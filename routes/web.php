@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Admin
+Route::namespace('Admin')->prefix('admin')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+
+    Route::get('dashboard', 'DashboardController@index');
+    Route::resource('hilight', 'HilightController');
+});
