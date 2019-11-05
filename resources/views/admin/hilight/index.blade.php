@@ -29,7 +29,7 @@
             <tbody>
                 @foreach($rs as $row)
                 <tr>
-                    <td>{{ $row->image }}</td>
+                    <td><img src="{{ url('uploads/hilight/'.$row->image) }}" width="100"></td>
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->url }}</td>
                     <td>{{ $row->created_at }}</td>

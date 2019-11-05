@@ -2,14 +2,17 @@
 <div class="card-body">
     <div class="form-group">
         <label for="title">หัวข้อ</label>
-        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="หัวข้อ">
+        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="หัวข้อ" value="{{ isset($rs->title) ? $rs->title : old('title') }}">
     </div>
     <div class="form-group">
         <label for="url">ลิ้งค์</label>
-        <input type="text" class="form-control" id="url" name="url" placeholder="ลิ้งค์">
+        <input type="text" class="form-control" id="url" name="url" placeholder="ลิ้งค์" value="{{ isset($rs->url) ? $rs->url : old('url') }}">
     </div>
     <div class="form-group">
         <label for="image">รูปไฮไลท์</label>
+        @if(isset($rs->image))
+            <div><img src="{{ url('uploads/hilight/'.$rs->image) }}" width="200"></div>
+        @endif
         <div class="input-group">
             <div class="custom-file">
                 <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="image" name="image">
