@@ -413,6 +413,17 @@ return [
             ],
         ],
         [
+            'name' => 'TinyMCE',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '//cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js',
+                ],
+            ],
+        ],
+        [
             'name' => 'MyScript',
             'active' => true,
             'files' => [

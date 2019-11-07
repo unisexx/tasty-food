@@ -30,11 +30,14 @@ $(document).ready(function () {
     });
 
     //CKEditor4
-    var options = {
-        filebrowserImageBrowseUrl: urlPath+'laravel-filemanager?type=Images',
-        filebrowserImageUploadUrl: urlPath+'laravel-filemanager/upload?type=Images&_token=',
-        filebrowserBrowseUrl: urlPath+'laravel-filemanager?type=Files',
-        filebrowserUploadUrl: urlPath+'laravel-filemanager/upload?type=Files&_token='
-    };
-    CKEDITOR.replace('detail', options);
+    // var options = {
+    //     filebrowserImageBrowseUrl: urlPath+'laravel-filemanager?type=Images',
+    //     filebrowserImageUploadUrl: urlPath+'laravel-filemanager/upload?type=Images&_token=',
+    //     filebrowserBrowseUrl: urlPath+'laravel-filemanager?type=Files',
+    //     filebrowserUploadUrl: urlPath+'laravel-filemanager/upload?type=Files&_token='
+    // };
+    // CKEDITOR.replace('detail', options);
+
+    //TinyMCE
+    tinymce.init({selector:'textarea'});
 });
