@@ -192,7 +192,7 @@ return [
             'active' => ['admin/hilight*']
         ],
         [
-            'text' => 'aboutus',
+            'text' => 'เกี่ยวกับเรา',
             'url'  => 'admin/page/1/edit',
             'icon' => 'fab fa-wpforms',
             'active' => ['admin/page/1*']
@@ -414,12 +414,12 @@ return [
         ],
         [
             'name' => 'TinyMCE',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.tiny.cloud/1/3n6gkw4fc40e1p915bhekje73ea4erdpb5b1xq85eh4z2q9o/tinymce/5/tinymce.min.js',
+                    'asset' => true,
+                    'location' => 'tinymce_file_manager/tinymce/tinymce.min.js',
                 ],
             ],
         ],

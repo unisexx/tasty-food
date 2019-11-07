@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         <label for="detail">เนื้อหา</label>
-        <textarea id="editor" class="form-control" name="detail"></textarea>
+        <textarea class="form-control tinyMCE" name="detail">{!! isset($rs->detail) ? $rs->detail : old('detail') !!}</textarea>
     </div>
 </div>
 <!-- /.card-body -->
