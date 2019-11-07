@@ -132,9 +132,9 @@ return [
     |
     */
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/admin/dashboard',
 
-    'logout_url' => 'logout',
+    'logout_url' => '../logout',
 
     'login_url' => 'login',
 
@@ -167,11 +167,11 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
+        // [
+        //     'text' => 'search',
+        //     'search' => true,
+        //     'topnav' => true,
+        // ],
         // [
         //     'text' => 'blog',
         //     'url'  => 'admin/blog',
@@ -192,15 +192,16 @@ return [
             'active' => ['admin/hilight*']
         ],
         [
-            'text' => 'เกี่ยวกับเรา',
-            'url'  => 'admin/aboutus',
+            'text' => 'aboutus',
+            'url'  => 'admin/page/1/edit',
             'icon' => 'fab fa-wpforms',
+            'active' => ['admin/page/1*']
         ],
-        [
-            'text' => 'บริการของเรา',
-            'url'  => 'admin/aboutus',
-            'icon' => 'fab fa-wpforms',
-        ],
+        // [
+        //     'text' => 'บริการของเรา',
+        //     'url'  => 'admin/aboutus',
+        //     'icon' => 'fab fa-wpforms',
+        // ],
 
 
 
@@ -374,6 +375,17 @@ return [
             ],
         ],
         [
+            'name' => 'BootstrapSwitch',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'AdminLTE-3.0.0/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
+                ],
+            ],
+        ],
+        [
             'name' => 'Pace',
             'active' => false,
             'files' => [
@@ -386,6 +398,17 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'CKEditor4',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '//cdn.ckeditor.com/4.13.0/standard/ckeditor.js',
                 ],
             ],
         ],

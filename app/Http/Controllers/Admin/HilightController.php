@@ -51,11 +51,6 @@ class HilightController extends Controller
         return redirect('admin/hilight');
     }
 
-    public function show($id)
-    {
-        //
-    }
-
     public function edit($id)
     {
         $rs = Hilight::findOrFail($id);

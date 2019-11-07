@@ -20,6 +20,13 @@
             </div>
         </div>
     </div>
+    <div class="form-group">
+        <label for="status">เผยแพร่</label>
+        <div>
+            <input type="hidden" name="status" value="0" checked>
+            <input type="checkbox" name="status" value="1" @if(@$rs->status == 1 || @$rs->status === null) checked @endif data-bootstrap-switch>
+        </div>
+    </div>
 </div>
 <!-- /.card-body -->
 

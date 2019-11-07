@@ -19,6 +19,7 @@
         <table id="data-table" class="table table-bordered table-striped">
             <thead>
                 <tr>
+                    <th class="no-sort">เผยแพร่</th>
                     <th class="no-sort">รูป</th>
                     <th>หัวข้อ</th>
                     <th>ลิ้งค์</th>
@@ -29,6 +30,9 @@
             <tbody>
                 @foreach($rs as $row)
                 <tr>
+                    <td>
+                        <input class="switch_status" data-id="<?php echo $row->id?>" data-tb="hilights" type="checkbox" @if(@$row->status == 1) checked @endif data-bootstrap-switch>
+                    </td>
                     <td><img src="{{ url('uploads/hilight/'.$row->image) }}" width="100"></td>
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->url }}</td>

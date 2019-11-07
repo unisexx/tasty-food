@@ -19,10 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// ajax
+Route::any('ajaxSwitchStatus', 'AjaxController@ajaxSwitchStatus');
+
 // Admin
 Route::namespace('Admin')->prefix('admin')->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
     Route::get('dashboard', 'DashboardController@index');
+    Route::resource('page', 'PageController');
     Route::resource('hilight', 'HilightController');
 });
