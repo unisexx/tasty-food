@@ -403,23 +403,23 @@ return [
         ],
         [
             'name' => 'CKEditor4',
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.ckeditor.com/4.13.0/standard/ckeditor.js',
                 ],
             ],
         ],
         [
             'name' => 'TinyMCE',
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
-                    'location' => '//cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js',
+                    'asset' => false,
+                    'location' => '//cdn.tiny.cloud/1/3n6gkw4fc40e1p915bhekje73ea4erdpb5b1xq85eh4z2q9o/tinymce/5/tinymce.min.js',
                 ],
             ],
         ],
