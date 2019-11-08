@@ -197,6 +197,30 @@ return [
             'icon' => 'fab fa-wpforms',
             'active' => ['admin/page/1*']
         ],
+        [
+            'text' => 'บริการของเรา',
+            'url'  => 'admin/page/2/edit',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/page/2*']
+        ],
+        [
+            'text' => 'วิธีสั่งซื้อและชำระเงิน',
+            'url'  => 'admin/page/3/edit',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/page/3*']
+        ],
+        [
+            'text' => 'ข่าวสาร',
+            'url'  => 'admin/info',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/info*']
+        ],
+        [
+            'text' => 'ความรู้น่ารู้',
+            'url'  => 'admin/knowledge',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/knowledge*']
+        ],
         // [
         //     'text' => 'บริการของเรา',
         //     'url'  => 'admin/aboutus',

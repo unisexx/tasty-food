@@ -42,7 +42,7 @@ $(document).ready(function () {
     // tinymce.init({selector:'textarea'});
     tinymce.init({
         selector: "textarea.tinyMCE",
-        height: 300,
+        height: 400,
         plugins: [
             "advlist autolink link image lists charmap print preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",

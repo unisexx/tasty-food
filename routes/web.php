@@ -29,4 +29,6 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::get('dashboard', 'DashboardController@index');
     Route::resource('page', 'PageController');
     Route::resource('hilight', 'HilightController');
+    Route::resource('info', 'InfoController');
+    Route::resource('knowledge', 'KnowledgeController');
 });
