@@ -221,6 +221,14 @@ return [
             'icon' => 'fab fa-wpforms',
             'active' => ['admin/knowledge*']
         ],
+        [
+            'text' => 'ติดต่อเรา',
+            'url'  => 'admin/contact/1/edit',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/contact/1*']
+        ],
+        ['header' => 'สินค้า'],
+        ['header' => 'สมาชิก'],
         // [
         //     'text' => 'บริการของเรา',
         //     'url'  => 'admin/aboutus',

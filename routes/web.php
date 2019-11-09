@@ -31,4 +31,5 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::resource('hilight', 'HilightController');
     Route::resource('info', 'InfoController');
     Route::resource('knowledge', 'KnowledgeController');
+    Route::resource('contact', 'ContactController');
 });
