@@ -192,11 +192,43 @@ return [
             'active' => ['admin/hilight*']
         ],
         [
-            'text' => 'aboutus',
+            'text' => 'เกี่ยวกับเรา',
             'url'  => 'admin/page/1/edit',
             'icon' => 'fab fa-wpforms',
             'active' => ['admin/page/1*']
         ],
+        [
+            'text' => 'บริการของเรา',
+            'url'  => 'admin/page/2/edit',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/page/2*']
+        ],
+        [
+            'text' => 'วิธีสั่งซื้อและชำระเงิน',
+            'url'  => 'admin/page/3/edit',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/page/3*']
+        ],
+        [
+            'text' => 'ข่าวสาร',
+            'url'  => 'admin/info',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/info*']
+        ],
+        [
+            'text' => 'ความรู้น่ารู้',
+            'url'  => 'admin/knowledge',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/knowledge*']
+        ],
+        [
+            'text' => 'ติดต่อเรา',
+            'url'  => 'admin/contact/1/edit',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/contact/1*']
+        ],
+        ['header' => 'สินค้า'],
+        ['header' => 'สมาชิก'],
         // [
         //     'text' => 'บริการของเรา',
         //     'url'  => 'admin/aboutus',
@@ -403,11 +435,11 @@ return [
         ],
         [
             'name' => 'CKEditor4',
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.ckeditor.com/4.13.0/standard/ckeditor.js',
                 ],
             ],
@@ -419,7 +451,7 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => '//cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js',
+                    'location' => 'tinymce_file_manager/tinymce/tinymce.min.js',
                 ],
             ],
         ],
