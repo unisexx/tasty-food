@@ -57,3 +57,23 @@ $(document).ready(function () {
         remove_script_host:false
       });
 });
+
+function archiveFunction() {
+    // alert('555');
+    event.preventDefault(); // prevent form submit
+    var form = event.target.form; // storing the form
+    Swal.fire({
+    title: 'ยืนยันการลบข้อมูล?',
+    text: "หลังจากที่ลบไปแล้วจะไม่สามารถดึงข้อมูลนี้กลับมาได้อีก!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ลบเลย',
+    cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+        if (result.value) {
+            form.submit();
+        }
+    });
+}

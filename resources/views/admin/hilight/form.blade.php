@@ -32,4 +32,5 @@
 
 <div class="card-footer">
     <button type="submit" class="btn btn-primary">บันทึก</button>
+    <button type="button" class="btn btn-default float-right" onclick="document.location='{{ url('admin/hilight') }}'">ย้อนกลับ</button>
 </div>

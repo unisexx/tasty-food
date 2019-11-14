@@ -91,7 +91,7 @@ class HilightController extends Controller
     public function destroy($id)
     {
         Hilight::destroy($id);
-        set_notify('error', 'ลบข้อมูลสำเร็จ');
+        set_notify('success', 'ลบข้อมูลสำเร็จ');
         return redirect('admin/hilight');
     }
 }
