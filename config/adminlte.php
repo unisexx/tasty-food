@@ -227,7 +227,13 @@ return [
             'icon' => 'fab fa-wpforms',
             'active' => ['admin/contact/1*']
         ],
-        ['header' => 'สินค้า'],
+        ['header' => 'ร้านค้า'],
+        [
+            'text' => 'หมวดหมู่สินค้า',
+            'url'  => 'admin/product-category',
+            'icon' => 'fas fa-store',
+            'active' => ['admin/product-category*']
+        ],
         ['header' => 'สมาชิก'],
         // [
         //     'text' => 'บริการของเรา',

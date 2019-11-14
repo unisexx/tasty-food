@@ -27,9 +27,14 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
     Route::get('dashboard', 'DashboardController@index');
+
+    // ข้อมูลทั่วไป
     Route::resource('page', 'PageController');
     Route::resource('hilight', 'HilightController');
     Route::resource('info', 'InfoController');
     Route::resource('knowledge', 'KnowledgeController');
     Route::resource('contact', 'ContactController');
+
+    // หมวดหมู่สินค้า
+    Route::resource('product-category', 'ProductCategoryController');
 });
