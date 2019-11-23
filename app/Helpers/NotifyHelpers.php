@@ -29,7 +29,8 @@ if (!function_exists('sweetAlert')) {
             return '
 				<script type="text/javascript">
                 Swal.fire({
-                    position: "center",
+                    toast: true,
+                    position: "top-end",
                     type: "' . Session::get('type') . '",
                     title: "' . Session::get('msg') . '",
                     showConfirmButton: false,
