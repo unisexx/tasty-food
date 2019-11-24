@@ -8,50 +8,301 @@
 
 @section('content')
 
-<div class="treeview w-20 border">
-    <h6 class="pt-3 pl-3">Folders</h6>
-    <hr>
-    <ul class="mb-1 pl-3 pb-2">
-        <li><i class="fas fa-angle-right rotate"></i>
-            <span><i class="far fa-envelope-open ic-w mx-1"></i>Mail</span>
-            <ul class="nested">
-                <li><i class="far fa-bell ic-w mr-1"></i>Offers</li>
-                <li><i class="far fa-address-book ic-w mr-1"></i>Contacts</li>
-                <li><i class="fas fa-angle-right rotate"></i>
-                    <span><i class="far fa-calendar-alt ic-w mx-1"></i>Calendar</span>
-                    <ul class="nested">
-                        <li><i class="far fa-clock ic-w mr-1"></i>Deadlines</li>
-                        <li><i class="fas fa-users ic-w mr-1"></i>Meetings</li>
-                        <li><i class="fas fa-basketball-ball ic-w mr-1"></i>Workouts</li>
-                        <li><i class="fas fa-mug-hot ic-w mr-1"></i>Events</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><i class="fas fa-angle-right rotate"></i>
-            <span><i class="far fa-folder-open ic-w mx-1"></i>Inbox</span>
-            <ul class="nested">
-                <li><i class="far fa-folder-open ic-w mr-1"></i>Admin</li>
-                <li><i class="far fa-folder-open ic-w mr-1"></i>Corporate</li>
-                <li><i class="far fa-folder-open ic-w mr-1"></i>Finance</li>
-                <li><i class="far fa-folder-open ic-w mr-1"></i>Other</li>
-            </ul>
-        </li>
-        <li><i class="fas fa-angle-right rotate"></i>
-            <span><i class="far fa-gem ic-w mx-1"></i>Favourites</span>
-            <ul class="nested">
-                <li><i class="fas fa-pepper-hot ic-w mr-1"></i>Restaurants</li>
-                <li><i class="far fa-eye ic-w mr-1"></i>Places</li>
-                <li><i class="fas fa-gamepad ic-w mr-1"></i>Games</li>
-                <li><i class="fas fa-cocktail ic-w mr-1"></i>Coctails</li>
-                <li><i class="fas fa-pizza-slice ic-w mr-1"></i>Food</li>
-            </ul>
-        </li>
-        <li><i class="far fa-comment ic-w mr-1"></i>Notes</li>
-        <li><i class="fas fa-cogs ic-w mr-1"></i>Settings</li>
-        <li><i class="fas fa-desktop ic-w mr-1"></i>Devices</li>
-        <li><i class="fas fa-trash-alt ic-w mr-1"></i>Deleted Items</li>
-    </ul>
+@if ($errors->any())
+<ul class="alert alert-danger list-unstyled">
+    <li><b>ไม่สามารถบันทึกได้เนื่องจาก</b></li>
+    @foreach ($errors->all() as $error)
+    <li>- {{ $error }}</li>
+    @endforeach
+</ul>
+@endif
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">หมวดหมู่สินค้า</h3>
+            </div>
+
+            <div class="card-body">
+                <ol class="sortable">
+
+                    @foreach($rs as $parent_cat)
+                    <li id="menuItem_{{ $parent_cat->id }}">
+                        <div class="menuDiv">
+                            <span data-id="{{ $parent_cat->id }}" class="itemTitle">{{ $parent_cat->name }}</span>
+                            <span class="float-right">
+                                <button class="btn btn-xs btn-warning editBtn" data-id="{{ $parent_cat->id }}"
+                                    data-name="{{ $parent_cat->name }}"
+                                    data-parent="{{ $parent_cat->parent_id }}">แก้ไข</button>
+
+                                <form method="POST" action="{{ url('admin/product-category/' . $parent_cat->id) }}"
+                                    accept-charset="UTF-8" style="display:inline">
+                                    {{ method_field('DELETE') }}
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-xs btn-danger" title="ลบรายการนี้"
+                                        onclick="archiveFunction()">
+                                        ลบ
+                                    </button>
+                                </form>
+                            </span>
+                        </div>
+                        <ol>
+
+                            @foreach($parent_cat->children as $cat)
+                            <li id="menuItem_{{ $cat->id }}">
+                                <div class="menuDiv">
+                                    <span data-id="{{ $cat->id }}" class="itemTitle">{{ $cat->name }}</span>
+                                    <span class="float-right">
+                                        <button class="btn btn-xs btn-warning editBtn" data-id="{{ $cat->id }}"
+                                            data-name="{{ $cat->name }}"
+                                            data-parent="{{ $cat->parent_id }}">แก้ไข</button>
+
+                                        <form method="POST" action="{{ url('admin/product-category/' . $cat->id) }}"
+                                            accept-charset="UTF-8" style="display:inline">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-xs btn-danger" title="ลบรายการนี้"
+                                                onclick="archiveFunction()">
+                                                ลบ
+                                            </button>
+                                        </form>
+                                    </span>
+                                </div>
+                            </li>
+                            @endforeach
+
+                        </ol>
+                    </li>
+                    @endforeach
+
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Form</h3>
+            </div>
+
+            <form method="POST" action="{{ url('admin/product-category') }}" accept-charset="UTF-8"
+                enctype="multipart/form-data">
+                {{ csrf_field() }}
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>หมวดหมู่หลัก</label>
+                        <select name="parent_id" class="custom-select">
+                            <option value="">ตั้งเป็นหมวดหมู่หลัก</option>
+                            @foreach($rs as $row)
+                            <option value="{{ $row->id }}">{{ $row->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">ชื่อหมวดหมู่</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                            name="name" placeholder="ชื่อหมวดหมู่"
+                            value="{{ isset($rs->name) ? $rs->name : old('name') }}">
+                    </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <input type="hidden" name="id" value="">
+                    <button type="submit" class="btn btn-primary">บันทึก</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.card -->
+    </div>
+
 </div>
 
+@stop
+
+@section('css')
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<style type="text/css">
+		.placeholder {
+			outline: 1px dashed #4183C4;
+		}
+
+		.mjs-nestedSortable-error {
+			background: #fbe3e4;
+			border-color: transparent;
+		}
+
+		ol {
+			/* max-width: 500px; */
+			padding-left: 25px;
+		}
+
+		ol.sortable,ol.sortable ol {
+			list-style-type: none;
+		}
+
+		.sortable li div {
+			border: 1px solid #d4d4d4;
+			/* -webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px; */
+			cursor: move;
+			/* border-color: #D4D4D4 #D4D4D4 #BCBCBC; */
+			margin: 5px 0;
+			padding: 5px;
+		}
+
+		li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
+			border-color: #999;
+		}
+
+		.disclose, .expandEditor {
+			cursor: pointer;
+			width: 20px;
+			display: none;
+		}
+
+		.sortable li.mjs-nestedSortable-collapsed > ol {
+			display: none;
+		}
+
+		.sortable li.mjs-nestedSortable-branch > div > .disclose {
+			display: inline-block;
+		}
+
+		.sortable span.ui-icon {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		.menuDiv {
+			background: rgba(0,0,0,.03);
+		}
+
+		.menuEdit {
+			background: #FFF;
+		}
+
+		.itemTitle {
+			vertical-align: middle;
+			cursor: pointer;
+		}
+
+		.deleteMenu {
+			float: right;
+			cursor: pointer;
+		}
+    </style>
+@stop
+
+@section('js')
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script src="{{ url('js/nestedSortable/jquery.mjs.nestedSortable.js') }}"></script>
+<script>
+$(document).ready(function(){
+    $('body').on('click', '.editBtn', function(){
+        var editParentID = $(this).data('parent');
+        var editName = $(this).data('name');
+        var editID = $(this).data('id');
+
+        $('select[name=parent_id]').val(editParentID);
+        $('input[type=text][name=name]').val(editName);
+        $('input[type=hidden][name=id]').val(editID);
+    });
+});
+</script>
+
+<script>
+    $().ready(function(){
+        var ns = $('ol.sortable').nestedSortable({
+            excludeRoot: true,
+            forcePlaceholderSize: true,
+            handle: 'div',
+            helper:	'clone',
+            items: 'li',
+            opacity: .6,
+            placeholder: 'placeholder',
+            revert: 250,
+            tabSize: 25,
+            tolerance: 'pointer',
+            toleranceElement: '> div',
+            maxLevels: 2,
+            isTree: true,
+            expandOnHover: 700,
+            startCollapsed: false,
+            relocate: function(){
+                console.log('Relocated item');
+
+                arraied = $('ol.sortable').nestedSortable('toArray', {startDepthCount: 0});
+                $.ajax({
+                    url: "{{ url('ajaxRebuildTree') }}",
+                    method: "GET",
+                    data: {sort: arraied},
+                    success: function(data) {
+                        Swal.fire({
+                            toast: true,
+                            position: "top-end",
+                            type: "success",
+                            title: "บันทึกข้อมูลสำเร็จ",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                });
+            }
+        });
+
+        $('#serialize').click(function(){
+            serialized = $('ol.sortable').nestedSortable('serialize');
+            $('#serializeOutput').text(serialized+'\n\n');
+        })
+
+        $('#toHierarchy').click(function(e){
+            hiered = $('ol.sortable').nestedSortable('toHierarchy', {startDepthCount: 0});
+            hiered = dump(hiered);
+            (typeof($('#toHierarchyOutput')[0].textContent) != 'undefined') ?
+            $('#toHierarchyOutput')[0].textContent = hiered : $('#toHierarchyOutput')[0].innerText = hiered;
+
+        })
+
+        $('#toArray').click(function(e){
+            arraied = $('ol.sortable').nestedSortable('toArray', {startDepthCount: 0});
+            arraied = dump(arraied);
+            (typeof($('#toArrayOutput')[0].textContent) != 'undefined') ?
+            $('#toArrayOutput')[0].textContent = arraied : $('#toArrayOutput')[0].innerText = arraied;
+
+        });
+    });
+
+    function dump(arr,level) {
+        var dumped_text = "";
+        if(!level) level = 0;
+
+        //The padding given at the beginning of the line.
+        var level_padding = "";
+        for(var j=0;j<level+1;j++) level_padding += "    ";
+
+        if(typeof(arr) == 'object') { //Array/Hashes/Objects
+            for(var item in arr) {
+                var value = arr[item];
+
+                if(typeof(value) == 'object') { //If it is an array,
+                    dumped_text += level_padding + "'" + item + "' ...\n";
+                    dumped_text += dump(value,level+1);
+                } else {
+                    dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                }
+            }
+        } else { //Strings/Chars/Numbers etc.
+            dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+        }
+        return dumped_text;
+    }
+</script>
 @stop

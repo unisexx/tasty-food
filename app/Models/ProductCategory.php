@@ -17,26 +17,4 @@ class ProductCategory extends Model
         '_rgt',
         'parent_id'
     ];
-
-    public function getLftName()
-    {
-        return 'left';
-    }
-
-    public function getRgtName()
-    {
-        return 'right';
-    }
-
-    public function getParentIdName()
-    {
-        return 'parent';
-    }
-
-    // Specify parent id attribute mutator
-    // public function setParentAttribute($value)
-    // {
-    //     $this->setParentIdAttribute($value);
-    // }
-    
 }

@@ -703,6 +703,65 @@
             "time": "2019-11-19T14:01:43+00:00"
         },
         {
+            "name": "kalnoy/nestedset",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lazychaser/laravel-nestedset.git",
+                "reference": "9c0ae248f38289147a5094fa0c5ba9bb9e93104b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/9c0ae248f38289147a5094fa0c5ba9bb9e93104b",
+                "reference": "9c0ae248f38289147a5094fa0c5ba9bb9e93104b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.7.0|~5.8.0|~6.0",
+                "illuminate/events": "~5.7.0|~5.8.0|~6.0",
+                "illuminate/support": "~5.7.0|~5.8.0|~6.0",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v5.0.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Kalnoy\\Nestedset\\NestedSetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kalnoy\\Nestedset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kalnoy",
+                    "email": "lazychaser@gmail.com"
+                }
+            ],
+            "description": "Nested Set Model for Laravel 5.7 and up",
+            "keywords": [
+                "database",
+                "hierarchy",
+                "laravel",
+                "nested sets",
+                "nsm"
+            ],
+            "time": "2019-09-06T06:18:32+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v6.5.2",
             "source": {
@@ -846,11 +905,7 @@
                 "framework",
                 "laravel"
             ],
-<<<<<<< HEAD
             "time": "2019-11-19T14:52:01+00:00"
-=======
-            "time": "2019-11-12T15:20:18+00:00"
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
         },
         {
             "name": "laravel/helpers",
@@ -2486,11 +2541,7 @@
                 "mime",
                 "mime-type"
             ],
-<<<<<<< HEAD
             "time": "2019-11-18T17:27:11+00:00"
-=======
-            "time": "2019-11-12T13:10:02+00:00"
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2845,11 +2896,7 @@
         },
         {
             "name": "symfony/process",
-<<<<<<< HEAD
             "version": "v4.4.0",
-=======
-            "version": "v4.3.8",
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -2898,7 +2945,6 @@
         },
         {
             "name": "symfony/routing",
-<<<<<<< HEAD
             "version": "v4.4.0",
             "source": {
                 "type": "git",
@@ -2909,18 +2955,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/routing/zipball/cf6d72cf0348775f5243b8389169a7096221ea40",
                 "reference": "cf6d72cf0348775f5243b8389169a7096221ea40",
-=======
-            "version": "v4.3.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/routing.git",
-                "reference": "533fd12a41fb9ce8d4e861693365427849487c0e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/533fd12a41fb9ce8d4e861693365427849487c0e",
-                "reference": "533fd12a41fb9ce8d4e861693365427849487c0e",
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
                 "shasum": ""
             },
             "require": {
@@ -2983,7 +3017,6 @@
                 "uri",
                 "url"
             ],
-<<<<<<< HEAD
             "time": "2019-11-20T13:44:34+00:00"
         },
         {
@@ -2998,22 +3031,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/service-contracts/zipball/9d99e1556417bf227a62e14856d630672bf10eaf",
                 "reference": "9d99e1556417bf227a62e14856d630672bf10eaf",
-=======
-            "time": "2019-11-04T20:23:03+00:00"
-        },
-        {
-            "name": "symfony/service-contracts",
-            "version": "v1.1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "ffc7f5692092df31515df2a5ecf3b7302b3ddacf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/ffc7f5692092df31515df2a5ecf3b7302b3ddacf",
-                "reference": "ffc7f5692092df31515df2a5ecf3b7302b3ddacf",
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
                 "shasum": ""
             },
             "require": {
@@ -3058,7 +3075,6 @@
                 "interoperability",
                 "standards"
             ],
-<<<<<<< HEAD
             "time": "2019-11-09T09:18:34+00:00"
         },
         {
@@ -3073,22 +3089,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/897fb68ee7933372517b551d6f08c6d4bb0b8c40",
                 "reference": "897fb68ee7933372517b551d6f08c6d4bb0b8c40",
-=======
-            "time": "2019-10-14T12:27:06+00:00"
-        },
-        {
-            "name": "symfony/translation",
-            "version": "v4.3.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation.git",
-                "reference": "bbce239b35b0cd47bd75848b23e969f17dd970e7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/bbce239b35b0cd47bd75848b23e969f17dd970e7",
-                "reference": "bbce239b35b0cd47bd75848b23e969f17dd970e7",
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
                 "shasum": ""
             },
             "require": {
@@ -3151,11 +3151,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "time": "2019-11-12T17:18:47+00:00"
-=======
-            "time": "2019-11-06T23:21:49+00:00"
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
         },
         {
             "name": "symfony/translation-contracts",
@@ -3216,11 +3212,7 @@
         },
         {
             "name": "symfony/var-dumper",
-<<<<<<< HEAD
             "version": "v4.4.0",
-=======
-            "version": "v4.3.8",
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -3460,7 +3452,6 @@
         },
         {
             "name": "facade/flare-client-php",
-<<<<<<< HEAD
             "version": "1.2.1",
             "source": {
                 "type": "git",
@@ -3471,18 +3462,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/facade/flare-client-php/zipball/5a1bfe4425974d17addeefce737d66a4c921a8df",
                 "reference": "5a1bfe4425974d17addeefce737d66a4c921a8df",
-=======
-            "version": "1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/flare-client-php.git",
-                "reference": "04c0bbd1881942f59e27877bac3b29ba57519666"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/04c0bbd1881942f59e27877bac3b29ba57519666",
-                "reference": "04c0bbd1881942f59e27877bac3b29ba57519666",
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
                 "shasum": ""
             },
             "require": {
@@ -3523,11 +3502,7 @@
                 "flare",
                 "reporting"
             ],
-<<<<<<< HEAD
             "time": "2019-11-19T08:42:39+00:00"
-=======
-            "time": "2019-11-08T11:11:17+00:00"
->>>>>>> bfb71bbafffa8da55112155a8324aa98be60223f
         },
         {
             "name": "facade/ignition",
