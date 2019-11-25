@@ -9,7 +9,13 @@ $(document).ready(function () {
         "columnDefs": [{
             "orderable": false,
             "targets": 'no-sort'
-        }]
+        }],
+        // ใช้ตอนกดเปลี่ยนหน้า เพื่อรันคำสั่ง bootstrap-switch อีกรอบ
+        rowCallback: function ( row, data ) {
+            $("input[data-bootstrap-switch]").each(function(){
+                $(this).bootstrapSwitch('state', $(this).prop('checked'));
+            });
+        }
     });
 
     // Input File

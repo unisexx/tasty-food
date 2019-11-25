@@ -38,4 +38,5 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
     // หมวดหมู่สินค้า
     Route::resource('product-category', 'ProductCategoryController');
+    Route::resource('product-item', 'ProductItemController');
 });

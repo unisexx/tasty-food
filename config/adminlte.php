@@ -232,7 +232,13 @@ return [
             'text' => 'หมวดหมู่สินค้า',
             'url'  => 'admin/product-category',
             'icon' => 'fas fa-store',
-            'active' => ['admin/product-category*']
+            'active' => ['admin/product-category']
+        ],
+        [
+            'text' => 'สินค้า',
+            'url'  => 'admin/product-item',
+            'icon' => 'fas fa-store',
+            'active' => ['admin/product-item']
         ],
         ['header' => 'สมาชิก'],
         // [

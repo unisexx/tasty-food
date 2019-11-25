@@ -23,7 +23,7 @@ class AjaxController extends Controller
     {
         // dd($_GET);
         $categories = $_GET['sort'];
-        dump($categories);
+        // dump($categories);
 
         if (is_array($categories)) {
             foreach ($categories as $cat) {
