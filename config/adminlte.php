@@ -468,6 +468,17 @@ return [
             ],
         ],
         [
+            'name' => 'NumberJs',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'js/jquery.number.js',
+                ],
+            ],
+        ],
+        [
             'name' => 'MyScript',
             'active' => true,
             'files' => [

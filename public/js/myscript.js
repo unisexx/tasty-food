@@ -61,7 +61,9 @@ $(document).ready(function () {
         external_plugins: { "filemanager" : "../filemanager/plugin.min.js"}
         ,relative_urls:false,
         remove_script_host:false
-      });
+    });
+
+    $('input.numDecimal').number( true, 2 );
 });
 
 function archiveFunction() {

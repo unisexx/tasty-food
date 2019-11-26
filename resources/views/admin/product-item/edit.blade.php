@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'ไฮไลท์ (เพิ่ม/แก้ไข)')
+@section('title', 'คลังสินค้า (เพิ่ม/แก้ไข)')
 
 @section('content_header')
-<h1>ไฮไลท์ (เพิ่ม/แก้ไข)</h1>
+<h1>คลังสินค้า (เพิ่ม/แก้ไข)</h1>
 @stop
 
 @section('content')
@@ -22,10 +22,10 @@
         <h3 class="card-title">Form</h3>
     </div>
 
-    <form method="POST" action="{{ url('admin/hilight/' . $rs->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+    <form method="POST" action="{{ url('admin/product-item/' . $rs->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
         {{ method_field('PATCH') }}
         {{ csrf_field() }}
-        @include ('admin.hilight.form', ['formMode' => 'edit'])
+        @include ('admin.product-item.form', ['formMode' => 'edit'])
     </form>
 </div>
 <!-- /.card -->

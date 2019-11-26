@@ -19,5 +19,21 @@ class ProductItem extends Model
         'description',
         'stock',
         'status',
+        'price',
     );
+
+    public function productImage()
+    {
+        return $this->hasMany('App\Models\ProductImage');
+    }
+
+    public function productImageLast()
+    {
+        return $this->hasOne('App\Models\ProductImage')->latest();
+    }
+
+    public function productImageFirst()
+    {
+        return $this->hasOne('App\Models\ProductImage')->oldest();
+    }
 }
