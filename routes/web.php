@@ -11,17 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+Route::get('home', 'HomeController@index')->name('home');
 
 // ajax
 Route::any('ajaxSwitchStatus', 'AjaxController@ajaxSwitchStatus');
 Route::any('ajaxRebuildTree', 'AjaxController@ajaxRebuildTree');
+Route::any('ajaxLoadProductCategoryForm', 'AjaxController@ajaxLoadProductCategoryForm');
+Route::any('ajaxUpdateOrderProductImage', 'AjaxController@ajaxUpdateOrderProductImage');
+Route::any('ajaxDeleteProductImage', 'AjaxController@ajaxDeleteProductImage');
+
 
 // Admin
 Route::namespace('Admin')->prefix('admin')->group(function () {

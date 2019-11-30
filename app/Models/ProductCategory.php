@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProductCategory extends Model
 {
     use NodeTrait;
+    use SoftDeletes;
 
     protected $table = 'product_categories';
 
@@ -15,6 +17,8 @@ class ProductCategory extends Model
         'name',
         '_lft',
         '_rgt',
-        'parent_id'
+        'parent_id',
+        'image',
+        'status'
     ];
 }

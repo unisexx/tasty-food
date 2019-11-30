@@ -26,33 +26,43 @@ class ProductItemController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'brand' => 'required',
-            'name'  => 'required',
-            'price' => 'required',
-            'stock' => 'required',
-            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'product_category_id' => 'required',
+            'brand'               => 'required',
+            'name'                => 'required',
+            'price'               => 'required',
+            'image'               => 'required_without:old_image',
+            'image.*'             => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ], [
-            'brand.required' => 'แบรนด์ ห้ามเป็นค่าว่าง',
-            'name.required'  => 'ชื่อสินค้า ห้ามเป็นค่าว่าง',
-            'price.required' => 'ราคา ห้ามเป็นค่าว่าง',
-            'stock.required' => 'จำนวนที่มีในสต็อก ห้ามเป็นค่าว่าง',
-            // 'image.required' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
-            // 'image.image'    => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
-            // 'image.mimes'    => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
-            // 'image.max'      => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
+            'product_category_id.required' => 'หมวดหมู่สินค้า ห้ามเป็นค่าว่าง',
+            'brand.required'               => 'แบรนด์ ห้ามเป็นค่าว่าง',
+            'name.required'                => 'ชื่อสินค้า ห้ามเป็นค่าว่าง',
+            'price.required'               => 'ราคา ห้ามเป็นค่าว่าง',
+            'image.required_without'       => 'รูปสินค้า ห้ามเป็นค่าว่าง',
+            'image.*.image'                => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
+            'image.*.mimes'                => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
+            'image.*.max'                  => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
         ]);
 
         $requestData = $request->all();
+        $rs = ProductItem::create($requestData);
 
-        // รูปไฮไลท์
-        if ($request->file('image')) {
-            $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
-            $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(800, 600); // resize image
-            $img->save('uploads/product-item/' . $requestData['image']); // save image
+        // ไฟล์แนบหลายไฟล์
+        if ($request->hasFile('image')) {
+            if ($files = $request->file('image')) {
+                foreach ($files as $key => $file) {
+
+                    $name = uniqid() . '.' . $file->extension(); // ชื่อรูป
+                    $img = Image::make($file->getRealPath()); // read image from temporary file
+                    $img->fit(300, 300); // resize image
+                    $img->save('uploads/product-item/' . $name); // save image
+
+                    $p = new ProductImage;
+                    $p->product_item_id = $rs->id;
+                    $p->name = $name;
+                    $p->save();
+                }
+            }
         }
-
-        ProductItem::create($requestData);
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
         return redirect('admin/product-item');
@@ -67,24 +77,24 @@ class ProductItemController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'brand' => 'required',
-            'name'  => 'required',
-            'price' => 'required',
-            'stock' => 'required',
-            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'product_category_id' => 'required',
+            'brand'               => 'required',
+            'name'                => 'required',
+            'price'               => 'required',
+            'image'               => 'required_without:old_image',
+            'image.*'             => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ], [
-            'brand.required' => 'แบรนด์ ห้ามเป็นค่าว่าง',
-            'name.required'  => 'ชื่อสินค้า ห้ามเป็นค่าว่าง',
-            'price.required' => 'ราคา ห้ามเป็นค่าว่าง',
-            'stock.required' => 'จำนวนที่มีในสต็อก ห้ามเป็นค่าว่าง',
-            // 'image.required' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
-            // 'image.image'    => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
-            // 'image.mimes'    => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
-            // 'image.max'      => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
+            'product_category_id.required' => 'หมวดหมู่สินค้า ห้ามเป็นค่าว่าง',
+            'brand.required'               => 'แบรนด์ ห้ามเป็นค่าว่าง',
+            'name.required'                => 'ชื่อสินค้า ห้ามเป็นค่าว่าง',
+            'price.required'               => 'ราคา ห้ามเป็นค่าว่าง',
+            'image.required_without'       => 'รูปสินค้า ห้ามเป็นค่าว่าง',
+            'image.*.image'                => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
+            'image.*.mimes'                => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
+            'image.*.max'                  => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
         ]);
 
         $requestData = $request->all();
-
         $rs = ProductItem::findOrFail($id);
         $rs->update($requestData);
 
@@ -96,7 +106,7 @@ class ProductItemController extends Controller
                     $name = uniqid() . '.' . $file->extension(); // ชื่อรูป
                     $img = Image::make($file->getRealPath()); // read image from temporary file
                     $img->fit(300, 300); // resize image
-                    $img->save('uploads/product/' . $name); // save image
+                    $img->save('uploads/product-item/' . $name); // save image
 
                     $p = new ProductImage;
                     $p->product_item_id = $rs->id;

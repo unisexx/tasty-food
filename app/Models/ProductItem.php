@@ -20,11 +20,12 @@ class ProductItem extends Model
         'stock',
         'status',
         'price',
+        'product_category_id',
     );
 
     public function productImage()
     {
-        return $this->hasMany('App\Models\ProductImage');
+        return $this->hasMany('App\Models\ProductImage')->orderBy('order', 'asc');
     }
 
     public function productImageLast()
@@ -35,5 +36,10 @@ class ProductItem extends Model
     public function productImageFirst()
     {
         return $this->hasOne('App\Models\ProductImage')->oldest();
+    }
+
+    public function productCategory()
+    {
+        return $this->hasOne('App\Models\ProductCategory', 'id', 'product_category_id');
     }
 }

@@ -18,6 +18,14 @@
         <label for="tel">เบอร์โทรศัพท์</label>
         <input type="text" class="form-control @error('tel') is-invalid @enderror" id="tel" name="tel" placeholder="หัวข้อ" value="{{ isset($rs->tel) ? $rs->tel : old('tel') }}">
     </div>
+    <div class="form-group">
+        <label for="tel">facebook</label>
+        <input type="text" class="form-control @error('facebook') is-invalid @enderror" id="facebook" name="facebook" placeholder="facebook" value="{{ isset($rs->facebook) ? $rs->facebook : old('facebook') }}">
+    </div>
+    <div class="form-group">
+        <label for="tel">twitter</label>
+        <input type="text" class="form-control @error('twitter') is-invalid @enderror" id="twitter" name="twitter" placeholder="twitter" value="{{ isset($rs->twitter) ? $rs->twitter : old('twitter') }}">
+    </div>
 </div>
 <!-- /.card-body -->
 

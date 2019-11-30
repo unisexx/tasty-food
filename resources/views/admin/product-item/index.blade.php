@@ -21,9 +21,9 @@
                 <tr>
                     <th class="no-sort">เผยแพร่</th>
                     <th class="no-sort">รูป</th>
+                    <th>หมวดหมู่</th>
                     <th>แบรนด์</th>
                     <th>ชื่อสินค้า</th>
-                    <th>จำนวนที่มี</th>
                     <th>ราคา</th>
                     <th class="no-sort">จัดการ</th>
                 </tr>
@@ -34,10 +34,10 @@
                     <td>
                         <input class="switch_status" data-id="<?php echo $row->id?>" data-tb="product_items" type="checkbox" @if(@$row->status == 1) checked @endif data-bootstrap-switch>
                     </td>
-                    <td><img src="{{ url('uploads/product/'.@$row->productImageFirst->name) }}" width="100"></td>
+                    <td><img src="{{ url('uploads/product-item/'.@$row->productImageFirst->name) }}" width="100"></td>
+                    <td>{{ $row->productCategory->name ?? '-' }}</td>
                     <td>{{ $row->brand }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>{{ $row->stock }}</td>
                     <td>{{ $row->price }}</td>
                     <td>
                         <a href="{{ url('admin/product-item/' . $row->id . '/edit') }}" title="แก้ไขรายการนี้">

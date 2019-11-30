@@ -9,9 +9,12 @@
         <input type="text" class="form-control" id="url" name="url" placeholder="ลิ้งค์" value="{{ isset($rs->url) ? $rs->url : old('url') }}">
     </div>
     <div class="form-group">
-        <label for="image">รูปไฮไลท์</label>
+        <label for="image">รูปไฮไลท์ ขนาด (1110x340 px)</label>
         @if(isset($rs->image))
-            <div><img src="{{ url('uploads/hilight/'.$rs->image) }}" width="200"></div>
+            <div>
+                <img src="{{ url('uploads/hilight/'.$rs->image) }}" width="200">
+                <input type="hidden" name="old_image" value="{{ $rs->image }}">
+            </div>
         @endif
         <div class="input-group">
             <div class="custom-file">

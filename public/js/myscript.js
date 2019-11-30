@@ -67,7 +67,6 @@ $(document).ready(function () {
 });
 
 function archiveFunction() {
-    // alert('555');
     event.preventDefault(); // prevent form submit
     var form = event.target.form; // storing the form
     Swal.fire({

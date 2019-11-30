@@ -26,13 +26,13 @@ class HilightController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'image' => 'required_without:old_image|image|mimes:jpeg,png,jpg,gif|max:10240',
         ], [
-            'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
-            'image.required' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
-            'image.image'    => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
-            'image.mimes'    => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
-            'image.max'      => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
+            'title.required'         => 'หัวข้อ ห้ามเป็นค่าว่าง',
+            'image.required_without' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
+            'image.image'            => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
+            'image.mimes'            => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
+            'image.max'              => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
         ]);
 
         $requestData = $request->all();
@@ -41,7 +41,7 @@ class HilightController extends Controller
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(800, 600); // resize image
+            $img->fit(1110, 340); // resize image
             $img->save('uploads/hilight/' . $requestData['image']); // save image
         }
 
@@ -61,13 +61,13 @@ class HilightController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'image' => 'required_without:old_image|image|mimes:jpeg,png,jpg,gif|max:10240',
         ], [
-            'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
-            'image.required' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
-            'image.image'    => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
-            'image.mimes'    => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
-            'image.max'      => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
+            'title.required'         => 'หัวข้อ ห้ามเป็นค่าว่าง',
+            'image.required_without' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
+            'image.image'            => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
+            'image.mimes'            => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
+            'image.max'              => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
         ]);
 
         $requestData = $request->all();
@@ -76,7 +76,7 @@ class HilightController extends Controller
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(800, 600); // resize image
+            $img->fit(1110, 340); // resize image
             $img->save('uploads/hilight/' . $requestData['image']); // save image
         }
 

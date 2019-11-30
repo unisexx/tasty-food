@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHC distributor</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <!-- fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!--JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--JS facebook-comment -->
+    <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+    <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+    <link rel="canonical" href="https://codepen.io/macio2/pen/pbOgmX?limit=all&page=4&q=comment" />
+    <link rel="stylesheet" href="css/facebook-comment.css" />
+
+</head>
+<body>
+<!--########################### START HEADER ###########################-->
+<div class="row bg-header">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-sm-4 col-md-4 mt-4 login">
+              <a href="#">Log in</a>   or  <a href="#">Register</a> 
+              <img src="images/icon-account.png" alt="" class="icon-account"> <a href="#"><span>My Account</span></a>
+          </div>
+          <div class="col-12 col-sm-4 col-md-4 text-center"> <img src="images/logo.png" alt="" class="logo img-fluid"> </div>
+          <div class="col-12 col-sm-4 col-md-4 mt-3">
+           <form class="search pull-right w-75">
+             <input class="form-control search-input" type="text" placeholder="Search Products..." aria-label="Search">
+             <button type="button"><i class="fa fa-search"></i></button>
+           </form>
+         </div>
+      </div>
+<!--########################### START CART ###########################-->
+        <div class="cart box_1">
+                <h3> 
+                <div class="total">
+                    <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
+                    <span class="simpleCart_total">$0.00</span> <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">0</span></div>
+                </div>
+                <a href="checkout.html"><img src="images/icon-cart1.png" alt=""></a>
+                </h3>
+                <div class="clearfix"> </div>
+        </div>
+<!--########################### END CART ###########################-->
+        <div class="row mt-5">
+            <div class="menu">
+                <nav class="navbar navbar-expand-lg navbar-light bg-faded nopadding">
+                    <!-- links toggle -->
+                    <button class="navbar-toggler tog" type="button" data-toggle="collapse" data-target="#topmenu"
+                        aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line" style="margin-bottom: 0;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="topmenu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html"><img src="images/icon-home.png" alt=""></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.html">บริการของเรา</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="menu-product" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false" onclick="window.location.href='products.html';">
+                                    สินค้า
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="menu-product">
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้ชาย</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้หญิง</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมของเด็ก</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมอื่นๆ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์สมุนไพร</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์เครื่องมือแพทย์</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมทางการแพทย์</a></li>
+                                            <li><a class="dropdown-item" href="#">อุปกรณ์การแพทย์</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>
+                            <li class="nav-item"><a class="nav-link" href="news.html">ข่าวสาร</a></li>
+                            <li class="nav-item"><a class="nav-link" href="knowledge.html">ความรู้น่ารู้</a></li>
+                            <li class="nav-item"><a class="nav-link" href="how2pay.html">วิธีสั่งซื้อและชำระเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="confirm.html">แจ้งการโอนเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!--########################### END HEADER ###########################-->
+<!--########################## START CONTENT ##########################-->
+<div class="row wrap-content">
+    <div class="container">
+     <hr class="line2"></hr>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bread justify-content-end">
+                    <li class="breadcrumb-item"><a href="#">หน้าแรก</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Astaxanthin Plus Vitamin E [30 แคปซูล]</li>
+                </ol>
+            </nav>
+      
+    <!-- END Breadcrump -->
+    <div class="title-page">Astaxanthin Plus Vitamin E [30 แคปซูล]</div>
+        <div class="row mt-4">
+            <div class="col-12 col-sm-12 col-md-6 single-right-left bg-white">
+                   
+                    <div id="main_area">
+
+                            <div class="row">
+                                <div id="slider">
+                                    <!-- Top part of the slider -->
+                                    <div class="row">
+                                        <div id="carousel-bounding-box">
+                                            <div class="carousel slide" id="myCarousel">
+                                                <!-- Carousel items -->
+                                                <div class="carousel-inner slides flex-viewport">
+                                                    <div class="active carousel-item" data-slide-number="0">
+                                                    <img src="images/products/vistra/vistra-astaxanthin.jpg"></div>
+                          
+                                                    <div class="carousel-item" data-slide-number="1">
+                                                    <img src="images/products/vistra/vistra-astaxanthin2.jpg"></div>
+                          
+                                                    <div class="carousel-item" data-slide-number="2">
+                                                    <img src="images/products/vistra/vistra-astaxanthin3.jpg"></div>
+                          
+                                                    <div class="carousel-item" data-slide-number="3">
+                                                    <img src="images/300x300.jpg"></div>
+                          
+                                                    <div class="carousel-item" data-slide-number="4">
+                                                    <img src="images/300x300.jpg"></div>
+                          
+                                                    <div class="carousel-item" data-slide-number="5">
+                                                    <img src="images/300x300.jpg"></div>
+                          
+                                                    <div class="carousel-item" data-slide-number="6">
+                                                    <img src="images/300x300.jpg"></div>
+                            
+                                                    <div class="carousel-item" data-slide-number="7">
+                                                    <img src="images/300x300.jpg"></div>
+                          
+                                                </div><!-- Carousel nav -->
+                                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                                        <img src="images/arrow-slide-back.png" alt="">
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                                        <img src="images/arrow-slide-next.png" alt="">
+                                                    </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div><!--/Slider-->
+                          </div>
+                          
+                          <div class="">
+                            <div id="myCarousel3" class="carousel slide" data-interval="false">            
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                          
+                            <div class="carousel-item active">
+                                <div class="row-fluid">
+                                    <div class="row-center flex-control-nav flex-control-thumbs size-thumb">
+                                        <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-0"><img src="images/products/vistra/vistra-astaxanthin.jpg"></a>
+                                        <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-1"><img src="images/products/vistra/vistra-astaxanthin2.jpg"></a>
+                                        <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-2"><img src="images/products/vistra/vistra-astaxanthin3.jpg"></a>
+                                    </div>
+                                </div><!--/row-fluid-->
+                            </div><!--/item-->
+                          
+                            <div class="carousel-item">
+                                <div class="row-fluid">
+                                    <div class="row-center flex-control-nav flex-control-thumbs size-thumb">
+                                        <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-4"><img src="images/170x170.jpg"></a>
+                                        <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-5"><img src="images/170x170.jpg"></a>
+                                        <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-4"><img src="images/170x170.jpg"></a>
+                                    </div>
+                                </div><!--/row-fluid-->
+                            </div><!--/item-->
+                          
+                            </div><!--/carousel-inner-->
+                                <a class="carousel-control-prev" href="#myCarousel3" role="button" data-slide="prev">
+                                    <img src="images/arrow-slide-back.png" alt="">
+                                </a>
+                                <a class="carousel-control-next" href="#myCarousel3" role="button" data-slide="next">
+                                    <img src="images/arrow-slide-next.png" alt="">
+                                </a>
+                                
+                            </div><!--/myCarousel-->
+                          
+                          </div>
+                          </div>
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 bg-white p-4">
+               <h3><span class="brand-title-product-detail">Vistra</span></h3>
+               <h4><span class="title-product-detail">Astaxanthin Plus Vitamin E [30 แคปซูล]</span></h4>
+               <div class="price2">฿ 690.00</div>
+               <div class="row">
+                    <label class="col-4 col-sm-3 col-md-3 col-form-label"><h5>จำนวน :</h5></label>
+                    <select id="" onchange="change_country(this.value)" class="col-2 form-control">
+                            <option value="null">1</option>
+                            <option value="null">2</option> 
+                            <option value="null">3</option>					
+                            <option value="null">10</option>								
+                        </select>
+                </div>
+                <input type="submit" name="submit" value="Add to cart" class="button add mt-4 mb-4">
+                <ul class="social-nav model-3d-0 social mt-4 mb-4 pl-0">
+                        <li class="share">Share On : </li>
+                        <li>
+                            <a href="#" class="facebook">
+                                <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="twitter">
+                                <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+<!-- START DESCRIPTION -->
+<div class="title-page7 pt-3 mt-4 mb-4"><i class="fa fa-edit black"></i> รายละเอียดสินค้า</div>
+<div class="row p-detail">
+    <div class="list-style01">
+    <ul>
+            <li>1 แคปซูลให้เอสตาแซนซิน 6 มก.</li>
+            <li>เต็มขั้นการต้านอนุมูลอิสระ</li>
+            <li>ช่วยชะลอวัย ปกป้องริ้วรอย</li>
+            <li>ลดความอ่อนล้า และความเสื่อมของดวงตา</li>
+            <li>ดูแลสุขภาพหัวใจ HDL</li>
+            <li>ลดการอ่อนล้าจากการออกกำลังกาย</li>
+        </ul>
+    </div>
+     <p><span class="text-pink">“แอสตาแซนธิน พลัสวิตามินอี”</span> อีกทางเลือกใหม่ในการลดเลือนริ้วรอยก่อนวัย ด้วยมหัศจรรย์สาหร่ายสีแดง เกรดพรีเมี่ยมจากประเทศญี่ปุ่น ที่เปี่ยมด้วยพลังแห่งสารต้านอนุมูลอิสระอันทรงประสิทธิภาพ เพื่อคงไว้ซึ่งความอ่อนเยาว์ และชุ่มชื่นของผิวพรรณ </p>
+     <p><span class="text-pink">แอสตาแซนธิน (Astaxanthin)</span></p>
+    <p>เป็นสารสีแดงในกลุ่มแซนโทรฟิลล์ในตระกูลแคโรทีนอยด์ พบได้ทั่วไปในธรรมชาติ เช่นไข่ปลาคาร์เวียร์ ปลาแซลมอน เปลือกกุ้ง ปู และมากที่สุดในสาหร่าย <strong>Microalgae Haematococcus Pluvialis(เฮมาโทคอกคัส พลูวิลลิส)</strong> และด้วยสูตรโครงสร้างที่เป็นเอกลักษณ์ของแอสตาแซนธินที่สามารถละลายได้ในน้ำและไขมัน จึงทำให้สามารถปกป้องได้ทั้งเยื่อหุ้มเซลภายในและภายนอกซึ่งะมีความครอบคลุมในการปกป้องมากกว่าวิตามินชนิดอื่น ๆ ที่สามารถปกป้องได้เพียงแค่ส่วนใดส่วนหนึ่ง </p>
+    <p><strong><u>จากการศึกษาพบว่า</u></strong> <span class="text-pink">แอสตาแซนธิน</span> มีประสิทธิภาพในการเป็นสารต้านอนุมูลอิสระเมื่อเปรียบเทียบกับสารอื่น ๆได้ดังต่อไปนี้  </p>
+    <div class="clearfix"></div>
+    <div class="list-style02">
+    <ul>
+        <li>มากกว่าวิตามินซี 6,000 เท่า </li>
+        <li>มากกว่า โคเอนไซม์คิวเท็น 800 เท่า </li>
+        <li>มากกว่าสารสกัดจากชาเขียว 550 เท่า </li>
+        <li>มากกว่า วิตามินอี 550 เท่า </li>
+        <li>มากกว่ากรดอัลฟา ไลโปอิก 75 เท่า </li>
+        <li> มากกว่าเมล็ดองุ่น 17 เท่า </li>
+    </ul>
+</div>
+
+</div>
+<!-- END DESCRIPTION -->
+
+ <!--########## START COMMENT ########-->
+ <div class="title-page7 pt-3 mt-4 mb-4"><i class="fa fa-commenting-o black"></i> ความคิดเห็น</div>
+ <div class="row">
+<!--JS facebook-comment -->
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+<script src='https://fb.me/react-15.1.0.min.js'></script>
+<script src='https://fb.me/react-dom-15.1.0.min.js'></script>
+<script >"use strict";
+
+var appId = "app";
+var main = document.createElement("DIV");
+main.id = appId;
+document.body.appendChild(main);
+
+var app = document.getElementById('app');
+
+var Hour = React.createClass({
+  displayName: "Hour",
+
+  getDefaultProps: function getDefaultProps() {
+    return {
+      time: 42
+    };
+  },
+
+  render: function render() {
+    return React.createElement(
+      "p",
+      null,
+      this.props.time,
+      " h"
+    );
+  }
+});
+
+var Creator = React.createClass({
+  displayName: "Creator",
+
+  getDefaultProps: function getDefaultProps() {
+    return {
+      name: "Mark Zuckerberg"
+    };
+  },
+
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "creator" },
+      React.createElement("img", null),
+      React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "p",
+          null,
+          this.props.name
+        ),
+        React.createElement(Hour, { time: 4 })
+      )
+    );
+  }
+});
+
+var Message = React.createClass({
+  displayName: "Message",
+
+  render: function render() {
+    return React.createElement(
+      "p",
+      { className: "message" },
+      "Omg it's snowing outside!"
+    );
+  }
+});
+
+var Action = React.createClass({
+  displayName: "Action",
+
+  render: function render() {
+    return React.createElement(
+      "p",
+      { className: "action-button" },
+      this.props.text
+    );
+  }
+});
+
+var Bar = React.createClass({
+  displayName: "Bar",
+
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "bar" },
+      React.createElement(Action, { text: "Like!" }),
+      React.createElement(Action, { text: "Comment" }),
+      React.createElement(Action, { text: "Share" })
+    );
+  }
+});
+
+var Comment = React.createClass({
+  displayName: "Comment",
+
+  getDefaultProps: function getDefaultProps() {
+    return { name: "Douglas Adams" };
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "single-comment" },
+      React.createElement("img", null),
+      React.createElement(
+        "div",
+        { className: "single-container" },
+        React.createElement(
+          "span",
+          null,
+          this.props.name
+        ),
+        React.createElement(
+          "span",
+          null,
+          this.props.children
+        )
+      ),
+      React.createElement(
+        "div",
+        { className: "buttons" },
+        React.createElement(Action, { text: "Like!" }),
+        React.createElement(Action, { text: "Respond" }),
+        React.createElement(Hour, { time: this.props.time })
+      )
+    );
+  }
+});
+
+var CommentSection = React.createClass({
+  displayName: "CommentSection",
+
+  getInitialState: function getInitialState() {
+    return {
+      comments: []
+    };
+  },
+
+  _eachComment: function _eachComment(text, i) {
+    return React.createElement(
+      Comment,
+      { key: i, index: i, removeComment: this._deleteComment },
+      text
+    );
+  },
+
+  _addComment: function _addComment(text) {
+    var arr = this.state.comments;
+    arr.push(text);
+    this.setState({ comments: arr });
+  },
+
+  _handleKeyPress: function _handleKeyPress(e) {
+    if (e.key === "Enter") {
+      this._addComment(this.refs.newText.value);
+      this.refs.newText.value = "";
+      e.preventDefault();
+    }
+  },
+
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "div",
+        { className: "comment-section" },
+        React.createElement(
+          Comment,
+          { name: "Bruce Wayne", time: 3 },
+          "Mark, we have windows..."
+        ),
+        React.createElement(
+          Comment,
+          { name: "Mark Zuckerberg", time: 2 },
+          "Shut up Bruce"
+        ),
+        this.state.comments.map(this._eachComment)
+      ),
+      React.createElement(
+        "div",
+        { className: "input" },
+        React.createElement("img", null),
+        React.createElement("textarea", { ref: "newText", onKeyPress: this._handleKeyPress, placeholder: "Write a comment..." })
+      )
+    );
+  }
+});
+
+var Post = React.createElement(
+  "div",
+  null,
+  React.createElement(Creator, null),
+  React.createElement(Message, null),
+  React.createElement(Bar, null),
+  React.createElement(CommentSection, null)
+);
+
+ReactDOM.render(Post, app);
+
+// Normal js
+var textarea = document.getElementsByTagName('textarea')[0];
+
+textarea.onkeyup = function () {
+  textarea.style.height = "34px";
+  textarea.style.height = textarea.scrollHeight + "px";
+};
+
+/*  */
+//# sourceURL=pen.js
+</script>
+ 
+     
+
+ </div>
+ <!--########## END COMMENT ########-->
+
+    </div>  
+</div>
+<!--########################## END CONTENT ##########################-->
+<!--########################## START ICON CONTACT ##########################-->
+<div class="row m-0">
+  <div class="container mt-5 icon-contact">
+      <div class="row">
+          <div class="col-12 col-sm-4 col-md-4 text-center">
+              <img src="images/icon-iphone.png" alt=""><br><span class="call">Call us</span><br><span class="number">02-014-1600</span>
+          </div>
+          <div class="col-12 col-sm-4 col-md-4 text-center">
+              <img src="images/icon-location.png" alt=""><br><span class="call">Location</span><br><span class="location">16th floor., SJ Infinite I 349, Chom Phon, Chatuchak Bangkok 10900</span>
+          </div>
+          <div class="col-12 col-sm-4 col-md-4 text-center">
+              <img src="images/icon-mail.png" alt="" style="margin-top:10px;"><br><span class="call">Mail</span><br><br><a href="#"><span class="mail">sales@chc.com</span></a>
+          </div>
+      </div>
+  </div>
+</div>          
+<!--########################## END ICON CONTACT  ##########################-->
+<footer class="mt-5">
+  <div class="row m-0 bg-footer">
+      <div class="container text-footer">
+          <div class="row">
+          <div class="col-12 col-sm-4 col-md-4">2019 www.chc.com  All rights reserved</div>
+          <div class="col-12 col-sm-4 col-md-4 text-center"><a href="#">Terms & Conditions</a><a href="#">Privacy</a> </div>
+          <div class="col-12 col-sm-4 col-md-4 text-right a-social">
+              <a href="#"><img src="images/icon-facebook.png" alt="" style="margin-top:-10px;"></a>
+              <a href="#"><img src="images/icon-twitter.png" alt="" class="ml-5" style="margin-top:-10px;"></a>
+          </div>
+      </div>
+      </div>
+  </div>
+</footer>
+<!-- js -->
+
+
+<script src="js/simpleCart.min.js"> </script>
+<!-- Product detail Slider -->
+<script>jQuery(document).ready(function($) {
+        $('#myCarousel3').carousel({
+            interval: 1000000
+        });
+    
+        $('#myCarousel').carousel({
+                interval: 3000
+        });
+        $('#myCarousel2').carousel({
+                interval: 2000
+        });
+    
+        $('#carousel-text').html($('#slide-content-0').html());
+    
+        //Handles the carousel thumbnails
+        $('[id^=carousel-selector-]').click( function(){
+                var id_selector = $(this).attr("id");
+                var id = id_selector.substr(id_selector.length -1);
+                var id = parseInt(id);
+                $('#myCarousel').carousel(id);
+        });
+    
+    
+        // When the carousel slides, auto update the text
+        $('#myCarousel').on('slid', function (e) {
+                var id = $('.item.active').data('slide-number');
+                $('#carousel-text').html($('#slide-content-'+id).html());
+        });
+    });</script>
+<!-- //Product detail Slider -->
+
+
+</body>
+</html>

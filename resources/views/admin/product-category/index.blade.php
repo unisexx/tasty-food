@@ -19,7 +19,7 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-5">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">หมวดหมู่สินค้า</h3>
@@ -28,11 +28,12 @@
             <div class="card-body">
                 <ol class="sortable">
 
-                    @foreach($rs as $parent_cat)
+                    @foreach($category as $parent_cat)
                     <li id="menuItem_{{ $parent_cat->id }}">
                         <div class="menuDiv">
                             <span data-id="{{ $parent_cat->id }}" class="itemTitle">{{ $parent_cat->name }}</span>
                             <span class="float-right">
+                                {!! $parent_cat->status === 1 ? '<i class="fas fa-check-circle text-success"></i>' : '<i class="fas fa-times-circle text-danger"></i>' !!}
                                 <button class="btn btn-xs btn-warning editBtn" data-id="{{ $parent_cat->id }}"
                                     data-name="{{ $parent_cat->name }}"
                                     data-parent="{{ $parent_cat->parent_id }}">แก้ไข</button>
@@ -55,6 +56,7 @@
                                 <div class="menuDiv">
                                     <span data-id="{{ $cat->id }}" class="itemTitle">{{ $cat->name }}</span>
                                     <span class="float-right">
+                                        {!! $cat->status === 1 ? '<i class="fas fa-check-circle text-success"></i>' : '<i class="fas fa-times-circle text-danger"></i>' !!}
                                         <button class="btn btn-xs btn-warning editBtn" data-id="{{ $cat->id }}"
                                             data-name="{{ $cat->name }}"
                                             data-parent="{{ $cat->parent_id }}">แก้ไข</button>
@@ -83,7 +85,7 @@
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-7">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Form</h3>
@@ -93,27 +95,12 @@
                 enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>หมวดหมู่หลัก</label>
-                        <select name="parent_id" class="custom-select">
-                            <option value="">ตั้งเป็นหมวดหมู่หลัก</option>
-                            @foreach($rs as $row)
-                            <option value="{{ $row->id }}">{{ $row->name }}</option>
-                            @endforeach
-                        </select>
+                    <div id="category-frm">
+                        @include('admin.product-category.form')
                     </div>
-                    <div class="form-group">
-                        <label for="title">ชื่อหมวดหมู่</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                            name="name" placeholder="ชื่อหมวดหมู่"
-                            value="{{ isset($rs->name) ? $rs->name : old('name') }}">
-                    </div>
-                </div>
-                <!-- /.card-body -->
+                    <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <input type="hidden" name="id" value="">
                     <button type="submit" class="btn btn-primary">บันทึก</button>
                 </div>
             </form>
@@ -202,18 +189,20 @@
 @stop
 
 @section('js')
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script src="{{ url('js/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
 <script src="{{ url('js/nestedSortable/jquery.mjs.nestedSortable.js') }}"></script>
 <script>
 $(document).ready(function(){
     $('body').on('click', '.editBtn', function(){
-        var editParentID = $(this).data('parent');
-        var editName = $(this).data('name');
         var editID = $(this).data('id');
-
-        $('select[name=parent_id]').val(editParentID);
-        $('input[type=text][name=name]').val(editName);
-        $('input[type=hidden][name=id]').val(editID);
+		$.ajax({
+			url: "{{ url('ajaxLoadProductCategoryForm') }}",
+			method: "GET",
+			data: {id: editID},
+			success: function(data) {
+				$('#category-frm').html(data);
+			}
+		});
     });
 });
 </script>
