@@ -227,6 +227,12 @@ return [
             'icon' => 'fab fa-wpforms',
             'active' => ['admin/contact/1*']
         ],
+        [
+            'text' => 'วีดีโอ',
+            'url'  => 'admin/vdo',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/vdo*']
+        ],
         ['header' => 'ร้านค้า'],
         [
             'text' => 'หมวดหมู่สินค้า',

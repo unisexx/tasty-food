@@ -27,6 +27,7 @@ Route::any('ajaxLoadProductCategoryForm', 'AjaxController@ajaxLoadProductCategor
 Route::any('ajaxUpdateOrderProductImage', 'AjaxController@ajaxUpdateOrderProductImage');
 Route::any('ajaxDeleteProductImage', 'AjaxController@ajaxDeleteProductImage');
 
+Route::any('product-category/{id}', 'Front\ProductCategoryController@index');
 
 // Admin
 Route::namespace('Admin')->prefix('admin')->group(function () {
@@ -40,6 +41,7 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::resource('info', 'InfoController');
     Route::resource('knowledge', 'KnowledgeController');
     Route::resource('contact', 'ContactController');
+    Route::resource('vdo', 'VdoController');
 
     // หมวดหมู่สินค้า
     Route::resource('product-category', 'ProductCategoryController');

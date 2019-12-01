@@ -41,7 +41,7 @@
                     <div class="collapse navbar-collapse" id="topmenu">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.html"><img src="{{ url('chc/images/icon-home.png') }}" alt=""></a>
+                                <a class="nav-link" href="{{ url('/') }}"><img src="{{ url('chc/images/icon-home.png') }}" alt=""></a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
                             <li class="nav-item"><a class="nav-link" href="service.html">บริการของเรา</a></li>

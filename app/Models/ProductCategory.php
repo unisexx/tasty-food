@@ -21,4 +21,9 @@ class ProductCategory extends Model
         'image',
         'status'
     ];
+
+    public function productItem()
+    {
+        return $this->hasMany('App\Models\ProductItem', 'product_category_id', 'id');
+    }
 }
