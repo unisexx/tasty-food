@@ -28,14 +28,14 @@ class ProductItem extends Model
         return $this->hasMany('App\Models\ProductImage')->orderBy('order', 'asc');
     }
 
-    public function productImageLast()
-    {
-        return $this->hasOne('App\Models\ProductImage')->latest();
-    }
-
     public function productImageFirst()
     {
-        return $this->hasOne('App\Models\ProductImage')->oldest();
+        return $this->hasOne('App\Models\ProductImage')->orderBy('order', 'asc');
+    }
+
+    public function productImageLast()
+    {
+        return $this->hasOne('App\Models\ProductImage')->orderBy('order', 'desc');
     }
 
     public function productCategory()

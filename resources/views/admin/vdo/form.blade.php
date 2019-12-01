@@ -5,8 +5,8 @@
         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="หัวข้อ" value="{{ isset($rs->title) ? $rs->title : old('title') }}">
     </div>
     <div class="form-group">
-        <label for="title">ลิ้งค์ youtube</label>
-        <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" placeholder="ลิ้งค์ youtube" value="{{ isset($rs->url) ? $rs->url : old('url') }}">
+        <label for="title">ลิ้งค์ embed youtube</label>
+        <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" placeholder="https://www.youtube.com/embed/V7TrAVE3iJs" value="{{ isset($rs->url) ? $rs->url : old('url') }}">
     </div>
     <div class="form-group">
         <label for="status">เผยแพร่</label>

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2019-11-25 23:27:58
+Date: 2019-12-01 21:51:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,13 +26,15 @@ CREATE TABLE `contacts` (
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of contacts
 -- ----------------------------
-INSERT INTO `contacts` VALUES ('1', '2019-11-09 09:02:55', '2019-11-09 02:21:53', 'ที่อยู่', 'อีเมล์', 'เบอร์โทรศัพท์');
+INSERT INTO `contacts` VALUES ('1', '2019-11-09 09:02:55', '2019-11-30 12:01:19', '16th floor., SJ Infinite I 349, Chom Phon, Chatuchak Bangkok 10900', 'sales@chc.com', '02-014-1600', '#', '#');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -66,17 +68,13 @@ CREATE TABLE `hilights` (
   `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of hilights
 -- ----------------------------
-INSERT INTO `hilights` VALUES ('15', '2019-11-04 16:18:32', '2019-11-23 19:55:54', '2019-11-23 19:55:54', 'title', '1573095656.jpeg', 'url', '0');
-INSERT INTO `hilights` VALUES ('16', '2019-11-04 13:28:09', '2019-11-23 19:59:44', '2019-11-23 19:59:44', 'title', '1573095741.jpeg', 'url', '0');
-INSERT INTO `hilights` VALUES ('17', '2019-11-04 13:31:05', '2019-11-07 03:02:15', null, 'title', '1573095735.jpeg', 'url', '0');
-INSERT INTO `hilights` VALUES ('18', '2019-11-04 13:31:47', '2019-11-07 03:02:09', null, 'title', '1573095728.jpeg', 'url', '1');
-INSERT INTO `hilights` VALUES ('19', '2019-11-04 13:46:11', '2019-11-07 03:02:02', null, 'title', '1573095722.jpeg', 'url', '1');
-INSERT INTO `hilights` VALUES ('20', '2019-11-04 14:17:19', '2019-11-07 03:49:14', null, 'title', '1573095711.jpeg', 'url', '1');
+INSERT INTO `hilights` VALUES ('1', '2019-11-30 11:41:24', '2019-11-30 11:41:24', null, 'title', '1575114084.jpeg', 'url', '1');
+INSERT INTO `hilights` VALUES ('2', '2019-11-30 11:41:57', '2019-11-30 11:41:57', null, 'title2', '1575114117.jpeg', 'url2', '1');
 
 -- ----------------------------
 -- Table structure for infos
@@ -129,7 +127,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
@@ -144,6 +142,9 @@ INSERT INTO `migrations` VALUES ('7', '2019_11_08_174932_create_knowledge_table'
 INSERT INTO `migrations` VALUES ('8', '2019_11_09_015155_create_contacts_table', '5');
 INSERT INTO `migrations` VALUES ('9', '2019_11_14_090930_create_product_categories_table', '6');
 INSERT INTO `migrations` VALUES ('10', '2019_11_25_151151_create_product_items_table', '7');
+INSERT INTO `migrations` VALUES ('11', '2019_11_26_161855_create_product_images_table', '8');
+INSERT INTO `migrations` VALUES ('12', '2019_12_01_065818_create_vdos_table', '9');
+INSERT INTO `migrations` VALUES ('13', '2019_12_01_121756_create_services_table', '10');
 
 -- ----------------------------
 -- Table structure for pages
@@ -162,7 +163,7 @@ CREATE TABLE `pages` (
 -- ----------------------------
 -- Records of pages
 -- ----------------------------
-INSERT INTO `pages` VALUES ('1', '2019-11-07 14:16:22', '2019-11-07 17:04:10', 'เกี่ยวกับเรา', '<p><img src=\"http://tasty-food.test:8080/tinymce_file_manager/source/demo/1.jpg\" alt=\"\" width=\"350\" height=\"350\" />&nbsp;lorem Ipsum</p>', 'aboutus');
+INSERT INTO `pages` VALUES ('1', '2019-11-07 14:16:22', '2019-12-01 09:37:18', 'เกี่ยวกับเรา', '<p><img style=\"margin-right: 20px; margin-left: 20px; float: left;\" src=\"http://tasty-food.test:8080/tinymce_file_manager/source/about/about3.jpg\" alt=\"\" width=\"400\" height=\"350\" /></p>\r\n<p>สินค้า มาตรฐานความปลอดภัย ความสะอาด</p>\r\n<p>กว่าจะมาเป็นแคปซูลในมือคุณ...</p>\r\n<p>ใส่ใจคุณภาพของสินค้า ตั้งแต่เริ่มค้นหาวัตถุดิบ เพื่อให้มั่นใจได้ว่า คุณได้บริโภคสิ่งที่ดีที่สุดจากเรา</p>\r\n<p>มาตรฐานในการผลิตที่มีความปลอดภัย และมีคุณภาพในระดับสากล ได้รับการตรวจสอบและประเมินผลโดยคณะกรรมการอาหารและยากระทรวงสาธารณสุข</p>\r\n<p>ISO 9001: 2015 มาตรฐานในการบริหารจัดการการให้ความสำคัญกับความต้องการของลูกค้ามีการควบคุมตรวจสอบและพัฒนาคุณภาพสินค้าก่อนส่งมอบอย่างมีนัยสำคัญ</p>\r\n<p>ISO 22716 (GMP ยุโรป) มาตรฐานที่ดีในการผลิตขั้นสูงเพื่อความปลอดภัยของผู้บริโภคตามกฎระเบียบของสหภาพยุโรปการควบคุมการจัดส่ง และคุณภาพของผลิตภัณฑ์ที่จะเข้ามาจำหน่ายในกลุ่มประเทศในยุโรปจะต้องผ่านมาตรฐานนี้</p>\r\n<p>วัตถุดิบที่ใช้ในการผลิตแต่ละครั้งถูกคัดสรรจากผู้จัดหา เพื่อคัดเลือกและสรรหาวัตถุดิบที่ดีที่สุด โดยมีทีมจัดหาวัตถุดิบออกเดินทางรอบโลก เพื่อให้มั่นใจว่าวัตถุดิบที่ใช้ในการผลิตมีคุณภาพและสามารถตรวจสอบได้จริง วัตถุดิบที่ได้จะถูกพัฒนาโดยการค้นคว้าวิจัยขั้นสูง และด้วยความทุ่มเทของทีมค้นคว้าวิจัย ทั้งผู้ชำนาญการทางด้านรักษาด้วยวิถีธรรมชาติ นักเคมี นักวิทยาศาสตร์ และเภสัชกรด้านการพัฒนาผลิตภัณฑ์ พวกเขาได้ทำการค้นคว้าโดยใช้ทฤษฎีความรู้เฉพาะทาง และการทดลองสูตรผลิตภัณฑ์ยาต่างๆ รวมถึงการตรวจสอบด้วยนวัตกรรมล่าสุด เกี่ยวกับธรรมชาติบำบัดที่เข้มงวดและครอบคลุม โดยได้รับการสนับสนุนจาก Therapeutic Goods Administration (TGA) ของกรมแพทย์กระทรวงสาธารณสุข ประเทศออสเตรเลีย ในขั้นตอนการประกันคุณภาพของแบลคมอร์สซึ่งทำให้ผู้บริโภคมั่นใจได้ว่า ผลิตภัณฑ์ทั้งหมด ของเราสามารถตอบโจทย์ความต้องการที่หลากหลายได้</p>', 'aboutus');
 INSERT INTO `pages` VALUES ('2', '2019-11-08 23:00:42', '2019-11-08 16:01:35', 'บริการของเรา', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 'service');
 INSERT INTO `pages` VALUES ('3', '2019-11-09 00:06:28', '2019-11-09 00:06:30', 'วิธีสั่งซื้อและชำระเงิน', null, 'howtobuy');
 
@@ -191,8 +192,11 @@ CREATE TABLE `product_categories` (
   `_lft` int(10) unsigned NOT NULL DEFAULT '0',
   `_rgt` int(10) unsigned NOT NULL DEFAULT '0',
   `parent_id` int(10) unsigned DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_categories__lft__rgt_parent_id_index` (`_lft`,`_rgt`,`parent_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -200,19 +204,40 @@ CREATE TABLE `product_categories` (
 -- ----------------------------
 -- Records of product_categories
 -- ----------------------------
-INSERT INTO `product_categories` VALUES ('20', 'BEST SELLERS', '1', '2', null, '2019-11-23 19:14:42', '2019-11-24 13:39:35');
-INSERT INTO `product_categories` VALUES ('21', 'ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย', '19', '24', null, '2019-11-24 07:07:59', '2019-11-25 15:02:51');
-INSERT INTO `product_categories` VALUES ('22', 'ผลิตภัณฑ์เครื่องมือแพทย์', '25', '26', null, '2019-11-24 07:08:14', '2019-11-25 15:02:51');
-INSERT INTO `product_categories` VALUES ('26', 'ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ', '3', '12', null, '2019-11-24 12:40:48', '2019-11-25 13:57:16');
-INSERT INTO `product_categories` VALUES ('27', 'ผลิตภัณฑ์สมุนไพร', '13', '18', null, '2019-11-24 12:40:59', '2019-11-25 13:58:43');
-INSERT INTO `product_categories` VALUES ('29', 'อาหารเสริมผู้ชาย', '4', '5', '26', '2019-11-24 12:44:38', '2019-11-25 13:57:16');
-INSERT INTO `product_categories` VALUES ('30', 'อาหารเสริมผู้หญิง', '6', '7', '26', '2019-11-24 12:44:55', '2019-11-25 13:57:16');
-INSERT INTO `product_categories` VALUES ('31', 'อาหารเสริมของเด็ก', '8', '9', '26', '2019-11-24 12:45:09', '2019-11-25 13:57:16');
-INSERT INTO `product_categories` VALUES ('32', 'อาหารเสริมอื่นๆ', '10', '11', '26', '2019-11-24 12:45:22', '2019-11-25 13:57:16');
-INSERT INTO `product_categories` VALUES ('33', 'ผลิตภัณฑ์สมุนไพรแบบรับประทาน', '16', '17', '27', '2019-11-24 12:46:05', '2019-11-25 13:58:39');
-INSERT INTO `product_categories` VALUES ('34', 'ผลิตภัณฑ์สมุนไพรใช้ภายนอก', '14', '15', '27', '2019-11-24 12:46:15', '2019-11-25 13:58:43');
-INSERT INTO `product_categories` VALUES ('35', 'ผลิตภัณฑ์ดูแลผิวหน้า', '20', '21', '21', '2019-11-24 12:46:36', '2019-11-25 15:02:51');
-INSERT INTO `product_categories` VALUES ('36', 'ผลิตภัณฑ์ดูแลผิวกาย', '22', '23', '21', '2019-11-24 12:46:51', '2019-11-25 15:02:51');
+INSERT INTO `product_categories` VALUES ('20', 'BEST SELLERS', '1', '2', null, null, '1', '2019-11-23 19:14:42', '2019-11-30 13:59:54', '2019-11-30 13:59:54');
+INSERT INTO `product_categories` VALUES ('21', 'ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย', '17', '22', null, '1575121048.jpeg', '1', '2019-11-24 07:07:59', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('22', 'ผลิตภัณฑ์เครื่องมือแพทย์', '23', '24', null, '1575122444.jpeg', '1', '2019-11-24 07:08:14', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('26', 'ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ', '1', '10', null, '1575121007.jpeg', '1', '2019-11-24 12:40:48', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('27', 'ผลิตภัณฑ์สมุนไพร', '11', '16', null, '1575121036.jpeg', '1', '2019-11-24 12:40:59', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('29', 'อาหารเสริมผู้ชาย', '2', '3', '26', null, '1', '2019-11-24 12:44:38', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('30', 'อาหารเสริมผู้หญิง', '4', '5', '26', null, '1', '2019-11-24 12:44:55', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('31', 'อาหารเสริมของเด็ก', '6', '7', '26', null, '1', '2019-11-24 12:45:09', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('32', 'อาหารเสริมอื่นๆ', '8', '9', '26', null, '1', '2019-11-24 12:45:22', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('33', 'ผลิตภัณฑ์สมุนไพรแบบรับประทาน', '14', '15', '27', null, '1', '2019-11-24 12:46:05', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('34', 'ผลิตภัณฑ์สมุนไพรใช้ภายนอก', '12', '13', '27', null, '1', '2019-11-24 12:46:15', '2019-11-30 15:23:24', null);
+INSERT INTO `product_categories` VALUES ('35', 'ผลิตภัณฑ์ดูแลผิวหน้า', '18', '19', '21', null, '1', '2019-11-24 12:46:36', '2019-11-30 15:23:30', null);
+INSERT INTO `product_categories` VALUES ('36', 'ผลิตภัณฑ์ดูแลผิวกาย', '20', '21', '21', null, '1', '2019-11-24 12:46:51', '2019-11-30 15:23:30', null);
+
+-- ----------------------------
+-- Table structure for product_images
+-- ----------------------------
+DROP TABLE IF EXISTS `product_images`;
+CREATE TABLE `product_images` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `product_item_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of product_images
+-- ----------------------------
+INSERT INTO `product_images` VALUES ('7', '2019-11-30 17:47:21', '2019-12-01 14:33:30', '22', '5de2ab2977574.jpeg', '0');
+INSERT INTO `product_images` VALUES ('8', '2019-11-30 17:47:21', '2019-12-01 14:33:30', '22', '5de2ab298bc3b.jpeg', '1');
+INSERT INTO `product_images` VALUES ('9', '2019-11-30 17:47:21', '2019-12-01 14:33:30', '22', '5de2ab299f2cd.jpeg', '2');
 
 -- ----------------------------
 -- Table structure for product_items
@@ -227,35 +252,50 @@ CREATE TABLE `product_items` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   `stock` int(11) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
   `status` tinyint(4) DEFAULT NULL,
+  `product_category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of product_items
 -- ----------------------------
-INSERT INTO `product_items` VALUES ('1', '2019-11-24 19:58:53', null, null, 'Everardo Herman', 'Animi nam quos quisquam culpa.', 'Tempore deserunt alias exercitationem voluptatibus. Asperiores error quae culpa amet qui aut. Consectetur non qui quas ipsum dolore inventore ut quasi. Eligendi qui eos aut voluptate atque.', '11', '1');
-INSERT INTO `product_items` VALUES ('2', '2019-11-15 05:57:29', null, null, 'Manuel McGlynn', 'Eos rerum quis repellat facere sunt qui.', 'Quibusdam vel tenetur pariatur quia. Consequuntur labore praesentium et sit. Cum cupiditate labore nemo et praesentium ut expedita. Maiores quo at fugit eveniet facilis nostrum aut sint.', '3', '1');
-INSERT INTO `product_items` VALUES ('3', '2019-11-13 18:54:52', null, null, 'Junius Predovic', 'Maxime voluptatem atque natus et deserunt quis quod.', 'Sunt qui doloremque illo assumenda tempora qui. Molestias repellendus aut fugiat non in. Quia suscipit explicabo soluta dolorem. Cum qui enim qui sint.', '78', '1');
-INSERT INTO `product_items` VALUES ('4', '2019-11-19 05:56:52', null, null, 'Kiara Thiel', 'Tempora qui voluptatem aut ut minima sequi.', 'Ex aliquam velit laboriosam. Minima aspernatur dolor eligendi. Reiciendis magni quia ducimus magni occaecati est magni. Minus ad et deserunt accusantium.', '55', '1');
-INSERT INTO `product_items` VALUES ('5', '2019-11-12 18:00:50', null, null, 'Marisa Pollich DVM', 'Distinctio perferendis et omnis optio.', 'Perferendis enim veniam aut inventore et quam. Totam et praesentium numquam laboriosam molestiae nesciunt. Soluta sunt illo aut. Consequatur minima nisi harum sint dolorem neque.', '64', '1');
-INSERT INTO `product_items` VALUES ('6', '2019-11-15 22:40:59', null, null, 'Prof. Xavier Crona', 'Voluptatibus nihil quia dolor rerum quia est.', 'Quo est molestiae sint voluptas odio earum. Vel neque quidem facilis quos beatae fuga at. Sint quas provident magnam atque officia magni.', '67', '1');
-INSERT INTO `product_items` VALUES ('7', '2019-11-03 18:24:09', null, null, 'Prof. Esmeralda Boehm DVM', 'Saepe nostrum consequuntur maiores esse vitae omnis.', 'Veniam nihil voluptatum maiores ut. Est harum aut provident quisquam architecto. Sint atque natus rerum id. Et et sit autem. Quo et nihil architecto. Ad vel libero qui soluta explicabo id.', '76', '1');
-INSERT INTO `product_items` VALUES ('8', '2019-11-18 23:11:53', null, null, 'Madisen Labadie', 'Debitis natus id asperiores et dolorem numquam.', 'Quia enim est deleniti aut quam possimus. Corporis repellendus consequatur incidunt omnis placeat adipisci vel. Vel quaerat dolorem nostrum veritatis. Asperiores esse error eaque quasi perspiciatis.', '22', '1');
-INSERT INTO `product_items` VALUES ('9', '2019-11-06 15:23:54', null, null, 'Geo Hegmann', 'Est ut accusantium odit laborum consequuntur.', 'Et fuga vero sed blanditiis optio omnis et. Provident saepe architecto pariatur dolorum qui laudantium. Consequatur id dolorum saepe esse eligendi et non.', '36', '1');
-INSERT INTO `product_items` VALUES ('10', '2019-11-19 08:28:41', '2019-11-25 16:27:02', '2019-11-25 16:27:02', 'Velda Bashirian', 'Itaque similique iste ex hic sed aspernatur qui.', 'Nobis sequi est architecto ad officia adipisci sunt. Unde corporis vel sapiente sint. Sed debitis similique accusamus et omnis.', '70', '1');
-INSERT INTO `product_items` VALUES ('11', '2019-11-03 08:14:27', '2019-11-25 16:26:55', '2019-11-25 16:26:55', 'Elda Spinka', 'Distinctio voluptatem dignissimos modi odit magnam fuga.', 'Reprehenderit accusamus aliquam assumenda exercitationem reiciendis. Consequatur unde error sed velit voluptas recusandae.', '5', '1');
-INSERT INTO `product_items` VALUES ('12', '2019-11-24 23:48:45', '2019-11-25 16:26:53', '2019-11-25 16:26:53', 'Dr. Ronny Gutmann Jr.', 'Non omnis impedit delectus aperiam.', 'Nobis molestias repellat sit deserunt ut. Vero est et est voluptatem non doloremque natus. Magni corrupti sapiente est mollitia ea tempore molestiae.', '32', '1');
-INSERT INTO `product_items` VALUES ('13', '2019-11-16 11:13:51', '2019-11-25 16:26:49', '2019-11-25 16:26:49', 'Thea Mraz', 'Porro qui at ex.', 'Qui ipsam aut sunt qui beatae sit magni dolor. Dicta blanditiis fugit inventore ut pariatur corrupti. Id molestiae vel et eligendi et. Reiciendis ratione ea odio ad voluptatibus.', '67', '1');
-INSERT INTO `product_items` VALUES ('14', '2019-11-07 16:26:45', null, null, 'Mr. Madison Abshire IV', 'Aut omnis omnis et vitae.', 'Consequatur maiores omnis enim eveniet incidunt cupiditate. Ut id eveniet quisquam. Impedit et laudantium sapiente repellendus.', '42', '1');
-INSERT INTO `product_items` VALUES ('15', '2019-11-16 09:24:24', null, null, 'Dr. Ludwig Koepp', 'Quo est officia neque quisquam omnis consequatur reprehenderit nulla.', 'Laborum quis quia rerum quis. Est veritatis amet delectus qui.', '47', '1');
-INSERT INTO `product_items` VALUES ('16', '2019-11-18 04:55:58', null, null, 'Osvaldo Sporer', 'Illo eos fuga recusandae.', 'Inventore quasi eveniet quasi et. Voluptates totam at nisi et magnam magnam laudantium. Veniam voluptatem earum est minima omnis vitae nesciunt qui.', '14', '1');
-INSERT INTO `product_items` VALUES ('17', '2019-10-29 01:45:36', null, null, 'Dr. Emilia Ruecker DDS', 'Sapiente adipisci accusamus incidunt eos porro possimus sed voluptas.', 'Autem repellat facilis rerum. Consequatur quibusdam quia cumque corrupti. Dicta nemo non dolorum ut sequi.', '65', '1');
-INSERT INTO `product_items` VALUES ('18', '2019-11-20 22:13:47', null, null, 'Roscoe Sipes', 'Et cupiditate maiores praesentium est consequuntur.', 'Laboriosam culpa voluptatem eum sed consectetur necessitatibus. Exercitationem corrupti omnis aperiam dolor possimus quam ut. Impedit fugit repellendus dolor in voluptas.', '5', '1');
-INSERT INTO `product_items` VALUES ('19', '2019-11-09 23:26:40', null, null, 'Reece Hoppe', 'Excepturi blanditiis vel totam qui veritatis quidem.', 'Maiores at accusantium suscipit placeat expedita. Nulla ipsam quisquam vel magnam et in nihil.', '29', '1');
-INSERT INTO `product_items` VALUES ('20', '2019-11-17 15:13:57', null, null, 'Destiney Rippin', 'Accusantium maiores et rerum qui occaecati sed nostrum.', 'Exercitationem aut cupiditate ab aut autem quia repellendus. Repellat rerum qui consequatur esse sit sint. Amet ipsam non sit beatae et. Dolorum explicabo magni placeat.', '55', '1');
-INSERT INTO `product_items` VALUES ('21', '2019-11-07 17:04:30', null, null, 'Norbert Brekke', 'Asperiores eum nulla ut dolorem molestiae ratione tempore.', 'Illum quia repudiandae odio molestiae molestias qui. Est qui odit placeat. Eaque et beatae non. Necessitatibus itaque velit modi.', '23', '1');
-INSERT INTO `product_items` VALUES ('22', '2019-11-18 07:24:34', null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', 'Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.', '71', '1');
+INSERT INTO `product_items` VALUES ('22', '2019-11-18 07:24:34', '2019-11-30 17:54:39', null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('23', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('24', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('25', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('26', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('27', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('28', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('29', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('30', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('31', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+INSERT INTO `product_items` VALUES ('32', null, null, null, 'Prof. Serena Mann', 'Soluta iusto maxime eos accusantium labore quo.', '<p>Cupiditate corrupti qui voluptatem eos quasi autem nam. Non ratione rem omnis pariatur et iusto nobis. Voluptate facere quaerat et doloremque perferendis vel. In in dolorum deserunt est at.</p>', '71', '690.00', '1', '36');
+
+-- ----------------------------
+-- Table structure for services
+-- ----------------------------
+DROP TABLE IF EXISTS `services`;
+CREATE TABLE `services` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `detail_1` text COLLATE utf8mb4_unicode_ci,
+  `detail_2` text COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of services
+-- ----------------------------
+INSERT INTO `services` VALUES ('1', '2019-12-01 12:43:33', '2019-12-01 12:44:44', null, 'บริการผลิตครบวงจร', '<p>รับผลิตเครื่องผลิตภัณฑ์อาหารเสริม นวัตกรรมใหม่ ไม่ซ้ำแบบใคร ภายใต้แบรนด์คุณ ได้รับการรับรองมาตรฐานการผลิตระดับสากล ISO 22716 จาก SGS และ ASEAN GMP ของกระทรวงสาธารณสุข</p>\r\n<div class=\"list-style03\">\r\n<ul>\r\n<li>ค่าพัฒนาสูตรผลิตภัณฑ์อาหารเสริม&nbsp;<span class=\"text-green\">5,000 บาท/ต่อสูตร</span></li>\r\n<li>ค่าจดแจ้ง อย.&nbsp;<span class=\"text-green\">2,000 บาท/ต่อสูตร</span></li>\r\n<li>ค่า Certificate of Free Sale&nbsp;<span class=\"text-green\">2,000 บาท/ต่อสูตร</span></li>\r\n<li>ค่าตรวจวิเคราะห์ผลิตภัณฑ์&nbsp;<span class=\"text-green\">(ตามเงื่อนไขบริษัท)</span></li>\r\n</ul>\r\n</div>', '<p>วัตถุดิบที่ใช้ในการผลิตแต่ละครั้งถูกคัดสรรจากผู้จัดหา เพื่อคัดเลือกและสรรหาวัตถุดิบที่ดีที่สุด โดยมีทีมจัดหาวัตถุดิบออกเดินทางรอบโลก เพื่อให้มั่นใจว่าวัตถุดิบที่ใช้ในการผลิตมีคุณภาพและสามารถตรวจสอบได้จริง วัตถุดิบที่ได้จะถูกพัฒนาโดยการค้นคว้าวิจัยขั้นสูง และด้วยความทุ่มเทของทีมค้นคว้าวิจัย ทั้งผู้ชำนาญการทางด้านรักษาด้วยวิถีธรรมชาติ นักเคมี นักวิทยาศาสตร์ และเภสัชกรด้านการพัฒนาผลิตภัณฑ์ พวกเขาได้ทำการค้นคว้าโดยใช้ทฤษฎีความรู้เฉพาะทาง และการทดลองสูตรผลิตภัณฑ์ยาต่างๆ รวมถึงการตรวจสอบด้วยนวัตกรรมล่าสุด เกี่ยวกับธรรมชาติบำบัดที่เข้มงวดและครอบคลุม โดยได้รับการสนับสนุนจาก Therapeutic Goods Administration (TGA) ของกรมแพทย์กระทรวงสาธารณสุข ประเทศออสเตรเลีย ในขั้นตอนการประกันคุณภาพของแบลคมอร์สซึ่งทำให้ผู้บริโภคมั่นใจได้ว่า ผลิตภัณฑ์ทั้งหมด ของเราสามารถตอบโจทย์ความต้องการที่หลากหลายได้</p>', '1575204283.jpeg', '1');
+INSERT INTO `services` VALUES ('2', '2019-12-01 12:46:12', '2019-12-01 12:46:12', null, 'บริการขึ้นทะเบียนผลิตภัณฑ์', '<p>บริการขึ้นทะเบียนเอกสารที่เกี่ยวข้องกับการจัดจำหน่ายสินค้า ทั้งภายใน และต่างประเทศ อาทิ เอกสาร อย. กระทรวงสาธารณสุข เครื่องหมายการค้า, สิทธิบัตร, (Certificate Of Free Sale) Food And Drug Adminstration Ministry Of Public Health)</p>', '<p>บริการขึ้นทะเบียนเอกสารที่เกี่ยวข้องกับการจัดจำหน่ายสินค้า ทั้งภายใน และต่างประเทศ อาทิ เอกสาร อย. กระทรวงสาธารณสุข เครื่องหมายการค้า, สิทธิบัตร, (Certificate Of Free Sale) Food And Drug Adminstration Ministry Of Public Health)</p>', '1575204372.jpeg', '1');
+INSERT INTO `services` VALUES ('3', '2019-12-01 12:48:23', '2019-12-01 12:48:23', null, 'บริการบรรจุสินค้า', '<p>บริการบรรจุสินค้า ด้วยกรรมวิธีที่ทันสมัย และปลอดภัย ได้รับการรับรองมาตรฐานสากล ASEAN GMP และ ISO 22716 บรรจุผลิตภัณฑ์ได้หลากหลายรูปแบบ เช่น บรรจุภัณฑ์แบบหลอด บรรจุภัณฑ์แบบขวด บรรจุภัณฑ์แบบซอง บรรจุภัณฑ์แบบกระปุก บรรจุผลิตภัณฑ์ด้วยวิธีอัดแก๊ส ฯลฯ</p>', '<p>บริการบรรจุสินค้า ด้วยกรรมวิธีที่ทันสมัย และปลอดภัย ได้รับการรับรองมาตรฐานสากล ASEAN GMP และ ISO 22716 บรรจุผลิตภัณฑ์ได้หลากหลายรูปแบบ เช่น บรรจุภัณฑ์แบบหลอด บรรจุภัณฑ์แบบขวด บรรจุภัณฑ์แบบซอง บรรจุภัณฑ์แบบกระปุก บรรจุผลิตภัณฑ์ด้วยวิธีอัดแก๊ส ฯลฯ</p>', '1575204503.jpeg', '1');
 
 -- ----------------------------
 -- Table structure for users
@@ -277,4 +317,25 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'admin', 'admin@food.com', null, '$2y$10$ibBLtWD351lbH5CG1KyzeeFkKje/Xd0dS/eR/SmK0LXOiOUNnoH2q', 'wkNOi3A2KkX2WgHs5oexuGPRi3wDwodI2JG9IR0OKDlDdDtb0oETCCEHhKr1', '2019-11-04 06:26:35', '2019-11-04 06:26:35');
+INSERT INTO `users` VALUES ('1', 'admin', 'admin@food.com', null, '$2y$10$ibBLtWD351lbH5CG1KyzeeFkKje/Xd0dS/eR/SmK0LXOiOUNnoH2q', 'fGL3HRzZSScAuQLHooBzguuXYQ2RBONFbWLnZBygHzxlxAmGEbqstpspeygl', '2019-11-04 06:26:35', '2019-11-04 06:26:35');
+
+-- ----------------------------
+-- Table structure for vdos
+-- ----------------------------
+DROP TABLE IF EXISTS `vdos`;
+CREATE TABLE `vdos` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of vdos
+-- ----------------------------
+INSERT INTO `vdos` VALUES ('1', '2019-12-01 07:31:31', '2019-12-01 11:47:47', null, 'ฟ้ามีตา', 'https://www.youtube.com/embed/V7TrAVE3iJs', '1');
+INSERT INTO `vdos` VALUES ('2', '2019-12-01 11:48:27', '2019-12-01 11:48:27', null, 'ทำไมต้องกินอาหารเสริม ?', 'https://www.youtube.com/embed/wL5Jhpy7gCE', '1');

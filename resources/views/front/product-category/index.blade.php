@@ -16,13 +16,13 @@
             </nav>
 
     <!-- END Breadcrump -->
-    <div class="title-page">อาหารเสริมผู้ชาย</div>
+    <div class="title-page">{{ $product_category->name }}</div>
 
     <div class="row products m-4">
-        @foreach($product_items as $row)
+        @foreach($product_items as $product_item)
         <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products text-center">
-            <p class="name-product">STAND UP อาหารเสริมท่านชาย</p>
-            <img class="img-fluid" src="images/products/men/stan_up.png">
+            <p class="name-product">{{ $product_item->name }}</p>
+            <img class="img-fluid" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">
             <div class="link">
                 <ul>
                     <li>
@@ -32,30 +32,15 @@
                             </a>
                         </div>
                     </li>
-                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
                 </ul>
             </div>
             <p class="price">387.-</p>
         </div>
         @endforeach
     </div>
-    <div class="col-md-12 centered">
-        <nav aria-label="...">
-            <ul class="pagination">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+
+    {!! $product_items->appends(@$_GET)->render() !!}
 
  </div>
 

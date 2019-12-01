@@ -53,11 +53,10 @@
         </div>
     </div>
 
-    <hr>
-
-    <div class="form-group">
-        <label for="status">จัดการรูปภาพสินค้า</label>
-        @if(isset($rs->productImage))
+    @if(@count($rs->productImage))
+        <hr>
+        <div class="form-group">
+            <label for="status">จัดการรูปภาพสินค้า <small class="text-muted">***ภาพลำดับที่ 1 จะถูกตั้งเป็นภาพหน้าปก</small></label>
             <table class="table table-hover table-bordered" id="sortable-list">
                 <thead class="thead-light">
                     <tr>
@@ -82,8 +81,8 @@
                 @endforeach
                 </tbody>
             </table>
-        @endif
-    </div>
+        </div>
+    @endif
 </div>
 <!-- /.card-body -->
 

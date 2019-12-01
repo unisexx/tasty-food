@@ -199,9 +199,9 @@ return [
         ],
         [
             'text' => 'บริการของเรา',
-            'url'  => 'admin/page/2/edit',
+            'url'  => 'admin/service',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/page/2*']
+            'active' => ['admin/service*']
         ],
         [
             'text' => 'วิธีสั่งซื้อและชำระเงิน',

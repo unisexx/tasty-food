@@ -1,4 +1,4 @@
-body{background-color:white; font-size:1em; color:#333; font-family:'Sarabun','Athiti','Prompt',sans-serif; letter-spacing:0.5px; 
+body{background-color:white; font-size:1em; color:#333; font-family:'Sarabun','Athiti','Prompt',sans-serif; letter-spacing:0.5px;
 	background-image:url(../images/bg-header01.jpg); background-repeat: no-repeat;	background-position:center top; background-size: 100% auto;}
 
 :focus {outline: none;}
@@ -45,11 +45,11 @@ p{width:100%;}
 	.dropdown-submenu>.dropdown-menu>.dropdown-submenu>.dropdown-menu li:hover{background-color:#2e9882;}
 	.dropdown-menu.show{display: none;}
 	/* rotate caret on hover */
-	.dropdown-menu > li > a:hover:after {text-decoration: underline;transform: rotate(-90deg);} 
+	.dropdown-menu > li > a:hover:after {text-decoration: underline;transform: rotate(-90deg);}
 	.dropdown-submenu>.dropdown-menu.menuright{left:84%; }
 	.dropdown-menu{margin-top: 10px;}
 	.dropdown-submenu>.dropdown-menu {top: 0px;left: 100%;margin-top: 0px;}
-	
+
 
 .menu{margin-top: -30px; position: absolute; z-index:2;}
 .navbar-toggler .line{	width: 100%; float: left; height: 2px; background-color: #fff;	margin-bottom: 5px;	}
@@ -164,10 +164,10 @@ padding: 1px;    min-width: 19px;    font-size: 0.9em; text-align:center;}
 ul.qty { padding: 0;  margin: 0;  list-style: none;}
 ul.qty li { display: inline-block; margin-right: 10%;}
 .cart-header {   background-color: #f0f1f0;
-	position: relative;  
+	position: relative;
   }
   .cart-header2 {  background-color: #f0f1f0;
-	position: relative;  
+	position: relative;
   }
 .close1,.close2{
 	background: url('../images/close_1.png') no-repeat 0px 0px;
@@ -256,19 +256,19 @@ a.facebook .front {    background: #3b5998;}
 .list-style01{margin-bottom:30px;}
 .list-style01 ul{padding: 0; margin: 0; width:100%;}
 .list-style01 ul li{  list-style:none; padding-left: 40px;line-height:35px;color: #ad0e3b; font-size: 1.2em;
-	 background-image: url(../images/point01.png); 	background-position: 18px 14px; background-repeat: no-repeat; }  
+	 background-image: url(../images/point01.png); 	background-position: 18px 14px; background-repeat: no-repeat; }
 .list-style01 ul li a{color: #db2257; font-size: 1.2em;}
 .list-style01 ul li a:hover{color: blue; text-decoration: none;}
 
 .list-style02{margin-bottom:30px; }
 .list-style02 ul{padding: 0; margin: 0; width:100%;}
-.list-style02 ul li{  list-style:none; padding-left: 40px;line-height:30px;color: #333; 
+.list-style02 ul li{  list-style:none; padding-left: 40px;line-height:30px;color: #333;
      background-image: url(../images/point02.png); 	background-position: 18px 14px; background-repeat: no-repeat; }
-     
+
 .list-style03{margin-bottom:30px;}
 .list-style03 ul{padding: 0; margin: 0; width:100%;}
 .list-style03 ul li{  list-style:none; padding-left: 40px;line-height:35px;color: #333; font-size: 1.2em;
-    background-image: url(../images/point03.png); 	background-position: 18px 14px; background-repeat: no-repeat; }  
+    background-image: url(../images/point03.png); 	background-position: 18px 14px; background-repeat: no-repeat; }
 .list-style03 ul li a{color: #333; font-size: 1.2em;}
 .list-style03 ul li a:hover{color: blue; text-decoration: none;}
 
@@ -322,7 +322,7 @@ a.facebook .front {    background: #3b5998;}
 
 
 /* pagination */
-.pagination a {  margin: 4px 4px; /* 0 is for top and bottom. Feel free to change it */}
+.pagination a, .page-item .page-link {  margin: 4px 4px; /* 0 is for top and bottom. Feel free to change it */}
 .pagination a {  border-radius: 1px;}
 .pagination a.active.page-link {  border-radius: 1px;}
 .page-item.active .page-link{background-color: #1ABC9C;    border-color: #1ABC9C;	color: white;}
@@ -424,3 +424,9 @@ body{background-size: 100% 50%;}
     background: inherit;
     border-radius: 5% / 50%;
   }
+
+
+/* reset style from editor area*/
+.from-editor-area{
+    display:block !important;
+}

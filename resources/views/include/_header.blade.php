@@ -1,3 +1,7 @@
+@php
+    $product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy('_lft')->get()->toTree();
+@endphp
+
 <!--########################### START HEADER ###########################-->
 <div class="row bg-header">
     <div class="container">
@@ -43,16 +47,28 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ url('/') }}"><img src="{{ url('chc/images/icon-home.png') }}" alt=""></a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
-                            <li class="nav-item"><a class="nav-link" href="service.html">บริการของเรา</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('about') }}">เกี่ยวกับเรา</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('service') }}">บริการของเรา</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="menu-product" data-toggle="dropdown"
                                     role="button" aria-haspopup="true" aria-expanded="false"
-                                    onclick="window.location.href='products.html';">
+                                    onclick="window.location.href='{{ url('product') }}';">
                                     สินค้า
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="menu-product">
-                                    <li class="dropdown-submenu" >
+                                    @foreach ($product_category_menu as $parent_cat)
+                                        <li class="dropdown-submenu" >
+                                            <a class="dropdown-item @if(count($parent_cat->children)) dropdown-toggle @endif" href="#">{{ $parent_cat->name }}</a>
+                                            @if(count($parent_cat->children))
+                                            <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                                @foreach($parent_cat->children as $cat)
+                                                <li><a class="dropdown-item" href="{{ url('product-category/'.$cat->id) }}">{{ $cat->name }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                    {{-- <li class="dropdown-submenu" >
                                         <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</a>
                                         <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
                                             <li><a class="dropdown-item" href="#">อาหารเสริมผู้ชาย</a></li>
@@ -81,7 +97,7 @@
                                             <li><a class="dropdown-item" href="#">อาหารเสริมทางการแพทย์</a></li>
                                             <li><a class="dropdown-item" href="#">อุปกรณ์การแพทย์</a></li>
                                         </ul>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>

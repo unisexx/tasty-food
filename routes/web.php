@@ -27,7 +27,11 @@ Route::any('ajaxLoadProductCategoryForm', 'AjaxController@ajaxLoadProductCategor
 Route::any('ajaxUpdateOrderProductImage', 'AjaxController@ajaxUpdateOrderProductImage');
 Route::any('ajaxDeleteProductImage', 'AjaxController@ajaxDeleteProductImage');
 
-Route::any('product-category/{id}', 'Front\ProductCategoryController@index');
+// Front
+Route::get('product-category/{id}', 'Front\ProductCategoryController@index');
+Route::get('about', 'Front\AboutController@index');
+Route::get('service', 'Front\ServiceController@index');
+Route::get('service/view/{id}', 'Front\ServiceController@view');
 
 // Admin
 Route::namespace('Admin')->prefix('admin')->group(function () {
@@ -38,6 +42,7 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     // ข้อมูลทั่วไป
     Route::resource('page', 'PageController');
     Route::resource('hilight', 'HilightController');
+    Route::resource('service', 'ServiceController');
     Route::resource('info', 'InfoController');
     Route::resource('knowledge', 'KnowledgeController');
     Route::resource('contact', 'ContactController');
