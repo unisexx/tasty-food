@@ -41,7 +41,7 @@ class InfoController extends Controller
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(800, 600); // resize image
+            $img->fit(290, 190); // resize image
             $img->save('uploads/info/' . $requestData['image']); // save image
         }
 
@@ -75,9 +75,19 @@ class InfoController extends Controller
         // รูปไฮไลท์
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
+
+            // thumb
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(800, 600); // resize image
-            $img->save('uploads/info/' . $requestData['image']); // save image
+            $img->fit(290, 190); // resize image
+            $img->save('uploads/info/thumb/' . $requestData['image']); // save image
+
+            // full-image
+            $img2 = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
+            $img2->resize(1000, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            $img2->save('uploads/info/' . $requestData['image']); // save image
         }
 
 

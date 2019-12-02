@@ -32,6 +32,8 @@ Route::get('product-category/{id}', 'Front\ProductCategoryController@index');
 Route::get('about', 'Front\AboutController@index');
 Route::get('service', 'Front\ServiceController@index');
 Route::get('service/view/{id}', 'Front\ServiceController@view');
+Route::get('info', 'Front\InfoController@index');
+Route::get('info/view/{id}', 'Front\InfoController@view');
 
 // Admin
 Route::namespace('Admin')->prefix('admin')->group(function () {

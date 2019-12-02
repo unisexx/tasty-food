@@ -68,40 +68,10 @@
                                             @endif
                                         </li>
                                     @endforeach
-                                    {{-- <li class="dropdown-submenu" >
-                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</a>
-                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
-                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้ชาย</a></li>
-                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้หญิง</a></li>
-                                            <li><a class="dropdown-item" href="#">อาหารเสริมของเด็ก</a></li>
-                                            <li><a class="dropdown-item" href="#">อาหารเสริมอื่นๆ</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu" >
-                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์สมุนไพร</a>
-                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
-                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
-                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu" >
-                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย</a>
-                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
-                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
-                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu" >
-                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์เครื่องมือแพทย์</a>
-                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
-                                            <li><a class="dropdown-item" href="#">อาหารเสริมทางการแพทย์</a></li>
-                                            <li><a class="dropdown-item" href="#">อุปกรณ์การแพทย์</a></li>
-                                        </ul>
-                                    </li> --}}
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>
-                            <li class="nav-item"><a class="nav-link" href="news.html">ข่าวสาร</a></li>
+                            <li class="nav-item"><a class="nav-link" href="info">ข่าวสาร</a></li>
                             <li class="nav-item"><a class="nav-link" href="knowledge.html">ความรู้น่ารู้</a></li>
                             <li class="nav-item"><a class="nav-link" href="how2pay.html">วิธีสั่งซื้อและชำระเงิน</a></li>
                             <li class="nav-item"><a class="nav-link" href="confirm.html">แจ้งการโอนเงิน</a></li>
