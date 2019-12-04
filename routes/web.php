@@ -34,6 +34,9 @@ Route::get('service', 'Front\ServiceController@index');
 Route::get('service/view/{id}', 'Front\ServiceController@view');
 Route::get('info', 'Front\InfoController@index');
 Route::get('info/view/{id}', 'Front\InfoController@view');
+Route::get('knowledge', 'Front\KnowledgeController@index');
+Route::get('knowledge/view/{id}', 'Front\KnowledgeController@view');
+Route::get('contact', 'Front\ContactController@index');
 
 // Admin
 Route::namespace('Admin')->prefix('admin')->group(function () {

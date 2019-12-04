@@ -16,5 +16,6 @@ class Contact extends Model
         'tel',
         'facebook',
         'twitter',
+        'map',
     );
 }

@@ -71,11 +71,11 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>
-                            <li class="nav-item"><a class="nav-link" href="info">ข่าวสาร</a></li>
-                            <li class="nav-item"><a class="nav-link" href="knowledge.html">ความรู้น่ารู้</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('info') }}">ข่าวสาร</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('knowledge') }}">ความรู้น่ารู้</a></li>
                             <li class="nav-item"><a class="nav-link" href="how2pay.html">วิธีสั่งซื้อและชำระเงิน</a></li>
                             <li class="nav-item"><a class="nav-link" href="confirm.html">แจ้งการโอนเงิน</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('contact') }}">ติดต่อเรา</a></li>
                         </ul>
                     </div>
                 </nav>
