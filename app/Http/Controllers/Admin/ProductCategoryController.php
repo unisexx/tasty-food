@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\ProductCategory;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 class ProductCategoryController extends Controller
@@ -39,9 +38,9 @@ class ProductCategoryController extends Controller
             ],
             [
                 'parent_id' => $request->parent_id,
-                'name'      => $request->name,
-                'image'     => $image_name ?? $request->old_image_name,
-                'status'    => $request->status,
+                'name' => $request->name,
+                'image' => $image_name ?? $request->old_image_name,
+                'status' => $request->status,
             ]
         );
 

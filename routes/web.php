@@ -29,6 +29,7 @@ Route::any('ajaxDeleteProductImage', 'AjaxController@ajaxDeleteProductImage');
 
 // Front
 Route::get('product-category/{id}', 'Front\ProductCategoryController@index');
+Route::get('product-item/{id}', 'Front\ProductItemController@view');
 Route::get('about', 'Front\AboutController@index');
 Route::get('service', 'Front\ServiceController@index');
 Route::get('service/view/{id}', 'Front\ServiceController@view');
@@ -38,6 +39,9 @@ Route::get('knowledge', 'Front\KnowledgeController@index');
 Route::get('knowledge/view/{id}', 'Front\KnowledgeController@view');
 Route::get('contact', 'Front\ContactController@index');
 Route::post('contact/save', 'Front\ContactController@save');
+Route::get('confirm-payment', 'Front\ConfirmPaymentController@index');
+Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
+Route::get('how-to-buy', 'Front\HowToBuyController@index');
 
 // Admin
 Route::namespace ('Admin')->prefix('admin')->group(function () {

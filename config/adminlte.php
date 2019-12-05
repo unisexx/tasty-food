@@ -204,10 +204,16 @@ return [
             'active' => ['admin/service*'],
         ],
         [
-            'text' => 'วิธีสั่งซื้อและชำระเงิน',
+            'text' => 'วิธีสั่งซื้อ',
             'url' => 'admin/page/3/edit',
             'icon' => 'fab fa-wpforms',
             'active' => ['admin/page/3*'],
+        ],
+        [
+            'text' => 'วิธีชำระเงิน',
+            'url' => 'admin/page/4/edit',
+            'icon' => 'fab fa-wpforms',
+            'active' => ['admin/page/4*'],
         ],
         [
             'text' => 'ข่าวสาร',
