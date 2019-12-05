@@ -41,7 +41,7 @@
                         <form method="POST" action="{{ url('admin/vdo/' . $row->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-sm btn-danger" title="ลบรายการนี้" onclick="return confirm(&quot;Confirm delete?&quot;)">
+                            <button type="submit" class="btn btn-sm btn-danger" title="ลบรายการนี้" onclick="archiveFunction()">
                                 ลบ
                             </button>
                         </form>

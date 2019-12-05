@@ -15,5 +15,7 @@
     @include('include._header')
     @yield('content')
     @include('include._footer')
+    @stack('js')
+    {!! sweetAlert29() !!}
 </body>
 </html>

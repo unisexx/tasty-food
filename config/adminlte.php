@@ -12,7 +12,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#61-title
     |
-    */
+     */
 
     'title' => 'AdminLTE 3',
     'title_prefix' => '',
@@ -28,7 +28,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#62-logo
     |
-    */
+     */
 
     'logo' => '<b>Admin</b>LTE',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
@@ -47,7 +47,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#63-layout
     |
-    */
+     */
 
     'layout_topnav' => null,
     'layout_boxed' => null,
@@ -65,7 +65,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#64-classes
     |
-    */
+     */
 
     'classes_body' => '',
     'classes_brand' => '',
@@ -88,7 +88,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#65-sidebar
     |
-    */
+     */
 
     'sidebar_mini' => true,
     'sidebar_collapse' => false,
@@ -110,7 +110,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#66-control-sidebar-right-sidebar
     |
-    */
+     */
 
     'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
@@ -130,7 +130,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#67-urls
     |
-    */
+     */
 
     'dashboard_url' => '/admin/dashboard',
 
@@ -150,7 +150,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#68-laravel-mix
     |
-    */
+     */
 
     'enabled_laravel_mix' => false,
 
@@ -164,7 +164,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#69-menu
     |
-    */
+     */
 
     'menu' => [
         // [
@@ -187,73 +187,78 @@ return [
         ['header' => 'ข้อมูลทั่วไป'],
         [
             'text' => 'ไฮไลท์',
-            'url'  => 'admin/hilight',
+            'url' => 'admin/hilight',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/hilight*']
+            'active' => ['admin/hilight*'],
         ],
         [
             'text' => 'เกี่ยวกับเรา',
-            'url'  => 'admin/page/1/edit',
+            'url' => 'admin/page/1/edit',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/page/1*']
+            'active' => ['admin/page/1*'],
         ],
         [
             'text' => 'บริการของเรา',
-            'url'  => 'admin/service',
+            'url' => 'admin/service',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/service*']
+            'active' => ['admin/service*'],
         ],
         [
             'text' => 'วิธีสั่งซื้อและชำระเงิน',
-            'url'  => 'admin/page/3/edit',
+            'url' => 'admin/page/3/edit',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/page/3*']
+            'active' => ['admin/page/3*'],
         ],
         [
             'text' => 'ข่าวสาร',
-            'url'  => 'admin/info',
+            'url' => 'admin/info',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/info*']
+            'active' => ['admin/info*'],
         ],
         [
             'text' => 'ความรู้น่ารู้',
-            'url'  => 'admin/knowledge',
+            'url' => 'admin/knowledge',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/knowledge*']
+            'active' => ['admin/knowledge*'],
         ],
         [
             'text' => 'ติดต่อเรา',
-            'url'  => 'admin/contact/1/edit',
+            'url' => 'admin/contact/1/edit',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/contact/1*']
+            'active' => ['admin/contact/1*'],
         ],
         [
             'text' => 'วีดีโอ',
-            'url'  => 'admin/vdo',
+            'url' => 'admin/vdo',
             'icon' => 'fab fa-wpforms',
-            'active' => ['admin/vdo*']
+            'active' => ['admin/vdo*'],
         ],
         ['header' => 'ร้านค้า'],
         [
             'text' => 'หมวดหมู่สินค้า',
-            'url'  => 'admin/product-category',
+            'url' => 'admin/product-category',
             'icon' => 'fas fa-store',
-            'active' => ['admin/product-category']
+            'active' => ['admin/product-category*'],
         ],
         [
             'text' => 'สินค้า',
-            'url'  => 'admin/product-item',
+            'url' => 'admin/product-item',
             'icon' => 'fas fa-store',
-            'active' => ['admin/product-item']
+            'active' => ['admin/product-item*'],
         ],
         ['header' => 'สมาชิก'],
+        ['header' => 'อื่นๆ'],
+        [
+            'text' => 'ข้อความ',
+            'url' => 'admin/message',
+            'icon' => 'far fa-envelope',
+            'active' => ['admin/message*'],
+        ],
         // [
         //     'text' => 'บริการของเรา',
         //     'url'  => 'admin/aboutus',
         //     'icon' => 'fab fa-wpforms',
         // ],
-
-
 
         // ['header' => 'account_settings'],
         // [
@@ -329,7 +334,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#610-menu-filters
     |
-    */
+     */
 
     'filters' => [
         JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
@@ -351,7 +356,7 @@ return [
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#611-plugins
     |
-    */
+     */
 
     'plugins' => [
         [

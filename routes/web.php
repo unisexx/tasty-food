@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -37,9 +37,10 @@ Route::get('info/view/{id}', 'Front\InfoController@view');
 Route::get('knowledge', 'Front\KnowledgeController@index');
 Route::get('knowledge/view/{id}', 'Front\KnowledgeController@view');
 Route::get('contact', 'Front\ContactController@index');
+Route::post('contact/save', 'Front\ContactController@save');
 
 // Admin
-Route::namespace('Admin')->prefix('admin')->group(function () {
+Route::namespace ('Admin')->prefix('admin')->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
     Route::get('dashboard', 'DashboardController@index');
@@ -56,4 +57,7 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     // หมวดหมู่สินค้า
     Route::resource('product-category', 'ProductCategoryController');
     Route::resource('product-item', 'ProductItemController');
+
+    // อื่นๆ
+    Route::resource('message', 'MessageController');
 });

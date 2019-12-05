@@ -15,7 +15,8 @@
         "kalnoy/nestedset": "^5.0",
         "laravel/framework": "^6.2",
         "laravel/helpers": "^1.1",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "proengsoft/laravel-jsvalidation": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

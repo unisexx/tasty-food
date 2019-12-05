@@ -12,3 +12,6 @@
 <script src="{{ url('chc/plugins/jquery/jquery.min.js') }}"></script>
 <!--JS -->
 <script src="{{ url('chc/js/bootstrap.min.js') }}"></script>
+{{-- SweetAlert --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+

@@ -9,19 +9,6 @@ if (!function_exists('notify')) {
     }
 }
 
-// if (!function_exists('jsNotify')) {
-//     function js_notify()
-//     {
-//         if (Session::get('notify')) {
-//             return '
-// 				<script type="text/javascript">
-//                 alertify.set(\'notifier\',\'position\', \'top-right\');
-//                 alertify.notify("' . Session::get('msg') . '", "' . Session::get('type') . '", ' . Session::get('delay') . ');
-//                 </script>';
-//         }
-//     }
-// }
-
 if (!function_exists('sweetAlert')) {
     function sweetAlert()
     {
@@ -35,6 +22,25 @@ if (!function_exists('sweetAlert')) {
                     title: "' . Session::get('msg') . '",
                     showConfirmButton: false,
                     timer: 1500
+                });
+                </script>';
+        }
+    }
+}
+
+if (!function_exists('sweetAlert29')) {
+    function sweetAlert29()
+    {
+        if (Session::get('notify')) {
+            return '
+				<script type="text/javascript">
+                Swal.fire({
+                    // toast: true,
+                    position: "center",
+                    icon: "' . Session::get('type') . '",
+                    title: "' . Session::get('msg') . '",
+                    showConfirmButton: false,
+                    timer: 3000
                 });
                 </script>';
         }
