@@ -28,6 +28,7 @@ Route::any('ajaxUpdateOrderProductImage', 'AjaxController@ajaxUpdateOrderProduct
 Route::any('ajaxDeleteProductImage', 'AjaxController@ajaxDeleteProductImage');
 
 // Front
+Route::get('product', 'Front\ProductController@index');
 Route::get('product-category/{id}', 'Front\ProductCategoryController@index');
 Route::get('product-item/{id}', 'Front\ProductItemController@view');
 Route::get('about', 'Front\AboutController@index');

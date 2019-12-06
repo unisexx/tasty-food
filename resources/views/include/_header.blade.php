@@ -58,7 +58,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="menu-product">
                                     @foreach ($product_category_menu as $parent_cat)
                                         <li class="dropdown-submenu" >
-                                            <a class="dropdown-item @if(count($parent_cat->children)) dropdown-toggle @endif" href="#">{{ $parent_cat->name }}</a>
+                                            <a class="dropdown-item @if(count($parent_cat->children)) dropdown-toggle @endif" href="{{ url('product-category/'.$parent_cat->id) }}">{{ $parent_cat->name }}</a>
                                             @if(count($parent_cat->children))
                                             <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
                                                 @foreach($parent_cat->children as $cat)

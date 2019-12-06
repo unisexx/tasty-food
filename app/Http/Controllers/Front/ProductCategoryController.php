@@ -11,7 +11,11 @@ class ProductCategoryController extends Controller
     public function index($id)
     {
         $product_category = ProductCategory::findOrFail($id);
-        $product_items = $product_category->productItem()->paginate(8);
-        return view('front.product-category.index', compact('product_category', 'product_items'));
+        if (count($product_category->children)) {
+            return view('front.product-category.parent', compact('product_category'));
+        } else {
+            $product_items = $product_category->productItem()->paginate(8);
+            return view('front.product-category.children', compact('product_category', 'product_items'));
+        }
     }
 }

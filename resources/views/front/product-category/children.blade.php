@@ -8,10 +8,10 @@
      <hr class="line2"></hr>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bread justify-content-end">
-                    <li class="breadcrumb-item"><a href="#">หน้าแรก</a></li>
-                    <li class="breadcrumb-item">สินค้า</li>
-                    <li class="breadcrumb-item">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</li>
-                    <li class="breadcrumb-item active" aria-current="page">อาหารเสริมผู้ชาย</li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">หน้าแรก</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('product') }}">สินค้า</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('product-category/'.$product_category->parent->id) }}">{{ $product_category->parent->name }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $product_category->name }}</li>
                 </ol>
             </nav>
 
