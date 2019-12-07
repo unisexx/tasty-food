@@ -27,15 +27,15 @@
                 <ul>
                     <li>
                         <div class="simpleCart_shelfItem buy">
-                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy
+                            <a class="add1 item_add" href="#"><img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> Buy
                                 <div class="carousel-control-next-icon i-buy"></div>
                             </a>
                         </div>
                     </li>
-                    <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
                 </ul>
             </div>
-            <p class="price">387.-</p>
+            <p class="price">{{ $product_item->price }}.-</p>
         </div>
         @endforeach
     </div>

@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -10,13 +9,20 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const ADMIN_TYPE = 1;
+    const DEFAULT_TYPE = 0;
+    public function isAdmin()
+    {
+        return $this->is_admin === self::ADMIN_TYPE;
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_admin', 'tel', 'address',
     ];
 
     /**

@@ -14,8 +14,8 @@ return [
     |
      */
 
-    'title' => 'AdminLTE 3',
-    'title_prefix' => '',
+    'title'         => 'CHC distributor',
+    'title_prefix'  => '',
     'title_postfix' => '',
 
     /*
@@ -30,12 +30,12 @@ return [
     |
      */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image-xl',
-    'logo_img_xl' => null,
+    'logo'              => '<b>CHC</b> distributor',
+    'logo_img'          => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img_class'    => 'brand-image-xl',
+    'logo_img_xl'       => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt'      => 'AdminLTE',
 
     /*
     |--------------------------------------------------------------------------
@@ -49,11 +49,11 @@ return [
     |
      */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
+    'layout_topnav'        => null,
+    'layout_boxed'         => null,
     'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => null,
+    'layout_fixed_navbar'  => null,
+    'layout_fixed_footer'  => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -67,15 +67,15 @@ return [
     |
      */
 
-    'classes_body' => '',
-    'classes_brand' => '',
-    'classes_brand_text' => '',
-    'classes_content_header' => 'container-fluid',
-    'classes_content' => 'container-fluid',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
-    'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
-    'classes_topnav_nav' => 'navbar-expand-md',
+    'classes_body'             => '',
+    'classes_brand'            => '',
+    'classes_brand_text'       => '',
+    'classes_content_header'   => 'container-fluid',
+    'classes_content'          => 'container-fluid',
+    'classes_sidebar'          => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar_nav'      => '',
+    'classes_topnav'           => 'navbar-white navbar-light',
+    'classes_topnav_nav'       => 'navbar-expand-md',
     'classes_topnav_container' => 'container',
 
     /*
@@ -90,15 +90,15 @@ return [
     |
      */
 
-    'sidebar_mini' => true,
-    'sidebar_collapse' => false,
-    'sidebar_collapse_auto_size' => false,
-    'sidebar_collapse_remember' => false,
+    'sidebar_mini'                            => true,
+    'sidebar_collapse'                        => false,
+    'sidebar_collapse_auto_size'              => false,
+    'sidebar_collapse_remember'               => false,
     'sidebar_collapse_remember_no_transition' => true,
-    'sidebar_scrollbar_theme' => 'os-theme-light',
-    'sidebar_scrollbar_auto_hide' => 'l',
-    'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_scrollbar_theme'                 => 'os-theme-light',
+    'sidebar_scrollbar_auto_hide'             => 'l',
+    'sidebar_nav_accordion'                   => true,
+    'sidebar_nav_animation_speed'             => 300,
 
     /*
     |--------------------------------------------------------------------------
@@ -112,12 +112,12 @@ return [
     |
      */
 
-    'right_sidebar' => false,
-    'right_sidebar_icon' => 'fas fa-cogs',
-    'right_sidebar_theme' => 'dark',
-    'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar'                     => false,
+    'right_sidebar_icon'                => 'fas fa-cogs',
+    'right_sidebar_theme'               => 'dark',
+    'right_sidebar_slide'               => true,
+    'right_sidebar_push'                => true,
+    'right_sidebar_scrollbar_theme'     => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -138,7 +138,8 @@ return [
 
     'login_url' => 'login',
 
-    'register_url' => 'register',
+    // 'register_url' => 'register',
+    'register_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -186,78 +187,78 @@ return [
         // ],
         ['header' => 'ข้อมูลทั่วไป'],
         [
-            'text' => 'ไฮไลท์',
-            'url' => 'admin/hilight',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'ไฮไลท์',
+            'url'    => 'admin/hilight',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/hilight*'],
         ],
         [
-            'text' => 'เกี่ยวกับเรา',
-            'url' => 'admin/page/1/edit',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'เกี่ยวกับเรา',
+            'url'    => 'admin/page/1/edit',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/page/1*'],
         ],
         [
-            'text' => 'บริการของเรา',
-            'url' => 'admin/service',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'บริการของเรา',
+            'url'    => 'admin/service',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/service*'],
         ],
         [
-            'text' => 'วิธีสั่งซื้อ',
-            'url' => 'admin/page/3/edit',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'วิธีสั่งซื้อ',
+            'url'    => 'admin/page/3/edit',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/page/3*'],
         ],
         [
-            'text' => 'วิธีชำระเงิน',
-            'url' => 'admin/page/4/edit',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'วิธีชำระเงิน',
+            'url'    => 'admin/page/4/edit',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/page/4*'],
         ],
         [
-            'text' => 'ข่าวสาร',
-            'url' => 'admin/info',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'ข่าวสาร',
+            'url'    => 'admin/info',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/info*'],
         ],
         [
-            'text' => 'ความรู้น่ารู้',
-            'url' => 'admin/knowledge',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'ความรู้น่ารู้',
+            'url'    => 'admin/knowledge',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/knowledge*'],
         ],
         [
-            'text' => 'ติดต่อเรา',
-            'url' => 'admin/contact/1/edit',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'ติดต่อเรา',
+            'url'    => 'admin/contact/1/edit',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/contact/1*'],
         ],
         [
-            'text' => 'วีดีโอ',
-            'url' => 'admin/vdo',
-            'icon' => 'fab fa-wpforms',
+            'text'   => 'วีดีโอ',
+            'url'    => 'admin/vdo',
+            'icon'   => 'fab fa-wpforms',
             'active' => ['admin/vdo*'],
         ],
         ['header' => 'ร้านค้า'],
         [
-            'text' => 'หมวดหมู่สินค้า',
-            'url' => 'admin/product-category',
-            'icon' => 'fas fa-store',
+            'text'   => 'หมวดหมู่สินค้า',
+            'url'    => 'admin/product-category',
+            'icon'   => 'fas fa-store',
             'active' => ['admin/product-category*'],
         ],
         [
-            'text' => 'สินค้า',
-            'url' => 'admin/product-item',
-            'icon' => 'fas fa-store',
+            'text'   => 'สินค้า',
+            'url'    => 'admin/product-item',
+            'icon'   => 'fas fa-store',
             'active' => ['admin/product-item*'],
         ],
         ['header' => 'สมาชิก'],
         ['header' => 'อื่นๆ'],
         [
-            'text' => 'ข้อความ',
-            'url' => 'admin/message',
-            'icon' => 'far fa-envelope',
+            'text'   => 'ข้อความ',
+            'url'    => 'admin/message',
+            'icon'   => 'far fa-envelope',
             'active' => ['admin/message*'],
         ],
         // [
@@ -366,142 +367,142 @@ return [
 
     'plugins' => [
         [
-            'name' => 'Datatables',
+            'name'   => 'Datatables',
             'active' => true,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'AdminLTE-3.0.0/plugins/datatables/jquery.dataTables.min.js',
                 ],
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'AdminLTE-3.0.0/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js',
                 ],
                 [
-                    'type' => 'css',
-                    'asset' => true,
+                    'type'     => 'css',
+                    'asset'    => true,
                     'location' => 'AdminLTE-3.0.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css',
                 ],
             ],
         ],
         [
-            'name' => 'CustomFileInput',
+            'name'   => 'CustomFileInput',
             'active' => true,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'AdminLTE-3.0.0/plugins/bs-custom-file-input/bs-custom-file-input.min.js',
                 ],
             ],
         ],
         [
-            'name' => 'Select2',
+            'name'   => 'Select2',
             'active' => false,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => false,
+                    'type'     => 'js',
+                    'asset'    => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
                 ],
                 [
-                    'type' => 'css',
-                    'asset' => false,
+                    'type'     => 'css',
+                    'asset'    => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
                 ],
             ],
         ],
         [
-            'name' => 'Chartjs',
+            'name'   => 'Chartjs',
             'active' => false,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => false,
+                    'type'     => 'js',
+                    'asset'    => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js',
                 ],
             ],
         ],
         [
-            'name' => 'Sweetalert2',
+            'name'   => 'Sweetalert2',
             'active' => true,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'https://cdn.jsdelivr.net/npm/sweetalert2@8',
                 ],
             ],
         ],
         [
-            'name' => 'BootstrapSwitch',
+            'name'   => 'BootstrapSwitch',
             'active' => true,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'AdminLTE-3.0.0/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
                 ],
             ],
         ],
         [
-            'name' => 'Pace',
+            'name'   => 'Pace',
             'active' => false,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'css',
-                    'asset' => false,
+                    'type'     => 'css',
+                    'asset'    => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-center-radar.min.css',
                 ],
                 [
-                    'type' => 'js',
-                    'asset' => false,
+                    'type'     => 'js',
+                    'asset'    => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
                 ],
             ],
         ],
         [
-            'name' => 'CKEditor4',
+            'name'   => 'CKEditor4',
             'active' => false,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => false,
+                    'type'     => 'js',
+                    'asset'    => false,
                     'location' => '//cdn.ckeditor.com/4.13.0/standard/ckeditor.js',
                 ],
             ],
         ],
         [
-            'name' => 'TinyMCE',
+            'name'   => 'TinyMCE',
             'active' => true,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'tinymce_file_manager/tinymce/tinymce.min.js',
                 ],
             ],
         ],
         [
-            'name' => 'NumberJs',
+            'name'   => 'NumberJs',
             'active' => true,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'js/jquery.number.js',
                 ],
             ],
         ],
         [
-            'name' => 'MyScript',
+            'name'   => 'MyScript',
             'active' => true,
-            'files' => [
+            'files'  => [
                 [
-                    'type' => 'js',
-                    'asset' => true,
+                    'type'     => 'js',
+                    'asset'    => true,
                     'location' => 'js/myscript.js',
                 ],
             ],

@@ -140,8 +140,80 @@
         </div>
         <!--########## END BEST SELLERS ########-->
 
-    </div>
 
+
+
+        @foreach ($product_category as $parent_category)
+        <!--########## START ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย ########-->
+        <div class="title-page5 pt-3 mt-4 mb-4"><img src="images/icon-face.png" alt="" class="icon-thumbs-up"> {{ $parent_category->name }}</div>
+
+        <!-- Nav pills -->
+        @if(count($parent_category->children) != 0)
+        <div class="wrap-tab">
+            <ul class="container nav nav-pills tab-product3">
+                @foreach ($parent_category->children as $key=>$sub_category)
+                    <li class="nav-item">
+                        <a class="nav-link {{ $key == 0 ? 'active' : '' }}" data-toggle="pill" href="#tab_{{ $sub_category->id }}">{{ $sub_category->name }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+            @foreach ($parent_category->children as $key=>$sub_category)
+            <div class="tab-pane {{ $key == 0 ? 'active' : '' }}" id="tab_{{ $sub_category->id }}">
+                <div class="row mx-auto my-auto products">
+
+                    <div id="carousel_{{ $sub_category->id }}" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner" role="listbox">
+
+                            @foreach ($sub_category->productItem->take(8) as $skey=>$product_item)
+                                <div class="carousel-item {{ $skey == 0 ? 'active' : '' }}">
+                                    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                        <p class="name-product">{{ $product_item->name }}</p>
+                                        <img class="img-fluid" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">
+                                        <div class="link">
+                                            <ul>
+                                                <li>
+                                                    <div class="simpleCart_shelfItem buy">
+                                                        <a class="add1 item_add" href="#"><img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> Buy
+                                                            <div class="carousel-control-next-icon i-buy"></div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li> <a class="go-detail" href="product_detail.html"><img
+                                                            src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
+                                            </ul>
+                                        </div>
+                                        <p class="price">{{ $product_item->price }}.-</p>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel_{{ $sub_category->id }}" role="button" data-slide="prev">
+                            <img src="{{ url('chc/images/arrow-slide-back.png') }}" alt="">
+                        </a>
+                        <a class="carousel-control-next" href="#carousel_{{ $sub_category->id }}" role="button" data-slide="next">
+                            <img src="{{ url('chc/images/arrow-slide-next.png') }}" alt="">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-12 viewall"><a href="{{ url('product-category/'.$sub_category->id) }}">ดูทั้งหมด</a></div>
+            </div>
+            @endforeach
+
+        </div>
+        <!--*************** END tab ********************* -->
+        <!--########## END ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย ########-->
+        @endforeach
+
+
+    </div>
 </div>
 <!--########################## END CONTENT ##########################-->
 

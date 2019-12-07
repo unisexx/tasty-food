@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $category = ProductCategory::orderBy('_lft')->get()->toTree();
-        return view('front.product.index', compact('category'));
+        $product_category = ProductCategory::orderBy('_lft')->get()->toTree();
+        return view('front.product.index', compact('product_category'));
     }
 }
