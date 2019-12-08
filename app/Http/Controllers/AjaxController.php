@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Models\Cart;
 use App\Models\ProductCategory;
 use App\Models\ProductImage;
+use Auth;
 use DB;
+use Session;
 
 class AjaxController extends Controller
 {
@@ -62,5 +63,63 @@ class AjaxController extends Controller
     public function ajaxDeleteProductImage()
     {
         ProductImage::destroy($_GET['id']);
+    }
+
+    public function ajaxAddItems()
+    {
+        if (Auth::check()) {
+            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('user_id', @Auth::user()->id)->first();
+        } else {
+            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('session_id', session()->getId())->first();
+        }
+
+        if ($cart) {
+            $cart->update(['qty' => DB::raw('qty+1')]);
+        } else {
+            $newcart = new Cart;
+            $newcart->user_id = @Auth::user()->id;
+            $newcart->session_id = session()->getId();
+            $newcart->product_item_id = $_GET['product_item_id'];
+            $newcart->qty = 1;
+            $newcart->save();
+        }
+    }
+
+    public function updateCartNumber()
+    {
+        if (Auth::check()) {
+            $count = Cart::select('id')->where('user_id', @Auth::user()->id)->get();
+        } else {
+            $count = Cart::select('id')->where('session_id', session()->getId())->get();
+        }
+
+        Session::put('cartNumber', $count->count());
+        return $count->count();
+    }
+
+    public function ajaxUpdateQty()
+    {
+        if (Auth::check()) {
+            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('user_id', @Auth::user()->id)->first();
+        } else {
+            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('session_id', session()->getId())->first();
+        }
+
+        // อัพเดท cart สินค้า
+        if ($cart) {
+            $cart->update(['qty' => $_GET['qty']]);
+        }
+    }
+
+    public function ajaxUpdateSummary()
+    {
+        // สรุปรายการสั่งซื้อต่อ
+        if (Auth::check()) {
+            $carts = Cart::where('user_id', @Auth::user()->id)->get();
+        } else {
+            $carts = Cart::where('session_id', session()->getId())->get();
+        }
+
+        return view('front.checkout.summary', compact('carts'));
     }
 }

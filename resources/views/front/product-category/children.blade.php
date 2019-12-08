@@ -20,13 +20,13 @@
 
     <div class="row products m-4">
         @foreach($product_items as $product_item)
-        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products text-center">
-            <p class="name-product">{{ $product_item->name }}</p>
-            <img class="img-fluid" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products text-center simpleCart_shelfItem">
+            <p class="name-product item_name">{{ $product_item->name }}</p>
+            <img class="img-fluid item_image" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">
             <div class="link">
                 <ul>
                     <li>
-                        <div class="simpleCart_shelfItem buy">
+                        <div class="buy">
                             <a class="add1 item_add" href="#"><img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> Buy
                                 <div class="carousel-control-next-icon i-buy"></div>
                             </a>
@@ -35,7 +35,8 @@
                     <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
                 </ul>
             </div>
-            <p class="price">{{ $product_item->price }}.-</p>
+            <p class="price item_price">{{ $product_item->price }}.-</p>
+            <div class="item_id invisible">{{ $product_item->id }}</div>
         </div>
         @endforeach
     </div>

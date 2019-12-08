@@ -27,6 +27,12 @@ Route::any('ajaxLoadProductCategoryForm', 'AjaxController@ajaxLoadProductCategor
 Route::any('ajaxUpdateOrderProductImage', 'AjaxController@ajaxUpdateOrderProductImage');
 Route::any('ajaxDeleteProductImage', 'AjaxController@ajaxDeleteProductImage');
 
+Route::any('ajaxAddItems', 'AjaxController@ajaxAddItems');
+Route::any('updateCartNumber', 'AjaxController@updateCartNumber');
+
+Route::any('ajaxUpdateQty', 'AjaxController@ajaxUpdateQty');
+Route::any('ajaxUpdateSummary', 'AjaxController@ajaxUpdateSummary');
+
 // Front
 Route::get('f-login', 'HomeController@flogin');
 Route::post('f-dologin', 'HomeController@fdologin');
@@ -49,6 +55,7 @@ Route::post('contact/save', 'Front\ContactController@save');
 Route::get('confirm-payment', 'Front\ConfirmPaymentController@index');
 Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
 Route::get('how-to-buy', 'Front\HowToBuyController@index');
+Route::get('checkout', 'Front\CheckOutController@index');
 
 // Member
 Route::middleware(['member'])->namespace('member')->prefix('member')->group(function () {
