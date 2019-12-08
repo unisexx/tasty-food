@@ -29,7 +29,7 @@ $product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy(
                 <h3>
                     <div class="total">
                         <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
-                        <span class="simpleCart_total">$0.00</span>
+                        <span class="simpleCart_total">{{ Session::get('cartTotalPrice') }}</span>
                         <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">{{ Session::get('cartNumber') }}</span></div>
                     </div>
                     <a href="{{ url('checkout') }}"><img src="{{ url('chc/images/icon-cart1.png') }}" alt=""></a>

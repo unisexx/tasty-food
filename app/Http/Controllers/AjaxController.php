@@ -88,13 +88,24 @@ class AjaxController extends Controller
     public function updateCartNumber()
     {
         if (Auth::check()) {
-            $count = Cart::select('id')->where('user_id', @Auth::user()->id)->get();
+            $carts = Cart::where('user_id', @Auth::user()->id)->get();
         } else {
-            $count = Cart::select('id')->where('session_id', session()->getId())->get();
+            $carts = Cart::where('session_id', session()->getId())->get();
         }
 
-        Session::put('cartNumber', $count->count());
-        return $count->count();
+        // จำนวนสินค้า
+        $data['count'] = $carts->count();
+        Session::put('cartNumber', $data['count']);
+
+        // มูลค่าสินค้า
+        $sum = 0;
+        foreach ($carts as $cart) {
+            $sum += $cart->productItem->price * $cart->qty;
+        }
+        $data['total'] = '฿' . number_format($sum, 2);
+        Session::put('cartTotalPrice', $data['total']);
+
+        return $data;
     }
 
     public function ajaxUpdateQty()
@@ -121,5 +132,23 @@ class AjaxController extends Controller
         }
 
         return view('front.checkout.summary', compact('carts'));
+    }
+
+    public function ajaxEmptyCart()
+    {
+        if (Auth::check()) {
+            Cart::where('user_id', @Auth::user()->id)->delete();
+        } else {
+            Cart::where('session_id', session()->getId())->delete();
+        }
+    }
+
+    public function ajaxDeleteProductItem()
+    {
+        if (Auth::check()) {
+            Cart::where('product_item_id', $_GET['product_item_id'])->where('user_id', @Auth::user()->id)->delete();
+        } else {
+            Cart::where('product_item_id', $_GET['product_item_id'])->where('session_id', session()->getId())->delete();
+        }
     }
 }

@@ -43,10 +43,8 @@
                         <div class="link">
                             <ul>
                                 <li>
-                                    <div class="simpleCart_shelfItem buy">
-                                        <a class="add1 item_add" href="#"><img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> 
-                                            Buy <div class="carousel-control-next-icon i-buy"></div>
-                                        </a>
+                                    <div class="buy add1 item_add" data-id="{{ $product_item->id }}">
+                                        <img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> <span class="text-white">Buy</span> <div class="carousel-control-next-icon i-buy"></div></a>
                                     </div>
                                 </li>
                                 <li>

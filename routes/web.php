@@ -26,12 +26,12 @@ Route::any('ajaxRebuildTree', 'AjaxController@ajaxRebuildTree');
 Route::any('ajaxLoadProductCategoryForm', 'AjaxController@ajaxLoadProductCategoryForm');
 Route::any('ajaxUpdateOrderProductImage', 'AjaxController@ajaxUpdateOrderProductImage');
 Route::any('ajaxDeleteProductImage', 'AjaxController@ajaxDeleteProductImage');
-
 Route::any('ajaxAddItems', 'AjaxController@ajaxAddItems');
 Route::any('updateCartNumber', 'AjaxController@updateCartNumber');
-
 Route::any('ajaxUpdateQty', 'AjaxController@ajaxUpdateQty');
 Route::any('ajaxUpdateSummary', 'AjaxController@ajaxUpdateSummary');
+Route::any('ajaxEmptyCart', 'AjaxController@ajaxEmptyCart');
+Route::any('ajaxDeleteProductItem', 'AjaxController@ajaxDeleteProductItem');
 
 // Front
 Route::get('f-login', 'HomeController@flogin');

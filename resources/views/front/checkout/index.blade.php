@@ -19,7 +19,7 @@
         <div class="title-page">ตะกร้าสินค้า</div>
         <!--########## START checkout ########-->
         <div class="row bg-white p-4">
-            <div class="col-12 col-sm-12 col-md-8">
+            <div class="col-12 col-sm-12 col-md-8 cart-area">
 
                 @foreach ($carts as $cart)
                     <div class="cart-header mb-4">
@@ -56,19 +56,7 @@
             <div class="col-12 col-sm-12 col-md-4">
                 <a class="col-12 btn btn-warning" href="#">เลือกซื้อสินค้าต่อ</a>
                 <div class="checkout-total mt-4">
-                    <ul class="summaryList">
-                        @php
-                            $sum = 0;
-                        @endphp
-                        @foreach ($carts as $cart)
-                        @php
-                            $sum+= $cart->productItem->price * $cart->qty;
-                        @endphp
-                        <li>{{ $cart->productItem->name }} <span class="totalprice">{!! number_format($cart->productItem->price * $cart->qty, 2) !!} </span></li>
-                        @endforeach
-                        <li>ค่าจัดส่ง <span class="totalprice">55.00</span></li>
-                        <li class="total-cart">ราคารวม <span class="totalAll">{{ number_format($sum, 2) }}</span></li>
-                    </ul>
+                    {{-- โชว์รายละเอียดสรุปทั้งหมด --}}
                 </div>
                 <button class="col-12 btn btn-success">checkout</button>
             </div>
@@ -86,9 +74,23 @@
 @push('js')
 <script>
 $(document).ready(function () {
+    ajaxUpdateSummary();
+
     $(document).on('click', ".close1", function () {
-        $(this).parent().fadeOut('slow', function () {
-            $(this).remove();
+        var $this = $(this);
+        var productItemID = $this.parent().find('.qty').data('id');
+        $.ajax({
+            method: "GET",
+            url: "{{ url('ajaxDeleteProductItem') }}",
+            data: {
+                product_item_id : productItemID
+            }
+        }).done(function(data) {
+            $this.parent().fadeOut('slow', function () {
+                $this.remove();
+                ajaxUpdateSummary();
+                updateCartNumber();
+            });
         });
     });
 
@@ -105,7 +107,7 @@ $(document).ready(function () {
 
         clickTimeout = setTimeout(function(){
             ajaxUpdateQty(productItemID,newItemQty);
-        }, 1000);
+        }, 500);
     });
 
     // กดปุ่มลบจำนวน
@@ -120,14 +122,13 @@ $(document).ready(function () {
 
             clickTimeout = setTimeout(function(){
                 ajaxUpdateQty(productItemID,newItemQty);
-            }, 1000);
+            }, 500);
         }
     });
+
 });
 
 function ajaxUpdateQty(product_item_id, qty){
-    // console.log(product_item_id);
-    // console.log(qty);
     $.ajax({
         method: "GET",
         url: "{{ url('ajaxUpdateQty') }}",
@@ -137,15 +138,22 @@ function ajaxUpdateQty(product_item_id, qty){
         }
     }).done(function(data) {
         ajaxUpdateSummary();
+        updateCartNumber();
     });
 }
 
 function ajaxUpdateSummary(){
+    $(".checkout-total").LoadingOverlay("show", {
+        background  : "rgba(255, 255, 255, 0.8)"
+    });
+    $(".checkout-total").LoadingOverlay("show");
+
     $.ajax({
         method: "GET",
         url: "{{ url('ajaxUpdateSummary') }}"
     }).done(function(data) {
         $('.checkout-total').html(data);
+        $(".checkout-total").LoadingOverlay("hide", true);
     });
 }
 

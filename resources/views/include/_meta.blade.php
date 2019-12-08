@@ -15,6 +15,8 @@
 {{-- SweetAlert --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
+
 {{-- <script src="{{ url('js/simplecart-js/simpleCart.js') }}"></script> --}}
 {{-- <script>
     $(document).ready(function () {
@@ -108,27 +110,41 @@
 <script>
 $(document).ready(function(){
     updateCartNumber();
-});
 
-// เพิ่มสินค้าลงในตระกร้า
-$(document).on('click','.item_add',function(){
-    $.ajax({
-        method: "GET",
-        url: "{{ url('ajaxAddItems') }}",
-        data: {
-            product_item_id : $(this).data('id'),
-        }
-    }).done(function(data) {
-        updateCartNumber();
+    // เพิ่มสินค้าลงในตระกร้า
+    $(document).on('click','.item_add',function(){
+        $.ajax({
+            method: "GET",
+            url: "{{ url('ajaxAddItems') }}",
+            data: {
+                product_item_id : $(this).data('id'),
+            }
+        }).done(function(data) {
+            updateCartNumber();
+        });
     });
-})
+
+    // กดปุ่มล้างตระกร้า empty cart
+    $(document).on('click','.simpleCart_empty',function(){
+        $.ajax({
+            method: "GET",
+            url: "{{ url('ajaxEmptyCart') }}"
+        }).done(function(data) {
+            $('#simpleCart_quantity').html('0');
+            $('.close1').trigger('click');
+        });
+    });
+
+});
 
 function updateCartNumber(){
     $.ajax({
         method: "GET",
         url: "{{ url('updateCartNumber') }}"
     }).done(function(data) {
-        $('#simpleCart_quantity').html(data);
+        $('#simpleCart_quantity').html(data.count);
+        $('.simpleCart_total').html(data.total)
     });
 }
+
 </script>
