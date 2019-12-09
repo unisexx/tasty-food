@@ -22,5 +22,7 @@ class ConfirmPayment extends Model
         'name',
         'email',
         'tel',
+        'order_id',
+        'description',
     );
 }

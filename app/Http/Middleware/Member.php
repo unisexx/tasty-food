@@ -19,7 +19,7 @@ class Member
         if (Auth::check()) {
             return $next($request);
         } else {
-            abort(403, 'Unauthorized action.');
+            return redirect('/f-login');
         }
     }
 }

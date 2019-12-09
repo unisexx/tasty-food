@@ -54,11 +54,11 @@
 
             </div>
             <div class="col-12 col-sm-12 col-md-4">
-                <a class="col-12 btn btn-warning" href="#">เลือกซื้อสินค้าต่อ</a>
+                <a class="col-12 btn btn-warning" href="{{ url('product') }}">เลือกซื้อสินค้าต่อ</a>
                 <div class="checkout-total mt-4">
                     {{-- โชว์รายละเอียดสรุปทั้งหมด --}}
                 </div>
-                <button class="col-12 btn btn-success">checkout</button>
+                <a class="col-12 btn btn-success" href="{{ url('checkout/finish') }}">checkout</a>
             </div>
 
         </div>

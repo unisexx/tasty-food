@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfirmPaymentRequest;
 use App\Models\ConfirmPayment;
+use App\Models\Order;
+use Auth;
 
 class ConfirmPaymentController extends Controller
 {
@@ -23,7 +25,11 @@ class ConfirmPaymentController extends Controller
             $request->payment_attach->move(public_path('uploads/payment-attach'), $requestData['payment_attach']);
         }
 
-        ConfirmPayment::create($requestData);
+        $rs = ConfirmPayment::create($requestData);
+
+        if ($rs->order_id !== null) {
+            Order::where('id', $rs->order_id)->where('user_id', Auth::user()->id)->update(['status' => 'แจ้งโอนเงินแล้ว']);
+        }
 
         set_notify('success', 'ส่งข้อมูลเรียบร้อย');
         return back();

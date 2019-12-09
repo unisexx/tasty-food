@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Session;
 
 class LoginController extends Controller
 {
@@ -42,7 +45,34 @@ class LoginController extends Controller
         if (auth()->user()->isAdmin()) {
             return '/admin/dashboard';
         } else {
-            return '/home';
+            return '/member/profile';
         }
+    }
+
+    /**
+     * Send the response after the user was authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    protected function sendLoginResponse(Request $request)
+    {
+        $cart_id = session('cartID');
+        // dump($cart_id);
+
+        $request->session()->regenerate();
+
+        Session::put('cartID', $cart_id);
+
+        // อัพเดทตระกร้าสินค้าใหม่หลังจากที่ user login
+        Cart::where('session_id', Session::get('cartID'))->update(['user_id' => auth()->user()->id]);
+
+        // dd(auth()->user()->id);
+        // dd(Session::get('cartID'));
+
+        $this->clearLoginAttempts($request);
+
+        return $this->authenticated($request, $this->guard()->user())
+            ?: redirect()->intended($this->redirectPath());
     }
 }

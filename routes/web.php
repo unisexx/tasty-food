@@ -35,7 +35,7 @@ Route::any('ajaxDeleteProductItem', 'AjaxController@ajaxDeleteProductItem');
 
 // Front
 Route::get('f-login', 'HomeController@flogin');
-Route::post('f-dologin', 'HomeController@fdologin');
+Route::post('postlogin', 'HomeController@postLogin');
 Route::get('f-logout', 'HomeController@flogout');
 Route::get('f-register', 'HomeController@fregister');
 Route::post('f-doregister', 'HomeController@fdoregister');
@@ -57,6 +57,8 @@ Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
 Route::get('how-to-buy', 'Front\HowToBuyController@index');
 Route::get('checkout', 'Front\CheckOutController@index');
 
+Route::get('checkout/finish', 'Front\CheckOutController@finish')->middleware('member');
+
 // Member
 Route::middleware(['member'])->namespace('member')->prefix('member')->group(function () {
     Route::get('profile', 'MemberController@profile');
@@ -64,6 +66,10 @@ Route::middleware(['member'])->namespace('member')->prefix('member')->group(func
 
     Route::get('password', 'MemberController@password');
     Route::post('password_save/{id}', 'MemberController@password_save');
+
+    Route::get('order', 'MemberController@order');
+    Route::get('order/view/{id}', 'MemberController@order_view');
+    Route::get('order/delete/{id}', 'MemberController@order_delete');
 });
 
 // Admin

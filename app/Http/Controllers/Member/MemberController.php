@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordRequest;
+use App\Models\Order;
 use App\User;
 use Auth;
 use Hash;
@@ -42,6 +43,27 @@ class MemberController extends Controller
             }
         }
         set_notify('success', 'เปลี่ยนรหัสผ่านสำเร็จ');
+        return back();
+    }
+
+    public function order()
+    {
+        $orders = Order::where('user_id', Auth::user()->id)->get();
+        return view('member.order', compact('orders'));
+    }
+
+    public function order_view($id)
+    {
+        $order = Order::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail();
+        return view('member.order_view', compact('order'));
+    }
+
+    public function order_delete($id)
+    {
+        $order = Order::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail();
+        // $order->orderDetail()->delete();
+        $order->delete();
+        set_notify('success', 'ลบรายการสำเร็จ');
         return back();
     }
 }

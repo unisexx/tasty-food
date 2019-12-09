@@ -73,12 +73,14 @@ class AjaxController extends Controller
             $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('session_id', session()->getId())->first();
         }
 
+        Session::put('cartID', session()->getId());
+
         if ($cart) {
             $cart->update(['qty' => DB::raw('qty+1')]);
         } else {
             $newcart = new Cart;
             $newcart->user_id = @Auth::user()->id;
-            $newcart->session_id = session()->getId();
+            $newcart->session_id = Session::get('cartID');
             $newcart->product_item_id = $_GET['product_item_id'];
             $newcart->qty = 1;
             $newcart->save();

@@ -23,6 +23,22 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6">
                     <div class="title-page6 pt-3 m-3 text-left">กรอกข้อมูลเพื่อแจ้งยืนยันการโอนเงิน</div>
+
+                    @auth
+                        @php
+                            $orders = App\Models\Order::where('user_id', Auth::user()->id)->orderBy('id', 'asc')->get();
+                        @endphp
+                        <label class="col-12 col-form-label"><strong>หมายเลขการสั่งซื้อ<span class="text-red">*</span> :</strong></label>
+                        <div class="col-12">
+                            <select name="order_id" class="form-control">
+                                    <option value="">--- เลือกหมายเลขการสั่งซื้อ ---</option>
+                                @foreach ($orders as $order)
+                                    <option value="{{ $order->id }}">{{ sprintf('%08d', $order->id) }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    @endauth
+
                     <label class="col-12 col-form-label"><strong>วันที่ชำระเงิน<span class="text-red">*</span>
                             :</strong></label>
                     <div class="col-12">
@@ -78,6 +94,10 @@
                     <label class="col-12 col-form-label"><strong>เบอร์มือถือ :</strong></label>
                     <div class="col-12">
                         <input name="tel" type="text" class="form-control">
+                    </div>
+                    <label class="col-12 col-form-label"><strong>รายละเอียดเพิ่มเติม :</strong></label>
+                    <div class="col-12">
+                        <textarea class="form-control" name="description" cols="30" rows="7" placeholder="รายละเอียดอื่นๆ เพื่อให้ง่ายต่อการตรวจสอบจากทางร้าน"></textarea>
                     </div>
                 </div>
                 <div class="justify-content-end text-center w-100">

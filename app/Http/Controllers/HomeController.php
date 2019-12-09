@@ -7,6 +7,7 @@ use App\Models\Hilight;
 use App\Models\ProductCategory;
 use App\User;
 use Auth;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -38,13 +39,19 @@ class HomeController extends Controller
         return view('front.home.login');
     }
 
-    public function fdologin()
+    public function postLogin(Request $request)
     {
-        // $credentials = $request->only('email', 'password');
-        // if (Auth::attempt($credentials)) {
-        //     // Authentication passed...
-        //     return redirect()->intended('dashboard');
-        // }
+        request()->validate([
+            'email'    => 'required',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('/');
+        }
+        return Redirect::to("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 
     public function fregister()

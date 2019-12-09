@@ -14,6 +14,27 @@
 <script src="{{ url('chc/js/bootstrap.min.js') }}"></script>
 {{-- SweetAlert --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script>
+function archiveFunction() {
+    event.preventDefault(); // prevent form submit
+    var url = event.target.href; // storing the form
+    // console.log(url);
+    Swal.fire({
+    title: 'ยืนยันการลบข้อมูล?',
+    text: "หลังจากที่ลบไปแล้วจะไม่สามารถดึงข้อมูลนี้กลับมาได้อีก!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ลบเลย',
+    cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+        if (result.value) {
+            location.href=url;
+        }
+    });
+}
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
 
