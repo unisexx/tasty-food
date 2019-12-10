@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-use App\Models\ProductItem;
 use App\Models\ProductImage;
+use App\Models\ProductItem;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 class ProductItemController extends Controller
@@ -53,7 +52,10 @@ class ProductItemController extends Controller
 
                     $name = uniqid() . '.' . $file->extension(); // ชื่อรูป
                     $img = Image::make($file->getRealPath()); // read image from temporary file
-                    $img->fit(300, 300); // resize image
+                    $img->resize(250, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    });
                     $img->save('uploads/product-item/' . $name); // save image
 
                     $p = new ProductImage;
@@ -105,7 +107,10 @@ class ProductItemController extends Controller
 
                     $name = uniqid() . '.' . $file->extension(); // ชื่อรูป
                     $img = Image::make($file->getRealPath()); // read image from temporary file
-                    $img->fit(300, 300); // resize image
+                    $img->resize(250, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    });
                     $img->save('uploads/product-item/' . $name); // save image
 
                     $p = new ProductImage;
