@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/dashboard';
+    protected $redirectTo = '/admin/order';
 
     /**
      * Create a new controller instance.
@@ -43,7 +43,7 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         if (auth()->user()->isAdmin()) {
-            return '/admin/dashboard';
+            return '/admin/order';
         } else {
             return '/member/profile';
         }

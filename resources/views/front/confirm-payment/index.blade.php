@@ -85,19 +85,19 @@
                     <div class="title-page6 pt-3 m-3 text-left">รายละเอียดผู้แจ้งชำระเงิน</div>
                     <label class="col-12 col-form-label"><strong>ชื่อผู้แจ้ง :</strong></label>
                     <div class="col-12">
-                        <input name="name" type="text" class="form-control">
+                        <input name="name" type="text" class="form-control" value="{{ @Auth::user()->name }}">
                     </div>
                     <label class="col-12 col-form-label"><strong>อีเมล :</strong></label>
                     <div class="col-12">
-                        <input name="email" type="text" class="form-control">
+                        <input name="email" type="text" class="form-control" value="{{ @Auth::user()->email }}">
                     </div>
                     <label class="col-12 col-form-label"><strong>เบอร์มือถือ :</strong></label>
                     <div class="col-12">
-                        <input name="tel" type="text" class="form-control">
+                        <input name="tel" type="text" class="form-control" value="{{ @Auth::user()->tel }}">
                     </div>
-                    <label class="col-12 col-form-label"><strong>รายละเอียดเพิ่มเติม :</strong></label>
+                    <label class="col-12 col-form-label"><strong>ที่อยู่สำหรับการจัดส่ง :</strong></label>
                     <div class="col-12">
-                        <textarea class="form-control" name="description" cols="30" rows="7" placeholder="รายละเอียดอื่นๆ เพื่อให้ง่ายต่อการตรวจสอบจากทางร้าน"></textarea>
+                        <textarea class="form-control" name="description" cols="30" rows="7" placeholder="ที่อยู่สำหรับการจัดส่ง">{{ @Auth::user()->address }}</textarea>
                     </div>
                 </div>
                 <div class="justify-content-end text-center w-100">

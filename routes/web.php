@@ -52,10 +52,11 @@ Route::get('knowledge', 'Front\KnowledgeController@index');
 Route::get('knowledge/view/{id}', 'Front\KnowledgeController@view');
 Route::get('contact', 'Front\ContactController@index');
 Route::post('contact/save', 'Front\ContactController@save');
-Route::get('confirm-payment', 'Front\ConfirmPaymentController@index');
-Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
 Route::get('how-to-buy', 'Front\HowToBuyController@index');
 Route::get('checkout', 'Front\CheckOutController@index');
+
+Route::get('confirm-payment', 'Front\ConfirmPaymentController@index')->middleware('member');
+Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
 
 Route::get('checkout/finish', 'Front\CheckOutController@finish')->middleware('member');
 
@@ -79,6 +80,7 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
     Route::get('dashboard', 'DashboardController@index');
 
     // ข้อมูลทั่วไป
+    Route::resource('user', 'UserController');
     Route::resource('page', 'PageController');
     Route::resource('hilight', 'HilightController');
     Route::resource('service', 'ServiceController');
@@ -93,4 +95,7 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
 
     // อื่นๆ
     Route::resource('message', 'MessageController');
+
+    // ข้อมูลการสั่งซื้อ
+    Route::resource('order', 'OrderController');
 });

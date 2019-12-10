@@ -6,3 +6,11 @@ if (!function_exists('get_first_paragraph')) {
         return $p;
     }
 }
+
+if (!function_exists('order_status')) {
+    function order_status($status)
+    {
+        $statusArray = ['รอการแจ้งโอน' => 'info', 'แจ้งโอนเงินแล้ว' => 'warning', 'จัดส่งสินค้าแล้ว' => 'success'];
+        return $statusArray[$status];
+    }
+}

@@ -17,10 +17,18 @@ class Order extends Model
         'user_id',
         'shipping_charge',
         'status',
+        'tracking_date',
+        'tracking_number',
+        'image',
     );
 
     public function orderDetail()
     {
         return $this->hasMany('App\Models\OrderDetail');
+    }
+
+    public function confirmPayment()
+    {
+        return $this->hasMany('App\Models\ConfirmPayment')->orderBy('id', 'desc');
     }
 }

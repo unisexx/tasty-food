@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordRequest;
+use App\Http\Requests\ProfileRequest;
 use App\Models\Order;
 use App\User;
 use Auth;

@@ -253,13 +253,26 @@ return [
             'icon'   => 'fas fa-store',
             'active' => ['admin/product-item*'],
         ],
-        ['header' => 'สมาชิก'],
         ['header' => 'อื่นๆ'],
         [
             'text'   => 'ข้อความ',
             'url'    => 'admin/message',
             'icon'   => 'far fa-envelope',
             'active' => ['admin/message*'],
+        ],
+        ['header' => 'สมาชิก'],
+        [
+            'text'   => 'จัดการสมาชิก',
+            'url'    => 'admin/user',
+            'icon'   => 'fas fa-user',
+            'active' => ['admin/user*'],
+        ],
+        ['header' => 'ข้อมูลการสั่งซื้อ'],
+        [
+            'text'   => 'ข้อมูลการสั่งซื้อ',
+            'url'    => 'admin/order',
+            'icon'   => 'fas fa-shopping-cart',
+            'active' => ['admin/order*'],
         ],
         // [
         //     'text' => 'บริการของเรา',
@@ -493,6 +506,17 @@ return [
                     'type'     => 'js',
                     'asset'    => true,
                     'location' => 'js/jquery.number.js',
+                ],
+            ],
+        ],
+        [
+            'name'   => 'InputMask',
+            'active' => false,
+            'files'  => [
+                [
+                    'type'     => 'js',
+                    'asset'    => false,
+                    'location' => 'AdminLTE-3.0.0/plugins/inputmask/min/jquery.inputmask.bundle.min.js',
                 ],
             ],
         ],
