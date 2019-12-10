@@ -185,6 +185,13 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
+        ['header' => 'ข้อมูลการสั่งซื้อ'],
+        [
+            'text'   => 'ข้อมูลการสั่งซื้อ',
+            'url'    => 'admin/order',
+            'icon'   => 'fas fa-shopping-cart',
+            'active' => ['admin/order*'],
+        ],
         ['header' => 'ข้อมูลทั่วไป'],
         [
             'text'   => 'ไฮไลท์',
@@ -253,6 +260,12 @@ return [
             'icon'   => 'fas fa-store',
             'active' => ['admin/product-item*'],
         ],
+        [
+            'text'   => 'โปรโมชั่น',
+            'url'    => 'admin/promotion',
+            'icon'   => 'fas fa-store',
+            'active' => ['admin/promotion*'],
+        ],
         ['header' => 'อื่นๆ'],
         [
             'text'   => 'ข้อความ',
@@ -266,13 +279,6 @@ return [
             'url'    => 'admin/user',
             'icon'   => 'fas fa-user',
             'active' => ['admin/user*'],
-        ],
-        ['header' => 'ข้อมูลการสั่งซื้อ'],
-        [
-            'text'   => 'ข้อมูลการสั่งซื้อ',
-            'url'    => 'admin/order',
-            'icon'   => 'fas fa-shopping-cart',
-            'active' => ['admin/order*'],
         ],
         // [
         //     'text' => 'บริการของเรา',

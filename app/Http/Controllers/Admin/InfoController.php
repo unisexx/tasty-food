@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\Info;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 class InfoController extends Controller
@@ -29,20 +28,30 @@ class InfoController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
         ], [
             'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
-            'image.required' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
-            'image.image'    => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
-            'image.mimes'    => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
-            'image.max'      => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
+            'image.required' => 'รูปประกอบข่าว ห้ามเป็นค่าว่าง',
+            'image.image'    => 'รูปประกอบข่าว ต้องเป็นไฟล์รูปภาพ',
+            'image.mimes'    => 'รูปประกอบข่าว ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
+            'image.max'      => 'รูปประกอบข่าว ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
         ]);
 
         $requestData = $request->all();
 
-        // รูปไฮไลท์
+        // รูปประกอบข่าว
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
+
+            // thumb
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
             $img->fit(290, 190); // resize image
-            $img->save('uploads/info/' . $requestData['image']); // save image
+            $img->save('uploads/info/thumb/' . $requestData['image']); // save image
+
+            // full-image
+            $img2 = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
+            $img2->resize(1000, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            $img2->save('uploads/info/' . $requestData['image']); // save image
         }
 
         Info::create($requestData);
@@ -64,15 +73,15 @@ class InfoController extends Controller
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:10240',
         ], [
             'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
-            'image.required' => 'รูปไฮไลท์ ห้ามเป็นค่าว่าง',
-            'image.image'    => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
-            'image.mimes'    => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
-            'image.max'      => 'รูปไฮไลท์ ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
+            'image.required' => 'รูปประกอบข่าว ห้ามเป็นค่าว่าง',
+            'image.image'    => 'รูปประกอบข่าว ต้องเป็นไฟล์รูปภาพ',
+            'image.mimes'    => 'รูปประกอบข่าว ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
+            'image.max'      => 'รูปประกอบข่าว ขนาดไฟล์ห้ามเกิน 10 เมกะไบต์',
         ]);
 
         $requestData = $request->all();
 
-        // รูปไฮไลท์
+        // รูปประกอบข่าว
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
 
@@ -89,7 +98,6 @@ class InfoController extends Controller
             });
             $img2->save('uploads/info/' . $requestData['image']); // save image
         }
-
 
         $rs = Info::findOrFail($id);
         $rs->update($requestData);

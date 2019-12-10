@@ -46,7 +46,10 @@
                     <td>
                         <img src="{{ url('uploads/product-item/'.@$order_detail->productItem->productImageFirst->name) }}" class="img-fluid" alt="" width="50">
                     </td>
-                    <td>{{ $order_detail->productItem->name }}</td>
+                    <td>
+                        <div>{{ $order_detail->productItem->name }}</div>
+                        <div><i class="fas fa-tags text-danger"></i> โปรโมชั่น : {{ $order_detail->productItem->promotion->title }}</div>
+                    </td>
                     <td class="text-right">{{ $order_detail->qty }}</td>
                     <td class="text-right">{{ $order_detail->productItem->price }}</td>
                     <td class="text-right">{!! number_format($order_detail->productItem->price * $order_detail->qty, 2) !!}</td>

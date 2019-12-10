@@ -42,9 +42,8 @@
                                             <span class="item-qty">{{ $order_detail->qty }}</span>
                                         </p>
                                     </li>
-                                    <li>
-                                        <p>ราคาต่อชิ้น : <span class="totalprice">{!! number_format($order_detail->productItem->price, 2) !!}</span>.-</p>
-                                    </li>
+                                    <li><p>ราคาต่อชิ้น : <span class="totalprice">{!! number_format($order_detail->productItem->price, 2) !!}</span>.-</p></li>
+                                    <li><i class="fas fa-tags text-danger"></i> โปรโมชั่น : {{ $order_detail->productItem->promotion->title }}</li>
                                 </ul>
                             </div>
                             <div class="clearfix"></div>

@@ -42,4 +42,9 @@ class ProductItem extends Model
     {
         return $this->hasOne('App\Models\ProductCategory', 'id', 'product_category_id');
     }
+
+    public function promotion()
+    {
+        return $this->hasOne('App\Models\Promotion', 'product_item_id', 'id')->where('status', 1);
+    }
 }

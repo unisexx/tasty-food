@@ -79,7 +79,7 @@ $product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy(
                                     @endforeach
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('promotion') }}">โปรโมชั่น</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('info') }}">ข่าวสาร</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('knowledge') }}">ความรู้น่ารู้</a>
                             </li>

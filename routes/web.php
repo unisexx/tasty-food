@@ -54,6 +54,7 @@ Route::get('contact', 'Front\ContactController@index');
 Route::post('contact/save', 'Front\ContactController@save');
 Route::get('how-to-buy', 'Front\HowToBuyController@index');
 Route::get('checkout', 'Front\CheckOutController@index');
+Route::get('promotion', 'Front\PromotionController@index');
 
 Route::get('confirm-payment', 'Front\ConfirmPaymentController@index')->middleware('member');
 Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
@@ -92,6 +93,7 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
     // หมวดหมู่สินค้า
     Route::resource('product-category', 'ProductCategoryController');
     Route::resource('product-item', 'ProductItemController');
+    Route::resource('promotion', 'PromotionController');
 
     // อื่นๆ
     Route::resource('message', 'MessageController');

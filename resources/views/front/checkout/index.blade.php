@@ -33,7 +33,6 @@
                                 <ul class="qty disable-select" data-id="{{ $cart->productItem->id }}">
                                     <li>
                                         <p>
-                                            
                                             จำนวน : 
                                             <i class="fas fa-minus-circle text-danger pointer decrease"></i>
                                             <span class="item-qty">{{ $cart->qty }}</span>
@@ -43,6 +42,7 @@
                                     <li>
                                         <p>ราคาต่อชิ้น : <span class="totalprice">{!! number_format($cart->productItem->price, 2) !!}</span>.-</p>
                                     </li>
+                                    <li><i class="fas fa-tags text-danger"></i> โปรโมชั่น : {{ $cart->productItem->promotion->title }}</li>
                                 </ul>
                             </div>
                             <div class="clearfix"></div>
