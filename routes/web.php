@@ -62,7 +62,7 @@ Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
 Route::get('checkout/finish', 'Front\CheckOutController@finish')->middleware('member');
 
 // Member
-Route::middleware(['member'])->namespace('member')->prefix('member')->group(function () {
+Route::middleware(['member'])->namespace('Member')->prefix('member')->group(function () {
     Route::get('profile', 'MemberController@profile');
     Route::post('profile_save/{id}', 'MemberController@profile_save');
 

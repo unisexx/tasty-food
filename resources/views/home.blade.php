@@ -52,15 +52,11 @@
         <div class="title-promotion"><span class="bg-title-promotion"><img src="{{ url('chc/images/icon-black-star.png') }}" alt="" class="icon-black-star"> PROMOTION</span></div>
         <hr class="line1">
         <div class="row mt-5 banner-promotion">
-            <div class="col-12 col-sm-4 col-md-4">
-                <a href="#"><img src="images/banner-ad01.jpg" alt="" class="w-100 img-fluid mb-5"></a>
-            </div>
-            <div class="col-12 col-sm-4 col-md-4">
-                <a href="#"><img src="images/banner-ad02.jpg" alt="" class="w-100 img-fluid mb-5"></a>
-            </div>
-            <div class="col-12 col-sm-4 col-md-4">
-                <a href="#"><img src="images/banner-ad03.jpg" alt="" class="w-100 img-fluid mb-5"></a>
-            </div>
+            @foreach ($promotions as $promotion)
+                <div class="col-12 col-sm-4 col-md-4">
+                    <a href="{{ url('promotion') }}"><img src="{{ url('uploads/promotion/'.$promotion->image) }}" alt="" class="w-100 img-fluid mb-5"></a>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>

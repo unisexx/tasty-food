@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Hilight;
 use App\Models\ProductCategory;
+use App\Models\Promotion;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -31,7 +32,8 @@ class HomeController extends Controller
     {
         $hilights = Hilight::where('status', 1)->orderBy('id', 'desc')->get();
         $product_categories = ProductCategory::whereNull('parent_id')->where('status', 1)->orderBy('_lft')->get();
-        return view('home', compact('hilights', 'product_categories'));
+        $promotions = Promotion::where('status', 1)->inRandomOrder()->take(3)->get();
+        return view('home', compact('hilights', 'product_categories', 'promotions'));
     }
 
     public function flogin()
