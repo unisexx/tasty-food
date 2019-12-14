@@ -19,12 +19,14 @@
         <div class="row mt-4 about bg-white p-5">
             <div class="col-xs-12 col-md-4 mx-auto">
                 <form class="col-12" method="POST" action="{{ route('login') }}">
-                {{ csrf_field() }}
+                    {{ csrf_field() }}
                     <div class="form-group">
-                        <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="ระบุชื่อผู้ใช้">
+                        <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail"
+                            aria-describedby="emailHelp" placeholder="ระบุชื่อผู้ใช้">
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="ระบุรหัสผ่าน">
+                        <input name="password" type="password" class="form-control form-control-user"
+                            id="exampleInputPassword" placeholder="ระบุรหัสผ่าน">
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
@@ -37,6 +39,14 @@
                     </div>
                 </form>
                 <hr>
+
+                {{-- FB Login --}}
+                <div class="text-center forget mb-3">
+                    <a href="{{url('/redirect')}}" class="btn btn-social btn-facebook">
+                        <i class="fab fa-facebook-f"></i> Sign in with Facebook
+                    </a>
+                </div>
+                {{-- FB Login --}}
 
                 <div class="text-center forget">
                     <a href="{{ url('password/reset') }}"><strong>ลืมรหัสผ่าน?</strong></a>
