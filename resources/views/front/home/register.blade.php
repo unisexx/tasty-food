@@ -32,9 +32,13 @@
                         <input name="password_confirmation" type="password" class="form-control form-control-user" placeholder="ยืนยันรหัสผ่าน">
                     </div>
                     <button type="submit" class="btn btn-success btn-user btn-block mt-4">ลงทะเบียน</button>
-                    <div class="col-sm-6 mt-4 pl-0"><a href="{{ url('password/reset') }}"><strong>ลืมรหัสผ่าน ?</strong></a></div>
-
-                <hr>
+                    
+                    <hr>
+                    {{-- FB Login --}}
+                    <a href="{{url('/redirect')}}" class="btn btn-social btn-facebook btn-block text-center mt-3">
+                        <i class="fab fa-facebook-f"></i> Sign in with Facebook
+                    </a>
+                    {{-- FB Login --}}
             </form>
         </div>
     </div>

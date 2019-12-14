@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Hilight;
 use App\Models\ProductCategory;
+use App\Models\ProductItem;
 use App\Models\Promotion;
 use App\User;
 use Auth;
@@ -80,5 +81,23 @@ class HomeController extends Controller
     {
         Auth::logout();
         return redirect()->to('/');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->get('search');
+
+        $product_items = ProductItem::select('*');
+
+        if (!empty($keyword)) {
+            $rs = $rs->where(function ($q) use ($keyword) {
+                $q->where('name', 'LIKE', "%$keyword%")
+                    ->orWhere('brand', 'LIKE', "%$keyword%");
+            });
+        }
+
+        $product_items = $product_items->where('status', 1)->paginate(8);
+
+        return view('front.home.search', compact('product_items'));
     }
 }

@@ -37,16 +37,14 @@
                     <div class="justify-content-end text-center w-100">
                         <button type="submit" class="btn btn-success btn-user btn-block">เข้าสู่ระบบ</button>
                     </div>
-                </form>
-                <hr>
 
-                {{-- FB Login --}}
-                <div class="text-center forget mb-3">
-                    <a href="{{url('/redirect')}}" class="btn btn-social btn-facebook">
-                        <i class="fab fa-facebook-f"></i> Sign in with Facebook
+                    <hr>
+                    {{-- FB Login --}}
+                    <a href="{{url('/redirect')}}" class="btn btn-social btn-facebook btn-block text-center mt-3 mb-3">
+                        <i class="fab fa-facebook-f"></i> Login in with Facebook
                     </a>
-                </div>
-                {{-- FB Login --}}
+                    {{-- FB Login --}}
+                </form>
 
                 <div class="text-center forget">
                     <a href="{{ url('password/reset') }}"><strong>ลืมรหัสผ่าน?</strong></a>

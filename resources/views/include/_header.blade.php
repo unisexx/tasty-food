@@ -17,10 +17,9 @@ $product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy(
             <div class="col-12 col-sm-4 col-md-4 text-center"> <img src="{{ url('chc/images/logo.png') }}" alt=""
                     class="logo img-fluid"> </div>
             <div class="col-12 col-sm-4 col-md-4 mt-3">
-                <form class="search pull-right w-75">
-                    <input class="form-control search-input" type="text" placeholder="Search Products..."
-                        aria-label="Search">
-                    <button type="button"><i class="fa fa-search"></i></button>
+                <form class="search pull-right w-75" method="GET" action="{{ url('search') }}" accept-charset="UTF-8" role="search">
+                    <input class="form-control search-input" type="text" placeholder="Search Products..." aria-label="Search" name="searchtxt" value="{{ request('searchtxt') }}">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>

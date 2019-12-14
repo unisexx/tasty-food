@@ -44,6 +44,7 @@ Route::get('f-logout', 'HomeController@flogout');
 Route::get('f-register', 'HomeController@fregister');
 Route::post('f-doregister', 'HomeController@fdoregister');
 
+Route::get('search', 'HomeController@search');
 Route::get('product', 'Front\ProductController@index');
 Route::get('product-category/{id}', 'Front\ProductCategoryController@index');
 Route::get('product-item/{id}', 'Front\ProductItemController@view');
