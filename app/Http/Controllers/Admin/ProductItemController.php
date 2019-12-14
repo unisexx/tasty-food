@@ -52,7 +52,7 @@ class ProductItemController extends Controller
 
                     $name = uniqid() . '.' . $file->extension(); // ชื่อรูป
                     $img = Image::make($file->getRealPath()); // read image from temporary file
-                    $img->resize(250, null, function ($constraint) {
+                    $img->resize(null, 300, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     });
