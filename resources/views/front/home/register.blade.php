@@ -17,7 +17,7 @@
         <!-- END Breadcrump -->
         <div class="title-page">สมัครสมาชิก</div>
         <div class="row mt-4 about bg-white p-5">
-            <form class="user mt-4 col-12 col-sm-12 col-md-4 mx-auto" method="POST" accept-charset="UTF-8" action="{{ url('doregister') }}">
+            <form class="user mt-4 col-12 col-sm-12 col-md-4 mx-auto" method="POST" accept-charset="UTF-8" action="{{ url('f-doregister') }}">
             {{ csrf_field() }}
                     <div class="form-group">
                         <input name="name" type="text" class="form-control form-control-user" placeholder="ชื่อ - นามสกุล">
