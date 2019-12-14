@@ -26,7 +26,7 @@
                 <div class="link">
                     <ul>
                         <li>
-                            <div class="buy add1 item_add" data-id="{{ $product_item->id }}">
+                            <div class="buy add1 item_add" data-id="{{ $product_item->id }}" data-qty="1">
                                 <img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> <span
                                     class="text-white">Buy</span>
                                 <div class="carousel-control-next-icon i-buy"></div></a>

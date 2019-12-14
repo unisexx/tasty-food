@@ -58,6 +58,11 @@ class ProductItemController extends Controller
                     });
                     $img->save('uploads/product-item/' . $name); // save image
 
+                    //thumb
+                    $img2 = Image::make($file->getRealPath());
+                    $img2->resizeCanvas(350, 350, 'center', false, 'FFFFFF');
+                    $img2->save('uploads/product-item/thumb/' . $name);
+
                     $p = new ProductImage;
                     $p->product_item_id = $rs->id;
                     $p->name = $name;
@@ -106,12 +111,18 @@ class ProductItemController extends Controller
                 foreach ($files as $key => $file) {
 
                     $name = uniqid() . '.' . $file->extension(); // ชื่อรูป
+
                     $img = Image::make($file->getRealPath()); // read image from temporary file
-                    $img->resize(250, null, function ($constraint) {
+                    $img->resize(null, 300, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     });
                     $img->save('uploads/product-item/' . $name); // save image
+
+                    //thumb
+                    $img2 = Image::make($file->getRealPath());
+                    $img2->resizeCanvas(350, 350, 'center', false, 'FFFFFF');
+                    $img2->save('uploads/product-item/thumb/' . $name);
 
                     $p = new ProductImage;
                     $p->product_item_id = $rs->id;

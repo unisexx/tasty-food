@@ -82,7 +82,7 @@ class AjaxController extends Controller
             $newcart->user_id = @Auth::user()->id;
             $newcart->session_id = Session::get('cartID');
             $newcart->product_item_id = $_GET['product_item_id'];
-            $newcart->qty = 1;
+            $newcart->qty = $_GET['product_item_qty'] ?? 1;
             $newcart->save();
         }
     }

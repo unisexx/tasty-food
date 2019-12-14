@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{ url('chc/css/bootstrap.min.css') }}" />
 <link rel="stylesheet" href="{{ url('css/fontawesome/css/all.css') }}" />
 <link rel="stylesheet" href="{{ url('chc/css/template.css') }}" />
+<link rel="stylesheet" href="{{ url('chc/css/flexslider.css') }}" type="text/css" media="screen" />
 <!-- fonts google-->
 <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
@@ -139,10 +140,17 @@ $(document).ready(function(){
             url: "{{ url('ajaxAddItems') }}",
             data: {
                 product_item_id : $(this).data('id'),
+                product_item_qty : $(this).data('qty'),
             }
         }).done(function(data) {
             updateCartNumber();
         });
+    });
+
+    $(document).on('click keyup blur change','.item_product_qty',function(){
+        var qty = $(this).val();
+        console.log(qty);
+        $(this).closest('div').next('.item_add').attr('data-qty', qty);
     });
 
     // กดปุ่มล้างตระกร้า empty cart
@@ -152,6 +160,7 @@ $(document).ready(function(){
             url: "{{ url('ajaxEmptyCart') }}"
         }).done(function(data) {
             $('#simpleCart_quantity').html('0');
+            $('.simpleCart_total').html('฿0.00');
             $('.close1').trigger('click');
         });
     });

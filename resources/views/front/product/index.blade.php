@@ -152,11 +152,11 @@
                                         <div class="link">
                                             <ul>
                                                 <li>
-                                                    <div class="buy add1 item_add" data-id="{{ $product_item->id }}">
+                                                    <div class="buy add1 item_add" data-id="{{ $product_item->id }}" data-qty="1">
                                                         <img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> <span class="text-white">Buy</span> <div class="carousel-control-next-icon i-buy"></div></a>
                                                     </div>
                                                 </li>
-                                                <li> <a class="go-detail" href="product_detail.html"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
+                                                <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
                                             </ul>
                                         </div>
                                         <p class="price item_price">{{ $product_item->price }}.-</p>

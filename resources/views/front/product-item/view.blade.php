@@ -60,7 +60,7 @@
                                         <div class="row-center flex-control-nav flex-control-thumbs size-thumb">
                                             @foreach($chunk as $skey=>$image)
                                             <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-{{ $skey }}">
-                                                <img src="{{ url('uploads/product-item/'.$image->name) }}">
+                                                <img src="{{ url('uploads/product-item/thumb/'.$image->name) }}">
                                             </a>
                                             @endforeach
                                         </div>
@@ -94,9 +94,9 @@
                     <label class="col-4 col-sm-3 col-md-3 col-form-label">
                         <h5>จำนวน :</h5>
                     </label>
-                    <input class="col-2 form-control" type="number" name="count" step="1" min="1" value="1">
+                    <input class="col-2 form-control item_product_qty" type="number" step="1" min="1" value="1">
                 </div>
-                <input type="submit" name="submit" value="Add to cart" class="button add mt-4 mb-4">
+                <input type="button" name="submit" value="Add to cart" class="button add mt-4 mb-4 item_add" data-id="{{ $product_item->id }}" data-qty="1">
                 <ul class="social-nav model-3d-0 social mt-4 mb-4 pl-0">
                     <li class="share">Share On : </li>
                     <li>
