@@ -34,7 +34,6 @@
                 </ul>
             </div>
             <p class="price item_price">{{ $product_item->price }}.-</p>
-            <div class="item_id invisible">{{ $product_item->id }}</div>
         </div>
         @endforeach
     </div>

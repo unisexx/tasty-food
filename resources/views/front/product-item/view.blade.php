@@ -124,13 +124,59 @@
         <!--########## START COMMENT ########-->
         <div class="title-page7 pt-3 mt-4 mb-4"><i class="fa fa-commenting-o black"></i> ความคิดเห็น</div>
         <div class="row">
-
-
+            <div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10"></div>
         </div>
         <!--########## END COMMENT ########-->
 
     </div>
 </div>
 <!--########################## END CONTENT ##########################-->
+
+
+<!--########## START RELATED ########-->
+<div class="container mt-4">
+    <div class="col-sm-12 mb-4 mt-4">
+        <h4 class="title-page7">RELATED PRODUCTS</h4>
+        <div class="col-12 viewall" style="margin-top:-40px;"><a href="{{ url('product-category/'.$product_item->productCategory->id) }}">ดูทั้งหมด</a></div>
+    </div>
+    <div class="row mx-auto my-auto products">
+        <div id="carouselRelated" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+
+                @foreach ($related_items->chunk(4) as $skey=>$chunk)
+                <div class="carousel-item {{ $skey == 0 ? 'active' : '' }}">
+                    <div class="row p-0 m-0">
+                        @foreach($chunk as $related_product_item)
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products2">
+                            <p class="name-product">{{ $related_product_item->name }}</p>
+                            <img class="img-fluid" src="{{ url('uploads/product-item/'.@$related_product_item->productImageFirst->name) }}">
+                            <div class="link">
+                                <ul>
+                                    <li>
+                                        <div class="buy add1 item_add" data-id="{{ $related_product_item->id }}" data-qty="1">
+                                            <img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> <span class="text-white">Buy</span> <div class="carousel-control-next-icon i-buy"></div></a>
+                                        </div>
+                                    </li>
+                                    <li> <a class="go-detail" href="{{ url('product-item/'.$related_product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
+                                </ul>
+                            </div>
+                            <p class="price">{{ $related_product_item->price }}.-</p>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselRelated" role="button" data-slide="prev">
+                <img src="{{ url('chc/images/arrow-slide-back.png') }}" alt="">
+            </a>
+            <a class="carousel-control-next" href="#carouselRelated" role="button" data-slide="next">
+                <img src="{{ url('chc/images/arrow-slide-next.png') }}" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+<!--########## END RELATED ########-->
 
 @endsection
