@@ -14,3 +14,33 @@ if (!function_exists('order_status')) {
         return $statusArray[$status];
     }
 }
+
+if (!function_exists('remove_commars')) {
+    function remove_commars($number)
+    {
+        return str_replace(',', '', $number);
+    }
+}
+
+if (!function_exists('show_price')) {
+    function show_price($productItemId)
+    {
+        if (Auth::user()->is_vip == 1) {
+            $price = $productItemId->vip_price;
+        } else {
+            $price = $productItemId->price;
+        }
+
+        return $price;
+    }
+}
+
+if (!function_exists('shipping_cost')) {
+    function shipping_cost($weight)
+    {
+        $shipping_cost = \App\Models\ShippingRate::where('start_weight', '<=', $weight)
+            ->where('end_weight', '>=', $weight)
+            ->first()->cost;
+        return $shipping_cost;
+    }
+}

@@ -16,6 +16,13 @@
         <label for="title">ที่อยู่จัดส่ง</label>
         <textarea name="address" id="address" class="form-control @error('address') is-invalid @enderror" cols="30" rows="5" placeholder="ที่อยู่จัดส่ง">{{ isset($rs->address) ? $rs->address : old('address') }}</textarea>
     </div>
+    <div class="form-group">
+        <label for="is_vip">ลูกค้า VIP</label>
+        <div>
+            <input type="hidden" name="is_vip" value="0" checked>
+            <input id="is_vip" type="checkbox" name="is_vip" value="1" @if(@$rs->is_vip == 1) checked @endif data-bootstrap-switch>
+        </div>
+    </div>
 </div>
 <!-- /.card-body -->
 

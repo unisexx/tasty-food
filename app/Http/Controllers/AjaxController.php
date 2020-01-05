@@ -76,7 +76,7 @@ class AjaxController extends Controller
         Session::put('cartID', session()->getId());
 
         if ($cart) {
-            $cart->update(['qty' => DB::raw('qty+1')]);
+            $cart->update(['qty' => DB::raw('qty+' . $_GET['product_item_qty'])]);
         } else {
             $newcart = new Cart;
             $newcart->user_id = @Auth::user()->id;
@@ -102,7 +102,7 @@ class AjaxController extends Controller
         // มูลค่าสินค้า
         $sum = 0;
         foreach ($carts as $cart) {
-            $sum += $cart->productItem->price * $cart->qty;
+            $sum += show_price($cart->productItem) * $cart->qty;
         }
         $data['total'] = '฿' . number_format($sum, 2);
         Session::put('cartTotalPrice', $data['total']);

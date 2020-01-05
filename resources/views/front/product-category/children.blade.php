@@ -33,7 +33,7 @@
                     <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
                 </ul>
             </div>
-            <p class="price item_price">{{ $product_item->price }}.-</p>
+            <p class="price item_price">{{ show_price($product_item) }}.-</p>
         </div>
         @endforeach
     </div>

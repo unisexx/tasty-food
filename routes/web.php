@@ -99,6 +99,7 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
     Route::resource('product-category', 'ProductCategoryController');
     Route::resource('product-item', 'ProductItemController');
     Route::resource('promotion', 'PromotionController');
+    Route::resource('shipping-rate', 'ShippingRateController');
 
     // อื่นๆ
     Route::resource('message', 'MessageController');

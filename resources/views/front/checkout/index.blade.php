@@ -40,7 +40,7 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <p>ราคาต่อชิ้น : <span class="totalprice">{!! number_format($cart->productItem->price, 2) !!}</span>.-</p>
+                                        <p>ราคาต่อชิ้น : <span class="totalprice">{!! number_format(show_price($cart->productItem), 2) !!}</span>.-</p>
                                     </li>
                                     <li><i class="fas fa-tags text-danger"></i> โปรโมชั่น : {{ $cart->productItem->promotion->title }}</li>
                                 </ul>

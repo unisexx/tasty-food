@@ -26,7 +26,7 @@
 
                     @auth
                         @php
-                            $orders = App\Models\Order::where('user_id', Auth::user()->id)->orderBy('id', 'asc')->get();
+                            $orders = App\Models\Order::where('user_id', Auth::user()->id)->where('status','รอการแจ้งโอน')->orderBy('id', 'asc')->get();
                         @endphp
                         <label class="col-12 col-form-label"><strong>หมายเลขการสั่งซื้อ<span class="text-red">*</span> :</strong></label>
                         <div class="col-12">

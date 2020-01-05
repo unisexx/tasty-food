@@ -266,6 +266,12 @@ return [
             'icon'   => 'fas fa-store',
             'active' => ['admin/promotion*'],
         ],
+        [
+            'text'   => 'ค่าจัดส่ง',
+            'url'    => 'admin/shipping-rate',
+            'icon'   => 'fas fa-store',
+            'active' => ['admin/shipping-rate*'],
+        ],
         ['header' => 'อื่นๆ'],
         [
             'text'   => 'ข้อความ',

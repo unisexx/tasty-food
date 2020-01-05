@@ -20,7 +20,10 @@ class ProductItem extends Model
         'stock',
         'status',
         'price',
+        'vip_price',
         'product_category_id',
+        'weight',
+        'view_count',
     );
 
     public function productImage()

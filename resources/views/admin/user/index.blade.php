@@ -23,7 +23,7 @@
                     <th>อีเมล์</th>
                     <th>เบอร์โทรศัพท์</th>
                     <th>ที่อยู่จัดส่ง</th>
-                    <th>วันที่สมัครสมาชิก</th>
+                    <th>สถานะ</th>
                     <th class="no-sort">จัดการ</th>
                 </tr>
             </thead>
@@ -34,7 +34,7 @@
                     <td>{{ $row->email }}</td>
                     <td>{{ $row->tel }}</td>
                     <td>{{ $row->address }}</td>
-                    <td>{{ $row->created_at }}</td>
+                    <td>{!! $row->is_vip == 1 ? '<span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span>' : '<span class="badge bg-info">normal</span>' !!}</td>
                     <td>
                         <a href="{{ url('admin/user/' . $row->id . '/edit') }}" title="แก้ไขรายการนี้">
                             <button id="btnFA" class="btn btn-sm btn-warning">แก้ไข</button>
@@ -57,7 +57,7 @@
                     <th>อีเมล์</th>
                     <th>เบอร์โทรศัพท์</th>
                     <th>ที่อยู่จัดส่ง</th>
-                    <th>วันที่สมัครสมาชิก</th>
+                    <th>สถานะ</th>
                     <th>จัดการ</th>
                 </tr>
             </tfoot>

@@ -26,11 +26,11 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="title">แบรนด์</label>
+        <label for="brand">แบรนด์</label>
         <input type="text" class="form-control @error('brand') is-invalid @enderror" id="brand" name="brand" placeholder="แบรนด์" value="{{ isset($rs->brand) ? $rs->brand : old('brand') }}">
     </div>
     <div class="form-group">
-        <label for="title">ชื่อสินค้า</label>
+        <label for="name">ชื่อสินค้า</label>
         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="ชื่อสินค้า" value="{{ isset($rs->name) ? $rs->name : old('name') }}">
     </div>
     <div class="form-group">
@@ -38,8 +38,16 @@
         <textarea class="form-control tinyMCE" name="description">{!! isset($rs->description) ? $rs->description : old('description') !!}</textarea>
     </div>
     <div class="form-group">
-        <label for="title">ราคา</label>
+        <label for="weight">น้ำหนักสินค้า (กรัม)</label>
+        <input type="text" class="form-control @error('weight') is-invalid @enderror" id="weight" name="weight" placeholder="น้ำหนักสินค้า" value="{{ isset($rs->weight) ? $rs->weight : old('weight') }}"  style="width:150px;">
+    </div>
+    <div class="form-group">
+        <label for="price">ราคา</label>
         <input type="text" class="form-control numDecimal @error('price') is-invalid @enderror" id="price" name="price" placeholder="ราคา" value="{{ isset($rs->price) ? $rs->price : old('price') }}"  style="width:150px;">
+    </div>
+    <div class="form-group">
+        <label for="vprice">ราคาสำหรับลูกค้า <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></label>
+        <input type="text" class="form-control numDecimal @error('vip_price') is-invalid @enderror" id="vprice" name="vip_price" placeholder="ราคา" value="{{ isset($rs->privip_pricece) ? $rs->vip_price : old('vip_price') }}"  style="width:150px;">
     </div>
     {{-- <div class="form-group">
         <label for="title">จำนวนที่มีในสต็อก</label>

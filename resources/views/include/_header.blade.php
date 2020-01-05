@@ -8,7 +8,7 @@ $product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy(
         <div class="row">
             <div class="col-12 col-sm-4 col-md-4 mt-4 login">
                 @auth
-                    <img src="{{ url('chc/images/icon-account.png') }}" alt="" class="icon-account"> <a href="{{ url('member/profile') }}"><span>{{ Auth::user()->name }}</span></a>
+                    <img src="{{ url('chc/images/icon-account.png') }}" alt="" class="icon-account"> <a href="{{ url('member/profile') }}"><span>{{ Auth::user()->name }} <span class="badge bg-warning" style="color:black;"><small><i class="fas fa-crown"></i> VIP</small></span></span></a>
                     | <a href="{{ url('f-logout') }}">ออกจากระบบ</a>
                 @else
                     <a href="{{ url('f-login') }}">เข้าสู่ระบบ</a> | <a href="{{ url('f-register') }}">ลงทะเบียน</a>

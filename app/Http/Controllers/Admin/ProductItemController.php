@@ -29,6 +29,8 @@ class ProductItemController extends Controller
             'brand'               => 'required',
             'name'                => 'required',
             'price'               => 'required',
+            'vip_price'           => 'required',
+            'weight'              => 'required|numeric',
             'image'               => 'required_without:old_image',
             'image.*'             => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ], [
@@ -36,6 +38,9 @@ class ProductItemController extends Controller
             'brand.required'               => 'แบรนด์ ห้ามเป็นค่าว่าง',
             'name.required'                => 'ชื่อสินค้า ห้ามเป็นค่าว่าง',
             'price.required'               => 'ราคา ห้ามเป็นค่าว่าง',
+            'vip_price.required'           => 'ราคาสำหรับลูกค้า VIP ห้ามเป็นค่าว่าง',
+            'weight.required'              => 'น้ำหนักสินค้า ห้ามเป็นค่าว่าง',
+            'weight.numeric'               => 'น้ำหนักสินค้า เป็นตัวเลขเท่านั้น',
             'image.required_without'       => 'รูปสินค้า ห้ามเป็นค่าว่าง',
             'image.*.image'                => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
             'image.*.mimes'                => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
@@ -43,6 +48,7 @@ class ProductItemController extends Controller
         ]);
 
         $requestData = $request->all();
+        $requestData['price'] = remove_commars($request->price);
         $rs = ProductItem::create($requestData);
 
         // ไฟล์แนบหลายไฟล์
@@ -88,6 +94,8 @@ class ProductItemController extends Controller
             'brand'               => 'required',
             'name'                => 'required',
             'price'               => 'required',
+            'vip_price'           => 'required',
+            'weight'              => 'required|numeric',
             'image'               => 'required_without:old_image',
             'image.*'             => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ], [
@@ -95,6 +103,9 @@ class ProductItemController extends Controller
             'brand.required'               => 'แบรนด์ ห้ามเป็นค่าว่าง',
             'name.required'                => 'ชื่อสินค้า ห้ามเป็นค่าว่าง',
             'price.required'               => 'ราคา ห้ามเป็นค่าว่าง',
+            'vip_price.required'           => 'ราคาสำหรับลูกค้า VIP ห้ามเป็นค่าว่าง',
+            'weight.required'              => 'น้ำหนักสินค้า ห้ามเป็นค่าว่าง',
+            'weight.numeric'               => 'น้ำหนักสินค้า เป็นตัวเลขเท่านั้น',
             'image.required_without'       => 'รูปสินค้า ห้ามเป็นค่าว่าง',
             'image.*.image'                => 'รูปไฮไลท์ ต้องเป็นไฟล์รูปภาพ',
             'image.*.mimes'                => 'รูปไฮไลท์ ต้องเป็นไฟล์นามสกุล jpeg,png,jpg,gif',
@@ -102,6 +113,7 @@ class ProductItemController extends Controller
         ]);
 
         $requestData = $request->all();
+        $requestData['price'] = remove_commars($request->price);
         $rs = ProductItem::findOrFail($id);
         $rs->update($requestData);
 

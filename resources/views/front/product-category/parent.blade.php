@@ -52,7 +52,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <p class="price">{{ $product_item->prict }}.-</p>
+                        <p class="price">{{ show_price($product_item) }}.-</p>
                     </div>
                     @endforeach
                 </div>

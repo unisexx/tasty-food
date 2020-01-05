@@ -89,7 +89,7 @@
             <div class="col-12 col-sm-12 col-md-6 bg-white p-4">
                 <h3><span class="brand-title-product-detail">{{ $product_item->brand }}</span></h3>
                 <h4><span class="title-product-detail">{{ $product_item->name }}</span></h4>
-                <div class="price2">฿ {{ $product_item->price }}</div>
+                <div class="price2">฿ {{ show_price($product_item) }}</div>
                 <div class="row">
                     <label class="col-4 col-sm-3 col-md-3 col-form-label">
                         <h5>จำนวน :</h5>
@@ -160,7 +160,7 @@
                                     <li> <a class="go-detail" href="{{ url('product-item/'.$related_product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
                                 </ul>
                             </div>
-                            <p class="price">{{ $related_product_item->price }}.-</p>
+                            <p class="price">{{ show_price($related_product_item) }}</p>
                         </div>
                         @endforeach
                     </div>
@@ -178,5 +178,4 @@
     </div>
 </div>
 <!--########## END RELATED ########-->
-
 @endsection
