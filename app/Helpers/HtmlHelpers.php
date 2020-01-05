@@ -25,7 +25,7 @@ if (!function_exists('remove_commars')) {
 if (!function_exists('show_price')) {
     function show_price($productItemId)
     {
-        if (Auth::user()->is_vip == 1) {
+        if (@Auth::user()->is_vip == 1) {
             $price = $productItemId->vip_price;
         } else {
             $price = $productItemId->price;

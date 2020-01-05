@@ -15,6 +15,8 @@
 <script src="{{ url('chc/js/bootstrap.min.js') }}"></script>
 {{-- SweetAlert --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+{{-- ShareThis --}}
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e11ccdc7739ed001293ffb2&product=inline-share-buttons&cms=sop' async='async'></script>
 <script>
 function archiveFunction() {
     event.preventDefault(); // prevent form submit
