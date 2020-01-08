@@ -81,8 +81,6 @@ Route::middleware(['member'])->namespace('Member')->prefix('member')->group(func
 
 // Admin
 Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(function () {
-    // Controllers Within The "App\Http\Controllers\Admin" Namespace
-
     Route::get('dashboard', 'DashboardController@index');
 
     // ข้อมูลทั่วไป
@@ -106,4 +104,10 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
 
     // ข้อมูลการสั่งซื้อ
     Route::resource('order', 'OrderController');
+
+    // รายงาน
+    Route::get('report1', 'ReportController@report1');
+    Route::get('report2', 'ReportController@report2');
+    Route::get('report3', 'ReportController@report3');
+    Route::get('report4', 'ReportController@report4');
 });

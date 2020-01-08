@@ -18,6 +18,20 @@ $(document).ready(function () {
         }
     });
 
+    $("#data-table-report").DataTable({
+        order: [],
+        "columnDefs": [{
+            "orderable": false,
+            "targets": 'no-sort'
+        }],
+        dom: 'Bfrtip',
+        buttons: [
+            // 'copy', 'csv', 'excel', 'pdf', 'print'
+            // 'copy', 'excel', 'pdf', 'print', 'pageLength'
+            'copy', 'excel', 'pdf', 'print',
+        ],
+    });
+
     // Input File
     bsCustomFileInput.init();
 
@@ -64,7 +78,46 @@ $(document).ready(function () {
     });
 
     $('input.numDecimal').number( true, 2 );
+
+    // Datepicker
+    $(function() {
+        datepicker_active('.datepicker');
+    });
+
+    $('.input-daterange').datepicker({
+        inputs: $('.range-date'),
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        language: 'th-th',
+        clearBtn: true,
+    });
+    $('.range-date').each(function(k, v) {
+        $(this).addClass('form-control').css({
+            'display': 'inline-block',
+            'width': '120px'
+        }); //.attr('readonly',true);
+        $(this).attr('placeholder', (!$(this).attr('placeholder') ? 'วัน/เดือน/ปี' : $(this).attr('placeholder')));
+        // $(this).after(' <img src="{{url('images/calendar.png')}}" alt="" width="24" height="24" /> ');
+    });
+
 });
+
+function datepicker_active(obj) {
+    $(obj).datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        language: 'th-th',
+        clearBtn: true
+    });
+    $(obj).each(function(k, v) {
+        $(this).addClass('form-control').css({
+            'display': 'inline-block',
+            'width': '120px'
+        }); //.attr('readonly',true);
+        $(this).attr('placeholder', (!$(this).attr('placeholder') ? 'วัน/เดือน/ปี' : $(this).attr('placeholder')));
+        // $(this).after(' <img src="{{url('images/calendar.png')}}" alt="" width="24" height="24" /> ');
+    });
+}
 
 function archiveFunction() {
     event.preventDefault(); // prevent form submit

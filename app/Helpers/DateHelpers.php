@@ -2,7 +2,7 @@
 if (!function_exists('DB2Date')) {
     function DB2Date($Dt)
     {
-        if (($Dt != NULL) && ($Dt != '0000-00-00')) {
+        if (($Dt != null) && ($Dt != '0000-00-00')) {
             @list($date, $time) = explode(" ", $Dt);
             list($y, $m, $d) = explode("-", $date);
             return $d . "/" . $m . "/" . ($y + 543);
@@ -14,12 +14,17 @@ if (!function_exists('DB2Date')) {
 }
 
 if (!function_exists('Date2DB')) {
-    function Date2DB($Dt)
+    function Date2DB($Dt, $showTime = false)
     {
         if (($Dt != "") && ($Dt != '0000-00-00')) {
             @list($date, $time) = explode(" ", $Dt);
             list($d, $m, $y) = explode("/", $date);
-            return ($y - 543) . "-" . $m . "-" . $d;
+
+            if ($showTime == false) {
+                return ($y - 543) . "-" . $m . "-" . $d;
+            } else {
+                return ($y - 543) . "-" . $m . "-" . $d . ' ' . $time;
+            }
         } else {
             return $Dt;
         }
@@ -46,19 +51,19 @@ if (!function_exists('thMonth')) {
     function thMonth($month)
     {
         $thai_month_arr = array(
-            "0" => "",
-            "1" => "มกราคม",
-            "2" => "กุมภาพันธ์",
-            "3" => "มีนาคม",
-            "4" => "เมษายน",
-            "5" => "พฤษภาคม",
-            "6" => "มิถุนายน",
-            "7" => "กรกฎาคม",
-            "8" => "สิงหาคม",
-            "9" => "กันยายน",
+            "0"  => "",
+            "1"  => "มกราคม",
+            "2"  => "กุมภาพันธ์",
+            "3"  => "มีนาคม",
+            "4"  => "เมษายน",
+            "5"  => "พฤษภาคม",
+            "6"  => "มิถุนายน",
+            "7"  => "กรกฎาคม",
+            "8"  => "สิงหาคม",
+            "9"  => "กันยายน",
             "10" => "ตุลาคม",
             "11" => "พฤศจิกายน",
-            "12" => "ธันวาคม"
+            "12" => "ธันวาคม",
         );
         return $thai_month_arr[ltrim($month, '0')];
     }

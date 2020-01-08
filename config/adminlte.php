@@ -286,6 +286,31 @@ return [
             'icon'   => 'fas fa-user',
             'active' => ['admin/user*'],
         ],
+        ['header' => 'รายงาน'],
+        [
+            'text'   => 'รายงานสรุปยอดขาย',
+            'url'    => 'admin/report-1',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report-1*'],
+        ],
+        [
+            'text'   => 'รายงานสินค้าขายดี',
+            'url'    => 'admin/report-2',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report-2*'],
+        ],
+        [
+            'text'   => 'รายงานลูกค้าชั้นยอด',
+            'url'    => 'admin/report-3',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report-3*'],
+        ],
+        [
+            'text'   => 'รายงานการเข้าชมสินค้า',
+            'url'    => 'admin/report4',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report4*'],
+        ],
         // [
         //     'text' => 'บริการของเรา',
         //     'url'  => 'admin/aboutus',
@@ -396,9 +421,59 @@ return [
             'active' => true,
             'files'  => [
                 [
+                    'type'     => 'css',
+                    'asset'    => true,
+                    'location' => 'https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css',
+                ],
+                [
                     'type'     => 'js',
                     'asset'    => true,
                     'location' => 'AdminLTE-3.0.0/plugins/datatables/jquery.dataTables.min.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js',
+                ],
+                // [
+                //     'type'     => 'js',
+                //     'asset'    => true,
+                //     'location' => 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js',
+                // ],
+                // [
+                //     'type'     => 'js',
+                //     'asset'    => true,
+                //     'location' => 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js',
+                // ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'js/pdfmake-thai/pdfmake.min.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'js/pdfmake-thai/vfs_fonts.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js',
                 ],
                 [
                     'type'     => 'js',
@@ -529,6 +604,32 @@ return [
                     'type'     => 'js',
                     'asset'    => false,
                     'location' => 'AdminLTE-3.0.0/plugins/inputmask/min/jquery.inputmask.bundle.min.js',
+                ],
+            ],
+        ],
+        [
+            'name'   => 'DatePicker',
+            'active' => true,
+            'files'  => [
+                [
+                    'type'     => 'css',
+                    'asset'    => true,
+                    'location' => 'js/bootstrap-datepicker-thai/css/datepicker.css',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'js/bootstrap-datepicker-thai/js/bootstrap-datepicker.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'js/bootstrap-datepicker-thai/js/bootstrap-datepicker-thai.js',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'js/bootstrap-datepicker-thai/js/locales/bootstrap-datepicker.th.js',
                 ],
             ],
         ],
