@@ -16,11 +16,11 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-clock"></i></span>
                 </div>
-                <input type="text" class="input-sm form-control range-date" name="start_date" value="{{ request('start_date') }}" required/>
+                <input type="text" class="input-sm form-control range-date" name="start_date" value="{{ request('start_date') }}"/>
                 <div class="input-group-append">
                     <span class="input-group-text">ถึงวันที่</span>
                 </div>
-                <input type="text" class="input-sm form-control range-date" name="end_date" value="{{ request('end_date') }}" required/>
+                <input type="text" class="input-sm form-control range-date" name="end_date" value="{{ request('end_date') }}"/>
             </div>
             
             <button type="submit" class="btn btn-sm btn-primary mt-2" title="ค้นหา">ค้นหา</button>
@@ -67,16 +67,3 @@
 <!-- /.card -->
 
 @stop
-{{-- 
-@section('js')
-<script>
-$(document).ready(function() {
-    $('#data-table').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
-</script>
-@stop --}}

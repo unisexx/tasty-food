@@ -93,8 +93,8 @@ $(document).ready(function () {
     });
     $('.range-date').each(function(k, v) {
         $(this).addClass('form-control').css({
-            'display': 'inline-block',
-            'width': '120px'
+            // 'display': 'inline-block',
+            // 'width': '120px'
         }); //.attr('readonly',true);
         $(this).attr('placeholder', (!$(this).attr('placeholder') ? 'วัน/เดือน/ปี' : $(this).attr('placeholder')));
         // $(this).after(' <img src="{{url('images/calendar.png')}}" alt="" width="24" height="24" /> ');
@@ -111,8 +111,8 @@ function datepicker_active(obj) {
     });
     $(obj).each(function(k, v) {
         $(this).addClass('form-control').css({
-            'display': 'inline-block',
-            'width': '120px'
+            // 'display': 'inline-block',
+            // 'width': '120px'
         }); //.attr('readonly',true);
         $(this).attr('placeholder', (!$(this).attr('placeholder') ? 'วัน/เดือน/ปี' : $(this).attr('placeholder')));
         // $(this).after(' <img src="{{url('images/calendar.png')}}" alt="" width="24" height="24" /> ');

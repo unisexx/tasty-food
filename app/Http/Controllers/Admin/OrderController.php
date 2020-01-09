@@ -64,6 +64,8 @@ class OrderController extends Controller
             $img->save('uploads/order/' . $requestData['image']); // save image
         }
 
+        $requestData['tracking_date'] = Date2DB($request->tracking_date);
+
         $rs = Order::findOrFail($id);
         $rs->update($requestData);
 

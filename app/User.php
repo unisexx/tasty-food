@@ -42,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function orderSuccess()
+    {
+        return $this->hasMany('App\Models\Order')->where('status', 'จัดส่งสินค้าแล้ว');
+    }
 }

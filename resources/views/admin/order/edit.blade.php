@@ -119,7 +119,7 @@
 {{-- ฟอร์มเปลี่ยนสถานะ --}}
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Form</h3>
+        <h3 class="card-title">สถานะข้อมูลการสั่งซื้อ</h3>
     </div>
 
     <form method="POST" action="{{ url('admin/order/' . $rs->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
