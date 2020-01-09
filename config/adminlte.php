@@ -132,7 +132,7 @@ return [
     |
      */
 
-    'dashboard_url' => '/admin/dashboard',
+    'dashboard_url' => '/admin/order',
 
     'logout_url' => '../logout',
 
