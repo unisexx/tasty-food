@@ -18,7 +18,7 @@
         <!-- END Breadcrump -->
         <div class="title-page">{{ $knowledge->title }}</div>
         <div class="row mt-4 about mb-5">
-            <span class="pl-3">({{ DBToDateThai($knowledge->created_at) }})</span>
+            <span class="pl-3">({{ @DBToDateThai($knowledge->created_at) }})</span>
             <div class="col-12 col-sm-12 col-md-6 mx-auto mt-5">
 
                 <img src="{{ url('uploads/knowledge/'.$knowledge->image) }}" alt="" class="w-100 img-fluid rounded">

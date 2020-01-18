@@ -24,12 +24,12 @@
             </div>
             <div class="col-12 col-sm-6 col-md-6 pt-4 mx-auto">
                 <span class="title4-about-detail pl-3">{{ $promotion->title }}</span>
-                <p>{{ $promotion->productItem->name }}</p>
+                <p>{{ @$promotion->productItem->name }}</p>
                 <div class="list-style01">
                     {!! $promotion->detail !!}
                 </div>
                 <div class="w-100">
-                    <input type="button" value="Add to cart" class="button add col-6 col-sm-6 col-md-5 m-3 item_add" data-id="{{ $promotion->productItem->id }}">
+                    <input type="button" value="Add to cart" class="button add col-6 col-sm-6 col-md-5 m-3 item_add" data-id="{{ @$promotion->productItem->id }}">
                 </div>
             </div>
         </div>
