@@ -1,5 +1,5 @@
 @php
-    $product_items = App\Models\ProductItem::orderBy('name', 'asc')->get();
+    $product_items = App\Models\ProductItem::where('status', 1)->orderBy('name', 'asc')->get();
 @endphp
 
 <div class="card-body">
