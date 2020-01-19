@@ -143,7 +143,7 @@
                     <div id="carousel_{{ $sub_category->id }}" class="carousel slide w-100" data-ride="carousel" data-interval="false">
                         <div class="carousel-inner" role="listbox">
 
-                            @foreach ($sub_category->productItem->take(8)->chunk(4) as $skey=>$chunk)
+                            @foreach ($sub_category->productItem->where('status', 1)->take(8)->chunk(4) as $skey=>$chunk)
                                 <div class="carousel-item {{ $skey == 0 ? 'active' : '' }}">
                                     @foreach($chunk as $product_item)
                                     <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products simpleCart_shelfItem">

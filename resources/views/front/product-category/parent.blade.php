@@ -36,7 +36,7 @@
             @foreach ($product_category->children as $key=>$children_category)
             <div class="tab-pane {{ $key == 0 ? 'active' : '' }}" id="tab_{{ $key }}">
                 <div class="row mx-auto my-auto products">
-                    @foreach ($children_category->productItem->take(8) as $product_item)
+                    @foreach ($children_category->productItem->where('status', 1)->take(8) as $product_item)
                     <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
                         <p class="name-product">{{ $product_item->name }}</p>
                         <img class="img-fluid" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">

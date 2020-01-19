@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Kalnoy\Nestedset\NodeTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Kalnoy\Nestedset\NodeTrait;
 
 class ProductCategory extends Model
 {
@@ -19,7 +19,7 @@ class ProductCategory extends Model
         '_rgt',
         'parent_id',
         'image',
-        'status'
+        'status',
     ];
 
     public function productItem()

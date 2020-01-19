@@ -19,6 +19,13 @@ class AjaxController extends Controller
         DB::table($_GET['table'])
             ->where('id', $_GET['id'])
             ->update(['status' => $status]);
+
+        // ถ้า $_GET['table'] = product_items ให้ลบข้อมูลในตระกร้าออกด้วย
+        if ($_GET['table'] == 'product_items') {
+            DB::table('carts')
+                ->where('product_item_id', $_GET['id'])
+                ->delete();
+        }
     }
 
     public function ajaxRebuildTree()

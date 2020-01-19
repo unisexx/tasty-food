@@ -14,7 +14,7 @@ class ProductCategoryController extends Controller
         if (count($product_category->children)) {
             return view('front.product-category.parent', compact('product_category'));
         } else {
-            $product_items = $product_category->productItem()->paginate(8);
+            $product_items = $product_category->productItem()->where('status', 1)->paginate(8);
             return view('front.product-category.children', compact('product_category', 'product_items'));
         }
     }
