@@ -87,6 +87,7 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
     Route::resource('user', 'UserController');
     Route::resource('page', 'PageController');
     Route::resource('hilight', 'HilightController');
+    Route::resource('banner', 'BannerController');
     Route::resource('service', 'ServiceController');
     Route::resource('info', 'InfoController');
     Route::resource('knowledge', 'KnowledgeController');

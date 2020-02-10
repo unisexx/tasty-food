@@ -40,9 +40,13 @@
 <div class="row m-0">
     <div class="container mt-5">
         <div class="title-welcome-home">ยินดีต้อนรับสู่ ร้าน CHC</div>
-        <div class="text-center"><img src="{{ url('chc/images/line-white.jpg') }}" alt=""></div>
+        <div class="text-center"><img class="img-fluid" src="{{ url('chc/images/line-white.jpg') }}" alt=""></div>
         <p class="title2-welcome-home">ทางร้านจำหน่ายสินค้าอาหารเสริม วิตามิน เวชสำอางราคาถูก ทั้งปลีกและส่ง ทุกรายการสินค้าเป็นของแท้แน่นอน</p>
-        <img src="{{ url('chc/images/banner-home-01.jpg') }}" alt="" class="mt-4 mb-4">
+        @foreach($banners as $banner)
+            @if($banner->url) <a href="{{ $banner->url }}" target="_blank"> @endif
+            <img class="img-fluid mt-2 mb-2" src="{{ url('uploads/banner/'.@$banner->image) }}">
+            @if($banner->url) </a> @endif
+        @endforeach
         <p class="title3-welcome-home">ทางร้านจัดส่งสินค้าทุกวัน...<br>
             และแจ้งเลขพัสดุให้ทุกท่านก่อนเวลา...</p>
     <div class="text-center">

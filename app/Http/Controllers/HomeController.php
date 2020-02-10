@@ -7,6 +7,7 @@ use App\Models\Hilight;
 use App\Models\ProductCategory;
 use App\Models\ProductItem;
 use App\Models\Promotion;
+use App\Models\Banner;
 use App\User;
 use Auth;
 use DB;
@@ -33,7 +34,8 @@ class HomeController extends Controller
     public function index()
     {
         $hilights = Hilight::where('status', 1)->orderBy('id', 'desc')->get();
-        $product_categories = ProductCategory::whereNull('parent_id')->where('status', 1)->orderBy('_lft')->get();
+        $banners = Banner::where('status', 1)->orderBy('id', 'desc')->get();
+        // $product_categories = ProductCategory::whereNull('parent_id')->where('status', 1)->orderBy('_lft')->get();
 
         // สินค้าใหม่
         $newitems = ProductItem::where('status', 1)->orderBy('id', 'desc')->take(8)->get();
@@ -71,7 +73,7 @@ class HomeController extends Controller
         // โปรโมชั่น
         $promotions = Promotion::where('status', 1)->inRandomOrder()->take(3)->get();
 
-        return view('home', compact('hilights', 'product_categories', 'promotions', 'newitems', 'bestitems'));
+        return view('home', compact('hilights', 'banners', 'promotions', 'newitems', 'bestitems'));
     }
 
     public function flogin()

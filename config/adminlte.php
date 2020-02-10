@@ -200,6 +200,12 @@ return [
             'active' => ['admin/hilight*'],
         ],
         [
+            'text'   => 'แบนเนอร์',
+            'url'    => 'admin/banner',
+            'icon'   => 'fab fa-wpforms',
+            'active' => ['admin/banner*'],
+        ],
+        [
             'text'   => 'เกี่ยวกับเรา',
             'url'    => 'admin/page/1/edit',
             'icon'   => 'fab fa-wpforms',
