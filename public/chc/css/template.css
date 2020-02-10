@@ -484,3 +484,10 @@ body{background-size: 100% 50%;}
     text-align: center;
     border-right: 1px solid rgba(0,0,0,0.2);
 }
+
+.title-welcome-home{color:#024297; font-size:28px; font-family: "Prompt"; font-weight:bold; text-align:center;}
+.title2-welcome-home{color:#174578;font-size:20px; font-family: "Prompt"; font-weight:normal; text-align:center;}
+.title3-welcome-home{color:#082c64;font-size:30px; font-family: "Prompt"; font-weight:500; text-align:center;}
+.title4-welcome-home{color:#2e9e9d;font-size:36px; font-family: "Prompt"; font-weight:normal; text-align:left; margin-bottom:20px;}
+.title5-welcome-home{color:#09a8f2;font-size:26px; font-family: "Prompt"; font-weight:normal;}
+.title6-welcome-home{color:#4866ad;font-size:18px; font-family: "Prompt"; font-weight:normal;}
