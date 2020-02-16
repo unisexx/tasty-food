@@ -24,6 +24,8 @@ class ProductItem extends Model
         'product_category_id',
         'weight',
         'view_count',
+        'is_new',
+        'is_bestseller',
     );
 
     public function productImage()

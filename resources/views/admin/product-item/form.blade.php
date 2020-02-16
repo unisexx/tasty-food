@@ -47,12 +47,25 @@
     </div>
     <div class="form-group">
         <label for="vprice">ราคาสำหรับลูกค้า <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></label>
-        <input type="text" class="form-control numDecimal @error('vip_price') is-invalid @enderror" id="vprice" name="vip_price" placeholder="ราคา" value="{{ isset($rs->privip_pricece) ? $rs->vip_price : old('vip_price') }}"  style="width:150px;">
+        <input type="text" class="form-control numDecimal @error('vip_price') is-invalid @enderror" id="vprice" name="vip_price" placeholder="ราคา" value="{{ isset($rs->vip_price) ? $rs->vip_price : old('vip_price') }}"  style="width:150px;">
     </div>
     {{-- <div class="form-group">
         <label for="title">จำนวนที่มีในสต็อก</label>
         <input type="number" step="1" class="form-control @error('stock') is-invalid @enderror" id="stock" name="stock" placeholder="จำนวนที่มีในสต็อก" value="{{ isset($rs->stock) ? $rs->stock : old('stock') }}"  style="width:150px;">
     </div> --}}
+    <div class="form-group">
+        <div class="custom-control custom-checkbox">
+            <input type="hidden" name="is_new" value="">
+            <input class="custom-control-input" type="checkbox" id="isNew" name="is_new" value="1" {{ @$rs->is_new == 1 ? 'checked' : '' }}>
+            <label for="isNew" class="custom-control-label">ตั้งเป็นสินค้ามาใหม่</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="hidden" name="is_bestseller" value="">
+            <input class="custom-control-input" type="checkbox" id="isBestseller" name="is_bestseller" value="1" {{ @$rs->is_bestseller == 1 ? 'checked' : '' }}>
+            <label for="isBestseller" class="custom-control-label">ตั้งเป็นสินค้าขายดี</label>
+        </div>
+    </div>
+
     <div class="form-group">
         <label for="status">เผยแพร่</label>
         <div>
