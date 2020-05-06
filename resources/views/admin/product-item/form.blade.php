@@ -64,6 +64,11 @@
             <input class="custom-control-input" type="checkbox" id="isBestseller" name="is_bestseller" value="1" {{ @$rs->is_bestseller == 1 ? 'checked' : '' }}>
             <label for="isBestseller" class="custom-control-label">ตั้งเป็นสินค้าขายดี</label>
         </div>
+        <div class="custom-control custom-checkbox">
+            <input type="hidden" name="is_vip_view_only" value="">
+            <input class="custom-control-input" type="checkbox" id="isVip" name="is_vip_view_only" value="1" {{ @$rs->is_vip_view_only == 1 ? 'checked' : '' }}>
+            <label for="isVip" class="custom-control-label">เห็นได้เฉพาะลูกค้า VIP</label>
+        </div>
     </div>
 
     <div class="form-group">

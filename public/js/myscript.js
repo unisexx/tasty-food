@@ -122,6 +122,7 @@ function datepicker_active(obj) {
 function archiveFunction() {
     event.preventDefault(); // prevent form submit
     var form = event.target.form; // storing the form
+    console.log(form);
     Swal.fire({
     title: 'ยืนยันการลบข้อมูล?',
     text: "หลังจากที่ลบไปแล้วจะไม่สามารถดึงข้อมูลนี้กลับมาได้อีก!",

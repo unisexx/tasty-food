@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use App\Scopes\VipScope;
+
 class ProductItem extends Model
 {
     use SoftDeletes;
@@ -26,6 +28,7 @@ class ProductItem extends Model
         'view_count',
         'is_new',
         'is_bestseller',
+        'is_vip_view_only',
     );
 
     public function productImage()
@@ -73,5 +76,7 @@ class ProductItem extends Model
             $product_item->cart()->delete();
             // do the rest of the cleanup...
         });
+
+        static::addGlobalScope(new VipScope);
     }
 }
