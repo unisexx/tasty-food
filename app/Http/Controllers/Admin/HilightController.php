@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\Hilight;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 class HilightController extends Controller
@@ -14,6 +13,7 @@ class HilightController extends Controller
     {
         $rs = Hilight::select('*');
         $rs = $rs->orderBy('id', 'desc')->get();
+
         return view('admin.hilight.index', compact('rs'));
     }
 
@@ -41,19 +41,21 @@ class HilightController extends Controller
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(1110, 340); // resize image
+            $img->fit(683, 346); // resize image
             $img->save('uploads/hilight/' . $requestData['image']); // save image
         }
 
         Hilight::create($requestData);
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
+
         return redirect('admin/hilight');
     }
 
     public function edit($id)
     {
         $rs = Hilight::findOrFail($id);
+
         return view('admin.hilight.edit', compact('rs'));
     }
 
@@ -76,15 +78,15 @@ class HilightController extends Controller
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(1110, 340); // resize image
+            $img->fit(683, 346); // resize image
             $img->save('uploads/hilight/' . $requestData['image']); // save image
         }
-
 
         $rs = Hilight::findOrFail($id);
         $rs->update($requestData);
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
+
         return redirect('admin/hilight');
     }
 
@@ -92,6 +94,7 @@ class HilightController extends Controller
     {
         Hilight::destroy($id);
         set_notify('success', 'ลบข้อมูลสำเร็จ');
+
         return redirect('admin/hilight');
     }
 }

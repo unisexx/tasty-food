@@ -1,18 +1,19 @@
 <!-- Stylesheets -->
-<link rel="stylesheet" href="{{ url('chc/css/bootstrap.min.css') }}" />
-<link rel="stylesheet" href="{{ url('css/fontawesome/css/all.css') }}" />
-<link rel="stylesheet" href="{{ url('chc/css/template.css') }}" />
-<link rel="stylesheet" href="{{ url('chc/css/flexslider.css') }}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}" />
+<link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}" />
+<link rel="stylesheet" href="{{ url('css/template.css') }}" />
+<link rel="stylesheet" href="{{ url('css/flexslider.css') }}" type="text/css" media="screen" />
 <!-- fonts google-->
 <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
 <!-- favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ url('chc/images/favicon.ico') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url('images/favicon.ico') }}">
+
 <!-- Jquery Core Js -->
-<script src="{{ url('chc/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
 <!--JS -->
-<script src="{{ url('chc/js/bootstrap.min.js') }}"></script>
+<script src="{{ url('js/bootstrap.min.js') }}"></script>
 {{-- SweetAlert --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 {{-- ShareThis --}}

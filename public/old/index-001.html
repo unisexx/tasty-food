@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHC distributor</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/template.css" />
+
+    <!-- fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!--JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <!--########################### START HEADER ###########################-->
+    <div class="bg-white p-2 m-0">
+        <div class="container">
+            <div class="row">
+            <div class="col-xs-12 col-md-2 p-0">
+                <img src="images/logo_chc.png" alt="" class="logo img-fluid">
+            </div>
+            <div class="col-xs-12 col-md-5 pt-3 align-items-center">
+                <div class="input-group pl-0 search w-100">
+                    <input class="form-control search-input" type="text" placeholder="Search Products" aria-label="Search">
+                    <div class="input-group-append">
+                      <span class="input-group-text magnify-search" id=""><i class="fa fa-search mx-auto" aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xs-12 col-md-3 pt-3 align-items-center justify-content-end login">
+                <img src="images/user-login.png" alt="" class="pr-3">  <a href="#">เข้าสู่ระบบ</a><span class="pl-2 pr-2">|</span><a href="#">ลงทะเบียน</a> 
+            </div>
+            <div class="col-xs-12 col-md-2">
+                <!--########################### START CART ###########################-->
+                    <div class="cart">
+                        <a href="checkout.html">
+                        <div class="total">
+                            <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
+                            <span class="simpleCart_total">$0.00</span>
+                            
+                        </div>
+                        <div class="position-relative">
+                            <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">0</span></div>
+                            <img src="images/icon-cart2.png" alt="" class="img-cart">
+                        </div>
+                        </a>
+                        <div class="clearfix"> </div>
+                </div>
+                <!--########################### END CART ###########################-->
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--########################### END HEADER ###########################-->
+
+<!-- Start Slogan -->
+<div class="container">
+    <div class="row pt-3 pb-3">
+        <div class="col-md-5 slogan p-0">จำหน่าย วิตามิน เวชสำอาง อุปกรณ์การแพทย์</div>
+        <div class="col-md-7 row justify-content-end">
+            <div class="col-md-5 p-0-slogan"><div class="slogan-2"><img src="images/icon-truck.png" alt=""> ส่งจริง ส่งไว ได้ของชัวร์</div></div>
+            <div class="col-md-4"><div class="slogan-3"><img src="images/icon-call.png" alt=""> 081-1234567</div></div>
+            <div class="col-md-2 p-0-slogan"><div class="slogan-3"><img src="images/icon-line-blue.png" alt=""> @chc</div></div>
+        </div>
+    </div>
+</div>
+<!-- End Slogan -->
+
+<div class="container">
+    <div class="row bg-white pt-3">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+                <!--########################### START MENU ###########################-->
+                <div class="dynamic-part">
+                    <ul>
+                        <li class="nav-item shop"><a class="nav-link" href="index.html">ร้าน CHC</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html"><img src="images/icon-menu-1.png" alt=""> เกี่ยวกับเรา</a></li>
+                        <li>
+                            <a href="products.html"><img src="images/icon-menu-2.png" alt="">  สินค้า<i class="fa fa-angle-right" style="margin-left:5px; font-size:20px; float:right;"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                    <ul>
+                                        <li ><a href="#">อาหารเสริมผู้ชาย</a></li>
+                                        <li ><a href="#">อาหารเสริมผู้หญิง</a></li>
+                                        <li ><a href="#">อาหารเสริมของเด็ก</a></li>
+                                        <li ><a href="#">อาหารเสริมอื่นๆ</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">ผลิตภัณฑ์สมุนไพร <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                    <ul>
+                                        <li ><a href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
+                                        <li ><a href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                    <ul>
+                                        <li ><a href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
+                                        <li ><a href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">ผลิตภัณฑ์เครื่องมือแพทย์ <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                    <ul>
+                                        <li ><a href="#">อาหารเสริมทางการแพทย์</a></li>
+                                        <li ><a href="#">อุปกรณ์การแพทย์</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li ><a href="promotion.html"><img src="images/icon-menu-3.png" alt=""> โปรโมชั่น</a></li>
+                        <li ><a href="knowledge.html"><img src="images/icon-menu-4.png" alt=""> ความรู้คู่คุณ</a></li>
+                        <li ><a href="how2pay.html"><img src="images/icon-menu-5.png" alt=""> วิธีสั่งซื้อและชำระเงิน</a></li>
+                        <li ><a href="confirm.html"><img src="images/icon-menu-6.png" alt=""> แจ้งการโอนเงิน</a></li>
+                        <li ><a href="contact.html"><img src="images/icon-menu-7.png" alt="">  ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                <!--########################### END MENU ###########################-->
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-7 p-0">
+            <!--########################### START SLIDE ###########################-->
+            <div id="slide" class="carousel slide" data-ride="carousel" data-interval="false">      
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#slide" data-slide-to="0" class="active"></li>
+                    <li data-target="#slide" data-slide-to="1"></li>
+                    <li data-target="#slide" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner" style="position: relative;">
+                    <div class="carousel-item active">
+                        <img src="images/hilight-001.jpg" class="w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/hilight-001.jpg" class="w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/hilight-001.jpg" class="w-100" alt="...">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#slide" data-slide="prev">
+                    <img src="images/arrow-products-slide-back.png" alt="">
+                </a>
+                <a class="carousel-control-next" href="#slide" data-slide="next">
+                    <img src="images/arrow-products-slide-next.png" alt="">
+                </a>
+            </div>
+            <!--########################### END SLIDE ###########################-->
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2">
+            <a href="#" ><img src="images/banner-facebook.jpg" alt="" class="w-100 pb-3"></a>
+            <a href="#" ><img src="images/banner-line.jpg" alt="" class="w-100 pb-3"></a>
+        </div>
+    </div>
+</div>
+
+
+<!--########################## START WELCOME ##########################-->
+<div class="row m-0">
+    <div class="container mt-5">
+       <div class="title-welcome-home">ยินดีต้อนรับสู่ ร้าน CHC</div>
+       <div class="text-center"><img src="images/line-white.jpg" alt=""></div>
+        <p class="title2-welcome-home">ทางร้านจำหน่ายสินค้าอาหารเสริม วิตามิน เวชสำอางราคาถูก ทั้งปลีกและส่ง ทุกรายการสินค้าเป็นของแท้แน่นอน</p>
+        <img src="images/banner-home-01.jpg" alt="" class="img-fluid mt-4 mb-4">
+        <p class="title3-welcome-home">ทางร้านจัดส่งสินค้าทุกวัน...<br>
+            และแจ้งเลขพัสดุให้ทุกท่านก่อนเวลา...</p>
+    <div class="text-center">
+        <img src="images/icon-van.png" alt="" class="pr-2"><span class="title5-welcome-home">ส่งจริง ส่งไว ได้ของชัวร์</span>
+        <img src="images/icon-phone.png" alt="" class="pl-4 pr-2"><span class="title6-welcome-home">081-1234567</span>
+        <img src="images/icon-line.png" alt="" class="pl-4 pr-2"><span class="title6-welcome-home">@chc</span>
+    </div>
+
+    </div>
+</div>
+<!--########################### END WELCOME ###########################-->
+
+<!--########################## START สินค้ามาใหม่ ##########################-->
+<div class="row m-0">
+    <div class="container mt-5">
+       <div class="title4-welcome-home">สินค้ามาใหม่</div>
+       <div class="row mx-auto my-auto products">
+
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">Blackmores Marine Q10 60’S</p>
+        <img class="img-fluid" src="images/products/blackmores/blackmores_01.png">
+            <div class="link">
+                <ul>
+                    <li>
+                        <div class="simpleCart_shelfItem buy">
+                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                <div class="carousel-control-next-icon i-buy"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                </ul>
+            </div>
+            <p class="price">450.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">Vistra Gluta Complex 800 30'S</p>
+            <img class="img-fluid" src="images/products/vistra/vistra_01.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">450.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">BigJ อาหารเสริมสำหรับผู้ชาย (10 Cap)</p>
+            <img class="img-fluid" src="images/products/men/big_j.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">1,140.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">Vistra Ginkgo 120 mg 30 cap</p>
+            <img class="img-fluid" src="images/products/vistra/vistra_02.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">198.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">Ezerra Extra Gentle Cleanser 150ml</p>
+            <img class="img-fluid" src="images/products/skin_care/skin_care_01.png">
+            <div class="link">
+                <ul>
+                    <li>
+                        <div class="simpleCart_shelfItem buy">
+                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                <div class="carousel-control-next-icon i-buy"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                </ul>
+            </div>
+            <p class="price">379.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">Cetaphil Gentle Skin Cleanser 125ml 1 Bottle</p>
+            <img class="img-fluid" src="images/products/skin_care/skin_care_02.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">360.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">Eucerin sun fluid extra 50ML</p>
+            <img class="img-fluid" src="images/products/skin_care/skin_care_03.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">259.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">Smooth E Babyface Foa 8 oz.</p>
+            <img class="img-fluid" src="images/products/skin_care/skin_care_04.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">320.-</p>
+        </div>
+
+
+    </div>
+
+    </div>
+</div>
+<!--########################### END สินค้ามาใหม่ ###########################-->
+<!--########################## START สินค้าขายดี ##########################-->
+<div class="row m-0">
+    <div class="container mt-5">
+       <div class="title4-welcome-home">สินค้าขายดี</div>
+       <div class="row mx-auto my-auto products">
+
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">สมุนไพรคุณสัมฤทธิ์ พลูคาว 60 เม็ด</p>
+            <img class="img-fluid" src="images/products/herb/herb_01.png">
+            <div class="link">
+                <ul>
+                    <li>
+                        <div class="simpleCart_shelfItem buy">
+                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                <div class="carousel-control-next-icon i-buy"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                </ul>
+            </div>
+            <p class="price">350.-</p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                <p class="name-product">น้ำมันกระเทียม 500 mg (CAL Garlic Oil)</p>
+                <img class="img-fluid" src="images/products/herb/herb_02.png">
+                <div class="link">
+                        <ul>
+                            <li>
+                                <div class="simpleCart_shelfItem buy">
+                                    <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                        <div class="carousel-control-next-icon i-buy"></div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                        </ul>
+                    </div>
+                <p class="price">390.-</p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                <p class="name-product">สมุนไพรรางจืด ตราอภัยภูเบศร์ 70 แคปซูล</p>
+                <img class="img-fluid" src="images/products/herb/herb_03.png">
+                <div class="link">
+                        <ul>
+                            <li>
+                                <div class="simpleCart_shelfItem buy">
+                                    <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                        <div class="carousel-control-next-icon i-buy"></div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                        </ul>
+                    </div>
+                <p class="price">67.-</p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">อาหารเสริมแก้ริดสีดวง ตราคอมพิวเตอร์</p>
+            <img class="img-fluid" src="images/products/herb/herb_04.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">390.-</p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+        <p class="name-product">อาหารเสริมทางการแพทย์ Mega IMMUPLEX </p>
+       <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_01.png">
+        <div class="link">
+            <ul>
+                <li>
+                    <div class="simpleCart_shelfItem buy">
+                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                            <div class="carousel-control-next-icon i-buy"></div>
+                        </a>
+                    </div>
+                </li>
+                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+            </ul>
+        </div>
+        <p class="price">3,305.-</p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+            <p class="name-product">โปรตีนไข่ขาวบริสุทธิ์ Albu 60 เม็ด  </p>
+            <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_02.png">
+            <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+            <p class="price">379.-</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                <p class="name-product">B-GIN 30 S' ผลิตภัณฑ์เพื่อสมอง ผู้ป่วยไมเกรน</p>
+                <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_03.png">
+                <div class="link">
+                        <ul>
+                            <li>
+                                <div class="simpleCart_shelfItem buy">
+                                    <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                        <div class="carousel-control-next-icon i-buy"></div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                        </ul>
+                    </div>
+                <p class="price">395.-</p>
+            </div>
+            <div class="ccol-12 col-sm-6 col-md-3 d-inline-block box-products">
+                    <p class="name-product">ปรอทวัดไข้ อัตโนมัติ แม่นยำ ใช้ง่าย</p>
+                    <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_04.png">
+                    <div class="link">
+                            <ul>
+                                <li>
+                                    <div class="simpleCart_shelfItem buy">
+                                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                            <div class="carousel-control-next-icon i-buy"></div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                            </ul>
+                        </div>
+                    <p class="price">775.-</p>
+                </div>
+
+
+      </div>
+
+    </div>
+</div>
+<!--########################### END สินค้าขายดี ###########################-->
+<!--########################## START BANNER PROMOTION ##########################-->
+<div class="row mt-5 m-0">
+    <div class="container mt-4">
+        <div class="title-promotion"><span class="bg-title-promotion"><img src="images/icon-black-star.png" alt="" class="icon-black-star"> PROMOTION</span></div>
+        <hr class="line1">
+        <div class="row mt-5 banner-promotion">
+            <div class="col-12 col-sm-4 col-md-4">
+                <a href="#"><img src="images/banner-ad01.jpg" alt="" class="w-100 img-fluid mb-5"></a>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4">
+                <a href="#"><img src="images/banner-ad02.jpg" alt="" class="w-100 img-fluid mb-5"></a>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4">
+                <a href="#"><img src="images/banner-ad03.jpg" alt="" class="w-100 img-fluid mb-5"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--########################## END BANNER PROMOTION ##########################-->
+<!--########################## START ICON CONTACT ##########################-->
+<div class="row m-0">
+    <div class="container mt-5 icon-contact">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-iphone.png" alt=""><br><span class="call">Call us</span><br><span class="number">02-014-1600</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-location.png" alt=""><br><span class="call">Location</span><br><span class="location">16th floor., SJ Infinite I 349, Chom Phon, Chatuchak Bangkok 10900</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-mail.png" alt="" style="margin-top:10px;"><br><span class="call">Mail</span><br><br><a href="#"><span class="mail">sales@chc.com</span></a>
+            </div>
+        </div>
+    </div>
+</div>          
+<!--########################## END ICON CONTACT  ##########################-->
+<footer class="mt-5">
+    <div class="row m-0 bg-footer">
+        <div class="container text-footer">
+            <div class="row">
+            <div class="col-12 col-sm-4 col-md-4">2019 www.chc.com  All rights reserved</div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"><a href="#">Terms & Conditions</a><a href="#">Privacy</a> </div>
+            <div class="col-12 col-sm-4 col-md-4 text-right a-social">
+                <a href="#"><img src="images/icon-facebook.png" alt="" style="margin-top:-10px;"></a>
+                <a href="#"><img src="images/icon-twitter.png" alt="" class="ml-5" style="margin-top:-10px;"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -3,12 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Hilight extends Model
 {
-    use SoftDeletes;
-    
     protected $table = 'hilights';
 
     protected $primaryKey = 'id';
@@ -17,6 +14,6 @@ class Hilight extends Model
         'title',
         'image',
         'url',
-        'status'
+        'status',
     );
 }

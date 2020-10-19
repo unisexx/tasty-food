@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHC distributor</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <!-- fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!--JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<!--########################### START HEADER ###########################-->
+    <div class="bg-white p-2 m-0">
+        <div class="container">
+            <div class="row">
+            <div class="col-xs-12 col-md-2 p-0">
+                <img src="images/logo_chc.png" alt="" class="logo img-fluid">
+            </div>
+            <div class="col-xs-12 col-md-5 pt-3 align-items-center">
+                <div class="input-group pl-0 search w-100">
+                    <input class="form-control search-input" type="text" placeholder="Search Products" aria-label="Search">
+                    <div class="input-group-append">
+                      <span class="input-group-text magnify-search" id=""><i class="fa fa-search mx-auto" aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-xs-12 col-md-3 pt-3 align-items-center justify-content-end text-right login">
+                <img src="images/user-login.png" alt="" class="pr-2"> <a href="#">เข้าสู่ระบบ</a><span class="pl-2 pr-2">|</span><a href="#">ลงทะเบียน</a> 
+            </div>
+            <div class="col-xs-12 col-md-2">
+                <!--########################### START CART ###########################-->
+                    <div class="cart">
+                        <a href="checkout.html">
+                        <div class="total">
+                            <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
+                            <span class="simpleCart_total">$0.00</span>
+                            
+                        </div>
+                        <div class="position-relative">
+                            <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">0</span></div>
+                            <img src="images/icon-cart2.png" alt="" class="img-cart">
+                        </div>
+                        </a>
+                        <div class="clearfix"> </div>
+                </div>
+                <!--########################### END CART ###########################-->
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--########################### END HEADER ###########################-->
+<!--########################## START CONTENT ##########################-->
+
+<!-- Start title page-->
+<div class="row wrap-content bg-title-page">
+  <div class="container">
+    <div class="title-page">สมัครสมาชิก</div>
+  </div>
+</div>
+<!-- End title page-->
+
+<div class="row wrap-content">
+    <div class="container">
+      <!-- Start Breadcrump -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bread">
+                <li class="breadcrumb-item"><a href="#">หน้าแรก</a></li>
+                <li class="breadcrumb-item active" aria-current="page">สมัครสมาชิก</li>
+            </ol>
+        </nav>
+      <!-- END Breadcrump -->
+      <div class="container">
+        <div class="row bg-white pt-3 pl-3">
+            <div class="col-sm-3 col-md-3 col-lg-fix p-0">
+                <!--########################### START MENU ###########################-->
+                <nav class="navbar-expand-md bg-faded p-0">
+                    <!-- links toggle -->
+                    <button class="navbar-toggler tog" type="button" data-toggle="collapse" data-target="#leftmenu"
+                        aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line" style="margin-bottom: 0;"></span>
+                    </button>
+    
+                    <div class="dynamic-part collapse navbar-collapse" id="leftmenu">
+                        <ul>
+                            <li class="nav-item shop"><a class="nav-link" href="index.html">ร้าน CHC</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html"><img src="images/icon-menu-1.png" alt="" class="pr-1"> เกี่ยวกับเรา</a></li>
+                            <li>
+                                <a href="products.html"><img src="images/icon-menu-2.png" alt="" class="pr-1">  สินค้า<i class="fa fa-angle-right" style="margin-left:5px; font-size:20px; float:right;"></i></a>
+                                <ul>
+                                    <li>
+                                        <a href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                        <ul>
+                                            <li ><a href="#">อาหารเสริมผู้ชาย</a></li>
+                                            <li ><a href="#">อาหารเสริมผู้หญิง</a></li>
+                                            <li ><a href="#">อาหารเสริมของเด็ก</a></li>
+                                            <li ><a href="#">อาหารเสริมอื่นๆ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">ผลิตภัณฑ์สมุนไพร <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                        <ul>
+                                            <li ><a href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
+                                            <li ><a href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                        <ul>
+                                            <li ><a href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
+                                            <li ><a href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">ผลิตภัณฑ์เครื่องมือแพทย์ <i class="fa fa-angle-right" style="margin-left:5px; font-size:20px"></i></a>
+                                        <ul>
+                                            <li ><a href="#">อาหารเสริมทางการแพทย์</a></li>
+                                            <li ><a href="#">อุปกรณ์การแพทย์</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li ><a href="promotion.html"><img src="images/icon-menu-3.png" alt="" class="pr-1"> โปรโมชั่น</a></li>
+                            <li ><a href="knowledge.html"><img src="images/icon-menu-4.png" alt="" class="pr-1"> ความรู้คู่คุณ</a></li>
+                            <li ><a href="how2pay.html"><img src="images/icon-menu-5.png" alt="" class="pr-1"> วิธีสั่งซื้อและชำระเงิน</a></li>
+                            <li ><a href="confirm.html"><img src="images/icon-menu-6.png" alt="" class="pr-1"> แจ้งการโอนเงิน</a></li>
+                            <li ><a href="contact.html"><img src="images/icon-menu-7.png" alt="" class="pr-1">  ติดต่อเรา</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!--########################### END MENU ###########################-->
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 p-0 col-lg-fix3">
+                <!--########################### START SLIDE ###########################-->
+                <div class="row mt-4 about">
+                  <div class="col-md-12 wrap-tab">
+                      <ul id="tabsJustified" class="container nav nav-pills nav-fill tab-product2">
+                          <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link text-uppercase" style="background-color:transparent;">บุคคลทั่วไป</a></li>
+                          <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link text-uppercase active" style="background-color:transparent;">สำหรับร้านขายยา</a></li>
+                      </ul>
+                      <br>
+                      <div id="tabsJustifiedContent" class="tab-content bg-white p-3">
+                          <div id="home1" class="tab-pane fade">
+                              <div class="list-group">
+                                  <form class="user mt-4 col-12 col-sm-12 col-md-8 mx-auto">
+                                      <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                          <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="ชื่อ">
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="นามสกุล">
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="อีเมล">
+                                      </div>
+                                      <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                          <input type="username" class="form-control form-control-user" id="exampleInputPassword" placeholder="ชื่อผู้ใช้">
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="รหัสผ่าน">
+                                        </div>
+                                      </div>
+                                      <div class="form-group row">
+                                          <div class="col-sm-6">
+                                          <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="ยืนยันรหัสผ่าน">
+                                          </div>
+                                      </div>
+                                      <a href="login.html" class="btn btn-success btn-user btn-block mt-4">
+                                        ลงทะเบียน
+                                      </a>
+                                      <div class="col-sm-6 mt-4 pl-0"><a href="#"><strong>ลืมรหัสผ่าน ?</strong></a></div>
+                                      
+                                      <hr>
+                                    </form>
+                              </div>
+                          </div>
+                          <div id="profile1" class="tab-pane fade active show">
+                              <div class="row pb-2">
+                                  <div class="col-md-12">
+                                     <form class="needs-validation" novalidate>
+                                         <div class="card col-md-3 pull-right pt-2 pl-4">
+                                              <strong>*เอกสารที่ต้องเตรียมก่อนสมัคร</strong>
+                                             <ol>
+                                                 <li><strong>รูปใบประกอบวิชาชีพ</strong></li>
+                                                 <li><strong>รูปใบอนุญาตขายยา</strong></li>
+                                             </ol>
+                                          </div>
+                                      <div class="clearfix"></div>
+                                      <div class="title-page7 mb-4"><i class="fa fa-edit black"></i> ข้อมูลประกอบการค้า</div>
+                                      <div class="form-group">
+                                          <div class="custom-file col-md-8 mt-3">
+                                              <input type="file" class="custom-file-input" id="customFile">
+                                              <label class="custom-file-label" for="customFile">*ใบอนุญาตขายยา/ใบอนุญาตสถานพยาบาล</label>
+                                              <div class="text-red">*จำเป็นต้องใส่ โดยภาพและตัวอักษรชัดเจน หากไม่มี ทาง admin ไม่สามารถเปิดใช้งาน user ให้ได้*</div>
+                                              <div class="valid-feedback">
+                                              Looks good!
+                                              </div>
+                                          </div>
+                                          <div class="custom-file col-md-8 mt-3">
+                                              <input type="file" class="custom-file-input" id="customFile">
+                                              <label class="custom-file-label" for="customFile">*ใบประกอบวิชาชีพ</label>
+                                              <div class="text-red">*จำเป็นต้องใส่ โดยภาพและตัวอักษรชัดเจน หากไม่มี ทาง admin ไม่สามารถเปิดใช้งาน user ให้ได้*</div>
+                                              <div class="valid-feedback">
+                                              Looks good!
+                                              </div>
+                                          </div>
+                                      </div>
+      
+                                      <div class="title-page7 mt-5 mb-4"><i class="fa fa-edit black"></i> ข้อมูลสำหรับเข้าสู่ระบบ</div>
+                                      <div class="form-row">
+                                          <div class="form-group col-md-6">
+                                              <label for="inputEmail4">Email</label>
+                                              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                            </div>
+                                      </div>
+                                      <div class="form-row">
+                                          <div class="form-group col-md-6">
+                                              <label for="inlineFormInputGroupUsername">Username สำหรับเข้าสู่ระบบ</label>
+                                            <input type="text" class="form-control" placeholder="Username">
+                                          </div>
+                                          <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                          </div>
+                                      </div>
+      
+                                      <div class="title-page7 mt-5 mb-4"><i class="fa fa-edit black"></i> ข้อมูลร้านค้า</div>
+                                      <div class="form-row">
+                                          <div class="col-md-8 mb-4">
+                                            <label for="validationCustom01">ชื่อร้านค้า/คลินิก</label>
+                                            <input type="text" class="form-control" id="validationCustom01" placeholder="ชื่อร้านค้า/คลินิก" value="" required>
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4 mb-3">
+                                            <label for="validationCustom02">เลขใบอนุญาตร้านค้า</label>
+                                            <input type="text" class="form-control" id="validationCustom02" placeholder="เลขใบอนุญาตร้านค้า" value="" required>
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-row">
+                                          <div class="col-md-12 mb-3">
+                                            <label for="validationCustom03">ที่อยู่จัดส่ง</label>
+                                            <input type="text" class="form-control" id="validationCustom03" placeholder="" required>
+                                            <div class="invalid-feedback">
+                                              กรุณากรอกที่อยู่จัดส่ง.
+                                            </div>
+                                          </div>
+                                          <div class="form-group col-md-3">
+                                              <label for="inputState">จังหวัด</label>
+                                              <select id="inputState" class="form-control">
+                                                <option selected>กรุณาเลือกจังหวัด...</option>
+                                                <option>...</option>
+                                              </select>
+                                              <div class="invalid-feedback">กรุณาเลือกจังหวัด</div>
+                                          </div>
+                                          <div class="form-group col-md-3">
+                                              <label for="inputState">อำเภอ</label>
+                                              <select id="inputState" class="form-control">
+                                                <option selected>กรุณาเลือกอำเภอ...</option>
+                                                <option>...</option>
+                                              </select>
+                                              <div class="invalid-feedback">กรุณาเลือกอำเภอ</div>
+                                          </div>
+                                          <div class="form-group col-md-3">
+                                              <label for="inputState">ตำบล</label>
+                                              <select id="inputState" class="form-control">
+                                                <option selected>กรุณาเลือกตำบล...</option>
+                                                <option>...</option>
+                                              </select>
+                                              <div class="invalid-feedback">กรุณาเลือกตำบล</div>
+                                          </div>
+      
+                                          <div class="col-md-3 mb-3">
+                                            <label for="validationCustom05">รหัสไปรษณีย์</label>
+                                            <input type="text" class="form-control" id="validationCustom05" placeholder="" required>
+                                            <div class="invalid-feedback">
+                                              กรุณากรอกรหัสไปรษณีย์.
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-row mt-2">
+                                          <div class="col-md-4 mb-3">
+                                            <label for="validationCustom01">ชื่อผู้ติดต่อหลัก</label>
+                                            <input type="text" class="form-control" id="" placeholder="ชื่อ" value="" required>
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4 mb-3">
+                                            <label for="validationCustom02">เบอร์โทรศัพท์มือถือ (ตย. 0887112223)</label>
+                                            <input type="text" class="form-control" id="validationCustom02" placeholder="" value="" required>
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4 mb-3">
+                                            <label for="validationCustomUsername">เบอร์โทรศัพท์ร้าน (ตย. 027112222)</label>
+                                            <input type="text" class="form-control" id="" placeholder="" aria-describedby="inputGroupPrepend" required>
+                                          </div>
+                                        </div>
+                                        <button class="col-6 mt-5 mb-5 btn btn-primary btn-lg pl-4 pr-4 mx-auto d-block" type="submit">ลงทะเบียน</button>
+                                        </div>
+                                    </form>
+      
+                                  </div>
+                                  
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                <!--########################### END SLIDE ###########################-->
+            </div>
+           
+        </div>
+    </div>
+
+        <div class="row mt-4 about">
+            <div class="col-md-12 wrap-tab">
+                <ul id="tabsJustified" class="container nav nav-pills nav-fill tab-product2">
+                    <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link text-uppercase" style="background-color:transparent;">บุคคลทั่วไป</a></li>
+                    <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link text-uppercase active" style="background-color:transparent;">สำหรับร้านขายยา</a></li>
+                </ul>
+                <br>
+                <div id="tabsJustifiedContent" class="tab-content bg-white p-3">
+                    <div id="home1" class="tab-pane fade">
+                        <div class="list-group">
+                            <form class="user mt-4 col-12 col-sm-12 col-md-8 mx-auto">
+                                <div class="form-group row">
+                                  <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="ชื่อ">
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="นามสกุล">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="อีเมล">
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="username" class="form-control form-control-user" id="exampleInputPassword" placeholder="ชื่อผู้ใช้">
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="รหัสผ่าน">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="ยืนยันรหัสผ่าน">
+                                    </div>
+                                </div>
+                                <a href="login.html" class="btn btn-success btn-user btn-block mt-4">
+                                  ลงทะเบียน
+                                </a>
+                                <div class="col-sm-6 mt-4 pl-0"><a href="#"><strong>ลืมรหัสผ่าน ?</strong></a></div>
+                                
+                                <hr>
+                              </form>
+                        </div>
+                    </div>
+                    <div id="profile1" class="tab-pane fade active show">
+                        <div class="row pb-2">
+                            <div class="col-md-12">
+                               <form class="needs-validation" novalidate>
+                                   <div class="card col-md-3 pull-right pt-2 pl-4">
+                                        <strong>*เอกสารที่ต้องเตรียมก่อนสมัคร</strong>
+                                       <ol>
+                                           <li><strong>รูปใบประกอบวิชาชีพ</strong></li>
+                                           <li><strong>รูปใบอนุญาตขายยา</strong></li>
+                                       </ol>
+                                    </div>
+                                <div class="clearfix"></div>
+                                <div class="title-page7 mb-4"><i class="fa fa-edit black"></i> ข้อมูลประกอบการค้า</div>
+                                <div class="form-group">
+                                    <div class="custom-file col-md-8 mt-3">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">*ใบอนุญาตขายยา/ใบอนุญาตสถานพยาบาล</label>
+                                        <div class="text-red">*จำเป็นต้องใส่ โดยภาพและตัวอักษรชัดเจน หากไม่มี ทาง admin ไม่สามารถเปิดใช้งาน user ให้ได้*</div>
+                                        <div class="valid-feedback">
+                                        Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="custom-file col-md-8 mt-3">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">*ใบประกอบวิชาชีพ</label>
+                                        <div class="text-red">*จำเป็นต้องใส่ โดยภาพและตัวอักษรชัดเจน หากไม่มี ทาง admin ไม่สามารถเปิดใช้งาน user ให้ได้*</div>
+                                        <div class="valid-feedback">
+                                        Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="title-page7 mt-5 mb-4"><i class="fa fa-edit black"></i> ข้อมูลสำหรับเข้าสู่ระบบ</div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                      </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inlineFormInputGroupUsername">Username สำหรับเข้าสู่ระบบ</label>
+                                      <input type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="inputPassword4">Password</label>
+                                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                    </div>
+                                </div>
+
+                                <div class="title-page7 mt-5 mb-4"><i class="fa fa-edit black"></i> ข้อมูลร้านค้า</div>
+                                <div class="form-row">
+                                    <div class="col-md-8 mb-4">
+                                      <label for="validationCustom01">ชื่อร้านค้า/คลินิก</label>
+                                      <input type="text" class="form-control" id="validationCustom01" placeholder="ชื่อร้านค้า/คลินิก" value="" required>
+                                      <div class="valid-feedback">
+                                        Looks good!
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                      <label for="validationCustom02">เลขใบอนุญาตร้านค้า</label>
+                                      <input type="text" class="form-control" id="validationCustom02" placeholder="เลขใบอนุญาตร้านค้า" value="" required>
+                                      <div class="valid-feedback">
+                                        Looks good!
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="col-md-12 mb-3">
+                                      <label for="validationCustom03">ที่อยู่จัดส่ง</label>
+                                      <input type="text" class="form-control" id="validationCustom03" placeholder="" required>
+                                      <div class="invalid-feedback">
+                                        กรุณากรอกที่อยู่จัดส่ง.
+                                      </div>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputState">จังหวัด</label>
+                                        <select id="inputState" class="form-control">
+                                          <option selected>กรุณาเลือกจังหวัด...</option>
+                                          <option>...</option>
+                                        </select>
+                                        <div class="invalid-feedback">กรุณาเลือกจังหวัด</div>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputState">อำเภอ</label>
+                                        <select id="inputState" class="form-control">
+                                          <option selected>กรุณาเลือกอำเภอ...</option>
+                                          <option>...</option>
+                                        </select>
+                                        <div class="invalid-feedback">กรุณาเลือกอำเภอ</div>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputState">ตำบล</label>
+                                        <select id="inputState" class="form-control">
+                                          <option selected>กรุณาเลือกตำบล...</option>
+                                          <option>...</option>
+                                        </select>
+                                        <div class="invalid-feedback">กรุณาเลือกตำบล</div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                      <label for="validationCustom05">รหัสไปรษณีย์</label>
+                                      <input type="text" class="form-control" id="validationCustom05" placeholder="" required>
+                                      <div class="invalid-feedback">
+                                        กรุณากรอกรหัสไปรษณีย์.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-row mt-2">
+                                    <div class="col-md-4 mb-3">
+                                      <label for="validationCustom01">ชื่อผู้ติดต่อหลัก</label>
+                                      <input type="text" class="form-control" id="" placeholder="ชื่อ" value="" required>
+                                      <div class="valid-feedback">
+                                        Looks good!
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                      <label for="validationCustom02">เบอร์โทรศัพท์มือถือ (ตย. 0887112223)</label>
+                                      <input type="text" class="form-control" id="validationCustom02" placeholder="" value="" required>
+                                      <div class="valid-feedback">
+                                        Looks good!
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                      <label for="validationCustomUsername">เบอร์โทรศัพท์ร้าน (ตย. 027112222)</label>
+                                      <input type="text" class="form-control" id="" placeholder="" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                  </div>
+                                  <button class="col-6 mt-5 mb-5 btn btn-primary btn-lg pl-4 pr-4 mx-auto d-block" type="submit">ลงทะเบียน</button>
+                                  </div>
+                              </form>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            
+        </div>
+    </div>  
+</div>
+<!--########################## END CONTENT ##########################-->
+<!--########################## START ICON CONTACT ##########################-->
+<div class="row m-0">
+    <div class="container mt-5 icon-contact">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-iphone.png" alt=""><br><span class="call">Call us</span><br><span class="number">02-014-1600</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-location.png" alt=""><br><span class="call">Location</span><br><span class="location">16th floor., SJ Infinite I 349, Chom Phon, Chatuchak Bangkok 10900</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-mail.png" alt="" style="margin-top:10px;"><br><span class="call">Mail</span><br><br><a href="#"><span class="mail">sales@chc.com</span></a>
+            </div>
+        </div>
+    </div>
+</div>          
+<!--########################## END ICON CONTACT  ##########################-->
+<footer class="mt-5">
+    <div class="row m-0 bg-footer">
+        <div class="container text-footer">
+            <div class="row">
+            <div class="col-12 col-sm-4 col-md-4">2019 www.chc.com  All rights reserved</div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"><a href="#">Terms & Conditions</a><a href="#">Privacy</a> </div>
+            <div class="col-12 col-sm-4 col-md-4 text-right a-social">
+                <a href="#"><img src="images/icon-facebook.png" alt="" style="margin-top:-10px;"></a>
+                <a href="#"><img src="images/icon-twitter.png" alt="" class="ml-5" style="margin-top:-10px;"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/simpleCart.min.js"> </script>
+<!-- FlexSlider -->
+<script src="js/jquery.flexslider.js"></script>
+<script>
+    // Can also be used with $(document).ready()
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
+</script>
+<!-- //FlexSlider-->
+
+
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHC distributor</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/template.css" />
+    <!-- fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!--JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<!--########################### START HEADER ###########################-->
+<div class="row bg-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 mt-4 login">
+                <a href="#">Log in</a>   or  <a href="#">Register</a> 
+                <img src="images/icon-account.png" alt="" class="icon-account"> <a href="#"><span>My Account</span></a>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"> <img src="images/logo.png" alt="" class="logo img-fluid"> </div>
+            <div class="col-12 col-sm-4 col-md-4 mt-3">
+             <form class="search pull-right w-75">
+               <input class="form-control search-input" type="text" placeholder="Search Products..." aria-label="Search">
+               <button type="button"><i class="fa fa-search"></i></button>
+             </form>
+           </div>
+        </div>
+  <!--########################### START CART ###########################-->
+        <div class="cart box_1">
+                <h3> 
+                <div class="total">
+                    <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
+                    <span class="simpleCart_total">$0.00</span> <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">0</span></div>
+                </div>
+                <a href="checkout.html"><img src="images/icon-cart1.png" alt=""></a>
+                </h3>
+                <div class="clearfix"> </div>
+        </div>
+<!--########################### END CART ###########################-->
+        <div class="row mt-5">
+            <div class="menu">
+                <nav class="navbar navbar-expand-lg navbar-light bg-faded nopadding">
+                    <!-- links toggle -->
+                    <button class="navbar-toggler tog" type="button" data-toggle="collapse" data-target="#topmenu"
+                        aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line" style="margin-bottom: 0;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="topmenu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html"><img src="images/icon-home.png" alt=""></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.html">บริการของเรา</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="menu-product" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false" onclick="window.location.href='products.html';">
+                                    สินค้า
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="menu-product">
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="products_men.html">อาหารเสริมผู้ชาย</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้หญิง</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมของเด็ก</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมอื่นๆ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์สมุนไพร</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์เครื่องมือแพทย์</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมทางการแพทย์</a></li>
+                                            <li><a class="dropdown-item" href="#">อุปกรณ์การแพทย์</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>
+                            <li class="nav-item"><a class="nav-link" href="news.html">ข่าวสาร</a></li>
+                            <li class="nav-item"><a class="nav-link" href="knowledge.html">ความรู้น่ารู้</a></li>
+                            <li class="nav-item"><a class="nav-link" href="how2pay.html">วิธีสั่งซื้อและชำระเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="confirm.html">แจ้งการโอนเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!--########################### END HEADER ###########################-->
+<!--########################## START CONTENT ##########################-->
+<div class="row wrap-content">
+    <div class="container">
+     <hr class="line2"></hr>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bread justify-content-end">
+                    <li class="breadcrumb-item"><a href="#">หน้าแรก</a></li>
+                    <li class="breadcrumb-item"><a href="#">สินค้า</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">ผลิตภัณฑ์เครื่องมือแพทย์</li>
+                </ol>
+            </nav>
+      
+    <!-- END Breadcrump -->
+    <div class="title-page">ผลิตภัณฑ์เครื่องมือแพทย์</div>
+
+ <!--########## START ผลิตภัณฑ์เครื่องมือแพทย์ ########-->
+ <div class="row products mt-5 text-center">
+        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                <p class="name-product">อาหารเสริมทางการแพทย์ Mega IMMUPLEX </p>
+               <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_01.png">
+                <div class="link">
+                    <ul>
+                        <li>
+                            <div class="simpleCart_shelfItem buy">
+                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                    <div class="carousel-control-next-icon i-buy"></div>
+                                </a>
+                            </div>
+                        </li>
+                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                    </ul>
+                </div>
+                <p class="price">3,305.-</p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                    <p class="name-product">โปรตีนไข่ขาวบริสุทธิ์ Albu 60 เม็ด  </p>
+                    <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_02.png">
+                    <div class="link">
+                            <ul>
+                                <li>
+                                    <div class="simpleCart_shelfItem buy">
+                                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                            <div class="carousel-control-next-icon i-buy"></div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                            </ul>
+                        </div>
+                    <p class="price">379.-</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                        <p class="name-product">B-GIN 30 S' ผลิตภัณฑ์เพื่อสมอง ผู้ป่วยไมเกรน</p>
+                        <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_03.png">
+                        <div class="link">
+                                <ul>
+                                    <li>
+                                        <div class="simpleCart_shelfItem buy">
+                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                <div class="carousel-control-next-icon i-buy"></div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                </ul>
+                            </div>
+                        <p class="price">395.-</p>
+                    </div>
+                    <div class="ccol-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">ปรอทวัดไข้ อัตโนมัติ แม่นยำ ใช้ง่าย</p>
+                            <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_04.png">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">775.-</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">name nmame</p>
+                            <img class="img-fluid" src="images/210x210.jpg">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">000.-</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                <p class="name-product">name nmame</p>
+                                <img class="img-fluid" src="images/210x210.jpg">
+                                <div class="link">
+                                        <ul>
+                                            <li>
+                                                <div class="simpleCart_shelfItem buy">
+                                                    <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                        <div class="carousel-control-next-icon i-buy"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                        </ul>
+                                    </div>
+                                <p class="price">000.-</p>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                    <p class="name-product">name nmame</p>
+                                    <img class="img-fluid" src="images/210x210.jpg">
+                                    <div class="link">
+                                            <ul>
+                                                <li>
+                                                    <div class="simpleCart_shelfItem buy">
+                                                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                            <div class="carousel-control-next-icon i-buy"></div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                            </ul>
+                                        </div>
+                                    <p class="price">000.-</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                        <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                        <div class="col-md-12 centered">
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+     </div>
+     <!--########## END ผลิตภัณฑ์เครื่องมือแพทย์ ########-->
+
+
+
+</div>  
+
+</div>
+<!--########################## END CONTENT ##########################-->
+<!--########################## START ICON CONTACT ##########################-->
+<div class="row m-0">
+    <div class="container mt-5 icon-contact">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-iphone.png" alt=""><br><span class="call">Call us</span><br><span class="number">02-014-1600</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-location.png" alt=""><br><span class="call">Location</span><br><span class="location">16th floor., SJ Infinite I 349, Chom Phon, Chatuchak Bangkok 10900</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-mail.png" alt="" style="margin-top:10px;"><br><span class="call">Mail</span><br><br><a href="#"><span class="mail">sales@chc.com</span></a>
+            </div>
+        </div>
+    </div>
+  </div>          
+  <!--########################## END ICON CONTACT  ##########################-->
+  <footer class="mt-5">
+    <div class="row m-0 bg-footer">
+        <div class="container text-footer">
+            <div class="row">
+            <div class="col-12 col-sm-4 col-md-4">2019 www.chc.com  All rights reserved</div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"><a href="#">Terms & Conditions</a><a href="#">Privacy</a> </div>
+            <div class="col-12 col-sm-4 col-md-4 text-right a-social">
+                <a href="#"><img src="images/icon-facebook.png" alt="" style="margin-top:-10px;"></a>
+                <a href="#"><img src="images/icon-twitter.png" alt="" class="ml-5" style="margin-top:-10px;"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+  </footer>
+<script src="js/simpleCart.min.js"> </script>
+<script>
+$('#recipeCarousel').carousel({
+    interval: 10000
+  })
+  
+  $('.carousel .carousel-item').each(function(){
+      var next = $(this).next();
+      if (!next.length) {
+      next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+      
+      if (next.next().length>0) {
+      next.next().children(':first-child').clone().appendTo($(this));
+      }
+      if (next.next().length>1) {
+      next.next().children(':first-child').clone().appendTo($(this));
+      }
+      else {
+        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+      }
+  });
+</script>
+</body>
+</html>

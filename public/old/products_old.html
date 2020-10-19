@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHC distributor</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/template.css" />
+    <!-- fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!--JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<!--########################### START HEADER ###########################-->
+<div class="row bg-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 mt-4 login">
+                <a href="#">Log in</a>   or  <a href="#">Register</a> 
+                <img src="images/icon-account.png" alt="" class="icon-account"> <a href="#"><span>My Account</span></a>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"> <img src="images/logo.png" alt="" class="logo img-fluid"> </div>
+            <div class="col-12 col-sm-4 col-md-4 mt-3">
+             <form class="search pull-right w-75">
+               <input class="form-control search-input" type="text" placeholder="Search Products..." aria-label="Search">
+               <button type="button"><i class="fa fa-search"></i></button>
+             </form>
+           </div>
+        </div>
+  <!--########################### START CART ###########################-->
+        <div class="cart box_1">
+                <h3> 
+                <div class="total">
+                    <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
+                    <span class="simpleCart_total">$0.00</span> <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">0</span></div>
+                </div>
+                <a href="checkout.html"><img src="images/icon-cart1.png" alt=""></a>
+                </h3>
+                <div class="clearfix"> </div>
+        </div>
+<!--########################### END CART ###########################-->
+        <div class="row mt-5">
+            <div class="menu">
+                <nav class="navbar navbar-expand-lg navbar-light bg-faded nopadding">
+                    <!-- links toggle -->
+                    <button class="navbar-toggler tog" type="button" data-toggle="collapse" data-target="#topmenu"
+                        aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line" style="margin-bottom: 0;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="topmenu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html"><img src="images/icon-home.png" alt=""></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.html">บริการของเรา</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="menu-product" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false" onclick="window.location.href='products.html';">
+                                    สินค้า
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="menu-product">
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="products_men.html">อาหารเสริมผู้ชาย</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้หญิง</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมของเด็ก</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมอื่นๆ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์สมุนไพร</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์เครื่องมือแพทย์</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมทางการแพทย์</a></li>
+                                            <li><a class="dropdown-item" href="#">อุปกรณ์การแพทย์</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>
+                            <li class="nav-item"><a class="nav-link" href="news.html">ข่าวสาร</a></li>
+                            <li class="nav-item"><a class="nav-link" href="knowledge.html">ความรู้น่ารู้</a></li>
+                            <li class="nav-item"><a class="nav-link" href="how2pay.html">วิธีสั่งซื้อและชำระเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="confirm.html">แจ้งการโอนเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!--########################### END HEADER ###########################-->
+<!--########################## START CONTENT ##########################-->
+<div class="row wrap-content">
+    <div class="container">
+     <hr class="line2"></hr>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bread justify-content-end">
+                    <li class="breadcrumb-item"><a href="#">หน้าแรก</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">สินค้า</li>
+                </ol>
+            </nav>
+      
+    <!-- END Breadcrump -->
+    <div class="title-page">สินค้า</div>
+    <!--########## START BEST SELLERS ########-->
+    <div class="title-page2 mb-4"><img src="images/icon-white-star.png" alt="" class="icon-thumbs-up"> BEST SELLERS</div>
+    <div class="row mx-auto my-auto products">
+            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">Blackmores Marine Q10 60’S</p>
+                           <img class="img-fluid" src="images/products/blackmores/blackmores_01.png">
+                            <div class="link">
+                                <ul>
+                                    <li>
+                                        <div class="simpleCart_shelfItem buy">
+                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                <div class="carousel-control-next-icon i-buy"></div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                </ul>
+                            </div>
+                            <p class="price">450.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                         <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">Vistra Gluta Complex 800 30'S</p>
+                            <img class="img-fluid" src="images/products/vistra/vistra_01.png">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">450.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">BigJ อาหารเสริมสำหรับผู้ชาย (10 Cap)</p>
+                            <img class="img-fluid" src="images/products/men/big_j.png">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">1,140.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">Vistra Ginkgo 120 mg 30 cap</p>
+                            <img class="img-fluid" src="images/products/vistra/vistra_02.png">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">198.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                            <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                              <p class="name-product">name nmame</p>
+                            <img class="img-fluid" src="images/210x210.jpg">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">000.-</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+                    <img src="images/arrow-slide-back.png" alt="">
+                </a>
+                <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+                    <img src="images/arrow-slide-next.png" alt="">
+                </a>
+            </div>
+            <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+        </div>
+        <!--########## END BEST SELLERS ########-->
+
+  <!--########## START ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ ########-->
+  <div class="title-page3 pt-3 mt-4 mb-4"><img src="images/icon-heart.png" alt="" class="icon-thumbs-up"> ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</div>
+
+          <!-- Nav pills -->
+          <div class="wrap-tab">
+            <ul class="container nav nav-pills tab-product">
+                <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#men">อาหารเสริมผู้ชาย</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#women">อาหารเสริมผู้หญิง</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#kid">อาหารเสริมของเด็ก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#other">อาหารเสริมอื่นๆ</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="men">
+                <div class="row mx-auto my-auto products">
+                    <div id="menCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                    <p class="name-product">STAND UP อาหารเสริมท่านชาย</p>
+                                    <img class="img-fluid" src="images/products/men/stan_up.png">
+                                    <div class="link">
+                                        <ul>
+                                            <li>
+                                                <div class="simpleCart_shelfItem buy">
+                                                    <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                        <div class="carousel-control-next-icon i-buy"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                        </ul>
+                                    </div>
+                                    <p class="price">387.-</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                    <p class="name-product">Maxma plus 4 Cap</p>
+                                    <img class="img-fluid" src="images/products/men/cu_plus.png">
+                                    <div class="link">
+                                            <ul>
+                                                <li>
+                                                    <div class="simpleCart_shelfItem buy">
+                                                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                            <div class="carousel-control-next-icon i-buy"></div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                            </ul>
+                                        </div>
+                                    <p class="price">218.-</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                    <p class="name-product">BigJ อาหารเสริมสำหรับผู้ชาย (10 Cap)</p>
+                                    <img class="img-fluid" src="images/products/men/big_j.png">
+                                    <div class="link">
+                                            <ul>
+                                                <li>
+                                                    <div class="simpleCart_shelfItem buy">
+                                                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                            <div class="carousel-control-next-icon i-buy"></div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                            </ul>
+                                        </div>
+                                    <p class="price">1,140.-</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                    <p class="name-product">CU PLUS 4 cap</p>
+                                    <img class="img-fluid" src="images/products/men/cu_plus.png">
+                                    <div class="link">
+                                            <ul>
+                                                <li>
+                                                    <div class="simpleCart_shelfItem buy">
+                                                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                            <div class="carousel-control-next-icon i-buy"></div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                            </ul>
+                                        </div>
+                                    <p class="price">219.-</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                        <p class="name-product">name nmame</p>
+                                    <img class="img-fluid" src="images/210x210.jpg">
+                                    <div class="link">
+                                            <ul>
+                                                <li>
+                                                    <div class="simpleCart_shelfItem buy">
+                                                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                            <div class="carousel-control-next-icon i-buy"></div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                            </ul>
+                                        </div>
+                                    <p class="price">000.-</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#menCarousel" role="button" data-slide="prev">
+                            <img src="images/arrow-slide-back.png" alt="">
+                        </a>
+                        <a class="carousel-control-next" href="#menCarousel" role="button" data-slide="next">
+                            <img src="images/arrow-slide-next.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 viewall"><a href="products_men.html">ดูทั้งหมด</a></div>
+            </div>
+            <div class="tab-pane fade" id="women">
+                <div class="row mx-auto my-auto products">
+                        <div id="womenCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#womenCarousel" role="button" data-slide="prev">
+                                <img src="images/arrow-slide-back.png" alt="">
+                            </a>
+                            <a class="carousel-control-next" href="#womenCarousel" role="button" data-slide="next">
+                                <img src="images/arrow-slide-next.png" alt="">
+                            </a>
+                        </div>
+                </div>
+                <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+            </div>
+            <div class="tab-pane fade" id="kid">
+                <div class="row mx-auto my-auto products">
+                        <div id="kidCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">อาหารเสริมของเด็ก</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">อาหารเสริมของเด็ก</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#kidCarousel" role="button" data-slide="prev">
+                                <img src="images/arrow-slide-back.png" alt="">
+                            </a>
+                            <a class="carousel-control-next" href="#kidCarousel" role="button" data-slide="next">
+                                <img src="images/arrow-slide-next.png" alt="">
+                            </a>
+                        </div>
+                </div>
+                <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+            </div>
+            <div class="tab-pane fade" id="other">
+                <div class="row mx-auto my-auto products">
+                        <div id="otherCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">อาหารเสริมอื่นๆ</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">อาหารเสริมอื่นๆ</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                            <p class="name-product">name nmame</p>
+                                        <img class="img-fluid" src="images/210x210.jpg">
+                                        <div class="link">
+                                                <ul>
+                                                    <li>
+                                                        <div class="simpleCart_shelfItem buy">
+                                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                                <div class="carousel-control-next-icon i-buy"></div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        <p class="price">000.-</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#otherCarousel" role="button" data-slide="prev">
+                                <img src="images/arrow-slide-back.png" alt="">
+                            </a>
+                            <a class="carousel-control-next" href="#otherCarousel" role="button" data-slide="next">
+                                <img src="images/arrow-slide-next.png" alt="">
+                            </a>
+                        </div>
+                </div>
+                <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+            </div>
+            
+         </div>
+   <!--*************** END tab ********************* -->
+ <!--########## END ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ ########-->
+
+<!--########## START ผลิตภัณฑ์สมุนไพร ########-->
+<div class="title-page4 pt-3 mt-4 mb-4"><img src="images/icon-leaf.png" alt="" class="icon-thumbs-up"> ผลิตภัณฑ์สมุนไพร</div>
+
+<!-- Nav pills -->
+<div class="wrap-tab">
+  <ul class="container nav nav-pills tab-product2">
+      <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#inner">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#outer">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a>
+      </li>
+  </ul>
+</div>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="inner">
+      <div class="row mx-auto my-auto products">
+          <div id="innerCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+              <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">สมุนไพรคุณสัมฤทธิ์ พลูคาว 60 เม็ด</p>
+                          <img class="img-fluid" src="images/products/herb/herb_01.png">
+                          <div class="link">
+                              <ul>
+                                  <li>
+                                      <div class="simpleCart_shelfItem buy">
+                                          <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                              <div class="carousel-control-next-icon i-buy"></div>
+                                          </a>
+                                      </div>
+                                  </li>
+                                  <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                              </ul>
+                          </div>
+                          <p class="price">350.-</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                          <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">น้ำมันกระเทียม 500 mg (CAL Garlic Oil)</p>
+                          <img class="img-fluid" src="images/products/herb/herb_02.png">
+                          <div class="link">
+                                  <ul>
+                                      <li>
+                                          <div class="simpleCart_shelfItem buy">
+                                              <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                  <div class="carousel-control-next-icon i-buy"></div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                  </ul>
+                              </div>
+                          <p class="price">390.-</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">สมุนไพรรางจืด ตราอภัยภูเบศร์ 70 แคปซูล</p>
+                          <img class="img-fluid" src="images/products/herb/herb_03.png">
+                          <div class="link">
+                                  <ul>
+                                      <li>
+                                          <div class="simpleCart_shelfItem buy">
+                                              <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                  <div class="carousel-control-next-icon i-buy"></div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                  </ul>
+                              </div>
+                          <p class="price">67.-</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">อาหารเสริมแก้ริดสีดวง ตราคอมพิวเตอร์</p>
+                          <img class="img-fluid" src="images/products/herb/herb_04.png">
+                          <div class="link">
+                                  <ul>
+                                      <li>
+                                          <div class="simpleCart_shelfItem buy">
+                                              <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                  <div class="carousel-control-next-icon i-buy"></div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                  </ul>
+                              </div>
+                          <p class="price">390.-</p>
+                      </div>
+                  </div>
+              </div>
+              <a class="carousel-control-prev" href="#innerCarousel" role="button" data-slide="prev">
+                  <img src="images/arrow-slide-back.png" alt="">
+              </a>
+              <a class="carousel-control-next" href="#innerCarousel" role="button" data-slide="next">
+                  <img src="images/arrow-slide-next.png" alt="">
+              </a>
+          </div>
+      </div>
+      <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+  </div>
+  <div class="tab-pane fade" id="outer">
+      <div class="row mx-auto my-auto products">
+              <div id="outerCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                  <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">ผลิตภัณฑ์ สมุนไพรใช้ภายนอก</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">name nmame</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">name nmame</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">name nmame</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#outerCarousel" role="button" data-slide="prev">
+                      <img src="images/arrow-slide-back.png" alt="">
+                  </a>
+                  <a class="carousel-control-next" href="#outerCarousel" role="button" data-slide="next">
+                      <img src="images/arrow-slide-next.png" alt="">
+                  </a>
+              </div>
+      </div>
+      <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+  </div>
+</div>
+<!--*************** END tab ********************* -->
+<!--########## END ผลิตภัณฑ์สมุนไพร ########-->
+
+<!--########## START ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย ########-->
+<div class="title-page5 pt-3 mt-4 mb-4"><img src="images/icon-face.png" alt="" class="icon-thumbs-up"> ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย</div>
+
+<!-- Nav pills -->
+<div class="wrap-tab">
+  <ul class="container nav nav-pills tab-product3">
+      <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#face">ผลิตภัณฑ์ดูแลผิวหน้า</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#skin">ผลิตภัณฑ์ดูแลผิวกาย</a>
+      </li>
+  </ul>
+</div>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="face">
+      <div class="row mx-auto my-auto products">
+          <div id="faceCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+              <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">Ezerra Extra Gentle Cleanser 150ml</p>
+                          <img class="img-fluid" src="images/products/skin_care/skin_care_01.png">
+                          <div class="link">
+                              <ul>
+                                  <li>
+                                      <div class="simpleCart_shelfItem buy">
+                                          <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                              <div class="carousel-control-next-icon i-buy"></div>
+                                          </a>
+                                      </div>
+                                  </li>
+                                  <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                              </ul>
+                          </div>
+                          <p class="price">379.-</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                          <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">Cetaphil Gentle Skin Cleanser 125ml 1 Bottle</p>
+                          <img class="img-fluid" src="images/products/skin_care/skin_care_02.png">
+                          <div class="link">
+                                  <ul>
+                                      <li>
+                                          <div class="simpleCart_shelfItem buy">
+                                              <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                  <div class="carousel-control-next-icon i-buy"></div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                  </ul>
+                              </div>
+                          <p class="price">360.-</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">Eucerin sun fluid extra 50ML</p>
+                          <img class="img-fluid" src="images/products/skin_care/skin_care_03.png">
+                          <div class="link">
+                                  <ul>
+                                      <li>
+                                          <div class="simpleCart_shelfItem buy">
+                                              <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                  <div class="carousel-control-next-icon i-buy"></div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                  </ul>
+                              </div>
+                          <p class="price">259.-</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                          <p class="name-product">Smooth E Babyface Foa 8 oz.</p>
+                          <img class="img-fluid" src="images/products/skin_care/skin_care_04.png">
+                          <div class="link">
+                                  <ul>
+                                      <li>
+                                          <div class="simpleCart_shelfItem buy">
+                                              <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                  <div class="carousel-control-next-icon i-buy"></div>
+                                              </a>
+                                          </div>
+                                      </li>
+                                      <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                  </ul>
+                              </div>
+                          <p class="price">320.-</p>
+                      </div>
+                  </div>
+              </div>
+              <a class="carousel-control-prev" href="#faceCarousel" role="button" data-slide="prev">
+                  <img src="images/arrow-slide-back.png" alt="">
+              </a>
+              <a class="carousel-control-next" href="#faceCarousel" role="button" data-slide="next">
+                  <img src="images/arrow-slide-next.png" alt="">
+              </a>
+          </div>
+      </div>
+      <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+  </div>
+  <div class="tab-pane fade" id="skin">
+      <div class="row mx-auto my-auto products">
+              <div id="skinCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                  <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">ผลิตภัณฑ์ดูแลผิวกาย</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">name nmame</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">name nmame</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                              <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                                  <p class="name-product">name nmame</p>
+                              <img class="img-fluid" src="images/210x210.jpg">
+                              <div class="link">
+                                      <ul>
+                                          <li>
+                                              <div class="simpleCart_shelfItem buy">
+                                                  <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                      <div class="carousel-control-next-icon i-buy"></div>
+                                                  </a>
+                                              </div>
+                                          </li>
+                                          <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                      </ul>
+                                  </div>
+                              <p class="price">000.-</p>
+                          </div>
+                      </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#skinCarousel" role="button" data-slide="prev">
+                      <img src="images/arrow-slide-back.png" alt="">
+                  </a>
+                  <a class="carousel-control-next" href="#skinCarousel" role="button" data-slide="next">
+                      <img src="images/arrow-slide-next.png" alt="">
+                  </a>
+              </div>
+      </div>
+      <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+  </div>
+  
+</div>
+<!--*************** END tab ********************* -->
+<!--########## END ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย ########-->
+
+ <!--########## START ผลิตภัณฑ์เครื่องมือแพทย์ ########-->
+    <div class="title-page6 pt-3 mt-4 mb-4"><img src="images/icon-doctor.png" alt="" class="icon-thumbs-up"> ผลิตภัณฑ์เครื่องมือแพทย์</div>
+    <div class="row mx-auto my-auto products">
+            <div id="medCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">อาหารเสริมทางการแพทย์ Mega IMMUPLEX </p>
+                           <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_01.png">
+                            <div class="link">
+                                <ul>
+                                    <li>
+                                        <div class="simpleCart_shelfItem buy">
+                                            <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                <div class="carousel-control-next-icon i-buy"></div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                </ul>
+                            </div>
+                            <p class="price">3,305.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                         <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">โปรตีนไข่ขาวบริสุทธิ์ Albu 60 เม็ด  </p>
+                            <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_02.png">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">379.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">B-GIN 30 S' ผลิตภัณฑ์เพื่อสมอง ผู้ป่วยไมเกรน</p>
+                            <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_03.png">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">395.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="ccol-12 col-sm-6 col-md-3 d-inline-block box-products">
+                            <p class="name-product">ปรอทวัดไข้ อัตโนมัติ แม่นยำ ใช้ง่าย</p>
+                            <img class="img-fluid" src="images/products/medical_instruments/medical_instruments_04.png">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">775.-</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                            <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
+                              <p class="name-product">name nmame</p>
+                            <img class="img-fluid" src="images/210x210.jpg">
+                            <div class="link">
+                                    <ul>
+                                        <li>
+                                            <div class="simpleCart_shelfItem buy">
+                                                <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy 
+                                                    <div class="carousel-control-next-icon i-buy"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt=""> Detail</a></li>
+                                    </ul>
+                                </div>
+                            <p class="price">000.-</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#medCarousel" role="button" data-slide="prev">
+                    <img src="images/arrow-slide-back.png" alt="">
+                </a>
+                <a class="carousel-control-next" href="#medCarousel" role="button" data-slide="next">
+                    <img src="images/arrow-slide-next.png" alt="">
+                </a>
+            </div>
+            <div class="col-12 viewall"><a href="#">ดูทั้งหมด</a></div>
+        </div>
+        <!--########## END ผลิตภัณฑ์เครื่องมือแพทย์ ########-->
+
+</div>  
+
+</div>
+<!--########################## END CONTENT ##########################-->
+<!--########################## START ICON CONTACT ##########################-->
+<div class="row m-0">
+    <div class="container mt-5 icon-contact">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-iphone.png" alt=""><br><span class="call">Call us</span><br><span class="number">02-014-1600</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-location.png" alt=""><br><span class="call">Location</span><br><span class="location">16th floor., SJ Infinite I 349, Chom Phon, Chatuchak Bangkok 10900</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-mail.png" alt="" style="margin-top:10px;"><br><span class="call">Mail</span><br><br><a href="#"><span class="mail">sales@chc.com</span></a>
+            </div>
+        </div>
+    </div>
+  </div>          
+  <!--########################## END ICON CONTACT  ##########################-->
+  <footer class="mt-5">
+    <div class="row m-0 bg-footer">
+        <div class="container text-footer">
+            <div class="row">
+            <div class="col-12 col-sm-4 col-md-4">2019 www.chc.com  All rights reserved</div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"><a href="#">Terms & Conditions</a><a href="#">Privacy</a> </div>
+            <div class="col-12 col-sm-4 col-md-4 text-right a-social">
+                <a href="#"><img src="images/icon-facebook.png" alt="" style="margin-top:-10px;"></a>
+                <a href="#"><img src="images/icon-twitter.png" alt="" class="ml-5" style="margin-top:-10px;"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+  </footer>
+<script src="js/simpleCart.min.js"> </script>
+<script>
+$('#recipeCarousel').carousel({
+    interval: 10000
+  })
+  
+  $('.carousel .carousel-item').each(function(){
+      var next = $(this).next();
+      if (!next.length) {
+      next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+      
+      if (next.next().length>0) {
+      next.next().children(':first-child').clone().appendTo($(this));
+      }
+      if (next.next().length>1) {
+      next.next().children(':first-child').clone().appendTo($(this));
+      }
+      else {
+        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+      }
+  });
+</script>
+</body>
+</html>

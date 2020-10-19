@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHC distributor</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/template.css" />
+    <!-- fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!--JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!--########################### START HEADER ###########################-->
+<div class="row bg-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 mt-4 login">
+                <a href="#">Log in</a>   or  <a href="#">Register</a> 
+                <img src="images/icon-account.png" alt="" class="icon-account"> <a href="#"><span>My Account</span></a>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"> <img src="images/logo.png" alt="" class="logo img-fluid"> </div>
+            <div class="col-12 col-sm-4 col-md-4 mt-3">
+             <form class="search pull-right w-75">
+               <input class="form-control search-input" type="text" placeholder="Search Products..." aria-label="Search">
+               <button type="button"><i class="fa fa-search"></i></button>
+             </form>
+           </div>
+        </div>
+<!--########################### START CART ###########################-->
+        <div class="cart box_1">
+                <a href="checkout.html">
+                <h3> 
+                <div class="total">
+                    <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
+                    <span class="simpleCart_total">$0.00</span> <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">0</span></div>
+                </div>
+                    <img src="images/icon-cart1.png" alt="">
+                </h3>
+                </a>
+                <div class="clearfix"> </div>
+        </div>
+<!--########################### END CART ###########################-->
+        <div class="row mt-5">
+            <div class="menu">
+                <nav class="navbar navbar-expand-lg navbar-light bg-faded nopadding">
+                    <!-- links toggle -->
+                    <button class="navbar-toggler tog" type="button" data-toggle="collapse" data-target="#topmenu"
+                        aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line" style="margin-bottom: 0;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="topmenu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html"><img src="images/icon-home.png" alt=""></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.html">บริการของเรา</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="menu-product" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false"
+                                    onclick="window.location.href='products.html';">
+                                    สินค้า
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="menu-product">
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้ชาย</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมผู้หญิง</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมของเด็ก</a></li>
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมอื่นๆ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์สมุนไพร</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
+                                            <li><a class="dropdown-item" href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu" >
+                                        <a class="dropdown-item dropdown-toggle" href="#">ผลิตภัณฑ์เครื่องมือแพทย์</a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-ordinance">
+                                            <li><a class="dropdown-item" href="#">อาหารเสริมทางการแพทย์</a></li>
+                                            <li><a class="dropdown-item" href="#">อุปกรณ์การแพทย์</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="promotion.html">โปรโมชั่น</a></li>
+                            <li class="nav-item"><a class="nav-link" href="news.html">ข่าวสาร</a></li>
+                            <li class="nav-item"><a class="nav-link" href="knowledge.html">ความรู้น่ารู้</a></li>
+                            <li class="nav-item"><a class="nav-link" href="how2pay.html">วิธีสั่งซื้อและชำระเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="confirm.html">แจ้งการโอนเงิน</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!--########################### END HEADER ###########################-->
+<!--########################### START SLIDE ###########################-->
+<div class="row m-0">
+   <div class="container mt-4">
+        <div id="slide" class="carousel slide" data-ride="carousel" data-interval="false">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#slide" data-slide-to="0" class="active"></li>
+                <li data-target="#slide" data-slide-to="1"></li>
+                <li data-target="#slide" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner" style="position: relative;">
+                <div class="carousel-item active">
+                    <img src="images/slide001.jpg" class="img-fluid" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slide002.jpg" class="img-fluid" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slide001.jpg" class="img-fluid" alt="...">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#slide" data-slide="prev">
+               <img src="images/arrow-products-slide-back.png" alt="">
+            </a>
+            <a class="carousel-control-next" href="#slide" data-slide="next">
+               <img src="images/arrow-products-slide-next.png" alt="">
+            </a>
+
+        </div>
+    </div>
+</div>
+<!--########################### END SLIDE ###########################-->
+<!--########################## START BANNER PRODUCT ##########################-->
+<div class="row m-0">
+    <div class="container mt-5 banner-product">
+       <div class="title-banner"><img src="images/icon-thumbs-up.png" alt="" class="icon-thumbs-up"> OUR PRODUCTS</div>
+        <a href="#"><img src="images/banner-product01.jpg" alt="" class="img-fluid mb-5"></a>
+        <a href="#"><img src="images/banner-product02.jpg" alt="" class="img-fluid mb-5"></a>
+        <a href="#"><img src="images/banner-product03.jpg" alt="" class="img-fluid mb-5"></a>
+        <a href="#"><img src="images/banner-product04.jpg" alt="" class="img-fluid mb-5"></a>
+    </div>
+</div>
+<!--########################### END BANNER PRODUCT ###########################-->
+<!--########################## START BANNER PROMOTION ##########################-->
+<div class="row m-0">
+    <div class="container mt-4">
+        <div class="title-promotion"><span class="bg-title-promotion"><img src="images/icon-black-star.png" alt="" class="icon-black-star"> PROMOTION</span></div>
+        <hr class="line1">
+        <div class="row mt-5 banner-promotion">
+            <div class="col-12 col-sm-4 col-md-4">
+                <a href="#"><img src="images/banner-ad01.jpg" alt="" class="w-100 img-fluid mb-5"></a>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4">
+                <a href="#"><img src="images/banner-ad02.jpg" alt="" class="w-100 img-fluid mb-5"></a>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4">
+                <a href="#"><img src="images/banner-ad03.jpg" alt="" class="w-100 img-fluid mb-5"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--########################## END BANNER PROMOTION ##########################-->
+<!--########################## START ICON CONTACT ##########################-->
+<div class="row m-0">
+    <div class="container mt-5 icon-contact">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-iphone.png" alt=""><br><span class="call">Call us</span><br><span class="number">02-014-1600</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-location.png" alt=""><br><span class="call">Location</span><br><span class="location">16th floor., SJ Infinite I 349, Chom Phon, Chatuchak Bangkok 10900</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 text-center">
+                <img src="images/icon-mail.png" alt="" style="margin-top:10px;"><br><span class="call">Mail</span><br><br><a href="#"><span class="mail">sales@chc.com</span></a>
+            </div>
+        </div>
+    </div>
+</div>          
+<!--########################## END ICON CONTACT  ##########################-->
+<footer class="mt-5">
+    <div class="row m-0 bg-footer">
+        <div class="container text-footer">
+            <div class="row">
+            <div class="col-12 col-sm-4 col-md-4">2019 www.chc.com  All rights reserved</div>
+            <div class="col-12 col-sm-4 col-md-4 text-center"><a href="#">Terms & Conditions</a><a href="#">Privacy</a> </div>
+            <div class="col-12 col-sm-4 col-md-4 text-right a-social">
+                <a href="#"><img src="images/icon-facebook.png" alt="" style="margin-top:-10px;"></a>
+                <a href="#"><img src="images/icon-twitter.png" alt="" class="ml-5" style="margin-top:-10px;"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

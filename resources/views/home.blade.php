@@ -1,41 +1,60 @@
 @extends('layouts.front')
 
-@section('content')
-
-<!--########################### START SLIDE ###########################-->
-<div class="row m-0">
-    <div class="container mt-4">
-        <div id="slide" class="carousel slide" data-ride="carousel" data-interval="false">
-
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                @foreach($hilights as $key => $hilight)
-                <li data-target="#slide" data-slide-to="{{ $key }}" class="@if($key == 0) active @endif"></li>
-                @endforeach
-            </ul>
-
-            <!-- The slideshow -->
-            <div class="carousel-inner" style="position: relative;">
-                @foreach($hilights as $key => $hilight)
-                <div class="carousel-item @if($key == 0) active @endif">
-                    <img src="{{ url('uploads/hilight/'.$hilight->image) }}" class="img-fluid"
-                        alt="{{ $hilight->title }}">
-                </div>
-                @endforeach
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#slide" data-slide="prev">
-                <img src="{{ url('chc/images/arrow-products-slide-back.png') }}" alt="">
-            </a>
-            <a class="carousel-control-next" href="#slide" data-slide="next">
-                <img src="{{ url('chc/images/arrow-products-slide-next.png') }}" alt="">
-            </a>
-
+@push('slogan')
+<div class="container">
+    <div class="row pt-3 pb-3">
+        <div class="col-md-5 slogan p-0">จำหน่าย วิตามิน เวชสำอาง อุปกรณ์การแพทย์</div>
+        <div class="col-md-7 row justify-content-end">
+            <div class="col-md-5 p-0-slogan"><div class="slogan-2 text-center"><img src="images/icon-truck.png" alt=""> ส่งจริง ส่งไว ได้ของชัวร์</div></div>
+            <div class="col-md-4"><div class="slogan-3 text-center"><img src="images/icon-call.png" alt=""> 081-1234567</div></div>
+            <div class="col-md-2 p-0-slogan"><div class="slogan-3 w-slogan-3 text-center tracking"> ติดตาม สินค้า</div></div>
         </div>
     </div>
 </div>
+@endpush
+
+
+@section('content')
+<!--########################### START SLIDE ###########################-->
+<div id="slide" class="carousel slide" data-ride="carousel" data-interval="false">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        @foreach($hilights as $key => $hilight)
+        <li data-target="#slide" data-slide-to="{{ $key }}" class="@if($key == 0) active @endif"></li>
+        @endforeach
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner" style="position: relative;">
+        @foreach($hilights as $key => $hilight)
+        <div class="carousel-item @if($key == 0) active @endif">
+            <img src="{{ url('uploads/hilight/'.$hilight->image) }}" class="img-fluid"
+                alt="{{ $hilight->title }}">
+        </div>
+        @endforeach
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#slide" data-slide="prev">
+        <img src="{{ url('chc/images/arrow-products-slide-back.png') }}" alt="">
+    </a>
+    <a class="carousel-control-next" href="#slide" data-slide="next">
+        <img src="{{ url('chc/images/arrow-products-slide-next.png') }}" alt="">
+    </a>
+
+</div>
 <!--########################### END SLIDE ###########################-->
+</div>
+    <div class="col-sm-12 col-md-3 col-lg-fix2">
+    <a href="#" ><img src="images/banner-facebook.jpg" alt="" class="w-100 pb-3 banner1"></a>
+    <a href="#" ><img src="images/banner-line.jpg" alt="" class="w-100 pb-3 banner2"></a>
+    <iframe src="https://www.youtube.com/embed/wL5Jhpy7gCE" class="banner3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!--########################### END SLIDE ###########################-->
+@endsection
+
+
+@push('homepage')
 <!--########################## START WELCOME ##########################-->
 <div class="row m-0">
     <div class="container mt-5">
@@ -61,7 +80,7 @@
 <!--########################## START สินค้ามาใหม่ ##########################-->
 <div class="row m-0">
     <div class="container mt-5">
-        <div class="title4-welcome-home">สินค้ามาใหม่</div>
+        <div class="header-gradient-2 mb-4">สินค<sup class="superscript">้</sup>ามาใหม<sup class="superscript">่</sup></div>
         <div class="row mx-auto my-auto products">
 
         @foreach($newitems as $product_item)
@@ -90,7 +109,7 @@
 <!--########################## START สินค้าขายดี ##########################-->
 <div class="row m-0">
     <div class="container mt-5">
-        <div class="title4-welcome-home">สินค้าขายดี</div>
+        <div class="header-gradient-2 mb-4">สินค<sup class="superscript">้</sup>าขายดี</div>
         <div class="row mx-auto my-auto products">
 
             @foreach($bestitems as $product_item)
@@ -126,10 +145,9 @@
 </div> --}}
 <!--########################### END BANNER PRODUCT ###########################-->
 <!--########################## START BANNER PROMOTION ##########################-->
-<div class="row mt-5">
+<div class="row mt-5 m-0">
     <div class="container mt-4">
-        <div class="title-promotion"><span class="bg-title-promotion"><img src="{{ url('chc/images/icon-black-star.png') }}" alt="" class="icon-black-star"> PROMOTION</span></div>
-        <hr class="line1">
+        <div class="header-gradient-2"><div style="height: 1.02em;">PROMOTION</div></div>
         <div class="row mt-5 banner-promotion">
             @foreach ($promotions as $promotion)
                 <div class="col-12 col-sm-4 col-md-4">
@@ -140,5 +158,4 @@
     </div>
 </div>
 <!--########################## END BANNER PROMOTION ##########################-->
-
-@endsection
+@endpush
