@@ -211,12 +211,12 @@ return [
             'icon'   => 'fab fa-wpforms',
             'active' => ['admin/page/1*'],
         ],
-        [
-            'text'   => 'บริการของเรา',
-            'url'    => 'admin/service',
-            'icon'   => 'fab fa-wpforms',
-            'active' => ['admin/service*'],
-        ],
+        // [
+        //     'text'   => 'บริการของเรา',
+        //     'url'    => 'admin/service',
+        //     'icon'   => 'fab fa-wpforms',
+        //     'active' => ['admin/service*'],
+        // ],
         [
             'text'   => 'วิธีสั่งซื้อ',
             'url'    => 'admin/page/3/edit',
@@ -229,17 +229,23 @@ return [
             'icon'   => 'fab fa-wpforms',
             'active' => ['admin/page/4*'],
         ],
+        // [
+        //     'text'   => 'ข่าวสาร',
+        //     'url'    => 'admin/info',
+        //     'icon'   => 'fab fa-wpforms',
+        //     'active' => ['admin/info*'],
+        // ],
         [
-            'text'   => 'ข่าวสาร',
-            'url'    => 'admin/info',
+            'text'   => 'หมวดหมู่ข้อมูลสุขภาพ',
+            'url'    => 'admin/knowledge-category',
             'icon'   => 'fab fa-wpforms',
-            'active' => ['admin/info*'],
+            'active' => ['admin/knowledge-category/*'],
         ],
         [
-            'text'   => 'ความรู้น่ารู้',
+            'text'   => 'ข้อมูลสุขภาพ',
             'url'    => 'admin/knowledge',
             'icon'   => 'fab fa-wpforms',
-            'active' => ['admin/knowledge*'],
+            'active' => ['admin/knowledge/*'],
         ],
         [
             'text'   => 'ติดต่อเรา',

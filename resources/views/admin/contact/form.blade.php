@@ -27,6 +27,10 @@
         <input type="text" class="form-control @error('twitter') is-invalid @enderror" id="twitter" name="twitter" placeholder="twitter" value="{{ isset($rs->twitter) ? $rs->twitter : old('twitter') }}">
     </div>
     <div class="form-group">
+        <label for="tel">line</label>
+        <input type="text" class="form-control @error('line') is-invalid @enderror" id="line" name="line" placeholder="line" value="{{ isset($rs->line) ? $rs->line : old('line') }}">
+    </div>
+    <div class="form-group">
         <label for="address">โค้ดแผนที่</label>
          <textarea class="form-control" name="map" rows="5">{!! isset($rs->map) ? $rs->map : old('map') !!}</textarea>
     </div>

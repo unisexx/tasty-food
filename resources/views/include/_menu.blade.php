@@ -1,8 +1,3 @@
-
-@php
-$product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy('_lft')->get()->toTree();
-@endphp
-
 <!--########################### START MENU ###########################-->
 <nav class="navbar-expand-md bg-faded p-0">
     <!-- links toggle -->
@@ -18,43 +13,21 @@ $product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy(
             <li class="nav-item shop"><a class="nav-link" href="{{ url('') }}">ร้าน CHULALAK</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('about') }}">เกี่ยวกับเรา</a></li>
             <li>
-                <a href="products.html">สินค้า<i class="fa fa-angle-right"
-                        style="margin-left:5px; font-size:20px; float:right;"></i></a>
+                <a href="{{ url('product') }}">สินค้า<i class="fa fa-angle-right" style="margin-left:5px; font-size:20px; float:right;"></i></a>
                 <ul>
+                    @foreach ($product_category_menu as $parent_cat)
                     <li>
-                        <a href="#">ผลิตภัณฑ์อาหารเสริมเพื่อสุขภาพ <i class="fa fa-angle-right"
-                                style="margin-left:1px; font-size:20px"></i></a>
-                        <ul>
-                            <li><a href="#">อาหารเสริมผู้ชาย</a></li>
-                            <li><a href="#">อาหารเสริมผู้หญิง</a></li>
-                            <li><a href="#">อาหารเสริมของเด็ก</a></li>
-                            <li><a href="#">อาหารเสริมอื่นๆ</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">ผลิตภัณฑ์สมุนไพร <i class="fa fa-angle-right"
+                        <a href="{{ url('product-category/'.$parent_cat->id) }}">{{ $parent_cat->name }} <i class="fa fa-angle-right"
                                 style="margin-left:5px; font-size:20px"></i></a>
+                        @if(count($parent_cat->children))
                         <ul>
-                            <li><a href="#">ผลิตภัณฑ์สมุนไพรแบบรับประทาน</a></li>
-                            <li><a href="#">ผลิตภัณฑ์สมุนไพรใช้ภายนอก</a></li>
+                            @foreach($parent_cat->children as $cat)
+                            <li><a href="{{ url('product-category/'.$cat->id) }}">{{ $cat->name }}</a></li>
+                            @endforeach
                         </ul>
+                        @endif
                     </li>
-                    <li>
-                        <a href="#">ผลิตภัณฑ์ดูแลผิวหน้า ผิวกาย <i class="fa fa-angle-right"
-                                style="margin-left:5px; font-size:20px"></i></a>
-                        <ul>
-                            <li><a href="#">ผลิตภัณฑ์ดูแลผิวหน้า</a></li>
-                            <li><a href="#">ผลิตภัณฑ์ดูแลผิวกาย</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">ผลิตภัณฑ์เครื่องมือแพทย์ <i class="fa fa-angle-right"
-                                style="margin-left:5px; font-size:20px"></i></a>
-                        <ul>
-                            <li><a href="#">อาหารเสริมทางการแพทย์</a></li>
-                            <li><a href="#">อุปกรณ์การแพทย์</a></li>
-                        </ul>
-                    </li>
+                    @endforeach
                 </ul>
             </li>
             <li><a href="{{ url('promotion') }}">โปรโมชั่น</a></li>
@@ -62,12 +35,11 @@ $product_category_menu = App\Models\ProductCategory::where('status',1)->orderBy(
                 <a href="{{ url('knowledge') }}">ข้อมูลสุขภาพ<i class="fa fa-angle-right"
                         style="margin-left:5px; font-size:20px; float:right;"></i></a>
                 <ul>
-                    <li>
-                        <a href="#">วิตามิน</a>
-                    </li>
-                    <li>
-                        <a href="#">สมุนไพร</a>
-                    </li>
+                    @foreach ($knowledge_category_menu as $item)
+                        <li>
+                            <a href="{{ url('knowledge-category/'.$item->id) }}">{{ $item->title }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </li>
             <li><a href="{{ url('how-to-buy') }}">วิธีสั่งซื้อและชำระเงิน</a></li>

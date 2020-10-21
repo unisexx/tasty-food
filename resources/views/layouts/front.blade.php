@@ -20,12 +20,7 @@
                     <div class="col-sm-3 col-md-3 col-lg-fix p-0">
                         @include('include._menu')
                     </div>
-                    <div class="col-xs-12 col-sm-12 
-                    @if(Request::segment(1) == 'home' || is_null(Request::segment(1)))col-md-7 
-                    @else
-                    col-md-9
-                    @endif 
-                    p-0 col-lg-fix3">
+                    <div class="col-xs-12 col-sm-12 @if(Request::segment(1) == 'home' || is_null(Request::segment(1)) || (Request::segment(1) == 'knowledge' && Request::segment(2) == 'view')) col-md-7 @else col-md-9 @endif col-lg-fix3">
                         @yield('content')
                     </div>
                 </div>

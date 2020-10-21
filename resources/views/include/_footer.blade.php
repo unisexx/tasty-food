@@ -1,6 +1,3 @@
-@php
-    $contact = App\Models\Contact::find(1);
-@endphp
 <!--########################## START ICON LOGO payment ##########################-->
 <div class="row m-0">
     <div class="container mt-5 icon-contact">

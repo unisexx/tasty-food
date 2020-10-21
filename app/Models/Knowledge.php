@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Knowledge extends Model
 {
     use SoftDeletes;
-    
+
     protected $table = 'knowledges';
 
     protected $primaryKey = 'id';
@@ -17,6 +17,12 @@ class Knowledge extends Model
         'title',
         'detail',
         'image',
-        'status'
+        'status',
+        'knowledge_category_id',
     );
+
+    public function knowledgeCategory()
+    {
+        return $this->belongsTo('App\Models\KnowledgeCategory', 'knowledge_category_id', 'id');
+    }
 }

@@ -90,6 +90,7 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
     Route::resource('banner', 'BannerController');
     Route::resource('service', 'ServiceController');
     Route::resource('info', 'InfoController');
+    Route::resource('knowledge-category', 'KnowledgeCategoryController');
     Route::resource('knowledge', 'KnowledgeController');
     Route::resource('contact', 'ContactController');
     Route::resource('vdo', 'VdoController');

@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
+use App\Scopes\VipScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
-use App\Scopes\VipScope;
 
 class ProductItem extends Model
 {
@@ -30,6 +29,11 @@ class ProductItem extends Model
         'is_bestseller',
         'is_vip_view_only',
     );
+
+    public function productItemPrice()
+    {
+        return $this->hasMany('App\Models\ProductItemPrice', 'product_item_id', 'id');
+    }
 
     public function productImage()
     {

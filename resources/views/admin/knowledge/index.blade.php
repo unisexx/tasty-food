@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'ความรู้น่ารู้')
+@section('title', 'ข้อมูลสุขภาพ')
 
 @section('content_header')
-<h1>ความรู้น่ารู้</h1>
+<h1>ข้อมูลสุขภาพ</h1>
 @stop
 
 @section('content')
@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <th class="no-sort">เผยแพร่</th>
+                    <th class="no-sort">หมวดหมู่</th>
                     <th class="no-sort">รูป</th>
                     <th>หัวข้อ</th>
                     <th>วันที่สร้าง</th>
@@ -32,6 +33,7 @@
                     <td>
                         <input class="switch_status" data-id="<?php echo $row->id?>" data-tb="knowledges" type="checkbox" @if(@$row->status == 1) checked @endif data-bootstrap-switch>
                     </td>
+                    <td>{{ @$row->knowledgeCategory->title }}</td>
                     <td><img src="{{ url('uploads/knowledge/'.$row->image) }}" width="100"></td>
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->created_at }}</td>
@@ -54,6 +56,7 @@
             <tfoot>
                 <tr>
                     <th>เผยแพร่</th>
+                    <th>หมวดหมู่</th>
                     <th>รูป</th>
                     <th>หัวข้อ</th>
                     <th>วันที่สร้าง</th>

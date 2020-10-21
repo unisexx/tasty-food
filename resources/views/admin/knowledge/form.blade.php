@@ -1,5 +1,16 @@
+@php
+    $knowledge_categories = App\Models\KnowledgeCategory::where('status', 1)->get();
+@endphp
 
 <div class="card-body">
+    <div class="form-group">
+        <label for="knowledge-category">หมวดหมู่ข้อมูลสุขภาพ</label>
+        <select name="knowledge_category_id" id="knowledge-category" class="form-control">
+            @foreach ($knowledge_categories as $item)
+                <option value="{{ $item->id }}" {{ $item->id == @$rs->knowledge_category_id ? 'selected' : '' }}>{{ $item->title }}</option>
+            @endforeach
+        </select>
+    </div>
     <div class="form-group">
         <label for="image">รูปประกอบข่าว</label>
         @if(isset($rs->image))

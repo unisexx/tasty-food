@@ -82,27 +82,10 @@
     <div class="container mt-5">
         <div class="header-gradient-2 mb-4">สินค<sup class="superscript">้</sup>ามาใหม<sup class="superscript">่</sup></div>
         <div class="row mx-auto my-auto products">
-
-        @foreach($newitems as $product_item)
-            <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
-                <p class="name-product">{{ $product_item->name }}</p>
-            <img class="img-fluid" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">
-                <div class="link">
-                    <ul>
-                        <li>
-                            <div class="buy add1 item_add" data-id="{{ $product_item->id }}" data-qty="1">
-                                <img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> <span class="text-white">Buy</span> <div class="carousel-control-next-icon i-buy"></div></a>
-                            </div>
-                        </li>
-                        <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
-                    </ul>
-                </div>
-                <p class="price">{{ show_price($product_item) }}.-</p>
-            </div>
-        @endforeach
-        
-    </div>
-
+            @foreach($newitems as $product_item)
+                @include('include.__box_product', $product_item);
+            @endforeach
+        </div>
     </div>
 </div>
 <!--########################### END สินค้ามาใหม่ ###########################-->
@@ -111,25 +94,9 @@
     <div class="container mt-5">
         <div class="header-gradient-2 mb-4">สินค<sup class="superscript">้</sup>าขายดี</div>
         <div class="row mx-auto my-auto products">
-
             @foreach($bestitems as $product_item)
-                <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
-                    <p class="name-product">{{ $product_item->name }}</p>
-                <img class="img-fluid" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">
-                    <div class="link">
-                        <ul>
-                            <li>
-                                <div class="buy add1 item_add" data-id="{{ $product_item->id }}" data-qty="1">
-                                    <img src="{{ url('chc/images/icon-cart.png') }}" alt="" class="icon-buy"> <span class="text-white">Buy</span> <div class="carousel-control-next-icon i-buy"></div></a>
-                                </div>
-                            </li>
-                            <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
-                        </ul>
-                    </div>
-                    <p class="price">{{ show_price($product_item) }}.-</p>
-                </div>
+                @include('include.__box_product', $product_item);
             @endforeach
-
         </div>
     </div>
 </div>

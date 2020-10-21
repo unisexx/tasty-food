@@ -41,14 +41,14 @@
         <label for="weight">น้ำหนักสินค้า (กรัม)</label>
         <input type="text" class="form-control @error('weight') is-invalid @enderror" id="weight" name="weight" placeholder="น้ำหนักสินค้า" value="{{ isset($rs->weight) ? $rs->weight : old('weight') }}"  style="width:150px;">
     </div>
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="price">ราคา</label>
         <input type="text" class="form-control numDecimal @error('price') is-invalid @enderror" id="price" name="price" placeholder="ราคา" value="{{ isset($rs->price) ? $rs->price : old('price') }}"  style="width:150px;">
     </div>
     <div class="form-group">
         <label for="vprice">ราคาสำหรับลูกค้า <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></label>
         <input type="text" class="form-control numDecimal @error('vip_price') is-invalid @enderror" id="vprice" name="vip_price" placeholder="ราคา" value="{{ isset($rs->vip_price) ? $rs->vip_price : old('vip_price') }}"  style="width:150px;">
-    </div>
+    </div> --}}
     {{-- <div class="form-group">
         <label for="title">จำนวนที่มีในสต็อก</label>
         <input type="number" step="1" class="form-control @error('stock') is-invalid @enderror" id="stock" name="stock" placeholder="จำนวนที่มีในสต็อก" value="{{ isset($rs->stock) ? $rs->stock : old('stock') }}"  style="width:150px;">
@@ -109,6 +109,40 @@
             </table>
         </div>
     @endif
+
+
+    <hr>
+    <div class="form-group">
+        <label for="status">ยิ่งซื้อยิ่งลด</label>
+        <span style="float:right; margin-bottom:10px;">
+            <button type="button" class="btn btn-block btn-primary addPrice">+ เพิ่มรายการ</button>
+        </span>
+        <table id="tbPrice" class="table table-hover table-bordered" id="sortable-list">
+            <thead class="thead-light">
+                <tr>
+                    <th>ชื่อชุด</th>
+                    <th>ราคา</th>
+                    <th>ราคา <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></th>
+                    <th>จัดการ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(@$rs->productItemPrice)
+                    @foreach(@$rs->productItemPrice as $item)
+                        <tr>
+                            <td><input class='form-control' type='text' name='title[]' value="{{ $item->title }}"></td>
+                            <td><input class='form-control numDecimal' type='text' name='price[]' value="{{ $item->price }}"></td>
+                            <td><input class='form-control numDecimal' type='text' name='price_vip[]' value="{{ $item->price_vip }}"></td>
+                            <td>
+                                <input type='hidden' name='product_item_price_id[]' value="{{ $item->id }}">
+                                <button class='btn btn-sm btn-danger delPrice' value='ลบ'>ลบ</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
+            </tbody>
+        </table>
+    </div>
 </div>
 <!-- /.card-body -->
 
@@ -207,6 +241,28 @@ $(function () {
         });
     });
 
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $('.addPrice').click(function(){
+        var html = "";
+        html += "<tr>";
+        html += "<td><input class='form-control' type='text' name='title[]'></td>";
+        html += "<td><input class='form-control numDecimal' type='text' name='price[]'></td>";
+        html += "<td><input class='form-control numDecimal' type='text' name='price_vip[]'></td>";
+        html += "<td>";
+            html += "<input type='hidden' name='product_item_price_id[]'>";
+            html += "<button class='btn btn-sm btn-danger delPrice' value='ลบ'>ลบ</button>";
+        html += "</td>";
+        html += "</tr>";
+        $('#tbPrice tbody').append(html);
+    });
+
+    $('body').on('click', '.delPrice', function(){
+        $(this).closest('tr').remove();
+    });
 });
 </script>
 @stop

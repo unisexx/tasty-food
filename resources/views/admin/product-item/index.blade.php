@@ -24,9 +24,7 @@
                     <th>หมวดหมู่</th>
                     <th>แบรนด์</th>
                     <th>ชื่อสินค้า</th>
-                    <th>น้ำหนัก (กรัม)</th>
                     <th>ราคา</th>
-                    <th>ราคา <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></th>
                     <th class="no-sort">จัดการ</th>
                 </tr>
             </thead>
@@ -40,9 +38,7 @@
                     <td>{{ $row->productCategory->name ?? '-' }}</td>
                     <td>{{ $row->brand }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>{{ number_format($row->weight) }}</td>
                     <td>{{ number_format($row->price, 2) }}</td>
-                    <td>{{ number_format($row->vip_price, 2) }}</td>
                     <td>
                         <a href="{{ url('admin/product-item/' . $row->id . '/edit') }}" title="แก้ไขรายการนี้">
                             <button id="btnFA" class="btn btn-sm btn-warning">แก้ไข</button>
@@ -66,9 +62,7 @@
                     <th>แบรนด์</th>
                     <th>ชื่อสินค้า</th>
                     <th>จำนวนที่มี</th>
-                    <th>น้ำหนัก (กรัม)</th>
                     <th>ราคา</th>
-                    <th>ราคา <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></th>
                     <th>จัดการ</th>
                 </tr>
             </tfoot>

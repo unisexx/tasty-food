@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'ความรู้น่ารู้ (เพิ่ม/แก้ไข)')
+@section('title', 'ข้อมูลสุขภาพ (เพิ่ม/แก้ไข)')
 
 @section('content_header')
-<h1>ความรู้น่ารู้ (เพิ่ม/แก้ไข)</h1>
+<h1>ข้อมูลสุขภาพ (เพิ่ม/แก้ไข)</h1>
 @stop
 
 
