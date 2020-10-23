@@ -19,6 +19,7 @@ class Knowledge extends Model
         'image',
         'status',
         'knowledge_category_id',
+        'tags',
     );
 
     public function knowledgeCategory()

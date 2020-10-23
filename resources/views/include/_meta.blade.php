@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}" />
 <link rel="stylesheet" href="{{ url('css/template.css') }}" />
 <link rel="stylesheet" href="{{ url('css/flexslider.css') }}" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
 <!-- fonts google-->
 <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">

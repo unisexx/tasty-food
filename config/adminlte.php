@@ -14,7 +14,7 @@ return [
     |
      */
 
-    'title'         => 'CHC distributor',
+    'title'         => 'Chulalak',
     'title_prefix'  => '',
     'title_postfix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
      */
 
-    'logo'              => '<b>CHC</b> distributor',
+    'logo'              => '<b>C</b>hulalak',
     'logo_img'          => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class'    => 'brand-image-xl',
     'logo_img_xl'       => null,
@@ -637,6 +637,22 @@ return [
                     'type'     => 'js',
                     'asset'    => true,
                     'location' => 'js/bootstrap-datepicker-thai/js/locales/bootstrap-datepicker.th.js',
+                ],
+            ],
+        ],
+        [
+            'name'   => 'TagInput',
+            'active' => true,
+            'files'  => [
+                [
+                    'type'     => 'css',
+                    'asset'    => true,
+                    'location' => 'js/bootstrap4-tagsinput/tagsinput.css',
+                ],
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => 'js/bootstrap4-tagsinput/tagsinput.js',
                 ],
             ],
         ],

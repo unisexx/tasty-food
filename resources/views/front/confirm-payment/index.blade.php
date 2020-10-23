@@ -154,7 +154,7 @@ $(".custom-file-input").on("change", function() {
 });
 </script>
 
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
 <script type="text/javascript">
     function custom_template(obj){
             var data = $(obj.element).data();
@@ -173,5 +173,5 @@ $(".custom-file-input").on("change", function() {
     $('.select2-container--default .select2-selection--single').css({'height': '35px'});
     $('#id_select3_example').select2(options);
     $('.select2-container--default .select2-selection--single').css({'height': '35px'});
-</script> --}}
+</script>
 @endpush

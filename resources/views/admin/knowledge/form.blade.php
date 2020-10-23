@@ -32,6 +32,12 @@
         <textarea class="form-control tinyMCE" name="detail">{!! isset($rs->detail) ? $rs->detail : old('detail') !!}</textarea>
     </div>
     <div class="form-group">
+        <label for="status">แท็กที่เกี่ยวข้อง</label>
+        <div>
+            <input type="text" class="form-control @error('tags') is-invalid @enderror" id="tags" name="tags" value="{{ isset($rs->tags) ? $rs->tags : old('tags') }}" data-role="tagsinput">
+        </div>
+    </div>
+    <div class="form-group">
         <label for="status">เผยแพร่</label>
         <div>
             <input type="hidden" name="status" value="0" checked>

@@ -20,8 +20,6 @@ class ProductItem extends Model
         'description',
         'stock',
         'status',
-        'price',
-        'vip_price',
         'product_category_id',
         'weight',
         'view_count',
@@ -33,6 +31,11 @@ class ProductItem extends Model
     public function productItemPrice()
     {
         return $this->hasMany('App\Models\ProductItemPrice', 'product_item_id', 'id');
+    }
+
+    public function productItemPriceFirst()
+    {
+        return $this->hasOne('App\Models\ProductItemPrice')->orderBy('id', 'asc');
     }
 
     public function productImage()

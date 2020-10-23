@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    @stack('homepage')
+    @stack('fullwidth')
     @include('include._footer')
     @stack('js')
     {!! sweetAlert29() !!}

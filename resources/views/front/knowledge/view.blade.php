@@ -63,16 +63,12 @@
 
 <hr class="line4">
 <div class="title2-about-detail pt-2">แท็กที่เกี่ยวข้อง</div>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">ยาปฎิชีวินะ</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">ยาแก้ปวด</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">สมุนไพรสกัด</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">สมุทจีน</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">ฟ้าทะลายโจร</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">วิตามิน</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">วิตามินเอ</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">สมุนไพร</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">น้ำลายพังพอน</a>
-<a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">บรรเทาอาการเจ็บคอ</a>
+@php
+    $tags = explode(",", $knowledge->tags);
+@endphp
+@foreach ($tags as $item)
+    <a href="#" class="btn btn-secondary btn-sm mb-2" role="button" aria-disabled="true">{{ $item }}</a>
+@endforeach
 <hr class="line4 ">
 
 <!--########## START สินค้าแนะนำ ########-->

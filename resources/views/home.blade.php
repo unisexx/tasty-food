@@ -54,7 +54,7 @@
 @endsection
 
 
-@push('homepage')
+@push('fullwidth')
 <!--########################## START WELCOME ##########################-->
 <div class="row m-0">
     <div class="container mt-5">
