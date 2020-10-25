@@ -26,4 +26,14 @@ class Knowledge extends Model
     {
         return $this->belongsTo('App\Models\KnowledgeCategory', 'knowledge_category_id', 'id');
     }
+
+    public function knowledgeBanner()
+    {
+        return $this->hasMany('App\Models\KnowledgeBanner');
+    }
+
+    public function knowledgeProductItem()
+    {
+        return $this->hasMany('App\Models\KnowledgeProductItem');
+    }
 }

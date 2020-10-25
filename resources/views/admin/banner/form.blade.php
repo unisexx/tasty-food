@@ -1,6 +1,14 @@
 
 <div class="card-body">
     <div class="form-group">
+        <label for="knowledge-category">ตำแหน่งของแบนเนอร์</label>
+        <select name="position" class="form-control">
+            <option value="1" {{ @$rs->position == 1 ? "selected" : "" }}>หน้าแรก</option>
+            <option value="2" {{ @$rs->position == 2 ? "selected" : "" }}>ข้อมูลสุขภาพ (ด้านขวา)</option>
+            <option value="3" {{ @$rs->position == 3 ? "selected" : "" }}>ข้อมูลสุขภาพ (ด้านล่าง)</option>
+        </select>
+    </div>
+    <div class="form-group">
         <label for="title">หัวข้อ</label>
         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="หัวข้อ" value="{{ isset($rs->title) ? $rs->title : old('title') }}">
     </div>
@@ -9,7 +17,7 @@
         <input type="text" class="form-control" id="url" name="url" placeholder="ลิ้งค์" value="{{ isset($rs->url) ? $rs->url : old('url') }}">
     </div>
     <div class="form-group">
-        <label for="image">รูปไฮไลท์ ขนาด (1110x150 px)</label>
+        <label for="image">รูปแบนเนอร์</label>
         @if(isset($rs->image))
             <div>
                 <img src="{{ url('uploads/banner/'.$rs->image) }}" width="200">

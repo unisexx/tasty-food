@@ -83,7 +83,7 @@
         <div class="header-gradient-2 mb-4">สินค<sup class="superscript">้</sup>ามาใหม<sup class="superscript">่</sup></div>
         <div class="row mx-auto my-auto products">
             @foreach($newitems as $product_item)
-                @include('include.__box_product', $product_item);
+                @include('include.__box_product', ['product_item' => $product_item])
             @endforeach
         </div>
     </div>
@@ -95,7 +95,7 @@
         <div class="header-gradient-2 mb-4">สินค<sup class="superscript">้</sup>าขายดี</div>
         <div class="row mx-auto my-auto products">
             @foreach($bestitems as $product_item)
-                @include('include.__box_product', $product_item);
+                @include('include.__box_product', ['product_item' => $product_item])
             @endforeach
         </div>
     </div>

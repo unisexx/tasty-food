@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
+// use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Banner extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
 
     protected $table = 'banners';
 
@@ -17,6 +18,18 @@ class Banner extends Model
         'title',
         'image',
         'url',
-        'status'
+        'status',
+        'position',
     );
+
+    public function getPositionTxt()
+    {
+        $data = array(
+            1 => 'หน้าแรก',
+            2 => 'ข้อมูลสุขภาพ (ด้านขวา)',
+            3 => 'ข้อมูลสุขภาพ (ด้านล่าง)',
+        );
+
+        return $data[$this->position];
+    }
 }

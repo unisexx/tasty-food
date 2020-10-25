@@ -47,3 +47,30 @@ if (!function_exists('shipping_cost')) {
         return $shipping_cost;
     }
 }
+
+if (!function_exists('iconArray')) {
+    function iconArray($product_category_id)
+    {
+        $iconArray = ['26' => 'icon-heart.png', '27' => 'icon-leaf.png', '21' => 'icon-face.png', '22' => 'icon-doctor.png'];
+
+        return $iconArray[$product_category_id];
+    }
+}
+
+if (!function_exists('titleArray')) {
+    function titleArray($product_category_id)
+    {
+        $titleArray = ['26' => 'title-page3', '27' => 'title-page4', '21' => 'title-page5', '22' => 'title-page6'];
+
+        return $titleArray[$product_category_id];
+    }
+}
+
+if (!function_exists('tabArray')) {
+    function tabArray($product_category_id)
+    {
+        $tabArray = ['26' => 'tab-product', '27' => 'tab-product2', '21' => 'tab-product3', '22' => 'tab-product4'];
+
+        return $tabArray[$product_category_id];
+    }
+}

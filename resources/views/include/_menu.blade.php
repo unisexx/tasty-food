@@ -37,7 +37,7 @@
                 <ul>
                     @foreach ($knowledge_category_menu as $item)
                         <li>
-                            <a href="{{ url('knowledge-category/'.$item->id) }}">{{ $item->title }}</a>
+                            <a href="{{ url('knowledge?category='.$item->id) }}">{{ $item->title }}</a>
                         </li>
                     @endforeach
                 </ul>

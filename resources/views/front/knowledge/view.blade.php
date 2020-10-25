@@ -75,78 +75,11 @@
 <div class="mb-4 header-gradient"> สินค้าแนะนำ</div>
 
 <div class="row mx-auto my-auto products">
-    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products_recommended">
-        <p class="name-product">ปรอทวัดไข้ อัตโนมัติ</p>
-        <img class="img-fluid height_recommended" src="images/products/medical_instruments/medical_instruments_04.png">
-        <div class="link">
-            <ul>
-                <li>
-                    <div class="simpleCart_shelfItem buy">
-                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy
-                            <div class="carousel-control-next-icon i-buy"></div>
-                        </a>
-                    </div>
-                </li>
-                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt="">
-                        Detail</a></li>
-            </ul>
-        </div>
-        <p class="price">775.-</p>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products_recommended">
-        <p class="name-product">name nmame</p>
-        <img class="img-fluid height_recommended" src="images/210x210.jpg">
-        <div class="link">
-            <ul>
-                <li>
-                    <div class="simpleCart_shelfItem buy">
-                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy
-                            <div class="carousel-control-next-icon i-buy"></div>
-                        </a>
-                    </div>
-                </li>
-                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt="">
-                        Detail</a></li>
-            </ul>
-        </div>
-        <p class="price">000.-</p>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products_recommended">
-        <p class="name-product">name nmame</p>
-        <img class="img-fluid height_recommended" src="images/210x210.jpg">
-        <div class="link">
-            <ul>
-                <li>
-                    <div class="simpleCart_shelfItem buy">
-                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy
-                            <div class="carousel-control-next-icon i-buy"></div>
-                        </a>
-                    </div>
-                </li>
-                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt="">
-                        Detail</a></li>
-            </ul>
-        </div>
-        <p class="price">000.-</p>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products_recommended">
-        <p class="name-product">name nmame</p>
-        <img class="img-fluid height_recommended" src="images/210x210.jpg">
-        <div class="link">
-            <ul>
-                <li>
-                    <div class="simpleCart_shelfItem buy">
-                        <a class="add1 item_add" href="#"><img src="images/icon-cart.png" alt="" class="icon-buy"> Buy
-                            <div class="carousel-control-next-icon i-buy"></div>
-                        </a>
-                    </div>
-                </li>
-                <li> <a class="go-detail" href="product_detail.html"><img src="images/icon-go-detail.png" alt="">
-                        Detail</a></li>
-            </ul>
-        </div>
-        <p class="price">000.-</p>
-    </div>
+    @if(@$knowledge->knowledgeProductItem)
+        @foreach(@$knowledge->knowledgeProductItem as $item)
+            @include('include.__box_product', ['product_item' => $item->productItem]);
+        @endforeach
+    @endif
 </div>
 <!--########## END สินค้าแนะนำ ########-->
 </div>
@@ -154,14 +87,15 @@
 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-fix2">
     <!--########## START banner right ########-->
     <div class="banner-knowleage mt-5">
-        <a href="#"><img src="{{ asset('images/banner_knowledge_004.jpg') }}" alt=""
-                class="pt-4 img-fluid rounded d-block mx-auto"></a>
-        <a href="#"><img src="{{ asset('images/banner_knowledge_005.jpg') }}" alt=""
-                class="pt-4 img-fluid rounded d-block mx-auto"></a>
-        <a href="#"><img src="{{ asset('images/banner_knowledge_006.jpg') }}" alt=""
-                class="pt-4 img-fluid rounded d-block mx-auto"></a>
-        <a href="#"><img src="{{ asset('images/banner_knowledge_007.jpg') }}" alt=""
-                class="pt-4 img-fluid rounded d-block mx-auto"></a>
+        @if(@$knowledge->knowledgeBanner)
+            @foreach(@$knowledge->knowledgeBanner as $item)
+                @if($item->banner->position == 2)
+                    <a href="{{ @$item->banner->url }}">
+                        <img src="{{ asset('uploads/banner/'.@$item->banner->image) }}" alt="{{ @$item->banner->title }}" class="pt-4 img-fluid rounded d-block mx-auto">
+                    </a>
+                @endif
+            @endforeach
+        @endif
     </div>
     <!--########## END banner right ########-->
 </div>
@@ -170,7 +104,15 @@
 <!--########## START LINK BANNER ########-->
 <div class="row w-100 mt-5">
     <div class="col-12">
-        <a href="#"><img src="http://placehold.it/1048x150" width="100%" class="rounded banner-km img-fluid"></a>
+        @if(@$knowledge->knowledgeBanner)
+            @foreach(@$knowledge->knowledgeBanner as $item)
+                @if($item->banner->position == 3)
+                    <a href="{{ @$item->banner->url }}">
+                        <img src="{{ asset('uploads/banner/'.@$item->banner->image) }}" alt="{{ @$item->banner->title }}" width="100%" class="rounded banner-km img-fluid">
+                    </a>
+                @endif
+            @endforeach
+        @endif
     </div>
 </div>
 <!--########## END LINK BANNER ########-->

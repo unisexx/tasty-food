@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Models\Banner;
 use App\Models\Hilight;
-use App\Models\ProductCategory;
 use App\Models\ProductItem;
 use App\Models\Promotion;
-use App\Models\Banner;
 use App\User;
 use Auth;
-use DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -34,7 +32,7 @@ class HomeController extends Controller
     public function index()
     {
         $hilights = Hilight::where('status', 1)->orderBy('id', 'desc')->get();
-        $banners = Banner::where('status', 1)->orderBy('id', 'desc')->get();
+        $banners = Banner::where('status', 1)->where('position', 1)->orderBy('id', 'desc')->get();
         // $product_categories = ProductCategory::whereNull('parent_id')->where('status', 1)->orderBy('_lft')->get();
 
         // สินค้าใหม่
@@ -94,6 +92,7 @@ class HomeController extends Controller
             // Authentication passed...
             return redirect()->intended('/');
         }
+
         return Redirect::to("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 
@@ -114,12 +113,14 @@ class HomeController extends Controller
         $user = User::create($requestData);
 
         auth()->login($user);
+
         return redirect()->to('/');
     }
 
     public function flogout()
     {
         Auth::logout();
+
         return redirect()->to('/');
     }
 

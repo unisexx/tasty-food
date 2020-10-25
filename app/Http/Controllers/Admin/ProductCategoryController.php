@@ -13,6 +13,7 @@ class ProductCategoryController extends Controller
     {
         $category = ProductCategory::select('*');
         $category = $category->orderBy('_lft')->get()->toTree();
+
         return view('admin.product-category.index', compact('category'));
     }
 
@@ -38,13 +39,14 @@ class ProductCategoryController extends Controller
             ],
             [
                 'parent_id' => $request->parent_id,
-                'name' => $request->name,
-                'image' => $image_name ?? $request->old_image_name,
-                'status' => $request->status,
+                'name'      => $request->name,
+                'image'     => $image_name ?? $request->old_image_name,
+                'status'    => $request->status,
             ]
         );
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
+
         return back();
     }
 
@@ -52,6 +54,7 @@ class ProductCategoryController extends Controller
     {
         ProductCategory::destroy($id);
         set_notify('success', 'ลบข้อมูลสำเร็จ');
+
         return back();
     }
 }

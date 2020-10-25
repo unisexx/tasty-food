@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <th class="no-sort">เผยแพร่</th>
+                    <th>ตำแหน่ง</th>
                     <th class="no-sort">รูป</th>
                     <th>หัวข้อ</th>
                     <th>ลิ้งค์</th>
@@ -33,6 +34,7 @@
                     <td>
                         <input class="switch_status" data-id="<?php echo $row->id?>" data-tb="banners" type="checkbox" @if(@$row->status == 1) checked @endif data-bootstrap-switch>
                     </td>
+                    <td>{{ @$row->getPositionTxt() }}</td>
                     <td><img src="{{ url('uploads/banner/'.$row->image) }}" width="100"></td>
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->url }}</td>
@@ -56,6 +58,7 @@
             <tfoot>
                 <tr>
                     <th>เผยแพร่</th>
+                    <th>ตำแหน่ง</th>
                     <th>รูป</th>
                     <th>หัวข้อ</th>
                     <th>ลิ้งค์</th>

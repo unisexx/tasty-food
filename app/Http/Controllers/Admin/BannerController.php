@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\Banner;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 class BannerController extends Controller
@@ -14,6 +13,7 @@ class BannerController extends Controller
     {
         $rs = Banner::select('*');
         $rs = $rs->orderBy('id', 'desc')->get();
+
         return view('admin.banner.index', compact('rs'));
     }
 
@@ -41,19 +41,21 @@ class BannerController extends Controller
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(1110, 150); // resize image
+            // $img->fit(1110, 150); // resize image
             $img->save('uploads/banner/' . $requestData['image']); // save image
         }
 
         Banner::create($requestData);
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
+
         return redirect('admin/banner');
     }
 
     public function edit($id)
     {
         $rs = Banner::findOrFail($id);
+
         return view('admin.banner.edit', compact('rs'));
     }
 
@@ -76,15 +78,15 @@ class BannerController extends Controller
         if ($request->file('image')) {
             $requestData['image'] = time() . '.' . $request->image->extension(); // ชื่อรูป
             $img = Image::make($_FILES['image']['tmp_name']); // read image from temporary file
-            $img->fit(1110, 150); // resize image
+            // $img->fit(1110, 150); // resize image
             $img->save('uploads/banner/' . $requestData['image']); // save image
         }
-
 
         $rs = Banner::findOrFail($id);
         $rs->update($requestData);
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
+
         return redirect('admin/banner');
     }
 
@@ -92,6 +94,7 @@ class BannerController extends Controller
     {
         Banner::destroy($id);
         set_notify('success', 'ลบข้อมูลสำเร็จ');
+
         return redirect('admin/banner');
     }
 }
