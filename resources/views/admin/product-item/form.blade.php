@@ -37,10 +37,10 @@
         <label for="detail">รายละเอียดสินค้า</label>
         <textarea class="form-control tinyMCE" name="description">{!! isset($rs->description) ? $rs->description : old('description') !!}</textarea>
     </div>
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="weight">น้ำหนักสินค้า (กรัม)</label>
         <input type="text" class="form-control @error('weight') is-invalid @enderror" id="weight" name="weight" placeholder="น้ำหนักสินค้า" value="{{ isset($rs->weight) ? $rs->weight : old('weight') }}"  style="width:150px;">
-    </div>
+    </div> --}}
     {{-- <div class="form-group">
         <label for="price">ราคา</label>
         <input type="text" class="form-control numDecimal @error('price') is-invalid @enderror" id="price" name="price" placeholder="ราคา" value="{{ isset($rs->price) ? $rs->price : old('price') }}"  style="width:150px;">
@@ -121,6 +121,7 @@
             <thead class="thead-light">
                 <tr>
                     <th>ชื่อชุด</th>
+                    <th>น้ำหนักสินค้า (กรัม)</th>
                     <th>ราคา</th>
                     <th>ราคา <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></th>
                     <th>จัดการ</th>
@@ -131,6 +132,7 @@
                     @foreach(@$rs->productItemPrice as $item)
                         <tr>
                             <td><input class='form-control' type='text' name='title[]' value="{{ $item->title }}"></td>
+                            <td><input class='form-control' type='number' min="1" name='weight[]' value="{{ $item->weight }}"></td>
                             <td><input class='form-control numDecimal' type='text' name='price[]' value="{{ $item->price }}"></td>
                             <td><input class='form-control numDecimal' type='text' name='price_vip[]' value="{{ $item->price_vip }}"></td>
                             <td>

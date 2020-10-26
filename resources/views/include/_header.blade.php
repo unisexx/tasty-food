@@ -15,8 +15,23 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-3 pt-3 align-items-center justify-content-end text-right login">
-                <img src="{{ asset('images/user-login.png') }}" alt="" class="pr-2"> <a href="{{ url('f-login') }}">เข้าสู่ระบบ</a><span
-                    class="pl-2 pr-2">|</span><a href="{{ url('f-register') }}">ลงทะเบียน</a>
+                <img src="{{ asset('images/user-login.png') }}" alt="" class="pr-2"> 
+                @auth
+                    <a href="{{ url('member/profile') }}">
+                        <span>{{ Auth::user()->name }} 
+                            @if( Auth::user()->is_vip == 1 )
+                                <span class="badge bg-warning" style="color:black;">
+                                    <small><i class="fas fa-crown"></i> VIP</small>
+                                </span>
+                            @endif
+                        </span>
+                    </a>
+                    | <a href="{{ url('f-logout') }}">ออกจากระบบ</a>
+                @else
+                    <a href="{{ url('f-login') }}">เข้าสู่ระบบ</a>
+                    <span class="pl-2 pr-2">|</span>
+                    <a href="{{ url('f-register') }}">ลงทะเบียน</a>
+                @endauth
             </div>
             <div class="col-xs-12 col-md-2">
                 <!--########################### START CART ###########################-->

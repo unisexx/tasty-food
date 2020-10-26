@@ -15,5 +15,6 @@ class ProductItemPrice extends Model
         'title',
         'price',
         'price_vip',
+        'weight',
     );
 }

@@ -11,5 +11,5 @@
             <li> <a class="go-detail" href="{{ url('product-item/'.$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
         </ul>
     </div>
-    <p class="price">{{ @show_price($product_item) }}.-</p>
+    <p class="price">{{ @show_price($product_item->productItemPriceFirst) }}.-</p>
 </div>

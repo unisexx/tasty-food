@@ -115,6 +115,7 @@ class ProductItemController extends Controller
                     ],
                     [
                         'title'           => $request->title[$i],
+                        'weight'          => $request->weight[$i],
                         'price'           => $request->price[$i],
                         'price_vip'       => $request->price_vip[$i],
                         'product_item_id' => $rs->id,
