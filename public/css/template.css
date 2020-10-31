@@ -901,7 +901,7 @@ ul.qty li {
     list-style-type: none;
     margin-bottom: 1em;
     font-size: 1em;
-    color: #999;
+    color: #000;
     width: 100%;
 }
 
@@ -2124,7 +2124,7 @@ a.instagram .front {
 }
 
 a:hover {
-    color: #fbfbfb !important;
+    color: #0099a7 !important;
 }
 
 .dynamic-part>ul>li:hover>ul {

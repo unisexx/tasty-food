@@ -50,6 +50,7 @@ class AjaxController extends Controller
     public function ajaxLoadProductCategoryForm()
     {
         $rs = ProductCategory::findOrFail($_GET['id']);
+
         return view('admin.product-category.form', compact('rs'));
     }
 
@@ -75,9 +76,9 @@ class AjaxController extends Controller
     public function ajaxAddItems()
     {
         if (Auth::check()) {
-            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('user_id', @Auth::user()->id)->first();
+            $cart = Cart::where('product_item_price_id', $_GET['product_item_price_id'])->where('user_id', @Auth::user()->id)->first();
         } else {
-            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('session_id', session()->getId())->first();
+            $cart = Cart::where('product_item_price_id', $_GET['product_item_price_id'])->where('session_id', session()->getId())->first();
         }
 
         Session::put('cartID', session()->getId());
@@ -88,7 +89,8 @@ class AjaxController extends Controller
             $newcart = new Cart;
             $newcart->user_id = @Auth::user()->id;
             $newcart->session_id = Session::get('cartID');
-            $newcart->product_item_id = $_GET['product_item_id'];
+            // $newcart->product_item_id = $_GET['product_item_id'];
+            $newcart->product_item_price_id = $_GET['product_item_price_id'];
             $newcart->qty = $_GET['product_item_qty'] ?? 1;
             $newcart->save();
         }
@@ -109,7 +111,7 @@ class AjaxController extends Controller
         // มูลค่าสินค้า
         $sum = 0;
         foreach ($carts as $cart) {
-            $sum += show_price($cart->productItem) * $cart->qty;
+            $sum += show_price($cart->productItemPrice) * $cart->qty;
         }
         $data['total'] = '฿' . number_format($sum, 2);
         Session::put('cartTotalPrice', $data['total']);
@@ -120,9 +122,9 @@ class AjaxController extends Controller
     public function ajaxUpdateQty()
     {
         if (Auth::check()) {
-            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('user_id', @Auth::user()->id)->first();
+            $cart = Cart::where('product_item_price_id', $_GET['product_item_price_id'])->where('user_id', @Auth::user()->id)->first();
         } else {
-            $cart = Cart::where('product_item_id', $_GET['product_item_id'])->where('session_id', session()->getId())->first();
+            $cart = Cart::where('product_item_price_id', $_GET['product_item_price_id'])->where('session_id', session()->getId())->first();
         }
 
         // อัพเดท cart สินค้า
@@ -155,9 +157,9 @@ class AjaxController extends Controller
     public function ajaxDeleteProductItem()
     {
         if (Auth::check()) {
-            Cart::where('product_item_id', $_GET['product_item_id'])->where('user_id', @Auth::user()->id)->delete();
+            Cart::where('product_item_price_id', $_GET['product_item_price_id'])->where('user_id', @Auth::user()->id)->delete();
         } else {
-            Cart::where('product_item_id', $_GET['product_item_id'])->where('session_id', session()->getId())->delete();
+            Cart::where('product_item_price_id', $_GET['product_item_price_id'])->where('session_id', session()->getId())->delete();
         }
     }
 }

@@ -15,10 +15,11 @@ class Cart extends Model
         'qty',
         'session_id',
         'user_id',
+        'product_item_price_id',
     );
 
-    public function productItem()
+    public function productItemPrice()
     {
-        return $this->hasOne('App\Models\ProductItem', 'id', 'product_item_id');
+        return $this->belongsTo('App\Models\ProductItemPrice', 'product_item_price_id', 'id');
     }
 }

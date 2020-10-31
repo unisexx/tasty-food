@@ -12,13 +12,13 @@ class OrderDetail extends Model
 
     protected $fillable = array(
         'order_id',
-        'product_item_id',
+        'product_item_price_id',
         'qty',
         'price',
     );
 
-    public function productItem()
+    public function productItemPrice()
     {
-        return $this->hasOne('App\Models\ProductItem', 'id', 'product_item_id');
+        return $this->belongsTo('App\Models\ProductItemPrice', 'product_item_price_id', 'id');
     }
 }

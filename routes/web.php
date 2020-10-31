@@ -37,12 +37,17 @@ Route::any('ajaxUpdateSummary', 'AjaxController@ajaxUpdateSummary');
 Route::any('ajaxEmptyCart', 'AjaxController@ajaxEmptyCart');
 Route::any('ajaxDeleteProductItem', 'AjaxController@ajaxDeleteProductItem');
 
+// ่jquery load view
+Route::get('load-personal-regis-form', function () {return view('load.personal-regis-form');});
+Route::get('load-store-regis-form', function () {return view('load.store-regis-form');});
+
 // Front
 Route::get('f-login', 'HomeController@flogin');
 Route::post('postlogin', 'HomeController@postLogin');
 Route::get('f-logout', 'HomeController@flogout');
 Route::get('f-register', 'HomeController@fregister');
 Route::post('f-doregister', 'HomeController@fdoregister');
+Route::post('front-register', 'HomeController@frontRegister');
 
 Route::get('search', 'HomeController@search');
 Route::get('product', 'Front\ProductController@index');

@@ -17,4 +17,9 @@ class ProductItemPrice extends Model
         'price_vip',
         'weight',
     );
+
+    public function productItem()
+    {
+        return $this->belongsTo('App\Models\ProductItem', 'product_item_id', 'id');
+    }
 }

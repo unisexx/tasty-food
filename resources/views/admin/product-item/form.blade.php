@@ -37,22 +37,6 @@
         <label for="detail">รายละเอียดสินค้า</label>
         <textarea class="form-control tinyMCE" name="description">{!! isset($rs->description) ? $rs->description : old('description') !!}</textarea>
     </div>
-    {{-- <div class="form-group">
-        <label for="weight">น้ำหนักสินค้า (กรัม)</label>
-        <input type="text" class="form-control @error('weight') is-invalid @enderror" id="weight" name="weight" placeholder="น้ำหนักสินค้า" value="{{ isset($rs->weight) ? $rs->weight : old('weight') }}"  style="width:150px;">
-    </div> --}}
-    {{-- <div class="form-group">
-        <label for="price">ราคา</label>
-        <input type="text" class="form-control numDecimal @error('price') is-invalid @enderror" id="price" name="price" placeholder="ราคา" value="{{ isset($rs->price) ? $rs->price : old('price') }}"  style="width:150px;">
-    </div>
-    <div class="form-group">
-        <label for="vprice">ราคาสำหรับลูกค้า <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></label>
-        <input type="text" class="form-control numDecimal @error('vip_price') is-invalid @enderror" id="vprice" name="vip_price" placeholder="ราคา" value="{{ isset($rs->vip_price) ? $rs->vip_price : old('vip_price') }}"  style="width:150px;">
-    </div> --}}
-    {{-- <div class="form-group">
-        <label for="title">จำนวนที่มีในสต็อก</label>
-        <input type="number" step="1" class="form-control @error('stock') is-invalid @enderror" id="stock" name="stock" placeholder="จำนวนที่มีในสต็อก" value="{{ isset($rs->stock) ? $rs->stock : old('stock') }}"  style="width:150px;">
-    </div> --}}
     <div class="form-group">
         <div class="custom-control custom-checkbox">
             <input type="hidden" name="is_new" value="">

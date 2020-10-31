@@ -33,7 +33,7 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'      => 'ชื่อ ห้ามเป็นค่าว่าง',
+            'name.required'      => 'ชื่อ - นามสกุล ห้ามเป็นค่าว่าง',
             'email.required'     => 'อีเมล์ ห้ามเป็นค่าว่าง',
             'email.email'        => 'รูปแบบอีเมล์ไม่ถูกต้อง',
             'email.unique'       => 'อีเมล์นี้ไม่สามารถใช้ได้',

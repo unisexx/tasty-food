@@ -1,6 +1,6 @@
 <!-- Stylesheets -->
 <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}" />
-<link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ url('css/template.css') }}" />
 <link rel="stylesheet" href="{{ url('css/flexslider.css') }}" type="text/css" media="screen" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
@@ -13,6 +13,7 @@
 
 <!-- Jquery Core Js -->
 <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
+{{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 <!--JS -->
 <script src="{{ url('js/bootstrap.min.js') }}"></script>
@@ -43,6 +44,23 @@ function archiveFunction() {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
+
+
+{{-- jquety thailand --}}
+<script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+<script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+<link rel="stylesheet" href="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
+<script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+{{-- <script>
+$(document).ready(function(){
+    $.Thailand({
+        $district: $('#district'), // input ของตำบล
+        $amphoe: $('#amphoe'), // input ของอำเภอ
+        $province: $('#province'), // input ของจังหวัด
+        $zipcode: $('#zipcode'), // input ของรหัสไปรษณีย์
+    });
+});
+</script> --}}
 
 {{-- <script src="{{ url('js/simplecart-js/simpleCart.js') }}"></script> --}}
 {{-- <script>
@@ -144,12 +162,14 @@ $(document).ready(function(){
             method: "GET",
             url: "{{ url('ajaxAddItems') }}",
             data: {
-                product_item_id : $(this).data('id'),
+                product_item_price_id : $(this).data('id'),
                 product_item_qty : $(this).data('qty'),
             }
         }).done(function(data) {
             updateCartNumber();
         });
+
+        itemAddAlert();
     });
 
     $(document).on('click keyup blur change','.item_product_qty',function(){
@@ -160,14 +180,30 @@ $(document).ready(function(){
 
     // กดปุ่มล้างตระกร้า empty cart
     $(document).on('click','.simpleCart_empty',function(){
-        $.ajax({
-            method: "GET",
-            url: "{{ url('ajaxEmptyCart') }}"
-        }).done(function(data) {
-            $('#simpleCart_quantity').html('0');
-            $('.simpleCart_total').html('฿0.00');
-            $('.close1').trigger('click');
-        });
+        Swal.fire({
+            title: 'ยืนยันการล้างตระกร้าสินค้า',
+            // text: "หลังจากที่ลบไปแล้วจะไม่สามารถดึงข้อมูลนี้กลับมาได้อีก!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ตกลง',
+            cancelButtonText: 'ยกเลิก'
+            }).then((result) => {
+                if (result.value) {
+                    
+                    // ลบสินค้าในตระกร้า
+                    $.ajax({
+                        method: "GET",
+                        url: "{{ url('ajaxEmptyCart') }}"
+                    }).done(function(data) {
+                        $('#simpleCart_quantity').html('0');
+                        $('.simpleCart_total').html('฿0.00');
+                        $('.close1').trigger('click');
+                    });
+
+                }
+            });
     });
 
 });
@@ -182,4 +218,20 @@ function updateCartNumber(){
     });
 }
 
+function itemAddAlert(){
+    Swal.fire({
+            title: 'เพิ่มสินค้าลงในตระกร้าเรียบร้อย',
+            // text: "test!",
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ไปที่ตระกร้าสินค้าของฉัน',
+            cancelButtonText: 'ดูสินค้าอื่นๆต่อ'
+            }).then((result) => {
+                if (result.value) {
+                    $(location).attr('href', '{{ url("checkout") }}')
+                }
+            });
+}
 </script>

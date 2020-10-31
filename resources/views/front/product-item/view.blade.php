@@ -93,14 +93,14 @@
                     <div class="col-7">
                         <div class="row">
                             <label class="col-5 col-form-label">จำนวน :</label>
-                            <input class="col-3 form-control item_product_qty" type="number" step="1" min="0" value="0">
+                            <input class="col-3 form-control item_product_qty" type="number" step="1" min="0" value="0" data-id="{{ $item->id }}">
                         </div>
                     </div>
                 </div>
             @endforeach
         @endif
 
-        <input type="submit" name="submit" value="Add to cart" class="button add mt-4 mb-4">
+        <input type="button" name="submit" value="Add to cart" class="button add mt-4 mb-4 item_add_set">
         <div class="mt-3">Share on: <div class="sharethis-inline-share-buttons"></div></div>
     </div>
 </div>
@@ -128,4 +128,29 @@
     </div>
 </div>
 <!--########################## END CONTENT ##########################-->
+@endpush
+
+@push('js')
+<script>
+// เพิ่มสินค้าลงในตระกร้า
+$(document).on('click','.item_add_set',function(){
+    $('input.item_product_qty').each(function(){
+        var qty = $(this).val();
+        if(qty > 0){
+            $.ajax({
+                method: "GET",
+                url: "{{ url('ajaxAddItems') }}",
+                data: {
+                    product_item_price_id : $(this).data('id'),
+                    product_item_qty : qty,
+                }
+            }).done(function(data) {
+                updateCartNumber();
+            });
+        }
+    });
+
+    itemAddAlert();
+});
+</script>
 @endpush

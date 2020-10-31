@@ -15,13 +15,16 @@
     <form class="user mt-4 col-12 col-sm-12 col-md-8 mx-auto" method="POST" action="{{ url('member/profile_save/'.Auth::user()->id) }}" accept-charset="UTF-8">
     {{ csrf_field() }}
         <div class="form-group">
-            <input name="name" type="text" class="form-control form-control-user bg-fields" placeholder="ชื่อ" value="{{ Auth::user()->name }}">
+            <label for="p-name">ชื่อ - นามสกุล</label>
+            <input id="p-name" name="name" type="text" class="form-control form-control-user bg-fields" placeholder="ชื่อ - นามสกุล" value="{{ Auth::user()->name }}">
         </div>
         <div class="form-group">
-            <input name="tel" type="text" class="form-control form-control-user bg-fields" placeholder="เบอร์โทรศัพท์" value="{{ Auth::user()->tel }}">
+            <label for="p-tel">เบอร์โทรศัพท์</label>
+            <input id="p-tel" name="tel" type="text" class="form-control form-control-user bg-fields" placeholder="เบอร์โทรศัพท์" value="{{ Auth::user()->tel }}">
         </div>
         <div class="form-group">
-            <textarea name="address" class="form-control" cols="30" rows="5" placeholder="ที่อยู่สำหรับจัดส่งสินค้า">{{ Auth::user()->address }}</textarea>
+            <label for="p-address">ที่อยู่สำหรับจัดส่งสินค้า</label>
+            <textarea id="p-address" name="address" class="form-control" cols="30" rows="5" placeholder="ที่อยู่สำหรับจัดส่งสินค้า">{{ Auth::user()->address }}</textarea>
         </div>
         <div class="justify-content-end text-center w-100">
             <button type="submit" class="btn btn-success btn-user btn-block mt-4 col-12">บันทึก</button>

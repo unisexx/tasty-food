@@ -18,7 +18,7 @@
                 <img src="{{ asset('images/user-login.png') }}" alt="" class="pr-2"> 
                 @auth
                     <a href="{{ url('member/profile') }}">
-                        <span>{{ Auth::user()->name }} 
+                        <span>{{ Auth::user()->name }}
                             @if( Auth::user()->is_vip == 1 )
                                 <span class="badge bg-warning" style="color:black;">
                                     <small><i class="fas fa-crown"></i> VIP</small>
@@ -41,10 +41,12 @@
                             <a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
                             <span class="simpleCart_total">{{ Session::get('cartTotalPrice') }}</span>
                         </div>
-                        <div class="position-relative">
-                            <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">{{ Session::get('cartNumber') }}</span></div>
-                            <img src="{{ asset('images/icon-cart2.png') }}" alt="" class="img-cart">
-                        </div>
+                        <a href="{{ url('checkout') }}">
+                            <div class="position-relative">
+                                <div class="cart-total"><span id="simpleCart_quantity" class="simpleCart_quantity">{{ Session::get('cartNumber') }}</span></div>
+                                <img src="{{ asset('images/icon-cart2.png') }}" alt="" class="img-cart">
+                            </div>
+                        </a>
                     </a>
                     <div class="clearfix"> </div>
                 </div>

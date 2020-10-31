@@ -24,19 +24,6 @@ if (!function_exists('remove_commars')) {
     }
 }
 
-// if (!function_exists('show_price')) {
-//     function show_price($productItemId)
-//     {
-//         if (@Auth::user()->is_vip == 1) {
-//             $price = $productItemId->productItemPriceFirst->price_vip;
-//         } else {
-//             $price = $productItemId->productItemPriceFirst->price;
-//         }
-
-//         return $price;
-//     }
-// }
-
 if (!function_exists('show_price')) {
     function show_price($productItemPrice)
     {
@@ -53,9 +40,10 @@ if (!function_exists('show_price')) {
 if (!function_exists('shipping_cost')) {
     function shipping_cost($weight)
     {
-        $shipping_cost = \App\Models\ShippingRate::where('start_weight', '<=', $weight)
-            ->where('end_weight', '>=', $weight)
-            ->first()->cost;
+        $shipping_cost = \App\Models\ShippingRate::where(function ($query) use ($weight) {
+            $query->where('start_weight', '<=', $weight);
+            $query->where('end_weight', '>=', $weight);
+        })->first()->cost;
 
         return $shipping_cost;
     }

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
-use App\Models\ProductItem;
+use App\Models\ProductItemPrice;
 use Auth;
 use Session;
 
@@ -19,6 +19,7 @@ class CheckoutController extends Controller
         } else {
             $carts = Cart::where('session_id', session()->getId())->get();
         }
+
         return view('front.checkout.index', compact('carts'));
     }
 
@@ -35,9 +36,9 @@ class CheckoutController extends Controller
         foreach ($carts as $cart) {
             $orderdetail = new OrderDetail;
             $orderdetail->order_id = $order->id;
-            $orderdetail->product_item_id = $cart->product_item_id;
+            $orderdetail->product_item_price_id = $cart->product_item_price_id;
             $orderdetail->qty = $cart->qty;
-            $orderdetail->price = (ProductItem::find($cart->product_item_id)->price * $cart->qty);
+            $orderdetail->price = (show_price(ProductItemPrice::find($cart->product_item_price_id)) * $cart->qty);
             $orderdetail->save();
         }
 

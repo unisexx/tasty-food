@@ -103,18 +103,19 @@ class HomeController extends Controller
 
     public function fdoregister(RegisterRequest $request)
     {
-        $requestData = $request->all();
+        echo "5555";
+        // $requestData = $request->all();
 
-        if ($requestData['password']) {
-            $requestData['password'] = bcrypt($request->password);
-        }
+        // if ($requestData['password']) {
+        //     $requestData['password'] = bcrypt($request->password);
+        // }
 
-        $requestData['is_admin'] = 0;
-        $user = User::create($requestData);
+        // $requestData['is_admin'] = 0;
+        // $user = User::create($requestData);
 
-        auth()->login($user);
+        // auth()->login($user);
 
-        return redirect()->to('/');
+        // return redirect()->to('/');
     }
 
     public function flogout()
@@ -140,5 +141,24 @@ class HomeController extends Controller
         $product_items = $product_items->where('status', 1)->paginate(8);
 
         return view('front.home.search', compact('product_items'));
+    }
+
+    public function frontRegister(RegisterRequest $request)
+    {
+        $requestData = $request->all();
+        // dd($requestData);
+
+        if ($requestData['password']) {
+            $requestData['password'] = bcrypt($request->password);
+        }
+
+        $requestData['is_admin'] = 0;
+        $user = User::create($requestData);
+
+        auth()->login($user);
+
+        return redirect()->to('/');
+
+        // return back();
     }
 }
