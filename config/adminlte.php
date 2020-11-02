@@ -293,10 +293,16 @@ return [
         ],
         ['header' => 'สมาชิก'],
         [
-            'text'   => 'จัดการสมาชิก',
+            'text'   => 'สมาชิกทั่วไป',
             'url'    => 'admin/user',
             'icon'   => 'fas fa-user',
             'active' => ['admin/user*'],
+        ],
+        [
+            'text'   => 'สมาชิกร้านค้า',
+            'url'    => 'admin/store',
+            'icon'   => 'fas fa-user',
+            'active' => ['admin/store*'],
         ],
         ['header' => 'รายงาน'],
         [

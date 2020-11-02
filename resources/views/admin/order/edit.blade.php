@@ -40,19 +40,19 @@
                 @endphp
                 @foreach ($rs->orderDetail as $order_detail)
                 @php
-                    $sum+= $order_detail->productItem->price * $order_detail->qty;
+                    $sum+= $order_detail->productItemPrice->price * $order_detail->qty;
                 @endphp
                 <tr>
                     <td>
-                        <img src="{{ url('uploads/product-item/'.@$order_detail->productItem->productImageFirst->name) }}" class="img-fluid" alt="" width="50">
+                        <img src="{{ url('uploads/product-item/'.@$order_detail->productItemPrice->productItem->productImageFirst->name) }}" class="img-fluid" alt="" width="50">
                     </td>
                     <td>
-                        <div>{{ $order_detail->productItem->name }}</div>
-                        <div><i class="fas fa-tags text-danger"></i> โปรโมชั่น : {{ $order_detail->productItem->promotion->title }}</div>
+                        <div>{{ $order_detail->productItemPrice->productItem->name }} ({{ $order_detail->productItemPrice->title }})</div>
+                        {{-- <div><i class="fas fa-tags text-danger"></i> โปรโมชั่น : {{ @$order_detail->productItemPrice->productItem->promotion->title }}</div> --}}
                     </td>
                     <td class="text-right">{{ $order_detail->qty }}</td>
-                    <td class="text-right">{{ $order_detail->productItem->price }}</td>
-                    <td class="text-right">{!! number_format($order_detail->productItem->price * $order_detail->qty, 2) !!}</td>
+                    <td class="text-right">{{ $order_detail->productItemPrice->price }}</td>
+                    <td class="text-right">{!! number_format($order_detail->productItemPrice->price * $order_detail->qty, 2) !!}</td>
                 </tr>
                 @endforeach
                 <tr class="table-light">
@@ -94,6 +94,8 @@
                     <td>
                         <div>วันที่ชำระเงิน : {{ $confirm_payment->payment_date }}</div>
                         <div>เวลา(โดยประมาณ) : {{ $confirm_payment->payment_hour }}:{{ $confirm_payment->payment_minute }}</div>
+                        <div>โอนเงินจากธนาคาร  : {{ $confirm_payment->bank_from }}</div>
+                        <div>ไปยังบัญชีธนาคาร  : {{ $confirm_payment->bank_to }}</div>
                         <div>จำนวนเงิน : {{ $confirm_payment->payment_amount }}</div>
                         <div>ชื่อผู้แจ้ง : {{ $confirm_payment->name }}</div>
                         <div>อีเมล์ : {{ $confirm_payment->email }}</div>

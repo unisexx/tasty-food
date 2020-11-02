@@ -6,19 +6,19 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class StoreController extends Controller
 {
     public function index()
     {
         $rs = User::select('*');
-        $rs = $rs->where('is_admin', '!=', 1)->where('type', 1)->orderBy('id', 'desc')->get();
+        $rs = $rs->where('is_admin', '!=', 1)->where('type', 2)->orderBy('id', 'desc')->get();
 
-        return view('admin.user.index', compact('rs'));
+        return view('admin.store.index', compact('rs'));
     }
 
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.store.create');
     }
 
     public function store(Request $request)
@@ -28,14 +28,14 @@ class UserController extends Controller
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
 
-        return redirect('admin/user');
+        return redirect('admin/store');
     }
 
     public function edit($id)
     {
         $rs = User::findOrFail($id);
 
-        return view('admin.user.edit', compact('rs'));
+        return view('admin.store.edit', compact('rs'));
     }
 
     public function update(Request $request, $id)
@@ -46,7 +46,7 @@ class UserController extends Controller
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
 
-        return redirect('admin/user');
+        return redirect('admin/store');
     }
 
     public function destroy($id)
@@ -54,6 +54,6 @@ class UserController extends Controller
         User::destroy($id);
         set_notify('success', 'ลบข้อมูลสำเร็จ');
 
-        return redirect('admin/user');
+        return redirect('admin/store');
     }
 }

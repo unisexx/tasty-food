@@ -47,9 +47,14 @@
 <!--########################### END SLIDE ###########################-->
 </div>
     <div class="col-sm-12 col-md-3 col-lg-fix2">
-    <a href="#" ><img src="images/banner-facebook.jpg" alt="" class="w-100 pb-3 banner1"></a>
-    <a href="#" ><img src="images/banner-line.jpg" alt="" class="w-100 pb-3 banner2"></a>
-    <iframe src="https://www.youtube.com/embed/wL5Jhpy7gCE" class="banner3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    @foreach($banner_hilights as $banner_hilight)
+        @if($banner_hilight->url) <a href="{{ $banner_hilight->url }}" target="_blank"> @endif
+        <img class="img-fluid mt-2 mb-2" src="{{ url('uploads/banner/'.@$banner_hilight->image) }}">
+        @if($banner_hilight->url) </a> @endif
+    @endforeach
+    @foreach($vdo_hilights as $vdo_hilight)
+        <iframe src="{{ youtube_url_to_embed($vdo_hilight->url) }}" class="banner3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    @endforeach
 <!--########################### END SLIDE ###########################-->
 @endsection
 

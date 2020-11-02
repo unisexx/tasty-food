@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'สมาชิกทั่วไป')
+@section('title', 'สมาชิกร้านค้า')
 
 @section('content_header')
-<h1>สมาชิกทั่วไป</h1>
+<h1>สมาชิกร้านค้า</h1>
 @stop
 
 @section('content')
@@ -20,10 +20,11 @@
             <thead>
                 <tr>
                     <th class="no-sort">สถานะ</th>
-                    <th>ชื่อ</th>
-                    <th>อีเมล์</th>
-                    <th>เบอร์โทรศัพท์</th>
-                    <th>ที่อยู่จัดส่ง</th>
+                    <th>ชื่อร้านค้า</th>
+                    <th>เลขใบอนุญาตร้านค้า</th>
+                    <th>ใบอนุญาตขายยา</th>
+                    <th>ใบประกอบวิชาชีพ</th>
+                    <th>โทรศัพท์</th>
                     <th>ประเภท</th>
                     <th class="no-sort">จัดการ</th>
                 </tr>
@@ -34,17 +35,18 @@
                     <td>
                         <input class="switch_status" data-id="<?php echo $row->id?>" data-tb="users" type="checkbox" @if(@$row->status == 1) checked @endif data-bootstrap-switch>
                     </td>
-                    <td>{{ $row->name }}</td>
-                    <td>{{ $row->email }}</td>
+                    <td>{{ $row->shop_name }}</td>
+                    <td>{{ $row->shop_license }}</td>
+                    <td><a href=""><img src="{{ asset('uploads/user/sell_license/'.$row->sell_license) }}" width="90"></a></td>
+                    <td><img src="{{ asset('uploads/user/pro_license/'.$row->pro_license) }}" width="90"></td>
                     <td>{{ $row->tel }}</td>
-                    <td>{{ $row->address }}</td>
                     <td>{!! $row->is_vip == 1 ? '<span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span>' : '<span class="badge bg-info">normal</span>' !!}</td>
                     <td>
-                        <a href="{{ url('admin/user/' . $row->id . '/edit') }}" title="แก้ไขรายการนี้">
+                        <a href="{{ url('admin/store/' . $row->id . '/edit') }}" title="แก้ไขรายการนี้">
                             <button id="btnFA" class="btn btn-sm btn-warning">แก้ไข</button>
                         </a>
 
-                        <form method="POST" action="{{ url('admin/user/' . $row->id) }}" accept-charset="UTF-8" style="display:inline">
+                        <form method="POST" action="{{ url('admin/store/' . $row->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-sm btn-danger" title="ลบรายการนี้" onclick="archiveFunction()">
@@ -58,10 +60,11 @@
             <tfoot>
                 <tr>
                     <th>สถานะ</th>
-                    <th>ชื่อ</th>
-                    <th>อีเมล์</th>
-                    <th>เบอร์โทรศัพท์</th>
-                    <th>ที่อยู่จัดส่ง</th>
+                    <th>ชื่อร้านค้า</th>
+                    <th>เลขใบอนุญาตร้านค้า</th>
+                    <th>ใบอนุญาตขายยา</th>
+                    <th>ใบประกอบวิชาชีพ</th>
+                    <th>โทรศัพท์</th>
                     <th>ประเภท</th>
                     <th>จัดการ</th>
                 </tr>

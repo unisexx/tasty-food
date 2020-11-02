@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'จัดการสมาชิก (เพิ่ม/แก้ไข)')
+@section('title', 'สมาชิกทั่วไป (เพิ่ม/แก้ไข)')
 
 @section('content_header')
 <h1>จัดการสมาชิก (เพิ่ม/แก้ไข)</h1>

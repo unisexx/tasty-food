@@ -21,8 +21,8 @@
 <div class="card col-md-4 pt-2 pl-4">
     <strong>*เอกสารที่ต้องเตรียมก่อนสมัคร</strong>
     <ol>
-        <li><strong>รูปใบประกอบวิชาชีพ</strong></li>
         <li><strong>รูปใบอนุญาตขายยา</strong></li>
+        <li><strong>รูปใบประกอบวิชาชีพ</strong></li>
     </ol>
 </div>
 <div class="clearfix"></div>
@@ -67,7 +67,7 @@
 <div class="form-row">
     <div class="col-md-12 mb-3">
         <label for="s-address">ที่อยู่จัดส่ง</label>
-        <input id="s-address" name="shop_address" type="text" class="form-control" placeholder="ที่อยู่จัดส่ง" required>
+        <input id="s-address" name="address" type="text" class="form-control" placeholder="ที่อยู่จัดส่ง" required>
         <div class="invalid-feedback">
             กรุณากรอกที่อยู่จัดส่ง.
         </div>

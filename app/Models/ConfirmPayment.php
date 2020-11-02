@@ -24,5 +24,8 @@ class ConfirmPayment extends Model
         'tel',
         'order_id',
         'description',
+        'bank_from',
+        'bank_to',
+
     );
 }

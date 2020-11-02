@@ -16,6 +16,16 @@ class vdo extends Model
     protected $fillable = array(
         'title',
         'url',
-        'status'
+        'status',
+        'position',
     );
+
+    public function getPositionTxt()
+    {
+        $data = array(
+            1 => 'หน้าแรก (ข้างไฮไลท์)',
+        );
+
+        return $data[$this->position];
+    }
 }

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'สมาชิกทั่วไป (เพิ่ม/แก้ไข)')
+@section('title', 'สมาชิกร้านค้า (เพิ่ม/แก้ไข)')
 
 @section('content_header')
-<h1>จัดการสมาชิก (เพิ่ม/แก้ไข)</h1>
+<h1>สมาชิกร้านค้า (เพิ่ม/แก้ไข)</h1>
 @stop
 
 
@@ -23,9 +23,9 @@
         <h3 class="card-title">Form</h3>
     </div>
 
-    <form method="POST" action="{{ url('admin/user') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form method="POST" action="{{ url('admin/store') }}" accept-charset="UTF-8" enctype="multipart/form-data">
     {{ csrf_field() }}
-        @include ('admin.user.form', ['formMode' => 'create'])
+        @include ('admin.store.form', ['formMode' => 'create'])
     </form>
 </div>
 <!-- /.card -->

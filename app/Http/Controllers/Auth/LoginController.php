@@ -40,6 +40,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    // ใช้กำหนดฟิลด์ที่ใช้ในการ login
+    protected function credentials(Request $request)
+    {
+        // return ['username' => $request->{$this->username()}, 'password' => $request->password, 'status' => 1];
+        return ['email' => $request->email, 'password' => $request->password, 'status' => 1];
+    }
+
     protected function redirectTo()
     {
         if (auth()->user()->isAdmin()) {

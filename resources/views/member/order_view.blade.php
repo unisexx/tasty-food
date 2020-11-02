@@ -93,6 +93,8 @@
                             <div>วันที่ชำระเงิน : {{ $confirm_payment->payment_date }}</div>
                             <div>เวลา(โดยประมาณ) :
                                 {{ $confirm_payment->payment_hour }}:{{ $confirm_payment->payment_minute }}</div>
+                            <div>โอนเงินจากธนาคาร  : {{ $confirm_payment->bank_from }}</div>
+                            <div>ไปยังบัญชีธนาคาร  : {{ $confirm_payment->bank_to }}</div>
                             <div>จำนวนเงิน : {{ $confirm_payment->payment_amount }}</div>
                             <div>ชื่อผู้แจ้ง : {{ $confirm_payment->name }}</div>
                             <div>อีเมล์ : {{ $confirm_payment->email }}</div>

@@ -11,7 +11,7 @@
 
 @section('content')
 <!--########################### START FORM ###########################-->
-<form class="user mt-4 col-12 col-sm-12 col-md-12 mx-auto" method="POST" accept-charset="UTF-8" action="{{ url('front-register') }}" autocomplete="off">
+<form class="user mt-4 col-12 col-sm-12 col-md-12 mx-auto" method="POST" accept-charset="UTF-8" action="{{ url('front-register') }}" autocomplete="off" enctype="multipart/form-data">
 {{ csrf_field() }}
 
 <div class="row mt-4 about">

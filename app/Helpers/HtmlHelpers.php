@@ -75,3 +75,12 @@ if (!function_exists('tabArray')) {
         return $tabArray[$product_category_id];
     }
 }
+
+if (!function_exists('youtube_url_to_embed')) {
+    function youtube_url_to_embed($youtube_url)
+    {
+        // input (https://www.youtube.com/watch?v=wL5Jhpy7gCE)
+        // output (https://www.youtube.com/embed/wL5Jhpy7gCE)
+        return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "//www.youtube.com/embed/$1", $youtube_url);
+    }
+}

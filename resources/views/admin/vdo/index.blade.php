@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <th class="no-sort">เผยแพร่</th>
+                    <th>ตำแหน่ง</th>
                     <th>หัวข้อ</th>
                     <th>วันที่สร้าง</th>
                     <th class="no-sort">จัดการ</th>
@@ -31,6 +32,7 @@
                     <td>
                         <input class="switch_status" data-id="<?php echo $row->id?>" data-tb="vdos" type="checkbox" @if(@$row->status == 1) checked @endif data-bootstrap-switch>
                     </td>
+                    <td>{{ @$row->getPositionTxt() }}</td>
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->created_at }}</td>
                     <td>
@@ -52,6 +54,7 @@
             <tfoot>
                 <tr>
                     <th>เผยแพร่</th>
+                    <th>ตำแหน่ง</th>
                     <th>หัวข้อ</th>
                     <th>วันที่สร้าง</th>
                     <th>จัดการ</th>

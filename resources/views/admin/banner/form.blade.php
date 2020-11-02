@@ -4,6 +4,7 @@
         <label for="knowledge-category">ตำแหน่งของแบนเนอร์</label>
         <select name="position" class="form-control">
             <option value="1" {{ @$rs->position == 1 ? "selected" : "" }}>หน้าแรก</option>
+            <option value="4" {{ @$rs->position == 1 ? "selected" : "" }}>หน้าแรก (ข้างไฮไลท์)</option>
             <option value="2" {{ @$rs->position == 2 ? "selected" : "" }}>ข้อมูลสุขภาพ (ด้านขวา)</option>
             <option value="3" {{ @$rs->position == 3 ? "selected" : "" }}>ข้อมูลสุขภาพ (ด้านล่าง)</option>
         </select>

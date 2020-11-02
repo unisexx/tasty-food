@@ -60,46 +60,45 @@
             
             <label class="col-12 col-form-label"><strong>โอนเงินจากธนาคาร</strong></label>
             <div class="col-12">
-                <select class="form-control" id="id_select2_example" style="width:100%;">
-                    <option value="bbl" data-img_src="{{ asset('images/icon-bank/Bangkok.jpg')}}">ธ. กรุงเทพ</option>
-                    <option value="KrungThai" data-img_src="images/icon-bank/KrungThai.jpg">ธ. กรุงไทย</option>
-                    <option value="Ayudhya" data-img_src="images/icon-bank/Ayudhya.jpg">ธ. กรุงศรีอยุธยา</option>
-                    <option value="TFB" data-img_src="images/icon-bank/TFB.jpg">ธ. กสิกรไทย</option>
-                    <option value="KIATNAKIN" data-img_src="images/icon-bank/KIATNAKIN.jpg">ธ. เกียรตินาคินภัทร</option>
-                    <option value="CIMBTHAI" data-img_src="images/icon-bank/CIMBTHAI.jpg">ธ. ซีไอเอ็มบี ไทย </option>
-                    <option value="TMB" data-img_src="images/icon-bank/TMB.jpg">ธ. ทหารไทย</option>
-                    <option value="Tisco" data-img_src="images/icon-bank/Tisco.jpg">ธ. ทิสโก้</option>
-                    <option value="SCB" data-img_src="images/icon-bank/SCB.jpg">ธ. ไทยพาณิชย์</option>
-                    <option value="Tanachat" data-img_src="images/icon-bank/Tanachat.jpg">ธ. ธนชาต</option>
-                    <option value="SiamCity" data-img_src="images/icon-bank/SiamCity.jpg">ธ. นครหลวงไทย</option>
-                    <option value="UOB" data-img_src="images/icon-bank/UOB.jpg">ธ. ยูโอบี</option>
-                    <option value="STANDARD" data-img_src="images/icon-bank/STANDARD.jpg">ธ. สแตนดาร์ดชาร์เตอร์ด (ไทย)</option>
-                    <option value="ICBC" data-img_src="images/icon-bank/ICBC.gif">ธ. ไอซีบีซี (ไทย)</option>
+                <select name="bank_from" class="form-control" id="id_select2_example" style="width:100%;">
+                    <option value="ธ. กรุงเทพ" data-img_src="{{ asset('images/icon-bank/Bangkok.jpg')}}">ธ. กรุงเทพ</option>
+                    <option value="ธ. กรุงไทย" data-img_src="images/icon-bank/KrungThai.jpg">ธ. กรุงไทย</option>
+                    <option value="ธ. กรุงศรีอยุธยา" data-img_src="images/icon-bank/Ayudhya.jpg">ธ. กรุงศรีอยุธยา</option>
+                    <option value="ธ. กสิกรไทย" data-img_src="images/icon-bank/TFB.jpg">ธ. กสิกรไทย</option>
+                    <option value="ธ. เกียรตินาคินภัทร" data-img_src="images/icon-bank/KIATNAKIN.jpg">ธ. เกียรตินาคินภัทร</option>
+                    <option value="ธ. ซีไอเอ็มบี ไทย" data-img_src="images/icon-bank/CIMBTHAI.jpg">ธ. ซีไอเอ็มบี ไทย</option>
+                    <option value="ธ. ทหารไทย" data-img_src="images/icon-bank/TMB.jpg">ธ. ทหารไทย</option>
+                    <option value="ธ. ทิสโก้" data-img_src="images/icon-bank/Tisco.jpg">ธ. ทิสโก้</option>
+                    <option value="ธ. ไทยพาณิชย์" data-img_src="images/icon-bank/SCB.jpg">ธ. ไทยพาณิชย์</option>
+                    <option value="ธ. ธนชาต" data-img_src="images/icon-bank/Tanachat.jpg">ธ. ธนชาต</option>
+                    <option value="ธ. นครหลวงไทย" data-img_src="images/icon-bank/SiamCity.jpg">ธ. นครหลวงไทย</option>
+                    <option value="ธ. ยูโอบี" data-img_src="images/icon-bank/UOB.jpg">ธ. ยูโอบี</option>
+                    <option value="ธ. สแตนดาร์ดชาร์เตอร์ด (ไทย)" data-img_src="images/icon-bank/STANDARD.jpg">ธ. สแตนดาร์ดชาร์เตอร์ด (ไทย)</option>
+                    <option value="ธ. ไอซีบีซี (ไทย)" data-img_src="images/icon-bank/ICBC.gif">ธ. ไอซีบีซี (ไทย)</option>
                 </select>
             </div>
             
             <label class="col-12 col-form-label mt-3"><strong>ไปยังบัญชีธนาคาร</strong></label>
             <div class="col-12">
-                <select class="form-control" id="id_select3_example" style="width:100%;">
-                    <option value="bbl" data-img_src="images/icon-bank/Bangkok.jpg">ธ. กรุงเทพ</option>
-                    <option value="KrungThai" data-img_src="images/icon-bank/KrungThai.jpg">ธ. กรุงไทย</option>
-                    <option value="Ayudhya" data-img_src="images/icon-bank/Ayudhya.jpg">ธ. กรุงศรีอยุธยา</option>
-                    <option value="TFB" data-img_src="images/icon-bank/TFB.jpg">ธ. กสิกรไทย</option>
-                    <option value="KIATNAKIN" data-img_src="images/icon-bank/KIATNAKIN.jpg">ธ. เกียรตินาคินภัทร</option>
-                    <option value="CIMBTHAI" data-img_src="images/icon-bank/CIMBTHAI.jpg">ธ. ซีไอเอ็มบี ไทย </option>
-                    <option value="TMB" data-img_src="images/icon-bank/TMB.jpg">ธ. ทหารไทย</option>
-                    <option value="Tisco" data-img_src="images/icon-bank/Tisco.jpg">ธ. ทิสโก้</option>
-                    <option value="SCB" data-img_src="images/icon-bank/SCB.jpg">ธ. ไทยพาณิชย์</option>
-                    <option value="Tanachat" data-img_src="images/icon-bank/Tanachat.jpg">ธ. ธนชาต</option>
-                    <option value="SiamCity" data-img_src="images/icon-bank/SiamCity.jpg">ธ. นครหลวงไทย</option>
-                    <option value="UOB" data-img_src="images/icon-bank/UOB.jpg">ธ. ยูโอบี</option>
-                    <option value="STANDARD" data-img_src="images/icon-bank/STANDARD.jpg">ธ. สแตนดาร์ดชาร์เตอร์ด (ไทย)</option>
-                    <option value="ICBC" data-img_src="images/icon-bank/ICBC.gif">ธ. ไอซีบีซี (ไทย)</option>
+                <select name="bank_to" class="form-control" id="id_select3_example" style="width:100%;">
+                    <option value="ธ. กรุงเทพ" data-img_src="{{ asset('images/icon-bank/Bangkok.jpg')}}">ธ. กรุงเทพ</option>
+                    <option value="ธ. กรุงไทย" data-img_src="images/icon-bank/KrungThai.jpg">ธ. กรุงไทย</option>
+                    <option value="ธ. กรุงศรีอยุธยา" data-img_src="images/icon-bank/Ayudhya.jpg">ธ. กรุงศรีอยุธยา</option>
+                    <option value="ธ. กสิกรไทย" data-img_src="images/icon-bank/TFB.jpg">ธ. กสิกรไทย</option>
+                    <option value="ธ. เกียรตินาคินภัทร" data-img_src="images/icon-bank/KIATNAKIN.jpg">ธ. เกียรตินาคินภัทร</option>
+                    <option value="ธ. ซีไอเอ็มบี ไทย" data-img_src="images/icon-bank/CIMBTHAI.jpg">ธ. ซีไอเอ็มบี ไทย</option>
+                    <option value="ธ. ทหารไทย" data-img_src="images/icon-bank/TMB.jpg">ธ. ทหารไทย</option>
+                    <option value="ธ. ทิสโก้" data-img_src="images/icon-bank/Tisco.jpg">ธ. ทิสโก้</option>
+                    <option value="ธ. ไทยพาณิชย์" data-img_src="images/icon-bank/SCB.jpg">ธ. ไทยพาณิชย์</option>
+                    <option value="ธ. ธนชาต" data-img_src="images/icon-bank/Tanachat.jpg">ธ. ธนชาต</option>
+                    <option value="ธ. นครหลวงไทย" data-img_src="images/icon-bank/SiamCity.jpg">ธ. นครหลวงไทย</option>
+                    <option value="ธ. ยูโอบี" data-img_src="images/icon-bank/UOB.jpg">ธ. ยูโอบี</option>
+                    <option value="ธ. สแตนดาร์ดชาร์เตอร์ด (ไทย)" data-img_src="images/icon-bank/STANDARD.jpg">ธ. สแตนดาร์ดชาร์เตอร์ด (ไทย)</option>
+                    <option value="ธ. ไอซีบีซี (ไทย)" data-img_src="images/icon-bank/ICBC.gif">ธ. ไอซีบีซี (ไทย)</option>
                 </select>
             </div>
 
-            <label class="col-12 col-form-label"><strong>จำนวนเงิน<span class="text-red">*</span>
-                    :</strong></label>
+            <label class="col-12 col-form-label"><strong>จำนวนเงิน<span class="text-red">*</span> :</strong></label>
             <div class="col-12">
                 <input name="payment_amount" type="text" class="form-control">
             </div>

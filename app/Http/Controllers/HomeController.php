@@ -7,9 +7,11 @@ use App\Models\Banner;
 use App\Models\Hilight;
 use App\Models\ProductItem;
 use App\Models\Promotion;
+use App\Models\vdo;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
@@ -33,6 +35,8 @@ class HomeController extends Controller
     {
         $hilights = Hilight::where('status', 1)->orderBy('id', 'desc')->get();
         $banners = Banner::where('status', 1)->where('position', 1)->orderBy('id', 'desc')->get();
+        $banner_hilights = Banner::where('status', 1)->where('position', 4)->orderBy('id', 'desc')->get();
+        $vdo_hilights = vdo::where('status', 1)->where('position', 1)->orderBy('id', 'desc')->get();
         // $product_categories = ProductCategory::whereNull('parent_id')->where('status', 1)->orderBy('_lft')->get();
 
         // สินค้าใหม่
@@ -72,7 +76,7 @@ class HomeController extends Controller
         // โปรโมชั่น
         $promotions = Promotion::where('status', 1)->inRandomOrder()->take(3)->get();
 
-        return view('home', compact('hilights', 'banners', 'promotions', 'newitems', 'bestitems'));
+        return view('home', compact('hilights', 'banners', 'banner_hilights', 'vdo_hilights', 'promotions', 'newitems', 'bestitems'));
     }
 
     public function flogin()
@@ -145,6 +149,8 @@ class HomeController extends Controller
 
     public function frontRegister(RegisterRequest $request)
     {
+        // type 1 = บุคคลธรรมดา สมัครแล้ว login ได้เลย
+        // type 2 = สมาชิกร้านค้า ต้องรอการยืนยันจาก admin ก่อน
         $requestData = $request->all();
         // dd($requestData);
 
@@ -152,10 +158,39 @@ class HomeController extends Controller
             $requestData['password'] = bcrypt($request->password);
         }
 
+        // ถ้าสมัครเข้ามาเป้นบุคคลทั้วไป ให้ปรับ status = 1 เพื่อที่จะได้ login ได้
+        if ($requestData['type'] == 1) {
+            $requestData['status'] = 1;
+        }
+
+        // รูปใบประกอบวิชาชีพ
+        if ($request->file('sell_license')) {
+            $requestData['sell_license'] = time() . '.' . $request->sell_license->extension(); // ชื่อรูป
+            $img = Image::make($_FILES['sell_license']['tmp_name']); // read image from temporary file
+            // $img->fit(1110, 150); // resize image
+            $img->save('uploads/user/sell_license/' . $requestData['sell_license']); // save image
+        }
+
+        // รูปใบอนุญาตขายยา
+        if ($request->file('pro_license')) {
+            $requestData['pro_license'] = time() . '.' . $request->pro_license->extension(); // ชื่อรูป
+            $img = Image::make($_FILES['pro_license']['tmp_name']); // read image from temporary file
+            // $img->fit(1110, 150); // resize image
+            $img->save('uploads/user/pro_license/' . $requestData['pro_license']); // save image
+        }
+
         $requestData['is_admin'] = 0;
         $user = User::create($requestData);
 
-        auth()->login($user);
+        // หลังสมัครแล้ว
+        // ถ้า type = 1 (บุคคลธรรมดา) ให้ทำการ login ทันทีหลังสมัคร,
+        // ถ้า type = 2 (ร้านค้า) ให้รอการยืนยันจาก admin
+        if ($user->type == 1) {
+            auth()->login($user);
+            set_notify('success', 'ยินดีต้อนรับเข้าสู่ระบบ');
+        } else {
+            set_notify('success', 'สมัครสมาชิกสำเร็จ รอการตรวจสอบยืนยันจากทางเว็บไซต์');
+        }
 
         return redirect()->to('/');
 

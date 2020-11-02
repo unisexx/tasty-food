@@ -99,6 +99,7 @@ Route::middleware(['admin'])->namespace('Admin')->prefix('admin')->group(functio
     Route::resource('knowledge', 'KnowledgeController');
     Route::resource('contact', 'ContactController');
     Route::resource('vdo', 'VdoController');
+    Route::resource('store', 'StoreController');
 
     // หมวดหมู่สินค้า
     Route::resource('product-category', 'ProductCategoryController');

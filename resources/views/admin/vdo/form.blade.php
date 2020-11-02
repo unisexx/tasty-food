@@ -1,6 +1,12 @@
 
 <div class="card-body">
     <div class="form-group">
+        <label for="knowledge-category">ตำแหน่งของแบนเนอร์</label>
+        <select name="position" class="form-control">
+            <option value="1" {{ @$rs->position == 1 ? "selected" : "" }}>หน้าแรก (ข้างไฮไลท์)</option>
+        </select>
+    </div>
+    <div class="form-group">
         <label for="title">หัวข้อ</label>
         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="หัวข้อ" value="{{ isset($rs->title) ? $rs->title : old('title') }}">
     </div>
