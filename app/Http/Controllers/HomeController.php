@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Banner;
 use App\Models\Hilight;
+use App\Models\Knowledge;
 use App\Models\ProductItem;
 use App\Models\Promotion;
 use App\Models\vdo;
@@ -131,20 +132,30 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        $keyword = $request->get('search');
+        $keyword = $request->get('searchtxt');
 
+        // สินค้า
         $product_items = ProductItem::select('*');
 
         if (!empty($keyword)) {
-            $rs = $rs->where(function ($q) use ($keyword) {
+            $product_items = $product_items->where(function ($q) use ($keyword) {
                 $q->where('name', 'LIKE', "%$keyword%")
                     ->orWhere('brand', 'LIKE', "%$keyword%");
             });
         }
 
-        $product_items = $product_items->where('status', 1)->paginate(8);
+        $product_items = $product_items->where('status', 1)->get();
 
-        return view('front.home.search', compact('product_items'));
+        // ข้อมูลสุขภาพ
+        $knowledges = Knowledge::where('status', 1);
+
+        if (!empty($keyword)) {
+            $knowledges = $knowledges->where('title', 'LIKE', "%$keyword%");
+        }
+
+        $knowledges = $knowledges->get();
+
+        return view('front.home.search', compact('product_items', 'knowledges'));
     }
 
     public function frontRegister(RegisterRequest $request)

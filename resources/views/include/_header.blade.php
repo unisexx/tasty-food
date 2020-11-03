@@ -5,15 +5,24 @@
             <div class="col-xs-12 col-md-3 d-flex align-items-center">
                 <img src="{{ asset('images/logo-chulalak.png') }}" alt="" class="logo img-fluid">
             </div>
-            <div class="col-xs-12 col-md-4 pt-3 align-items-center">
-                <div class="input-group pl-0 search w-100">
-                    <input class="form-control search-input" type="text"
-                        placeholder="ค้นหาสินค้า / ค้นหาข้อมูลในเว็บไซต์" aria-label="Search">
-                    <div class="input-group-append">
-                        <span class="input-group-text magnify-search" id=""><i class="fa fa-search mx-auto" aria-hidden="true"></i></span>
+
+
+            {{-- <form class="search pull-right w-75" method="GET" action="{{ url('search') }}" accept-charset="UTF-8" role="search">
+                <input class="form-control search-input" type="text" placeholder="Search Products..." aria-label="Search" name="searchtxt" value="{{ request('searchtxt') }}">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form> --}}
+
+
+                <form class="col-xs-12 col-md-4 pt-3 align-items-center" method="GET" action="{{ url('search') }}" accept-charset="UTF-8" role="search">
+                    <div class="input-group pl-0 search w-100">
+                        <input class="form-control search-input" type="text" placeholder="ค้นหาสินค้า / ค้นหาข้อมูลในเว็บไซต์" aria-label="Search" name="searchtxt" value="{{ request('searchtxt') }}">
+                        <div class="input-group-append">
+                            <button type="submit" class="input-group-text magnify-search" style="height: 38px; margin-top: 0px;"><i class="fa fa-search mx-auto" aria-hidden="true"></i></button>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </form>
+
+
             <div class="col-xs-12 col-md-3 pt-3 align-items-center justify-content-end text-right login">
                 <img src="{{ asset('images/user-login.png') }}" alt="" class="pr-2"> 
                 @auth
