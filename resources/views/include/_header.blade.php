@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3 d-flex align-items-center">
-                <img src="{{ asset('images/logo-chulalak.png') }}" alt="" class="logo img-fluid">
+                <a href="{{ url('') }}"><img src="{{ asset('images/logo-chulalak.png') }}" alt="" class="logo img-fluid"></a>
             </div>
 
 
