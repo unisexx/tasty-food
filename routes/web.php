@@ -63,7 +63,7 @@ Route::get('knowledge/view/{id}', 'Front\KnowledgeController@view');
 Route::get('contact', 'Front\ContactController@index');
 Route::post('contact/save', 'Front\ContactController@save');
 Route::get('how-to-buy', 'Front\HowToBuyController@index');
-Route::get('checkout', 'Front\CheckOutController@index');
+Route::get('checkout', 'Front\CheckoutController@index');
 Route::get('promotion', 'Front\PromotionController@index');
 
 Route::get('confirm-payment', 'Front\ConfirmPaymentController@index')->middleware('member');

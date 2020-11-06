@@ -29,35 +29,7 @@
     </div>
     <div class="mt-2 mb-4 border-title">{{ @$knowledge->title }}</div>
     <img src="{{ asset('uploads/knowledge/'.$knowledge->image) }}" alt="" class="img-fluid rounded">
-    <ul class="social-nav model-3d-0 social mt-4 mb-4 pl-0">
-        <li class="share">Share On : </li>
-        <li>
-            <a href="#" class="facebook">
-                <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="twitter">
-                <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="line">
-                <div class="front"><i class="fa fa-line" aria-hidden="true"></i></div>
-                <div class="back"><i class="fa fa-line2" aria-hidden="true"></i></div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="instagram">
-                <div class="front"><i class="fa fa-instagram" style="font-size:16px; margin-top:2px;"
-                        aria-hidden="true"></i></div>
-                <div class="back"><i class="fa fa-instagram" style="font-size:16px; margin-top:2px;"
-                        aria-hidden="true"></i></div>
-            </a>
-        </li>
-    </ul>
+    <div class="social-nav model-3d-0 social mt-4 mb-4 pl-0">Share on: <div class="sharethis-inline-share-buttons"></div></div>
     {!! $knowledge->detail !!}
 </div>
 
