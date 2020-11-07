@@ -80,7 +80,7 @@
             @foreach(@$knowledge->knowledgeBanner as $item)
                 @if($item->banner->position == 3)
                     <a href="{{ @$item->banner->url }}">
-                        <img src="{{ asset('uploads/banner/'.@$item->banner->image) }}" alt="{{ @$item->banner->title }}" width="100%" class="rounded banner-km img-fluid">
+                        <img src="{{ asset('uploads/banner/'.@$item->banner->image) }}" alt="{{ @$item->banner->title }}" width="100%" class="rounded banner-km img-fluid mb-4">
                     </a>
                 @endif
             @endforeach

@@ -34,7 +34,7 @@
         <textarea class="form-control tinyMCE" name="detail">{!! isset($rs->detail) ? $rs->detail : old('detail') !!}</textarea>
     </div>
     <div class="form-group">
-        <label for="status">แท็กที่เกี่ยวข้อง</label>
+        <label for="status">แท็กที่เกี่ยวข้อง (กดปุ่ม Enter เพื่อบันทึกคำ)</label>
         <div>
             <input type="text" class="form-control @error('tags') is-invalid @enderror" id="tags" name="tags" value="{{ isset($rs->tags) ? $rs->tags : old('tags') }}" data-role="tagsinput">
         </div>
@@ -67,7 +67,7 @@
                             <td>
                                 <select name='banner[banner_id][]' class='form-control'>
                                 @foreach($banners as $banner)
-                                    <option value='{{ $banner->id }}' {{ $item->banner_id == $banner->id ? 'selected' : '' }}>{{ $banner->title }} [{{ $banner->getPositionTxt() }}]</option>
+                                    <option value='{{ $banner->id }}' {{ $item->banner_id == $banner->id ? 'selected' : '' }}>[{{ $banner->getPositionTxt() }}] {{ $banner->title }}</option>
                                 @endforeach
                                 </select>
                             </td>
@@ -133,7 +133,7 @@ $(document).ready(function(){
         html += "<td>";
             html += "<select name='banner[banner_id][]' class='form-control'>";
             html += "@foreach($banners as $banner)";
-                html += "<option value='{{ $banner->id }}'>{{ $banner->title }}  [{{ $banner->getPositionTxt() }}]</option>";
+                html += "<option value='{{ $banner->id }}'>[{{ $banner->getPositionTxt() }}] {{ $banner->title }}</option>";
             html += "@endforeach";
             html += "</select>";
         html += "</td>";

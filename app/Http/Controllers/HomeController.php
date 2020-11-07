@@ -8,7 +8,7 @@ use App\Models\Hilight;
 use App\Models\Knowledge;
 use App\Models\ProductItem;
 use App\Models\Promotion;
-use App\Models\vdo;
+use App\Models\Vdo;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -37,7 +37,7 @@ class HomeController extends Controller
         $hilights = Hilight::where('status', 1)->orderBy('id', 'desc')->get();
         $banners = Banner::where('status', 1)->where('position', 1)->orderBy('id', 'desc')->get();
         $banner_hilights = Banner::where('status', 1)->where('position', 4)->orderBy('id', 'desc')->get();
-        $vdo_hilights = vdo::where('status', 1)->where('position', 1)->orderBy('id', 'desc')->get();
+        $vdo_hilights = Vdo::where('status', 1)->where('position', 1)->orderBy('id', 'desc')->get();
         // $product_categories = ProductCategory::whereNull('parent_id')->where('status', 1)->orderBy('_lft')->get();
 
         // สินค้าใหม่

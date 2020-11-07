@@ -236,6 +236,7 @@ $(document).ready(function(){
         var html = "";
         html += "<tr>";
         html += "<td><input class='form-control' type='text' name='title[]'></td>";
+        html += "<td><input class='form-control' type='number' min='1' name='weight[]'></td>";
         html += "<td><input class='form-control numDecimal' type='text' name='price[]'></td>";
         html += "<td><input class='form-control numDecimal' type='text' name='price_vip[]'></td>";
         html += "<td>";

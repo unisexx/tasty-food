@@ -33,7 +33,7 @@
     <div class="row m-0 bg-footer">
         <div class="container text-footer">
             <div class="row">
-            <div class="col-12 col-sm-4 col-md-4">2019 www.chc.com  All rights reserved</div>
+            <div class="col-12 col-sm-4 col-md-4">2020 www.chc.com  All rights reserved</div>
             <div class="col-12 col-sm-4 col-md-4 text-center"><a href="#">Terms & Conditions</a><a href="#">Privacy</a> </div>
             <div class="col-12 col-sm-4 col-md-4 text-right a-social">
                 <a href="{{ $contact->facebook }}"><img src="{{ url('images/icon-facebook.png') }}" alt="" style="margin-top:-10px;"></a>

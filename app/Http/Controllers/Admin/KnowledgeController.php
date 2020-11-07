@@ -57,10 +57,13 @@ class KnowledgeController extends Controller
             $img2->save('uploads/knowledge/' . $requestData['image']); // save image
         }
 
-        Knowledge::create($requestData);
+        $rs = Knowledge::create($requestData);
 
         //บันทึกแบนเนอร์
         $this->saveKnowledgeBanner($request, $rs);
+
+        //บันทึกสินค้าแนะนำ
+        $this->saveKnowledgeProduct($request, $rs);
 
         set_notify('success', 'บันทึกข้อมูลสำเร็จ');
 

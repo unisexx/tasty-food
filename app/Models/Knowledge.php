@@ -36,4 +36,13 @@ class Knowledge extends Model
     {
         return $this->hasMany('App\Models\KnowledgeProductItem');
     }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function ($knowledge) {
+            $knowledge->knowledgeBanner()->delete();
+            $knowledge->knowledgeProductItem()->delete();
+        });
+    }
 }

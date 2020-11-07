@@ -28,10 +28,12 @@
     <!-- The slideshow -->
     <div class="carousel-inner" style="position: relative;">
         @foreach($hilights as $key => $hilight)
-        <div class="carousel-item @if($key == 0) active @endif">
-            <img src="{{ url('uploads/hilight/'.$hilight->image) }}" class="img-fluid"
-                alt="{{ $hilight->title }}">
-        </div>
+        <a href="{{ url($hilight->url) }}" target="_blank">
+            <div class="carousel-item @if($key == 0) active @endif">
+                <img src="{{ url('uploads/hilight/'.$hilight->image) }}" class="img-fluid"
+                    alt="{{ $hilight->title }}">
+            </div>
+        </a>
         @endforeach
     </div>
 

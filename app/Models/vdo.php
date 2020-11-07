@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
+// use Illuminate\Database\Eloquent\SoftDeletes;
 
 class vdo extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
 
     protected $table = 'vdos';
 
@@ -24,6 +25,7 @@ class vdo extends Model
     {
         $data = array(
             1 => 'หน้าแรก (ข้างไฮไลท์)',
+            2 => 'หน้าเกี่ยวกับเรา',
         );
 
         return $data[$this->position];
