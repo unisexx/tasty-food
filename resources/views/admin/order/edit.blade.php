@@ -35,13 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                @php
-                    $sum = 0;
-                @endphp
                 @foreach ($rs->orderDetail as $order_detail)
-                @php
-                    $sum+= $order_detail->productItemPrice->price * $order_detail->qty;
-                @endphp
                 <tr>
                     <td>
                         <img src="{{ url('uploads/product-item/'.@$order_detail->productItemPrice->productItem->productImageFirst->name) }}" class="img-fluid" alt="" width="50">
@@ -51,24 +45,43 @@
                         {{-- <div><i class="fas fa-tags text-danger"></i> โปรโมชั่น : {{ @$order_detail->productItemPrice->productItem->promotion->title }}</div> --}}
                     </td>
                     <td class="text-right">{{ $order_detail->qty }}</td>
-                    <td class="text-right">{{ $order_detail->productItemPrice->price }}</td>
-                    <td class="text-right">{!! number_format($order_detail->productItemPrice->price * $order_detail->qty, 2) !!}</td>
+                    <td class="text-right">{{ $order_detail->price }}</td>
+                    <td class="text-right">{!! number_format($order_detail->total_price, 2) !!}</td>
                 </tr>
                 @endforeach
                 <tr class="table-light">
                     <td colspan="3"></td>
                     <td class="text-right">ค่าจัดส่ง</td>
-                    <td class="text-right">55.00</td>
+                    <td class="text-right">{{ @number_format($rs->shipping_cost, 2) }}</td>
                 </tr>
                 <tr class="table-warning">
                     <td colspan="3"></td>
                     <td class="text-right">รวมทั้งสิ้น</td>
-                    <td class="text-right">{{ number_format($sum+55.00, 2) }}</td>
+                    <td class="text-right">{{ number_format(@$rs->total_price, 2) }}</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+
+{{-- ที่อยู่จัดส่ง --}}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">ที่อยู่จัดส่ง</h3>
+    </div>
+
+    <div class="card-body">
+        <div>{{ $rs->addr_name }}</div>
+        <div>โทรศัพท์: {{ $rs->addr_tel }}</div>
+        <div>{{ $rs->addr_address }}</div>
+        <div>{{ $rs->addr_tumbon }}</div>
+        <div>{{ $rs->addr_amphoe }}</div>
+        <div>{{ $rs->addr_province }}</div>
+        <div>{{ $rs->addr_zipcode }}</div>
+    </div>
+</div>
+
 
 
 {{-- รายละเอียดการแจ้งโอน --}}
@@ -83,7 +96,6 @@
                 <tr>
                     <th>วันที่แจ้ง</th>
                     <th>รายละเอียดการโอน</th>
-                    <th>ที่อยู่สำหรับการจัดส่ง</th>
                     <th>ไฟล์แนบ</th>
                 </tr>
             </thead>
@@ -100,10 +112,7 @@
                         <div>ชื่อผู้แจ้ง : {{ $confirm_payment->name }}</div>
                         <div>อีเมล์ : {{ $confirm_payment->email }}</div>
                         <div>เบอร์มือถือ : {{ $confirm_payment->tel }}</div>
-                        <div>ที่อยู่สำหรับการจัดส่ง : {{ $confirm_payment->description }}</div>
-                    </td>
-                    <td>
-                        <textarea class="form-control" cols="50" rows="8">{{ $confirm_payment->name }}&#13;&#10;{{ $confirm_payment->description }}&#13;&#10;โทรศัพท์: {{ $confirm_payment->tel }}</textarea>
+                        {{-- <div>ที่อยู่สำหรับการจัดส่ง : {{ $confirm_payment->description }}</div> --}}
                     </td>
                     <td>
                         @if($confirm_payment->payment_attach)

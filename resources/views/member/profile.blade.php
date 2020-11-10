@@ -10,30 +10,61 @@
 @endpush
 
 @section('content')
-<div class="mb-5 about bg-white">
-    @include('member.menu')
-    <form class="user mt-4 col-12 col-sm-12 col-md-8 mx-auto" method="POST" action="{{ url('member/profile_save/'.Auth::user()->id) }}" accept-charset="UTF-8">
-    {{ csrf_field() }}
-        <div class="form-group">
-            <label for="p-name">ชื่อ - นามสกุล</label>
-            <input id="p-name" name="name" type="text" class="form-control form-control-user bg-fields" placeholder="ชื่อ - นามสกุล" value="{{ Auth::user()->name }}">
-        </div>
-        <div class="form-group">
-            <label for="p-tel">เบอร์โทรศัพท์</label>
-            <input id="p-tel" name="tel" type="text" class="form-control form-control-user bg-fields" placeholder="เบอร์โทรศัพท์" value="{{ Auth::user()->tel }}">
-        </div>
-        <div class="form-group">
-            <label for="p-address">ที่อยู่สำหรับจัดส่งสินค้า</label>
-            <textarea id="p-address" name="address" class="form-control" cols="30" rows="5" placeholder="ที่อยู่สำหรับจัดส่งสินค้า">{{ Auth::user()->address }}</textarea>
-        </div>
-        <div class="justify-content-end text-center w-100">
-            <button type="submit" class="btn btn-success btn-user btn-block mt-4 col-12">บันทึก</button>
-        </div>
-    </form>
-</div>
+@include('member.menu')
+
+<a href="{{ url('member/profile_form') }}"><button type="button" class="btn btn-block btn-primary float-right mt-3 mb-3" style="width:150px;">+ เพิ่มที่อยู่จัดส่ง</button></a>
+
+<table class="table table-striped mt-3">
+<thead>
+    <tr>
+        <td>ชื่อสถานที่</td>
+        <td>ที่อยู่</td>
+        <td style="width:110px;">จัดการ</td>
+    </tr>
+</thead>
+<tbody>
+    @foreach ($rs as $item)
+        <tr>
+            <td>{{ @$item->title }}</td>
+            <td>
+                {{ @$item->name }}<br>
+                โทรศัพท์ {{ @$item->tel }}<br>
+                {{ @$item->address }}
+                {{ @$item->tumbon }}
+                {{ @$item->amphoe }}
+                {{ @$item->province }}
+                {{ @$item->zipcode }}
+            </td>
+            <td>
+                <a href="{{ url('member/profile_form?id=' . $item->id) }}" title="แก้ไขรายการนี้">
+                    <button class="btn btn-sm btn-warning">แก้ไข</button>
+                </a>
+
+                <button class="btn btn-sm btn-danger" title="ลบรายการนี้" onclick="deleteAlert({{$item->id}})">ลบ</button>
+            </td>
+        </tr>
+    @endforeach
+</tbody>
+</table>
 @endsection
 
 @push('js')
-<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
-{!! JsValidator::formRequest('App\Http\Requests\ProfileRequest') !!}
+<script>
+function deleteAlert($id) {
+    Swal.fire({
+    title: 'ยืนยันการลบข้อมูล?',
+    text: "หลังจากที่ลบไปแล้วจะไม่สามารถดึงข้อมูลนี้กลับมาได้อีก!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ลบเลย',
+    cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+        if (result.value) {
+            $(location).attr('href', '{{ url("member/profile_delete") }}/'+$id)
+        }
+    });
+}
+</script>
 @endpush

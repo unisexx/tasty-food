@@ -231,6 +231,8 @@ function itemAddAlert(){
             }).then((result) => {
                 if (result.value) {
                     $(location).attr('href', '{{ url("checkout") }}')
+                }else{
+                    $(location).attr('href', '{{ url("product") }}')
                 }
             });
 }

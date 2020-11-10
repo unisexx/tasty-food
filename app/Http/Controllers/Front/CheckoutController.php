@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\ProductItemPrice;
 use Auth;
+use Illuminate\Http\Request;
 use Session;
 
 class CheckoutController extends Controller
@@ -23,22 +24,24 @@ class CheckoutController extends Controller
         return view('front.checkout.index', compact('carts'));
     }
 
-    public function finish()
+    public function finish(Request $request)
     {
-        $carts = Cart::where('user_id', @Auth::user()->id)->get();
+        $requestData = $request->all();
 
         //  อัพเดท table order ของ member
-        $order = new Order;
-        $order->user_id = @Auth::user()->id;
-        $order->status = 'รอการแจ้งโอน';
-        $order->save();
+        $requestData['user_id'] = @Auth::user()->id;
+        $requestData['status'] = 'รอการแจ้งโอน';
+        $order = Order::create($requestData);
+
+        $carts = Cart::where('user_id', @Auth::user()->id)->get();
 
         foreach ($carts as $cart) {
             $orderdetail = new OrderDetail;
             $orderdetail->order_id = $order->id;
             $orderdetail->product_item_price_id = $cart->product_item_price_id;
             $orderdetail->qty = $cart->qty;
-            $orderdetail->price = (show_price(ProductItemPrice::find($cart->product_item_price_id)) * $cart->qty);
+            $orderdetail->price = @show_price(ProductItemPrice::find($cart->product_item_price_id));
+            $orderdetail->total_price = @show_price(ProductItemPrice::find($cart->product_item_price_id)) * $cart->qty;
             $orderdetail->save();
         }
 

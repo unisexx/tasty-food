@@ -22,4 +22,17 @@ class ProductItemPrice extends Model
     {
         return $this->belongsTo('App\Models\ProductItem', 'product_item_id', 'id');
     }
+
+    public function cart()
+    {
+        return $this->hasMany('App\Models\Cart');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function ($product_item) {
+            $product_item->cart()->delete();
+        });
+    }
 }

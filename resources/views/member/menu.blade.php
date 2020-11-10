@@ -1,7 +1,7 @@
 <div>
 	<ul class="nav nav-tabs">
 		<li class="nav-item">
-			<a class="nav-link {{ Request::segment(2) == 'profile' ? 'active' : '' }}" href="{{ url('member/profile') }}">ข้อมูลสำหรับการจัดส่ง</a>
+			<a class="nav-link {{ Request::segment(2) == 'profile' || Request::segment(2) == 'profile_form' ? 'active' : '' }}" href="{{ url('member/profile') }}">ข้อมูลสำหรับการจัดส่ง</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link {{ Request::segment(2) == 'order' ? 'active' : '' }}" href="{{ url('member/order') }}">สถานะการสั่งซื้อ</a>

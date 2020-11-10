@@ -10,8 +10,14 @@
 @endpush
 
 @section('content')
+<form class="user col-12 col-sm-12 col-md-12 mx-auto" method="POST"
+        action="{{ url('checkout/finish') }}" accept-charset="UTF-8">
+        {{ csrf_field() }}
+
+
 <!--########## START checkout ########-->
-<div class="row bg-white p-4">
+<div class="title-page7 mb-4"><i class="fa fa-edit black"></i> รายการสินค้า</div>
+<div class="row bg-white mb-5">
     <div class="col-12 col-sm-12 col-md-8 cart-area">
         @foreach ($carts as $cart)
             <div class="cart-header mb-4">
@@ -48,10 +54,66 @@
         <div class="checkout-total mt-4">
             {{-- โชว์รายละเอียดสรุปทั้งหมด --}}
         </div>
-        <a class="col-12 btn btn-success" href="{{ url('checkout/finish') }}">checkout</a>
+        {{-- <a class="col-12 btn btn-success" href="{{ url('checkout/finish') }}">checkout</a> --}}
+    </div>
+</div>
+
+<hr>
+<div class="bg-white mt-5">
+    <div class="title-page7 mb-4"><i class="fa fa-edit black"></i> ที่อยู่จัดส่ง</div>
+    @if(Auth::check())
+        @php
+            $userAddress = App\Models\UserAddress::where('user_id', Auth::user()->id)->get();
+        @endphp
+    @endif
+    <div class="form-row">
+        @if(@count($userAddress))
+        <div class="col-md-12 mb-3">
+            <label for="s-title">ชื่อสถานที่</label>
+            <select id="userAddressId" class="form-control">
+                @foreach($userAddress as $item)
+                <option value="{{ $item->id }}">{{ $item->title }}</option>
+                @endforeach
+            </select>
+        </div>
+        @endif
+        <div class="col-md-8 mb-3">
+            <label for="s-name">ชื่อผู้รับสินค้า</label>
+            <input id="s-name" name="addr_name" type="text" class="form-control" placeholder="ชื่อผู้รับสินค้า" value="{{ @$rs->name }}" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="s-tel">เบอร์โทรศัพท์ที่ติดต่อได้</label>
+            <input id="s-tel" name="addr_tel" type="text" class="form-control" placeholder="เบอร์โทรศัพท์ที่ติดต่อได้" value="{{ @$rs->tel }}" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-12 mb-3">
+            <label for="s-address">ที่อยู่จัดส่ง</label>
+            <input id="s-address" name="addr_address" type="text" class="form-control" placeholder="ที่อยู่จัดส่ง" value="{{ @$rs->address }}" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="tumbon">ตำบล / แขวง</label>
+            <input class="form-control" type="text" id="tumbon" placeholder="ตำบล" name="addr_tumbon" value="{{ @$rs->tumbon }}" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="amphoe">อำเภอ / เขต</label>
+            <input class="form-control" type="text" id="amphoe" placeholder="อำเภอ" name="addr_amphoe" value="{{ @$rs->amphoe }}" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="province">จังหวัด</label>
+            <input class="form-control" type="text" id="province" placeholder="จังหวัด" name="addr_province" value="{{ @$rs->province }}" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="zipcode">รหัสไปรษณีย์</label>
+            <input class="form-control" type="text" id="zipcode" placeholder="รหัสไปรษณีย์" name="addr_zipcode" value="{{ @$rs->zipcode }}" required>
+        </div>
     </div>
 </div>
 <!--########## END checkout ########-->
+
+<button type="submit" class="col-12 btn btn-lg btn-success mt-5">ยืนยันการสั่งซื้อสินค้า</button>
+
+</form>
 @endsection
 
 @push('js')
@@ -109,6 +171,12 @@ $(document).ready(function () {
         }
     });
 
+    // โหลดที่อยู่จัดส่ง
+    ajaxLoadUserAddress();
+    $(document).on('change', "#userAddressId", function () {
+        ajaxLoadUserAddress();
+    });
+
 });
 
 function ajaxUpdateQty(product_item_price_id, qty){
@@ -140,5 +208,24 @@ function ajaxUpdateSummary(){
     });
 }
 
+function ajaxLoadUserAddress(){
+    var id = $( "#userAddressId option:selected" ).val();
+    $.ajax({
+        method: "GET",
+        url: "{{ url('ajaxGetUserAddressData') }}",
+        data: {
+            id : id,
+        }
+    }).done(function(data) {
+        console.log(data);
+        $("input[name='addr_name']").val(data.name);
+        $("input[name='addr_tel']").val(data.tel);
+        $("input[name='addr_address']").val(data.address);
+        $("input[name='addr_tumbon']").val(data.tumbon);
+        $("input[name='addr_amphoe']").val(data.amphoe);
+        $("input[name='addr_province']").val(data.province);
+        $("input[name='addr_zipcode']").val(data.zipcode);
+    });
+}
 </script>
 @endpush

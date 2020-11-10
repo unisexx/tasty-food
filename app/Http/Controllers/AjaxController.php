@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\ProductCategory;
 use App\Models\ProductImage;
+use App\Models\UserAddress;
 use Auth;
 use DB;
 use Session;
@@ -161,5 +162,12 @@ class AjaxController extends Controller
         } else {
             Cart::where('product_item_price_id', $_GET['product_item_price_id'])->where('session_id', session()->getId())->delete();
         }
+    }
+
+    public function ajaxGetUserAddressData()
+    {
+        $rs = UserAddress::where('user_id', @Auth::user()->id)->where('id', @$_GET['id'])->first();
+
+        return $rs;
     }
 }

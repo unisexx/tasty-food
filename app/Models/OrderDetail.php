@@ -15,6 +15,7 @@ class OrderDetail extends Model
         'product_item_price_id',
         'qty',
         'price',
+        'total_price',
     );
 
     public function productItemPrice()

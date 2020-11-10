@@ -546,7 +546,7 @@ return [
                 [
                     'type'     => 'js',
                     'asset'    => true,
-                    'location' => 'https://cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => 'https://cdn.jsdelivr.net/npm/sweetalert2@10',
                 ],
             ],
         ],

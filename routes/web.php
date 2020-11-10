@@ -36,6 +36,7 @@ Route::any('ajaxUpdateQty', 'AjaxController@ajaxUpdateQty');
 Route::any('ajaxUpdateSummary', 'AjaxController@ajaxUpdateSummary');
 Route::any('ajaxEmptyCart', 'AjaxController@ajaxEmptyCart');
 Route::any('ajaxDeleteProductItem', 'AjaxController@ajaxDeleteProductItem');
+Route::any('ajaxGetUserAddressData', 'AjaxController@ajaxGetUserAddressData');
 
 // ่jquery load view
 Route::get('load-personal-regis-form', function () {return view('load.personal-regis-form');});
@@ -69,12 +70,14 @@ Route::get('promotion', 'Front\PromotionController@index');
 Route::get('confirm-payment', 'Front\ConfirmPaymentController@index')->middleware('member');
 Route::post('confirm-payment/save', 'Front\ConfirmPaymentController@save');
 
-Route::get('checkout/finish', 'Front\CheckOutController@finish')->middleware('member');
+Route::post('checkout/finish', 'Front\CheckoutController@finish')->middleware('member');
 
 // Member
 Route::middleware(['member'])->namespace('Member')->prefix('member')->group(function () {
     Route::get('profile', 'MemberController@profile');
+    Route::get('profile_form', 'MemberController@profile_form');
     Route::post('profile_save/{id}', 'MemberController@profile_save');
+    Route::get('profile_delete/{id}', 'MemberController@profile_delete');
 
     Route::get('password', 'MemberController@password');
     Route::post('password_save/{id}', 'MemberController@password_save');

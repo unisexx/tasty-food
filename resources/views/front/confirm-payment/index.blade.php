@@ -128,10 +128,10 @@
             <div class="col-12">
                 <input name="tel" type="text" class="form-control" value="{{ @Auth::user()->tel }}">
             </div>
-            <label class="col-12 col-form-label"><strong>ที่อยู่สำหรับการจัดส่ง :</strong></label>
+            {{-- <label class="col-12 col-form-label"><strong>ที่อยู่สำหรับการจัดส่ง :</strong></label>
             <div class="col-12">
                 <textarea class="form-control" name="description" cols="30" rows="7" placeholder="ที่อยู่สำหรับการจัดส่ง">{{ @Auth::user()->address }}</textarea>
-            </div>
+            </div> --}}
         </div>
         <div class="justify-content-end text-center w-100">
             <button type="submit" class="col-6 mt-2 mb-5  btn btn-success display-block">Send</button>

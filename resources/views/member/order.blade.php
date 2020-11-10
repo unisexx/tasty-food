@@ -16,6 +16,7 @@
         <thead>
             <th>วันที่</th>
             <th>หมายเลขการสั่งซื้อ</th>
+            <th>ยอดชำระ</th>
             <th>สถานะ</th>
             <th>จัดการ</th>
         </thead>
@@ -24,6 +25,7 @@
                 <tr>
                     <td>{{ DB2Date($order->created_at) }}</td>
                     <td>{{ sprintf('%08d', $order->id) }}</td>
+                    <td>{{ number_format($order->total_price, 2) }}</td>
                     <td><span class="badge badge-{{ @order_status($order->status) }}">{{ $order->status }}</span></td>
                     <td>
                         <a class="btn btn-primary btn-sm" href="{{ url('member/order/view/'.$order->id) }}" role="button">ดูรายละเอียด</a>

@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <th>หมายเลขคำสั่งซื้อ</th>
+                    <th>ยอดชำระ</th>
                     <th>สถานะ</th>
                     <th>วันที่สร้าง</th>
                     <th class="no-sort">จัดการ</th>
@@ -29,6 +30,7 @@
                 @foreach($rs as $row)
                 <tr>
                     <td>{{ sprintf('%08d', $row->id) }}</td>
+                    <td>{{ number_format($row->total_price, 2) }}</td>
                     <td><span class="badge badge-{{ @order_status($row->status) }}">{{ $row->status }}</span></td>
                     <td>{{ $row->created_at }}</td>
                     <td>
@@ -50,6 +52,7 @@
             <tfoot>
                 <tr>
                     <th>หมายเลขคำสั่งซื้อ</th>
+                    <th>ยอดชำระ</th>
                     <th>สถานะ</th>
                     <th>วันที่สร้าง</th>
                     <th>จัดการ</th>

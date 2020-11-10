@@ -66,22 +66,18 @@ class ProductItem extends Model
         return $this->hasMany('App\Models\ProductItemCounter');
     }
 
-    public function cart()
+    public function carts()
     {
-        return $this->hasMany('App\Models\Cart');
+        return $this->hasManyThrough('App\Models\Cart', 'App\Models\ProductItemPrice');
     }
 
-    // this is a recommended way to declare event handlers
     public static function boot()
     {
         parent::boot();
-
         static::deleting(function ($product_item) {
-            // before delete() method call this
-            $product_item->cart()->delete();
-            // do the rest of the cleanup...
+            $product_item->carts()->delete();
+            $product_item->productItemPrice()->delete();
         });
-
         static::addGlobalScope(new VipScope);
     }
 }

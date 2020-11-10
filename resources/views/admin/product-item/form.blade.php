@@ -252,4 +252,34 @@ $(document).ready(function(){
     });
 });
 </script>
+
+{{-- validate ยิ่งซื้อยิ่งลด --}}
+<script>
+$(document).ready(function(){
+    $(document).on('click', 'form button[type=submit]', function(e) {
+        // ถ้า tbody ไม่มีแถว = 0 ให้แจ้งเตือน
+        if($("#tbPrice > tbody > tr").length == 0){
+            Swal.fire({
+                icon: 'error',
+                title: 'ไม่สามารถบันทึกได้',
+                text: 'กรุณาบันทึกข้อมูลในส่วนของยิ่งซื้อยิ่งลด'
+            })
+            e.preventDefault();
+        }else{
+            // ถ้ามีแถว ให้ check ทุก input ห้ามเป็นค่าว่าง (มากกว่า 0 คือมีค่าว่าง)
+            var emptyInput = $("#tbPrice input:not([type=hidden])").filter(function () {
+                        return $.trim($(this).val()).length == 0
+                    }).length;
+            if(emptyInput > 0){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'ไม่สามารถบันทึกได้',
+                    text: 'ข้อมูลในส่วนของยิ่งซื้อยิ่งลด ห้ามมีค่าว่าง'
+                })
+                e.preventDefault();
+            }
+        }
+    });
+});
+</script>
 @stop
