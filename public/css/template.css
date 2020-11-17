@@ -2408,3 +2408,9 @@ hgroup h2.lead {
     max-width: 100%;
     height: auto;
 }
+
+.original-price {
+    color: #9e9e9e;
+    text-decoration: line-through;
+    font-size: 18px;
+}

@@ -106,7 +106,8 @@
                 <tr>
                     <th>ชื่อชุด</th>
                     <th>น้ำหนักสินค้า (กรัม)</th>
-                    <th>ราคา</th>
+                    <th>ราคาเต็ม</th>
+                    <th>ราคาลด</th>
                     <th>ราคา <span class="badge bg-warning"><i class="fas fa-crown"></i> VIP</span></th>
                     <th>จัดการ</th>
                 </tr>
@@ -117,6 +118,7 @@
                         <tr>
                             <td><input class='form-control' type='text' name='title[]' value="{{ $item->title }}"></td>
                             <td><input class='form-control' type='number' min="1" name='weight[]' value="{{ $item->weight }}"></td>
+                            <td><input class='form-control numDecimal' type='text' name='price_full[]' value="{{ $item->price_full }}"></td>
                             <td><input class='form-control numDecimal' type='text' name='price[]' value="{{ $item->price }}"></td>
                             <td><input class='form-control numDecimal' type='text' name='price_vip[]' value="{{ $item->price_vip }}"></td>
                             <td>

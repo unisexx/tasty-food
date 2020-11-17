@@ -87,13 +87,17 @@
                     <div class="col-12">
                         <h5><span class="shop-set">{{ $item->title }}</span><h5>
                     </div>
-                    <div class="col-5">
-                        <div class="price2">฿ {{ show_price($item) }}</div>
-                    </div>
                     <div class="col-7">
+                        <div class="price2">฿{{ show_price($item) }}
+                            @if($item->price_full)
+                            <span class="original-price">฿{{ $item->price_full }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-5">
                         <div class="row">
-                            <label class="col-5 col-form-label">จำนวน :</label>
-                            <input class="col-3 form-control item_product_qty" type="number" step="1" min="0" value="0" data-id="{{ $item->id }}">
+                            <label class="col-7 col-form-label">จำนวน :</label>
+                            <input class="col-5 form-control item_product_qty" type="number" step="1" min="0" value="0" data-id="{{ $item->id }}">
                         </div>
                     </div>
                 </div>

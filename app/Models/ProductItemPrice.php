@@ -13,6 +13,7 @@ class ProductItemPrice extends Model
     protected $fillable = array(
         'product_item_id',
         'title',
+        'price_full',
         'price',
         'price_vip',
         'weight',
