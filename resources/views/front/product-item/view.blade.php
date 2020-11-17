@@ -128,6 +128,18 @@
     </div>
 </div>
 <!--########################## END CONTENT ##########################-->
+<!--########################## Related Product ##########################-->
+<div class="row m-0">
+    <div class="container mt-5">
+        <div class="header-gradient-2 mb-4">RELATED PRODUCTS</div>
+        <div class="row mx-auto my-auto products">
+            @foreach($related_items as $product_item)
+                @include('include.__box_product', ['product_item' => $product_item])
+            @endforeach
+        </div>
+    </div>
+</div>
+<!--########################### END Related Product ###########################-->
 @endpush
 
 @push('js')

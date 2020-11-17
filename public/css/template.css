@@ -2403,3 +2403,8 @@ hgroup h2.lead {
     font-family: 'Srivichainewbold';
     border: 2px solid #fff;
 }
+
+.from-editor-area img {
+    max-width: 100%;
+    height: auto;
+}
