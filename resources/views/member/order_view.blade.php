@@ -66,7 +66,7 @@
                         <span class="totalprice">{!! number_format($order_detail->total_price, 2) !!}</span>
                     </li>
                     @endforeach
-                    <li>ค่าจัดส่ง <span class="totalprice">{{ number_format($order->shipping_cost, 2) }}</span></li>
+                    <li>ค่าจัดส่ง ({{ $order->sum_weight/1000 }} kg)<span class="totalprice">{{ number_format($order->shipping_cost, 2) }}</span></li>
                     <li class="total-cart">ราคารวม <span
                             class="totalAll">{{ number_format($order->total_price, 2) }}</span></li>
                 </ul>

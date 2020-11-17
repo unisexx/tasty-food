@@ -15,8 +15,5 @@
     </li>
     <li class="total-cart">
         ราคารวม <span class="totalAll">{{ number_format($sum+shipping_cost($sum_weight), 2) }}</span>
-        <input type="hidden" name="sum_weight" value="{{ @$sum_weight }}">
-        <input type="hidden" name="shipping_cost" value="{{ @shipping_cost(@$sum_weight) }}">
-        <input type="hidden" name="total_price" value="{{ number_format($sum+shipping_cost($sum_weight), 2) }}">
     </li>
 </ul>
