@@ -33,7 +33,7 @@ class ProductItem extends Model
 
     public function productItemPriceFirst()
     {
-        return $this->hasOne('App\Models\ProductItemPrice')->orderBy('id', 'asc');
+        return $this->hasOne('App\Models\ProductItemPrice')->orderBy('price', 'asc');
     }
 
     public function productImage()

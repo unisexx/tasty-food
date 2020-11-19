@@ -595,6 +595,14 @@ span.simpleCart_total {
     width: 90%;
 }
 
+.price2 {
+    color: #d15d5e;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .name-product {
     min-height: 55px;
 }

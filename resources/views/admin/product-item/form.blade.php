@@ -14,7 +14,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="image">รูปสินค้า (เลือกได้หลายภาพ)</label>
+        <label for="image">รูปสินค้า (เลือกได้หลายภาพ) (ขนาด 800x800px)</label>
         @if(isset($rs->productImageFirst))
             <input type="hidden" name="old_image" value="hasImage">
         @endif

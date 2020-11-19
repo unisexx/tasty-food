@@ -1,6 +1,6 @@
 <div class="col-12 col-sm-6 col-md-3 d-inline-block box-products">
-    <p class="name-product">{{ @$product_item->name }}</p>
     <a href="{{ url('product-item/'.@$product_item->id) }}">
+        <p class="name-product">{{ @$product_item->name }}</p>
         <img class="img-fluid" src="{{ url('uploads/product-item/'.@$product_item->productImageFirst->name) }}">
     </a>
     <div class="link">
@@ -14,5 +14,10 @@
             <li> <a class="go-detail" href="{{ url('product-item/'.@$product_item->id) }}"><img src="{{ url('chc/images/icon-go-detail.png') }}" alt=""> Detail</a></li>
         </ul>
     </div>
-    <p class="price">{{ @show_price(@$product_item->productItemPriceFirst) }}.-</p>
+    <div class="price2">
+        ฿{{ @show_price(@$product_item->productItemPriceFirst) }}
+        @if(@$product_item->productItemPriceFirst->price_full)
+            <div class="original-price">฿{{ @$product_item->productItemPriceFirst->price_full }}</div>
+        @endif
+    </div>
 </div>
