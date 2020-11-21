@@ -19,15 +19,14 @@
     <div class="w-100 title6-km pl-3 bg-lightgreen">ข้อมูลสุขภาพ
         <div class="row float-right">
             <div class="col-md-6">
-                <a href="{{ $contact->line }}"><img src="{{ asset('images/line-add-friend.png') }}" alt=""
-                        class="float-right"></a>
+                <a href="{{ $contact->line }}"><img src="{{ asset('images/line-add-friend.png') }}" alt=""></a>
             </div>
             <div class="col-md-6">
                 <a href="{{ $contact->facebook }}"><img src="{{ asset('images/facebook-add-friend.png') }}" alt=""></a>
             </div>
         </div>
     </div>
-    <div class="mt-2 mb-4 border-title">{{ @$knowledge->title }}</div>
+    <div class="mt-2 mb-4 border-title float-left">{{ @$knowledge->title }}</div>
     <img src="{{ asset('uploads/knowledge/'.$knowledge->image) }}" alt="" class="img-fluid rounded">
     <div class="social-nav model-3d-0 social mt-4 mb-4 pl-0">Share on: <div class="sharethis-inline-share-buttons"></div></div>
     {!! $knowledge->detail !!}

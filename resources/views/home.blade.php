@@ -50,7 +50,7 @@
     <div class="col-sm-12 col-md-3 col-lg-fix2">
     @foreach($banner_hilights as $banner_hilight)
         @if($banner_hilight->url) <a href="{{ $banner_hilight->url }}" target="_blank"> @endif
-        <img class="img-fluid mt-2 mb-2" src="{{ url('uploads/banner/'.@$banner_hilight->image) }}">
+        <img class="img-fluid mt-2 mb-2 line-fb" src="{{ url('uploads/banner/'.@$banner_hilight->image) }}">
         @if($banner_hilight->url) </a> @endif
     @endforeach
     @foreach($vdo_hilights as $vdo_hilight)

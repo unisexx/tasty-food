@@ -25,7 +25,7 @@
                                 <div class="carousel-inner slides flex-viewport">
                                     @foreach($product_item->productImage as $key=>$image)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-slide-number="{{ $key }}">
-                                        <img src="{{ url('uploads/product-item/'.$image->name) }}">
+                                        <img src="{{ url('uploads/product-item/'.$image->name) }}" class="img-fluid">
                                     </div>
                                     @endforeach
                                 </div><!-- Carousel nav -->
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="col-12 col-sm-12 col-md-5 bg-white pt-2 p-0">
+    <div class="col-12 col-sm-12 col-md-5 bg-white pt-2 p-0 pl-2">
         <h3><span class="brand-title-product-detail">{{ $product_item->brand }}</span></h3>
         <h5><span class="title-product-detail">{{ $product_item->name }}</span></h5>
         <div class="col-12 p-0"><img src="{{ asset('images/shopping.png') }}" alt="" class="img-fluid"></div>

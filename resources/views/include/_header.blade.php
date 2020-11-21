@@ -2,7 +2,7 @@
 <div class="bg-white p-2 m-0">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-3 d-flex align-items-center">
+            <div class="col-xs-12 col-md-3 d-block align-items-center">
                 <a href="{{ url('') }}"><img src="{{ asset('images/logo-chulalak.png') }}" alt="" class="logo img-fluid"></a>
             </div>
 
