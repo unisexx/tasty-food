@@ -304,31 +304,31 @@ return [
             'icon'   => 'far fa-envelope',
             'active' => ['admin/message*'],
         ],
-        // ['header' => 'รายงาน'],
-        // [
-        //     'text'   => 'รายงานสรุปยอดขาย',
-        //     'url'    => 'admin/report1',
-        //     'icon'   => 'far fa-file-alt',
-        //     'active' => ['admin/report1*'],
-        // ],
-        // [
-        //     'text'   => 'รายงานสินค้าขายดี',
-        //     'url'    => 'admin/report2',
-        //     'icon'   => 'far fa-file-alt',
-        //     'active' => ['admin/report2*'],
-        // ],
-        // [
-        //     'text'   => 'รายงานลูกค้าชั้นยอด',
-        //     'url'    => 'admin/report3',
-        //     'icon'   => 'far fa-file-alt',
-        //     'active' => ['admin/report3*'],
-        // ],
-        // [
-        //     'text'   => 'รายงานการเข้าชมสินค้า',
-        //     'url'    => 'admin/report4',
-        //     'icon'   => 'far fa-file-alt',
-        //     'active' => ['admin/report4*'],
-        // ],
+        ['header' => 'รายงาน'],
+        [
+            'text'   => 'รายงานสรุปยอดขาย',
+            'url'    => 'admin/report1',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report1*'],
+        ],
+        [
+            'text'   => 'รายงานสินค้าขายดี',
+            'url'    => 'admin/report2',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report2*'],
+        ],
+        [
+            'text'   => 'รายงานลูกค้าชั้นยอด',
+            'url'    => 'admin/report3',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report3*'],
+        ],
+        [
+            'text'   => 'รายงานการเข้าชมสินค้า',
+            'url'    => 'admin/report4',
+            'icon'   => 'far fa-file-alt',
+            'active' => ['admin/report4*'],
+        ],
 
         // [
         //     'text' => 'บริการของเรา',

@@ -52,7 +52,7 @@
                                 <div class="row-center flex-control-nav flex-control-thumbs size-thumb">
                                     @foreach($chunk as $skey=>$image)
                                     <a class="thumbnail cursor thumbnail-modifier" id="carousel-selector-{{ $skey }}">
-                                        <img src="{{ url('uploads/product-item/thumb/'.$image->name) }}">
+                                        <img src="{{ url('uploads/product-item/'.$image->name) }}" class="img-fluid">
                                     </a>
                                     @endforeach
                                 </div>
@@ -65,11 +65,11 @@
                     <!--/carousel-inner-->
                     <a class="carousel-control-prev" href="#myCarousel3" role="button"
                         data-slide="prev">
-                        <img src="images/arrow-slide-back.png" alt="">
+                        <img src="{{ url('chc/images/arrow-slide-back.png') }}" alt="">
                     </a>
                     <a class="carousel-control-next" href="#myCarousel3" role="button"
                         data-slide="next">
-                        <img src="images/arrow-slide-next.png" alt="">
+                        <img src="{{ url('chc/images/arrow-slide-next.png') }}" alt="">
                     </a>
                 </div>
                 <!--/myCarousel-->

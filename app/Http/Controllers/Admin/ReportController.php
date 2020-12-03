@@ -43,6 +43,7 @@ class ReportController extends Controller
                     GROUP BY updated_at
                     ORDER BY updated_at DESC";
         $rs = DB::select($sql);
+
         return view('admin.report.report1', compact('rs'));
     }
 
@@ -65,18 +66,25 @@ class ReportController extends Controller
         }
 
         $sql = "SELECT
-                product_items.brand,
-                product_items.`name`,
-                Sum(order_details.qty) AS total_qty,
-                Sum(order_details.price) AS total_price
+                    product_items.brand,
+                    product_items.`name`,
+                    product_item_prices.title,
+                    Sum( order_details.qty ) AS total_qty,
+                    Sum( order_details.price ) AS total_price
                 FROM
-                orders
-                INNER JOIN order_details ON orders.id = order_details.order_id
-                INNER JOIN product_items ON product_items.id = order_details.product_item_id
-                WHERE orders.`status` = 'จัดส่งสินค้าแล้ว' " . @$condition . "
-                GROUP BY product_item_id
-                ORDER BY total_price DESC";
+                    orders
+                    INNER JOIN order_details ON orders.id = order_details.order_id
+                    INNER JOIN product_item_prices ON product_item_prices.id = order_details.product_item_price_id
+                    INNER JOIN product_items ON product_items.id = product_item_prices.product_item_id
+                WHERE
+                    orders.status = 'จัดส่งสินค้าแล้ว'  " . @$condition . "
+                GROUP BY
+                    product_item_price_id
+                ORDER BY
+                    total_price DESC";
+
         $rs = DB::select($sql);
+
         return view('admin.report.report2', compact('rs'));
     }
 
@@ -107,10 +115,11 @@ class ReportController extends Controller
                     users
                     INNER JOIN orders ON users.id = orders.user_id
                     INNER JOIN order_details ON orders.id = order_details.order_id
-                    WHERE `status` = 'จัดส่งสินค้าแล้ว' " . @$condition . "
+                    WHERE orders.status = 'จัดส่งสินค้าแล้ว' " . @$condition . "
                     GROUP BY email
                     ORDER BY total_price DESC";
         $rs = DB::select($sql);
+
         return view('admin.report.report3', compact('rs'));
     }
 
